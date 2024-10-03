@@ -71,7 +71,7 @@ export default function HomePage() {
                   "Instalación profesional de cámaras de seguridad WiFi para mayor seguridad.",
               },
             ].map((service, index) => (
-              <div key={index} className="h-full flex flex-col justify-center">
+              <div key={index} className="flex items-center justify-center h-full">
                 <ServiceCard
                   imageSrc={placeholderImage} // Usa la misma imagen para todos por ahora
                   title={service.title}

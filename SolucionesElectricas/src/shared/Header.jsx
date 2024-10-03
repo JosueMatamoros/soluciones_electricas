@@ -4,7 +4,6 @@ import {
   Navbar,
   Collapse,
   Typography,
-  Button,
   IconButton,
   List,
   ListItem,
@@ -12,80 +11,57 @@ import {
   MenuHandler,
   MenuList,
   MenuItem,
-} from "@material-tailwind/react";
+  SpeedDial,
+  SpeedDialHandler,
+  SpeedDialContent,
+  SpeedDialAction,
+} from "@material-tailwind/react"; 
+
 import {
   ChevronDownIcon,
   Bars3Icon,
   XMarkIcon,
-} from "@heroicons/react/24/outline";
+  UserCircleIcon,
+} from "@heroicons/react/24/outline"; 
+
 import {
-  Bars4Icon,
-  GlobeAmericasIcon,
-  NewspaperIcon,
-  PhoneIcon,
-  RectangleGroupIcon,
-  SquaresPlusIcon,
   SunIcon,
-  TagIcon,
+  PhoneIcon,
   UserGroupIcon,
-} from "@heroicons/react/24/solid";
+  EnvelopeIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+} from "@heroicons/react/24/solid"; 
 
 const navListMenuItems = [
   {
-    title: "Products",
-    description: "Find the perfect solution for your needs.",
-    icon: SquaresPlusIcon,
-  },
-  {
-    title: "About Us",
-    description: "Meet and learn about our dedication",
-    icon: UserGroupIcon,
-  },
-  {
-    title: "Blog",
-    description: "Find the perfect solution for your needs.",
-    icon: Bars4Icon,
-  },
-  {
-    title: "Services",
-    description: "Learn how we can help you achieve your goals.",
+    title: "Servicios",
+    description: "Descubre cómo podemos ayudarte a alcanzar tus metas.",
     icon: SunIcon,
+    to: "/servicios",
   },
   {
-    title: "Support",
-    description: "Reach out to us for assistance or inquiries",
-    icon: GlobeAmericasIcon,
-  },
-  {
-    title: "Contact",
-    description: "Find the perfect solution for your needs.",
+    title: "Contacto",
+    description: "Encuentra la solución perfecta para tus necesidades.",
     icon: PhoneIcon,
+    to: "/contacto",
   },
   {
-    title: "News",
-    description: "Read insightful articles, tips, and expert opinions.",
-    icon: NewspaperIcon,
-  },
-  {
-    title: "Products",
-    description: "Find the perfect solution for your needs.",
-    icon: RectangleGroupIcon,
-  },
-  {
-    title: "Special Offers",
-    description: "Explore limited-time deals and bundles",
-    icon: TagIcon,
+    title: "Sobre Nosotros",
+    description: "Conoce nuestro equipo y dedicación.",
+    icon: UserGroupIcon,
+    to: "/sobre-nosotros",
   },
 ];
 
 function NavListMenu() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+
   const renderItems = navListMenuItems.map(
-    ({ icon, title, description }, key) => (
-      <Link to="/" key={key}> {/* Cambié <a href="#"> por <Link to="/"> */}
+    ({ icon, title, description, to }, key) => (
+      <Link to={to} key={key}>
         <MenuItem className="flex items-center gap-3 rounded-lg">
-          <div className="flex items-center justify-center rounded-lg !bg-blue-gray-50 p-2 ">
+          <div className="flex items-center justify-center rounded-lg bg-blue-gray-50 p-2">
             {React.createElement(icon, {
               strokeWidth: 2,
               className: "h-6 text-gray-900 w-6",
@@ -101,7 +77,7 @@ function NavListMenu() {
             </Typography>
             <Typography
               variant="paragraph"
-              className="text-xs !font-medium text-blue-gray-500"
+              className="text-xs font-medium text-blue-gray-500"
             >
               {description}
             </Typography>
@@ -123,11 +99,11 @@ function NavListMenu() {
         <MenuHandler>
           <Typography as="div" variant="small" className="font-medium">
             <ListItem
-              className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900"
+              className="flex items-center gap-2 py-2 pr-4 font-medium text-gray-900 cursor-pointer"
               selected={isMenuOpen || isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((cur) => !cur)}
             >
-              Resources
+              Recursos
               <ChevronDownIcon
                 strokeWidth={2.5}
                 className={`hidden h-3 w-3 transition-transform lg:block ${
@@ -158,26 +134,28 @@ function NavListMenu() {
 
 function NavList() {
   return (
-    <List className="mt-4 mb-6 p-0 lg:mt-0 lg:mb-0 lg:flex-row lg:p-1">
+    <List className="flex flex-col lg:flex-row items-center justify-center w-full">
       <Typography
-        as={Link} // Cambié a Link
-        to="/" // Ruta a la HomePage
-        variant="small"
-        color="blue-gray"
-        className="font-medium"
-      >
-        <ListItem className="flex items-center gap-2 py-2 pr-4">Home</ListItem>
-      </Typography>
-      <NavListMenu />
-      <Typography
-        as={Link} // Cambié a Link
-        to="/contact" // Ruta a la página de contacto
+        as={Link}
+        to="/" 
         variant="small"
         color="blue-gray"
         className="font-medium"
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
-          Contact Us
+          Inicio
+        </ListItem>
+      </Typography>
+      <NavListMenu />
+      <Typography
+        as={Link}
+        to="/contact" 
+        variant="small"
+        color="blue-gray"
+        className="font-medium"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">
+          Contáctanos
         </ListItem>
       </Typography>
     </List>
@@ -188,38 +166,61 @@ export function NavbarWithMegaMenu() {
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpenNav(false)
-    );
+    const handleResize = () => {
+      if (window.innerWidth >= 960) {
+        setOpenNav(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-4 py-2">
+    <Navbar className="mx-auto max-w-screen-xl px-4 py-2 relative">
       <div className="flex items-center justify-between text-blue-gray-900">
-        <Typography
-          as={Link} // Cambié a Link
-          to="/" // Ruta a la HomePage
-          variant="h6"
-          className="mr-4 cursor-pointer py-1.5 lg:ml-2"
-        >
-          Soluciones Eléctricas del Norte
-        </Typography>
-        <div className="hidden lg:block">
+        <div className="flex items-center">
+          <Typography
+            as={Link}
+            to="/"
+            variant="h6"
+            className="cursor-pointer py-1.5 lg:ml-2"
+          >
+            Soluciones Eléctricas del Norte
+          </Typography>
+        </div>
+
+        <div className="hidden absolute lg:flex left-0 right-0 flex-1 justify-center">
           <NavList />
         </div>
-        <div className="hidden gap-2 lg:flex">
-          <Button variant="text" size="sm" color="blue-gray">
-            Log In
-          </Button>
-          <Button variant="gradient" size="sm">
-            Sign In
-          </Button>
+
+        <div className="hidden lg:flex items-center">
+          <SpeedDial placement="left">
+            <SpeedDialHandler>
+              <IconButton
+                size="md"
+                className="rounded-full bg-gray-100 text-black"
+              >
+                <UserCircleIcon className="h-6 w-6" />
+              </IconButton>
+            </SpeedDialHandler>
+            <SpeedDialContent className="flex-row space-x-2">
+              <SpeedDialAction>
+                <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5" />
+              </SpeedDialAction>
+              <SpeedDialAction>
+                <PhoneIcon className="h-5 w-5" />
+              </SpeedDialAction>
+              <SpeedDialAction>
+                <EnvelopeIcon className="h-5 w-5" />
+              </SpeedDialAction>
+            </SpeedDialContent>
+          </SpeedDial>
         </div>
+
         <IconButton
           variant="text"
           color="blue-gray"
-          className="lg:hidden"
+          className="lg:hidden ml-2"
           onClick={() => setOpenNav(!openNav)}
         >
           {openNav ? (
@@ -231,14 +232,6 @@ export function NavbarWithMegaMenu() {
       </div>
       <Collapse open={openNav}>
         <NavList />
-        <div className="flex w-full flex-nowrap items-center gap-2 lg:hidden">
-          <Button variant="outlined" size="sm" color="blue-gray" fullWidth>
-            Log In
-          </Button>
-          <Button variant="gradient" size="sm" fullWidth>
-            Sign In
-          </Button>
-        </div>
       </Collapse>
     </Navbar>
   );
