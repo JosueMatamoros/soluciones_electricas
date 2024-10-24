@@ -1,13 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Routing from "./routes"; 
+import Routing from "./routes";
 import { NavbarWithMegaMenu } from "./shared/Header";
+import Footer from "./shared/Footer";
 
 function App() {
   return (
     <Router>
-      <NavbarWithMegaMenu />
-      <Routing />
+      <div className="flex flex-col min-h-screen">
+        <NavbarWithMegaMenu />
+        <div className="flex-grow">
+          <Routing />
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }

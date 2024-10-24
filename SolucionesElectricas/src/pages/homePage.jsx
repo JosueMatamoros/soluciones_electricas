@@ -1,6 +1,8 @@
 import React from "react";
 import videoFile from "../assets/backgroundVideo.mp4";
 import { ServiceCard } from "../components/CardService";
+import Quote from "../components/Quote";
+import ContactForm from "../components/contact/contactForm";
 
 export default function HomePage() {
   return (
@@ -75,6 +77,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <ContactForm />
     </div>
   );
 }

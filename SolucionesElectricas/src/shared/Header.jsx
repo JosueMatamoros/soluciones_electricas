@@ -21,16 +21,20 @@ import {
   ChevronDownIcon,
   Bars3Icon,
   XMarkIcon,
-  UserCircleIcon,
+  ChatBubbleOvalLeftEllipsisIcon,
+  EnvelopeIcon,
+  PhoneIcon as PhoneIconOutline,
 } from "@heroicons/react/24/outline"; 
 
 import {
   SunIcon,
-  PhoneIcon,
   UserGroupIcon,
-  EnvelopeIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
+  PhoneIcon,
 } from "@heroicons/react/24/solid"; 
+
+import { FaWhatsapp } from "react-icons/fa";
+
+const logo = "/logo.png";
 
 const navListMenuItems = [
   {
@@ -179,17 +183,18 @@ export function NavbarWithMegaMenu() {
     <Navbar className="mx-auto max-w-screen-xl px-4 py-2 relative">
       <div className="flex items-center justify-between text-blue-gray-900">
         <div className="flex items-center">
+        <img src={logo} alt="Logo" className="h-12 w-auto mb-2 lg:mb-0" />
           <Typography
             as={Link}
             to="/"
             variant="h6"
-            className="cursor-pointer py-1.5 lg:ml-2"
+            className="cursor-pointer py-1.5 lg:ml-2 font-roboto-slab"
           >
-            Soluciones Eléctricas del Norte
+            Grupo SEN
           </Typography>
         </div>
 
-        <div className="hidden absolute lg:flex left-0 right-0 flex-1 justify-center">
+        <div className="hidden absolute lg:flex left-0 right-0 flex-1">
           <NavList />
         </div>
 
@@ -200,15 +205,15 @@ export function NavbarWithMegaMenu() {
                 size="md"
                 className="rounded-full bg-gray-100 text-black"
               >
-                <UserCircleIcon className="h-6 w-6" />
+                <ChatBubbleOvalLeftEllipsisIcon className="h-6 w-6" /> 
               </IconButton>
             </SpeedDialHandler>
             <SpeedDialContent className="flex-row space-x-2">
               <SpeedDialAction>
-                <ChatBubbleOvalLeftEllipsisIcon className="h-5 w-5" />
+                <FaWhatsapp className="h-5 w-5" />
               </SpeedDialAction>
               <SpeedDialAction>
-                <PhoneIcon className="h-5 w-5" />
+                <PhoneIconOutline className="h-5 w-5" />
               </SpeedDialAction>
               <SpeedDialAction>
                 <EnvelopeIcon className="h-5 w-5" />

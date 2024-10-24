@@ -1,4 +1,3 @@
-// src/components/Services.jsx
 import React from 'react';
 import { motion } from 'framer-motion';
 import BackgroundCard from '../components/BackgroundCard';
@@ -10,7 +9,7 @@ export default function Services() {
       title: "Instalación de Aires Acondicionados",
       description:
         "Instalamos y mantenemos sistemas de aire acondicionado para hogares y oficinas.",
-      image: placeholderImage, // Puedes usar diferentes imágenes para cada servicio
+      image: placeholderImage,
       path: "/servicios/AC",
     },
     {
@@ -46,15 +45,14 @@ export default function Services() {
       image: placeholderImage,
       path: "/servicios/domotica",
     }
-    
   ];
 
   return (
     <div className="min-h-screen bg-darkGray">
       {/* Encabezado */}
-      <header className="py-8 px-4 text-center bg-darkBlue">
+      <header className="py-12 px-4 text-center bg-darkBlue">
         <motion.h1 
-          className="text-4xl md:text-5xl font-bold mb-4"
+          className="text-4xl md:text-5xl font-roboto-slab text-black mb-4"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -62,7 +60,7 @@ export default function Services() {
           Nuestros Servicios
         </motion.h1>
         <motion.p 
-          className="text-xl max-w-2xl mx-auto text-gray-300"
+          className="text-xl max-w-2xl mx-auto text-gray-700 italic font-roboto"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
@@ -72,7 +70,7 @@ export default function Services() {
       </header>
 
       {/* Cuerpo Principal */}
-      <main className="container mx-auto px-4">
+      <main className="container mx-auto px-4 py-8 font-roboto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicios.map((servicio, index) => (
             <BackgroundCard
