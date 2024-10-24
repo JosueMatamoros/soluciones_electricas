@@ -49,7 +49,7 @@ const navListMenuItems = [
     title: "Sobre Nosotros",
     description: "Conoce nuestro equipo y dedicación.",
     icon: UserGroupIcon,
-    to: "/sobre-nosotros",
+    to: "/nosotros",
   },
 ];
 

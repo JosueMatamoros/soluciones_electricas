@@ -7,14 +7,7 @@ import {
   
   export function ServiceCard({ imageSrc, title, description }) {
     return (
-      <Card className="w-full max-w-[22rem] shadow-lg min-h-[28rem] md:max-h-[20rem]">
-        <CardHeader floated={false} color="blue-gray" className="h-[250px]">
-          <img
-            src={imageSrc}
-            alt={title}
-            className="h-full w-full object-cover"
-          />
-        </CardHeader>
+      <Card className="w-full max-w-[22rem] shadow-lg min-h-[16rem] md:max-h-[20rem]">
         <CardBody>
           <Typography variant="h5" color="blue-gray" className="font-medium mb-2 text-center">
             {title}

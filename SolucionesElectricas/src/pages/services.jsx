@@ -45,9 +45,9 @@ export default function Services() {
   ];
 
   return (
-    <div className="min-h-screen bg-darkGray text-white">
+    <div className="min-h-screen bg-darkGray">
       {/* Encabezado */}
-      <header className="py-16 px-4 text-center bg-darkBlue">
+      <header className="py-8 px-4 text-center bg-darkBlue">
         <motion.h1 
           className="text-4xl md:text-5xl font-bold mb-4"
           initial={{ opacity: 0, y: -50 }}
@@ -67,7 +67,7 @@ export default function Services() {
       </header>
 
       {/* Cuerpo Principal */}
-      <main className="container mx-auto px-4 py-16">
+      <main className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {servicios.map((servicio, index) => (
             <BackgroundCard
