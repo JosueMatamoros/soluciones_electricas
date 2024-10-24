@@ -11,12 +11,14 @@ export default function Services() {
       description:
         "Instalamos y mantenemos sistemas de aire acondicionado para hogares y oficinas.",
       image: placeholderImage, // Puedes usar diferentes imágenes para cada servicio
+      path: "/servicios/AC",
     },
     {
       title: "Instalaciones Eléctricas Generales",
       description:
         "Soluciones eléctricas profesionales para todas tus necesidades.",
       image: placeholderImage,
+      path: "/servicios/electricidad",
     },
     {
       title: "Instalación de Sistemas de Piscinas y Jacuzzis",
@@ -29,6 +31,7 @@ export default function Services() {
       description:
         "Servicio de mantenimiento y reparación para sistemas de aire acondicionado.",
       image: placeholderImage,
+      path: "/servicios/mantenimiento",
     },
     {
       title: "Automatización de Portones",
@@ -37,11 +40,13 @@ export default function Services() {
       image: placeholderImage,
     },
     {
-      title: "Instalación de Cámaras WiFi",
+      title: "Automatización y Domótica",
       description:
-        "Instalación profesional de cámaras de seguridad WiFi para mayor seguridad.",
+        "Soluciones inteligentes para automatizar tu hogar o negocio, mejorando la seguridad, comodidad y eficiencia.",
       image: placeholderImage,
-    },
+      path: "/servicios/domotica",
+    }
+    
   ];
 
   return (
@@ -75,6 +80,7 @@ export default function Services() {
               title={servicio.title}
               description={servicio.description}
               image={servicio.image}
+              path={servicio.path}
             />
           ))}
         </div>

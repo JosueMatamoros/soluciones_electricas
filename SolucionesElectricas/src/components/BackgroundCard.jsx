@@ -1,4 +1,3 @@
-// src/components/BackgroundCard.jsx
 import React from 'react';
 import {
   Card,
@@ -7,8 +6,11 @@ import {
   Button,
 } from "@material-tailwind/react";
 import placeholderImage from "../assets/placeholder.webp";
+import { useNavigate } from 'react-router-dom';
 
-export default function BackgroundCard({ title, description, image = placeholderImage }) {
+export default function BackgroundCard({ title, description, image = placeholderImage, path = "/" }) {
+  const navigate = useNavigate(); // Importa el hook useNavigate
+
   return (
     <Card
       shadow={false}
@@ -29,7 +31,7 @@ export default function BackgroundCard({ title, description, image = placeholder
         <Button
           size="sm"
           className="mt-4 bg-primary text-white hover:bg-primaryDark"
-          onClick={() => alert(`Más información sobre ${title}`)}
+          onClick={() => navigate(path)} 
         >
           Ver más
         </Button>
@@ -37,5 +39,3 @@ export default function BackgroundCard({ title, description, image = placeholder
     </Card>
   );
 }
-
-
