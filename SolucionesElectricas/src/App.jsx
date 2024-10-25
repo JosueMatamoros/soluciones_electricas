@@ -7,7 +7,7 @@ import Footer from "./shared/Footer";
 function App() {
   return (
     <Router>
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-screen bg-gray-50">
         <NavbarWithMegaMenu />
         <div className="flex-grow">
           <Routing />

@@ -2,6 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import BackgroundCard from '../components/BackgroundCard';
 import placeholderImage from "../assets/placeholder.jpeg";
+import acInstallation from "../assets/services/acInstallation.jpg"
+import electricalInstallation from "../assets/services/electricalInstallation.jpg"
+import poolsAndJacuzzis from "../assets/services/poolsAndJacuzzis.jpg"
+import acMaintenance from "../assets/services/acMaintenance.jpg"
+import homeAutomation from "../assets/services/homeAutomation.jpg"
+
 
 export default function Services() {
   const servicios = [
@@ -9,27 +15,28 @@ export default function Services() {
       title: "Instalación de Aires Acondicionados",
       description:
         "Instalamos y mantenemos sistemas de aire acondicionado para hogares y oficinas.",
-      image: placeholderImage,
+      image: acInstallation,
       path: "/servicios/AC",
     },
     {
       title: "Instalaciones Eléctricas Generales",
       description:
         "Soluciones eléctricas profesionales para todas tus necesidades.",
-      image: placeholderImage,
+      image: electricalInstallation,
       path: "/servicios/electricidad",
     },
     {
       title: "Instalación de Sistemas de Piscinas y Jacuzzis",
       description:
         "Nos encargamos de la instalación completa de sistemas de piscinas y jacuzzis.",
-      image: placeholderImage,
+      image: poolsAndJacuzzis,
+      path : "/servicios/piscinas"
     },
     {
       title: "Mantenimiento de Aires Acondicionados",
       description:
         "Servicio de mantenimiento y reparación para sistemas de aire acondicionado.",
-      image: placeholderImage,
+      image: acMaintenance,
       path: "/servicios/mantenimiento",
     },
     {
@@ -42,7 +49,7 @@ export default function Services() {
       title: "Automatización y Domótica",
       description:
         "Soluciones inteligentes para automatizar tu hogar o negocio, mejorando la seguridad, comodidad y eficiencia.",
-      image: placeholderImage,
+      image: homeAutomation,
       path: "/servicios/domotica",
     }
   ];

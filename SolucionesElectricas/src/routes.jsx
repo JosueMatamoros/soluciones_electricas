@@ -6,6 +6,7 @@ import AcInstallationPage from "./pages/servicesPages/AcInstallationPage";
 import ACMaintenancePage from "./pages/servicesPages/ACMaintenancePage";
 import ElectricalServices from "./pages/servicesPages/ElectricalServices";
 import AutomatizacionDomotica from "./pages/servicesPages/HomeAutomation";
+import PoolsAndJacuzzisPage from "./pages/servicesPages/PoolsAndJacuzzisPage";
 import AboutUs from "./pages/aboutUs";
 import Faqs from "./pages/FAQs";
 
@@ -18,6 +19,7 @@ const Routing = () => {
       <Route path="/servicios/mantenimiento" element={<ACMaintenancePage />} />
       <Route path="/servicios/electricidad" element={<ElectricalServices />} />
       <Route path="/servicios/domotica" element={<AutomatizacionDomotica />} />
+      <Route path="/servicios/piscinas" element={<PoolsAndJacuzzisPage />} />
       <Route path="/nosotros" element={<AboutUs />} />
       <Route path="/faqs" element={<Faqs />}/>
     </Routes>

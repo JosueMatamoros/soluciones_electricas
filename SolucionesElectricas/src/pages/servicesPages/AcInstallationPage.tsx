@@ -8,7 +8,7 @@ import { AirConditionerCard } from "../../components/servicesInfo/AcInstalation/
 // Icons
 import { WiThermometer, WiStrongWind, WiSnow } from "react-icons/wi";
 // Assets 
-import acConvencional from "../../assets/services/AcInstalation/acConvencional.jpg";
+import acConvencional from "../../assets/services/acInstallation/acConvencional.jpg";
 
 const AcInstallationPage = () => {
   return (

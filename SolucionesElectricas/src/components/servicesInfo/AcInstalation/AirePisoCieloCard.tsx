@@ -1,6 +1,6 @@
 import React from "react";
 import { FaCheckCircle } from "react-icons/fa";
-import PisoCielo from "../../../assets/services/AcInstalation/pisoCielo.jpg";
+import PisoCielo from "../../../assets/services/acInstallation/pisoCielo.jpg";
 
 const AirePisoCieloCard = () => {
   return (

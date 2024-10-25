@@ -180,7 +180,7 @@ export function NavbarWithMegaMenu() {
   }, []);
 
   return (
-    <Navbar className="mx-auto max-w-screen-xl px-4 py-2 relative">
+    <Navbar className="mx-auto max-w-screen-xl px-4 py-2 relative z-50">
       <div className="flex items-center justify-between text-blue-gray-900">
         <div className="flex items-center">
         <img src={logo} alt="Logo" className="h-12 w-auto mb-2 lg:mb-0" />

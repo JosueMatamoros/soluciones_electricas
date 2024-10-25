@@ -6,7 +6,6 @@ import {
   Button,
   Typography
 } from "@material-tailwind/react";
-import placeholderImage from "../assets/placeholder.webp";
 import { useNavigate } from 'react-router-dom';
 
 export default function BackgroundCard({ title, description, image = placeholderImage, path = "/" }) {

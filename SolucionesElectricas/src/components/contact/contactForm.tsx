@@ -7,7 +7,7 @@ const ContactForm: React.FC = () => {
     <div className="flex justify-center items-center p-8 rounded-md w-full bg-gray-50">
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-8">
         {/* Formulario de Contacto */}
-        <Card className="bg-white shadow-lg rounded-lg p-6">
+        <Card className="bg-white shadow-lg rounded-lg p-6 ">
           <CardBody>
             <Typography variant="h5" className="text-black mb-4 font-bold">
               Contáctanos
