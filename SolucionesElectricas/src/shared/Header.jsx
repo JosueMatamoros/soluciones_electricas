@@ -27,27 +27,28 @@ import {
 } from "@heroicons/react/24/outline"; 
 
 import {
-  SunIcon,
+  DocumentTextIcon,
+  CameraIcon,
   UserGroupIcon,
-  PhoneIcon,
-} from "@heroicons/react/24/solid"; 
+} from "@heroicons/react/24/solid";
 
 import { FaWhatsapp } from "react-icons/fa";
 
 const logo = "/logo.png";
 
 const navListMenuItems = [
+
   {
-    title: "Servicios",
-    description: "Descubre cómo podemos ayudarte a alcanzar tus metas.",
-    icon: SunIcon,
-    to: "/servicios",
+    title: "Galería de Proyectos",
+    description: "Descubre nuestro trabajo ",
+    icon: CameraIcon,
+    to: "/galeria",
   },
   {
-    title: "Contacto",
-    description: "Encuentra la solución perfecta para tus necesidades.",
-    icon: PhoneIcon,
-    to: "/contacto",
+    title: "Reseñas",
+    description: "Opiniones de nuestros clientes.",
+    icon: DocumentTextIcon,
+    to: "/resenas",
   },
   {
     title: "Sobre Nosotros",
@@ -148,6 +149,17 @@ function NavList() {
       >
         <ListItem className="flex items-center gap-2 py-2 pr-4">
           Inicio
+        </ListItem>
+      </Typography>
+      <Typography
+        as={Link}
+        to="/servicios" 
+        variant="small"
+        color="blue-gray"
+        className="font-medium"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">
+          Servicios
         </ListItem>
       </Typography>
       <NavListMenu />
