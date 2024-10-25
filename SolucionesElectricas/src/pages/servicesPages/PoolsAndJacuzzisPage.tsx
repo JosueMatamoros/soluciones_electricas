@@ -2,8 +2,8 @@
 
 import React from "react";
 import { Button } from "@material-tailwind/react";
-import Benefits from "../../components/poolsAndJacuzzis/Benefits";
-import SystemsOffered from "../../components/poolsAndJacuzzis/SystemsOffered";
+import Benefits from "../../components/servicesInfo/poolsAndJacuzzis/Benefits";
+import SystemsOffered from "../../components/servicesInfo/poolsAndJacuzzis/SystemsOffered";
 import jaccuzi from "../../assets/services/poolAndJacuzzi/jacuzzi.jpg";
 
 const PoolsAndJacuzzisPage: React.FC = () => {

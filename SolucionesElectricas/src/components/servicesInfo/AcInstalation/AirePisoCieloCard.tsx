@@ -14,7 +14,7 @@ const AirePisoCieloCard = () => {
       </div>
       <div className="ml-6">
         <h3 className="text-2xl font-bold">Aire Piso-Cielo</h3>
-        <p className="text-gray-600 mt-2">
+        <p className="text-gray-600 mt-2 ">
           Solución de alto rendimiento para espacios industriales y comerciales. Ideal para grandes áreas, con instalación flexible en suelo o techo.
         </p>
         <ul className="mt-4 space-y-2">

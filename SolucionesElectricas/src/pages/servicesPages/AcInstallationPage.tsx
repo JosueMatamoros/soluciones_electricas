@@ -83,7 +83,7 @@ const AcInstallationPage = () => {
       <BTUTable />
 
         {/* Nuevo componente de aire industrial */}
-        <h2 className="text-2xl font-semibold text-center mt-12">
+        <h2 className="text-2xl font-semibold text-center mt-12 mb-2">
         ¿Necesitas algo mas grande? 
       </h2>
       <AirePisoCieloCard />

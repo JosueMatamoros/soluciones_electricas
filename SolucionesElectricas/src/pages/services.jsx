@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import BackgroundCard from '../components/BackgroundCard';
-import placeholderImage from "../assets/placeholder.jpeg";
 import acInstallation from "../assets/services/acInstallation.jpg"
 import electricalInstallation from "../assets/services/electricalInstallation.jpg"
 import poolsAndJacuzzis from "../assets/services/poolsAndJacuzzis.jpg"
 import acMaintenance from "../assets/services/acMaintenance.jpg"
 import homeAutomation from "../assets/services/homeAutomation.jpg"
+import electricGatesInstallation from "../assets/services/electricGatesInstallation.jpg"
 
 
 export default function Services() {
@@ -43,7 +43,8 @@ export default function Services() {
       title: "Automatización de Portones",
       description:
         "Automatiza tus portones con nuestras soluciones de alta tecnología.",
-      image: placeholderImage,
+      image: electricGatesInstallation,
+      path : "/servicios/portones"
     },
     {
       title: "Automatización y Domótica",
