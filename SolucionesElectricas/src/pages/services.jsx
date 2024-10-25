@@ -1,13 +1,15 @@
+// src/pages/Services.tsx
+
 import React from 'react';
 import { motion } from 'framer-motion';
 import BackgroundCard from '../components/BackgroundCard';
-import acInstallation from "../assets/services/acInstallation.jpg"
-import electricalInstallation from "../assets/services/electricalInstallation.jpg"
-import poolsAndJacuzzis from "../assets/services/poolsAndJacuzzis.jpg"
-import acMaintenance from "../assets/services/acMaintenance.jpg"
-import homeAutomation from "../assets/services/homeAutomation.jpg"
-import electricGatesInstallation from "../assets/services/electricGatesInstallation.jpg"
-
+// Importa las imágenes necesarias
+import acInstallation from "../assets/services/acInstallation.jpg";
+import electricalInstallation from "../assets/services/electricalInstallation.jpg";
+import poolsAndJacuzzis from "../assets/services/poolsAndJacuzzis.jpg";
+import acMaintenance from "../assets/services/acMaintenance.jpg";
+import homeAutomation from "../assets/services/homeAutomation.jpg";
+import electricGatesInstallation from "../assets/services/electricGatesInstallation.jpg";
 
 export default function Services() {
   const servicios = [
