@@ -1,5 +1,3 @@
-// src/components/Footer.tsx
-
 import React from "react";
 import { Link } from "react-router-dom";
 import { Typography } from "@material-tailwind/react";
@@ -13,12 +11,12 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row justify-between items-center">
           {/* Logo y Navegación */}
-          <div className="flex flex-col items-center lg:items-start lg:flex-row">
+          <div className="flex flex-col items-center lg:items-start lg:flex-row ">
             {/* Logo */}
             <img src={logo} alt="Logo" className="h-12 w-auto mb-4 lg:mb-0 lg:mr-6" />
 
             {/* Navegación */}
-            <nav className="flex flex-wrap justify-center lg:justify-start gap-4 text-gray-600">
+            <nav className="flex flex-wrap self-center justify-center lg:justify-start gap-4 text-gray-600">
               <Link to="/" className="hover:text-gray-900 transition-colors duration-200">
                 Inicio
               </Link>

@@ -40,7 +40,7 @@ export default function MainServices() {
     <section className="py-12 px-4 bg-gray-50">
       <div className="container mx-auto max-w-6xl">
         <motion.h2
-          className="text-3xl font-semibold text-gray-900 mb-8 text-center font-roboto-slab font-bold"
+          className="text-3xl text-gray-900 mb-8 text-center font-roboto-slab font-bold"
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}

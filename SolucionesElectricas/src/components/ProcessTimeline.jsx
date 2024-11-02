@@ -36,7 +36,7 @@ const ProcessTimeline = () => {
 
   return (
     <div className="container mx-auto max-w-6xl ">
-      <h2 className="text-3xl font-semibold text-gray-900 font-roboto-slab font-bold mb-8 text-center">
+      <h2 className="text-3xl  text-gray-900 font-roboto-slab font-bold mb-8 text-center">
         Nuestro Proceso de Trabajo
       </h2>
       <div className="relative wrap overflow-hidden p-10 h-full">
