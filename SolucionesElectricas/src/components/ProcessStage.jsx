@@ -1,16 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { IconType } from "react-icons";
 
-interface ProcessStageProps {
-  title: string;
-  description: string;
-  Icon: IconType;
-  isReversed: boolean;
-  delay: number;
-}
-
-const ProcessStage: React.FC<ProcessStageProps> = ({ title, description, Icon, isReversed, delay }) => {
+const ProcessStage = ({ title, description, Icon, isReversed, delay }) => {
   return (
     <motion.div
       className={`mb-8 flex justify-between items-center w-full ${isReversed ? "flex-row-reverse" : ""}`}

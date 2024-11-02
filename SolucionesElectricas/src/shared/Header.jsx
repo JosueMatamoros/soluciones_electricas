@@ -165,7 +165,7 @@ function NavList() {
       <NavListMenu />
       <Typography
         as={Link}
-        to="/contact" 
+        to="/contacto" 
         variant="small"
         color="blue-gray"
         className="font-medium"
@@ -191,11 +191,16 @@ export function NavbarWithMegaMenu() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  // Define tu número y mensaje de WhatsApp
+  const whatsappNumber = '50661350349'; 
+  const whatsappMessage = 'Hola, me gustaría obtener más información.';
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <Navbar className="mx-auto max-w-screen-xl px-4 py-2 relative z-50">
       <div className="flex items-center justify-between text-blue-gray-900">
         <div className="flex items-center">
-        <img src={logo} alt="Logo" className="h-12 w-auto mb-2 lg:mb-0" />
+          <img src={logo} alt="Logo" className="h-12 w-auto mb-2 lg:mb-0" />
           <Typography
             as={Link}
             to="/"
@@ -221,13 +226,25 @@ export function NavbarWithMegaMenu() {
               </IconButton>
             </SpeedDialHandler>
             <SpeedDialContent className="flex-row space-x-2">
-              <SpeedDialAction>
+              {/* Acción de WhatsApp */}
+              <SpeedDialAction
+                onClick={() => window.open(whatsappUrl, '_blank')}
+                label="WhatsApp"
+              >
                 <FaWhatsapp className="h-5 w-5" />
               </SpeedDialAction>
-              <SpeedDialAction>
+
+              {/* Otras acciones */}
+              <SpeedDialAction
+                onClick={() => window.open('tel:+12345678900', '_self')}
+                label="Llamar"
+              >
                 <PhoneIconOutline className="h-5 w-5" />
               </SpeedDialAction>
-              <SpeedDialAction>
+              <SpeedDialAction
+                onClick={() => window.open('mailto:tuemail@ejemplo.com', '_self')}
+                label="Correo"
+              >
                 <EnvelopeIcon className="h-5 w-5" />
               </SpeedDialAction>
             </SpeedDialContent>

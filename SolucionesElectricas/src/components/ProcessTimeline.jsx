@@ -2,7 +2,7 @@ import React from "react";
 import { FaClipboardCheck, FaTools, FaCogs, FaThumbsUp } from "react-icons/fa";
 import ProcessStage from "./ProcessStage";
 
-const ProcessTimeline: React.FC = () => {
+const ProcessTimeline = () => {
   const stages = [
     {
       title: "Consulta Inicial",
@@ -41,7 +41,7 @@ const ProcessTimeline: React.FC = () => {
       </h2>
       <div className="relative wrap overflow-hidden p-10 h-full">
         {/* Línea Vertical */}
-        <div className="border-2 absolute border-opacity-20 border-gray-700 h-full  left-1/2 transform -translate-x-1/2"></div>
+        <div className="border-2 absolute border-opacity-20 border-gray-700 h-full left-1/2 transform -translate-x-1/2"></div>
 
         {/* Renderizar cada etapa */}
         {stages.map((stage, index) => (

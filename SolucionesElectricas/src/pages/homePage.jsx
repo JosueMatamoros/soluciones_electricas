@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import ProcessTimeline from "../components/ProcessTimeline";
 import MainServices from "../components/MainServices"; // Importa MainServices
 import { useRef } from "react";
+import ChatBubble from "../components/ChatBubble";
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -63,6 +64,8 @@ export default function HomePage() {
 
       {/* Formulario de Contacto */}
       <ContactForm />
+
+      <ChatBubble />
     </div>
   );
 }

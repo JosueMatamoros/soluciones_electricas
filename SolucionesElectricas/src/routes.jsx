@@ -10,6 +10,7 @@ import PoolsAndJacuzzisPage from "./pages/servicesPages/PoolsAndJacuzzisPage";
 import ElectricGatesInstallation from "./pages/servicesPages/ElectricGatesInstallationPage";
 import AboutUs from "./pages/aboutUs";
 import Faqs from "./pages/FAQs";
+import Contact from "./pages/contact";
 
 const Routing = () => {
   return (
@@ -24,6 +25,7 @@ const Routing = () => {
       <Route path="/servicios/piscinas" element={<PoolsAndJacuzzisPage />} />
       <Route path="/nosotros" element={<AboutUs />} />
       <Route path="/faqs" element={<Faqs />}/>
+      <Route path="/contacto" element={<Contact />} />
     </Routes>
   );
 };
