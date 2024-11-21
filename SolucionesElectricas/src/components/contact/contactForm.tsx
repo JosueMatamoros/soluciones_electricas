@@ -49,7 +49,7 @@ const ContactForm: React.FC = () => {
                 <FaEnvelope className="text-xl" />
                 <div>
                   <Typography variant="small" className="font-bold">Contactanos via correo</Typography>
-                  <span>yarielsibaja@gmail.com</span>
+                  <span>yarielSS@gmail.com</span>
                 </div>
               </div>
               <div className="flex items-center space-x-3">

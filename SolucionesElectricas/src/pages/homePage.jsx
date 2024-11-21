@@ -7,7 +7,7 @@ import { Button } from "@material-tailwind/react";
 import { motion, useInView } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import ProcessTimeline from "../components/ProcessTimeline";
-import MainServices from "../components/MainServices"; // Importa MainServices
+import MainServices from "../components/MainServices"; 
 import { useRef } from "react";
 import ChatBubble from "../components/ChatBubble";
 

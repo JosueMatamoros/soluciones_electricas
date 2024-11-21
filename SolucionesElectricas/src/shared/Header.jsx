@@ -42,13 +42,13 @@ const navListMenuItems = [
     title: "Galería de Proyectos",
     description: "Descubre nuestro trabajo ",
     icon: CameraIcon,
-    to: "/galeria",
+    to: "/coming-soon",
   },
   {
     title: "Reseñas",
     description: "Opiniones de nuestros clientes.",
     icon: DocumentTextIcon,
-    to: "/resenas",
+    to: "/coming-soon",
   },
   {
     title: "Sobre Nosotros",
@@ -191,10 +191,16 @@ export function NavbarWithMegaMenu() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Define tu número y mensaje de WhatsApp
+  // Definir WhatsApp con mensaje predefinido
   const whatsappNumber = '50661350349'; 
   const whatsappMessage = 'Hola, me gustaría obtener más información.';
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Definir email con mensaje predefinido
+  const emailAddress = "yarielSS@gmail.com"; 
+  const emailSubject = "Consulta sobre Servicios";
+  const emailBody = "Hola, me gustaría obtener más información sobre sus servicios de instalación eléctrica.";
+  const mailtoLink = `mailto:${emailAddress}?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
 
   return (
     <Navbar className="mx-auto max-w-screen-xl px-4 py-2 relative z-50">
@@ -221,6 +227,7 @@ export function NavbarWithMegaMenu() {
               <IconButton
                 size="md"
                 className="rounded-full bg-gray-100 text-black"
+                aria-label="Abrir opciones de contacto"
               >
                 <ChatBubbleOvalLeftEllipsisIcon className="h-6 w-6" /> 
               </IconButton>
@@ -234,15 +241,17 @@ export function NavbarWithMegaMenu() {
                 <FaWhatsapp className="h-5 w-5" />
               </SpeedDialAction>
 
-              {/* Otras acciones */}
+              {/* Acción de Llamar */}
               <SpeedDialAction
-                onClick={() => window.open('tel:+12345678900', '_self')}
+                onClick={() => window.location.href = 'tel:+50661350349'}
                 label="Llamar"
               >
                 <PhoneIconOutline className="h-5 w-5" />
               </SpeedDialAction>
+
+              {/* Acción de Correo con Mensaje Prefijado */}
               <SpeedDialAction
-                onClick={() => window.open('mailto:tuemail@ejemplo.com', '_self')}
+                onClick={() => window.location.href = mailtoLink}
                 label="Correo"
               >
                 <EnvelopeIcon className="h-5 w-5" />
@@ -256,6 +265,7 @@ export function NavbarWithMegaMenu() {
           color="blue-gray"
           className="lg:hidden ml-2"
           onClick={() => setOpenNav(!openNav)}
+          aria-label="Abrir menú de navegación"
         >
           {openNav ? (
             <XMarkIcon className="h-6 w-6" strokeWidth={2} />

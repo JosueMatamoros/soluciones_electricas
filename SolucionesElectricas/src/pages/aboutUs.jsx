@@ -5,7 +5,8 @@ import { Card, CardBody, Typography } from "@material-tailwind/react";
 export default class AboutUs extends Component {
   render() {
     return (
-      <div className="bg-red-200 w-full">
+      <div className="w-full h-screen flex flex-col justify-center">
+        <h1 className="text-4xl font-bold text-center mb-8">Sobre Nosotros</h1>
         <CompanyTimeline />
         <div className="flex flex-col md:flex-row justify-center space-y-6 md:space-y-0 md:space-x-8 mb-12">
       {/* Misión */}

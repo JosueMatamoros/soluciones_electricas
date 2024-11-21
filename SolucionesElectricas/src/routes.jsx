@@ -8,6 +8,7 @@ import ElectricalServices from "./pages/servicesPages/ElectricalServices";
 import AutomatizacionDomotica from "./pages/servicesPages/HomeAutomation";
 import PoolsAndJacuzzisPage from "./pages/servicesPages/PoolsAndJacuzzisPage";
 import ElectricGatesInstallation from "./pages/servicesPages/ElectricGatesInstallationPage";
+import ComingSoon from "./pages/comingSoon";
 import AboutUs from "./pages/aboutUs";
 import Faqs from "./pages/FAQs";
 import Contact from "./pages/contact";
@@ -26,6 +27,7 @@ const Routing = () => {
       <Route path="/nosotros" element={<AboutUs />} />
       <Route path="/faqs" element={<Faqs />}/>
       <Route path="/contacto" element={<Contact />} />
+      <Route path="/coming-soon" element={<ComingSoon />} />
     </Routes>
   );
 };
