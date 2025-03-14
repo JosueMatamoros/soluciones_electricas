@@ -6,13 +6,16 @@ module.exports = withMT({
   theme: {
     extend: {
       fontFamily: {
-        merryweather: ["Merryweather", "serif"],
+        'roboto-slab': ['"Roboto Slab"', 'serif'],  
+        'roboto': ['"Roboto"', 'sans-serif'],  
       },
       colors: {
-        'main-dark-bg': '#1F2937',
-        'secundary-dark-bg': '#6B7280',
-        'main-light-bg': '#FFFFFF',
-        'secundary-light-bg': '#F9F9F9',
+        'main-dark-bg': '#334155',
+        'secundary-dark-bg': '#64748b',
+        'main-light-bg': '#FAFAFA',
+        'secundary-light-bg': '#FFFFFF',
+        'dark-button': '#020202',
+        'light-button': '#29AAE3',
       },
     },
   },
