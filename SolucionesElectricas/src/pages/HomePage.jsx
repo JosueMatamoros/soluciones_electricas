@@ -8,8 +8,8 @@ export default function HomePage() {
 
   return (
     <div
-      className={`flex flex-col min-h-screen w-full transition-all duration-500 ${
-        isDarkMode ? "bg-main-dark-bg" : "bg-main-light-bg"
+      className={`flex flex-col min-h-screen w-full transition-colors duration-300 ${
+        isDarkMode ? "bg-dark-bg" : "bg-light-bg"
       }`}
     >
       <section className="py-12 px-4">
@@ -30,28 +30,34 @@ export default function HomePage() {
           </div>
           <div className="w-full flex flex-col items-center lg:items-start justify-center space-y-6">
             <h1
-              className={`text-3xl md:text-4xl lg:text-5xl font-roboto-slab font-bold max-w-xl text-center lg:text-left transition-all duration-500 ${
-                isDarkMode ? "text-white" : "text-gray-900"
+              className={`text-3xl md:text-4xl lg:text-5xl font-roboto-slab font-bold max-w-xl text-center lg:text-left transition-colors duration-300 ${
+                isDarkMode ? "text-dark-text" : "text-light-text"
               }`}
             >
               Soluciones Eléctricas del Norte
             </h1>
             <p
-              className={`text-lg md:text-xl max-w-lg text-center lg:text-left transition-all duration-500 ${
-                isDarkMode ? "text-gray-300" : "text-gray-700"
+              className={`text-lg md:text-xl max-w-lg text-center lg:text-left transition-colors duration-300 ${
+                isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
               }`}
             >
               Somos expertos en instalaciones y mantenimiento eléctrico. Si tienes una
               idea, la transformamos en realidad con soluciones a medida.
               <br />
               <span className="font-bold">Grupo SEN</span>,{" "}
-              <span className={`italic transition-all duration-500 ${isDarkMode ? "text-white" : "text-black"}`} >
+              <span className={`italic transition-colors duration-300 ${
+                isDarkMode ? "text-brand-cyan-light" : "text-brand-cyan-dark"
+              }`}>
                 sí hay de otra
               </span>
               .
             </p>
             <Button
-            className={`${isDarkMode ? "bg-dark-button" : ""}`}
+              className={`transition-colors duration-300 ${
+                isDarkMode 
+                  ? "bg-brand-cyan hover:bg-brand-cyan-light text-dark-bg" 
+                  : "bg-brand-cyan-dark hover:bg-brand-cyan text-white"
+              }`}
             >
               Solicita una Cotización
             </Button>

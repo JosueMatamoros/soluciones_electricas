@@ -76,10 +76,10 @@ function NavListMenu({ isDarkMode }) {
 
         {/* Desktop */}
         <MenuList
-          className={`hidden max-w-screen-xl rounded-xl lg:block ${
+          className={`hidden max-w-screen-xl rounded-xl lg:block border-0 ${
             isDarkMode
-              ? "bg-secundary-dark-bg border-secundary-dark-bg"
-              : "bg-secundary-light-bg"
+              ? "bg-dark-bg-secondary shadow-lg"
+              : "bg-light-bg-secondary shadow-md"
           }`}
         >
           <ul className="grid grid-cols-3 gap-y-2 outline-none">
@@ -162,10 +162,10 @@ function NavListMenu({ isDarkMode }) {
       <div className="block lg:hidden">
         <Collapse open={isMobileMenuOpen}>
           <ul
-            className={`grid grid-cols-1 gap-y-2 rounded-xl transition-all duration-500 ${
+            className={`grid grid-cols-1 gap-y-2 rounded-xl transition-all duration-300 ${
               isDarkMode
-                ? "bg-secundary-dark-bg border-secundary-dark-bg"
-                : "bg-secundary-light-bg"
+                ? "bg-dark-bg-secondary"
+                : "bg-light-bg-secondary"
             }`}
           >
             <Link to="/galeria">
@@ -301,10 +301,10 @@ export function NavbarWithMegaMenu() {
 
   return (
     <Navbar
-      className={`mx-auto max-w-screen-xl px-4 py-2 relative z-50 transition-all duration-500 ${
+      className={`mx-auto max-w-screen-xl px-4 py-2 relative z-50 border-0 transition-all duration-300 ${
         isDarkMode
-          ? "bg-secundary-dark-bg text-white border-secundary-dark-bg"
-          : "bg-secundary-light-bg text-black"
+          ? "bg-dark-bg-secondary text-dark-text shadow-lg shadow-dark-border/20"
+          : "bg-light-bg text-light-text shadow-md"
       }`}
     >
       <div className="flex items-center justify-between">
@@ -344,10 +344,10 @@ export function NavbarWithMegaMenu() {
               <SpeedDialAction
                 onClick={() => window.open(whatsappUrl, "_blank")}
                 label="WhatsApp"
-                className={`transition-all duration-500 ${
+                className={`border-0 transition-all duration-300 ${
                   isDarkMode
-                    ? "bg-secundary-dark-bg text-white border-secundary-dark-bg"
-                    : "bg-secundary-light-bg text-black"
+                    ? "bg-dark-bg-secondary text-dark-text"
+                    : "bg-light-bg-secondary text-light-text"
                 }`}
               >
                 <FaWhatsapp className="h-5 w-5" />
@@ -355,10 +355,10 @@ export function NavbarWithMegaMenu() {
               <SpeedDialAction
                 onClick={() => window.open("tel:+12345678900", "_self")}
                 label="Llamar"
-                className={`transition-all duration-500 ${
+                className={`border-0 transition-all duration-300 ${
                   isDarkMode
-                    ? "bg-secundary-dark-bg text-white border-secundary-dark-bg"
-                    : "bg-secundary-light-bg text-black"
+                    ? "bg-dark-bg-secondary text-dark-text"
+                    : "bg-light-bg-secondary text-light-text"
                 }`}
               >
                 <PhoneIconOutline className="h-5 w-5" />
@@ -366,10 +366,10 @@ export function NavbarWithMegaMenu() {
               <SpeedDialAction
                 onClick={() => window.open("mailto:tuemail@ejemplo.com", "_self")}
                 label="Correo"
-                className={`transition-all duration-500 ${
+                className={`border-0 transition-all duration-300 ${
                   isDarkMode
-                    ? "bg-secundary-dark-bg text-white border-secundary-dark-bg"
-                    : "bg-secundary-light-bg text-black"
+                    ? "bg-dark-bg-secondary text-dark-text"
+                    : "bg-light-bg-secondary text-light-text"
                 }`}
               >
                 <EnvelopeIcon className="h-5 w-5" />

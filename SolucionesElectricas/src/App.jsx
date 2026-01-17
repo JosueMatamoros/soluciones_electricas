@@ -9,9 +9,11 @@ function AppContent() {
 
   return (
     <div
-      className={`flex flex-col min-h-screen ${
-        isDarkMode ? "bg-main-dark-bg text-white" : "bg-main-light-bg text-black"
-      } transition-colors duration-500`}
+      className={`flex flex-col min-h-screen transition-colors duration-300 ${
+        isDarkMode 
+          ? "bg-dark-bg text-dark-text" 
+          : "bg-light-bg text-light-text"
+      }`}
     >
       <NavbarWithMegaMenu />
       <div className="flex-grow">
