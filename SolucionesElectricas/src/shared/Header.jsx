@@ -31,228 +31,18 @@ import {
 } from "@heroicons/react/24/solid";
 import { FaWhatsapp } from "react-icons/fa";
 import ModeToggle from "./ModeToggle";
+import LanguageSelector from "./LanguageSelector";
 import { useTheme } from "../context/ThemeContext";
 
 const logo = "/logo.png";
-
-function NavListMenu({ isDarkMode }) {
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-
-  return (
-    <>
-      <Menu
-        open={isMenuOpen}
-        handler={setIsMenuOpen}
-        offset={{ mainAxis: 20 }}
-        placement="bottom"
-        allowHover
-      >
-        <MenuHandler>
-          <Typography as="div" variant="small" className="font-medium">
-            <ListItem
-              className={`flex items-center gap-2 py-2 pr-4 cursor-pointer transition-all duration-500 ${
-                isMenuOpen || isMobileMenuOpen
-                  ? isDarkMode
-                    ? "bg-secundary-dark-bg text-white"
-                    : "bg-gray-200 text-black"
-                  : isDarkMode
-                  ? "bg-inherit text-white"
-                  : "text-black"
-              }`}
-              selected={isMenuOpen || isMobileMenuOpen}
-              onClick={() => setIsMobileMenuOpen((cur) => !cur)}
-            >
-              Recursos
-              <ChevronDownIcon
-                strokeWidth={2.5}
-                className={`h-3 w-3 transition-transform ${
-                  isMenuOpen || isMobileMenuOpen ? "rotate-180" : ""
-                }`}
-              />
-            </ListItem>
-          </Typography>
-        </MenuHandler>
-
-        {/* Desktop */}
-        <MenuList
-          className={`hidden max-w-screen-xl rounded-xl lg:block border-0 ${
-            isDarkMode
-              ? "bg-dark-bg-secondary shadow-lg"
-              : "bg-light-bg-secondary shadow-md"
-          }`}
-        >
-          <ul className="grid grid-cols-3 gap-y-2 outline-none">
-            <Link to="/galeria">
-              <MenuItem
-                className={`flex items-center gap-3 rounded-lg transition-all duration-500 bg-inherit ${
-                  isDarkMode ? "text-white" : "text-black"
-                }`}
-              >
-                <div
-                  className={`flex items-center justify-center rounded-lg p-2 ${
-                    isDarkMode ? "bg-gray-500" : "bg-gray-200"
-                  }`}
-                >
-                  <CameraIcon className="h-6 w-6" />
-                </div>
-                <div>
-                  <Typography variant="h6" className="text-sm font-bold">
-                    Galería de Proyectos
-                  </Typography>
-                  <Typography variant="paragraph" className="text-xs font-medium">
-                    Descubre nuestro trabajo
-                  </Typography>
-                </div>
-              </MenuItem>
-            </Link>
-
-            <Link to="/resenas">
-              <MenuItem
-                className={`flex items-center gap-3 rounded-lg transition-all duration-500 bg-inherit ${
-                  isDarkMode ? "text-white" : "text-black"
-                }`}
-              >
-                <div
-                  className={`flex items-center justify-center rounded-lg p-2 ${
-                    isDarkMode ? "bg-gray-500" : "bg-gray-200"
-                  }`}
-                >
-                  <DocumentTextIcon className="h-6 w-6" />
-                </div>
-                <div>
-                  <Typography variant="h6" className="text-sm font-bold">
-                    Reseñas
-                  </Typography>
-                  <Typography variant="paragraph" className="text-xs font-medium">
-                    Opiniones de nuestros clientes
-                  </Typography>
-                </div>
-              </MenuItem>
-            </Link>
-
-            <Link to="/nosotros">
-              <MenuItem
-                className={`flex items-center gap-3 rounded-lg transition-all duration-500 bg-inherit ${
-                  isDarkMode ? "text-white" : "text-black"
-                }`}
-              >
-                <div
-                  className={`flex items-center justify-center rounded-lg p-2 ${
-                    isDarkMode ? "bg-gray-500" : "bg-gray-200"
-                  }`}
-                >
-                  <UserGroupIcon className="h-6 w-6" />
-                </div>
-                <div>
-                  <Typography variant="h6" className="text-sm font-bold">
-                    Sobre Nosotros
-                  </Typography>
-                  <Typography variant="paragraph" className="text-xs font-medium">
-                    Conoce nuestro equipo y dedicación
-                  </Typography>
-                </div>
-              </MenuItem>
-            </Link>
-          </ul>
-        </MenuList>
-      </Menu>
-
-      {/* Mobile (same style, stacked) */}
-      <div className="block lg:hidden">
-        <Collapse open={isMobileMenuOpen}>
-          <ul
-            className={`grid grid-cols-1 gap-y-2 rounded-xl transition-all duration-300 ${
-              isDarkMode
-                ? "bg-dark-bg-secondary"
-                : "bg-light-bg-secondary"
-            }`}
-          >
-            <Link to="/galeria">
-              <MenuItem
-                className={`flex items-center gap-3 rounded-lg transition-all duration-500 bg-inherit ${
-                  isDarkMode ? "text-white" : "text-black"
-                }`}
-              >
-                <div
-                  className={`flex items-center justify-center rounded-lg p-2 ${
-                    isDarkMode ? "" : "bg-gray-200"
-                  }`}
-                >
-                  <CameraIcon className="h-6 w-6" />
-                </div>
-                <div>
-                  <Typography variant="h6" className="text-sm font-bold">
-                    Galería de Proyectos
-                  </Typography>
-                  <Typography variant="paragraph" className="text-xs font-medium">
-                    Descubre nuestro trabajo
-                  </Typography>
-                </div>
-              </MenuItem>
-            </Link>
-
-            <Link to="/resenas">
-              <MenuItem
-                className={`flex items-center gap-3 rounded-lg transition-all duration-500 bg-inherit ${
-                  isDarkMode ? "text-white" : "text-black"
-                }`}
-              >
-                <div
-                  className={`flex items-center justify-center rounded-lg p-2 ${
-                    isDarkMode ? "" : "bg-gray-200"
-                  }`}
-                >
-                  <DocumentTextIcon className="h-6 w-6" />
-                </div>
-                <div>
-                  <Typography variant="h6" className="text-sm font-bold">
-                    Reseñas
-                  </Typography>
-                  <Typography variant="paragraph" className="text-xs font-medium">
-                    Opiniones de nuestros clientes
-                  </Typography>
-                </div>
-              </MenuItem>
-            </Link>
-
-            <Link to="/nosotros">
-              <MenuItem
-                className={`flex items-center gap-3 rounded-lg transition-all duration-500 bg-inherit ${
-                  isDarkMode ? "text-white" : "text-black"
-                }`}
-              >
-                <div
-                  className={`flex items-center justify-center rounded-lg p-2 ${
-                    isDarkMode ? "" : "bg-gray-200"
-                  }`}
-                >
-                  <UserGroupIcon className="h-6 w-6" />
-                </div>
-                <div>
-                  <Typography variant="h6" className="text-sm font-bold">
-                    Sobre Nosotros
-                  </Typography>
-                  <Typography variant="paragraph" className="text-xs font-medium">
-                    Conoce nuestro equipo y dedicación
-                  </Typography>
-                </div>
-              </MenuItem>
-            </Link>
-          </ul>
-        </Collapse>
-      </div>
-    </>
-  );
-}
 
 function NavList({ isDarkMode }) {
   return (
     <List className="flex flex-col lg:flex-row items-center justify-center w-full">
       <Typography as={Link} to="/" variant="small" className="font-medium">
         <ListItem
-          className={`flex items-center gap-2 py-2 pr-4 transition-all duration-500 ${
-            isDarkMode ? "text-white" : "text-black"
+          className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
+            isDarkMode ? "text-dark-text" : "text-light-text"
           }`}
         >
           Inicio
@@ -260,18 +50,35 @@ function NavList({ isDarkMode }) {
       </Typography>
       <Typography as={Link} to="/servicios" variant="small" className="font-medium">
         <ListItem
-          className={`flex items-center gap-2 py-2 pr-4 transition-all duration-500 ${
-            isDarkMode ? "text-white" : "text-black"
+          className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
+            isDarkMode ? "text-dark-text" : "text-light-text"
           }`}
         >
           Servicios
         </ListItem>
       </Typography>
-      <NavListMenu isDarkMode={isDarkMode} />
+      <Typography as={Link} to="/galeria" variant="small" className="font-medium">
+        <ListItem
+          className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
+            isDarkMode ? "text-dark-text" : "text-light-text"
+          }`}
+        >
+          Galería de Proyectos
+        </ListItem>
+      </Typography>
+      <Typography as={Link} to="/nosotros" variant="small" className="font-medium">
+        <ListItem
+          className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
+            isDarkMode ? "text-dark-text" : "text-light-text"
+          }`}
+        >
+          Sobre Nosotros
+        </ListItem>
+      </Typography>
       <Typography as={Link} to="/contacto" variant="small" className="font-medium">
         <ListItem
-          className={`flex items-center gap-2 py-2 pr-4 transition-all duration-500 ${
-            isDarkMode ? "text-white" : "text-black"
+          className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
+            isDarkMode ? "text-dark-text" : "text-light-text"
           }`}
         >
           Contáctanos
@@ -314,8 +121,8 @@ export function NavbarWithMegaMenu() {
             as={Link}
             to="/"
             variant="h6"
-            className={`cursor-pointer py-1.5 lg:ml-2 font-roboto-slab transition-all duration-500 ${
-              isDarkMode ? "text-white" : "text-black"
+            className={`cursor-pointer py-1.5 lg:ml-2 font-roboto-slab transition-colors duration-300 ${
+              isDarkMode ? "text-dark-text" : "text-light-text"
             }`}
           >
             Grupo SEN
@@ -331,10 +138,10 @@ export function NavbarWithMegaMenu() {
             <SpeedDialHandler>
               <IconButton
                 size="md"
-                className={`rounded-full transition-all duration-500 ${
+                className={`rounded-full border-0 transition-colors duration-300 ${
                   isDarkMode
-                    ? "bg-secundary-dark-bg text-white"
-                    : "bg-secundary-light-bg text-black"
+                    ? "bg-dark-bg-secondary text-dark-text"
+                    : "bg-light-bg-secondary text-light-text"
                 }`}
               >
                 <ChatBubbleOvalLeftEllipsisIcon className="h-6 w-6" />
@@ -344,7 +151,7 @@ export function NavbarWithMegaMenu() {
               <SpeedDialAction
                 onClick={() => window.open(whatsappUrl, "_blank")}
                 label="WhatsApp"
-                className={`border-0 transition-all duration-300 ${
+                className={`border-0 transition-colors duration-300 ${
                   isDarkMode
                     ? "bg-dark-bg-secondary text-dark-text"
                     : "bg-light-bg-secondary text-light-text"
@@ -353,20 +160,9 @@ export function NavbarWithMegaMenu() {
                 <FaWhatsapp className="h-5 w-5" />
               </SpeedDialAction>
               <SpeedDialAction
-                onClick={() => window.open("tel:+12345678900", "_self")}
-                label="Llamar"
-                className={`border-0 transition-all duration-300 ${
-                  isDarkMode
-                    ? "bg-dark-bg-secondary text-dark-text"
-                    : "bg-light-bg-secondary text-light-text"
-                }`}
-              >
-                <PhoneIconOutline className="h-5 w-5" />
-              </SpeedDialAction>
-              <SpeedDialAction
                 onClick={() => window.open("mailto:tuemail@ejemplo.com", "_self")}
                 label="Correo"
-                className={`border-0 transition-all duration-300 ${
+                className={`border-0 transition-colors duration-300 ${
                   isDarkMode
                     ? "bg-dark-bg-secondary text-dark-text"
                     : "bg-light-bg-secondary text-light-text"
@@ -376,18 +172,17 @@ export function NavbarWithMegaMenu() {
               </SpeedDialAction>
             </SpeedDialContent>
           </SpeedDial>
-
+          <LanguageSelector />
           <ModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
         </div>
 
-        <div className="flex lg:hidden items-center">
-          <div>
-            <ModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} size={25} />
-          </div>
+        <div className="flex lg:hidden items-center gap-1">
+          <LanguageSelector />
+          <ModeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} size={25} />
           <IconButton
             variant="text"
-            className={`ml-1 transition-all duration-500 ${
-              isDarkMode ? "text-white" : "text-black"
+            className={`ml-1 transition-colors duration-300 ${
+              isDarkMode ? "text-dark-text" : "text-light-text"
             }`}
             onClick={() => setOpenNav(!openNav)}
           >
