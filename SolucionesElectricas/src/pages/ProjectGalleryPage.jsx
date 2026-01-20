@@ -3,6 +3,7 @@ import React, { useMemo, useState } from "react";
 import { PROJECTS } from "../data/Projects/projects";
 import ProjectCard from "../components/gallery/ProjectCard";
 import TabButton from "../components/gallery/TabButton";
+import SectionHeader from "../components/common/SectionHeader";
 import { useTheme } from "../context/ThemeContext";
 import { Layers, Droplets, Zap, Cog, Snowflake } from "lucide-react";
 
@@ -45,8 +46,18 @@ export default function ProjectGalleryPage() {
   const [activeCategory, setActiveCategory] = useState("Todos");
   const { isDarkMode } = useTheme();
 
+  // Shuffle para mezclar proyectos solo en "Todos"
+  function shuffle(array) {
+    const arr = array.slice();
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
   const filteredProjects = useMemo(() => {
-    if (activeCategory === "Todos") return PROJECTS;
+    if (activeCategory === "Todos") return shuffle(PROJECTS);
     return PROJECTS.filter((p) => p.category === activeCategory);
   }, [activeCategory]);
 
@@ -56,33 +67,25 @@ export default function ProjectGalleryPage() {
       isDarkMode ? "bg-dark-bg" : "bg-light-bg"
     )}>
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10">
-        {/* Header */}
-        <div className="flex flex-col items-center ">
-          <div className="mb-4 flex flex-col items-center">
-            <h1 className={cx(
-              "text-2xl font-bold transition-colors duration-300",
-              isDarkMode ? "text-dark-text" : "text-light-text"
-            )}>Proyectos</h1>
-            <p className={cx(
-              "mt-1 transition-colors duration-300",
-              isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
-            )}>
-              Galería con filtro por categorías y layout tipo bento. Porque a la gente le encanta ver tarjetas bonitas.
-            </p>
-          </div>
-          {/* Tabs */}
-          <div className="flex items-center gap-2 overflow-x-auto px-4">
-            {CATEGORIES.map(({ label, icon }, idx) => (
-              <TabButton
-                key={label}
-                icon={icon}
-                active={activeCategory === label}
-                onClick={() => setActiveCategory(label)}
-              >
-                {label}
-              </TabButton>
-            ))}
-          </div>
+        {/* Nuevo SectionHeader */}
+        <SectionHeader
+          badge="Galería"
+          badgeIcon={Layers}
+          title="Proyectos"
+          description="Galería con filtro por categorías y layout tipo bento. Porque a la gente le encanta ver tarjetas bonitas."
+        />
+        {/* Tabs */}
+        <div className="flex items-center justify-center gap-2 overflow-x-auto px-4 mb-4">
+          {CATEGORIES.map(({ label, icon }, idx) => (
+            <TabButton
+              key={label}
+              icon={icon}
+              active={activeCategory === label}
+              onClick={() => setActiveCategory(label)}
+            >
+              {label}
+            </TabButton>
+          ))}
         </div>
         {/* Grid */}
         <section className="mt-2">
