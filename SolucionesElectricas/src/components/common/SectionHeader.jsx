@@ -13,7 +13,7 @@ export default function SectionHeader({ badge, badgeIcon: BadgeIcon, title, desc
       <div className="relative">
         {/* Badge */}
         {badge && (
-          <div className="inline-flex items-center gap-2 mb-6">
+          <div className="inline-flex items-center gap-2 mb-2">
             <span className="h-px w-8 bg-gradient-to-r from-transparent to-[#22D3EE]" />
             <span className="inline-flex items-center gap-2 text-sm font-semibold tracking-wide uppercase text-[#22D3EE]">
               {BadgeIcon && (
