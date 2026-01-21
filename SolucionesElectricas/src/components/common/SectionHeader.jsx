@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// badgeIcon debe ser un componente de icono de lucide-react
+
 export default function SectionHeader({ badge, badgeIcon: BadgeIcon, title, description }) {
   return (
     <div className="relative text-center mb-2 md:mb-4">
