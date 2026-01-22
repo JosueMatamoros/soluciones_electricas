@@ -2,43 +2,11 @@ import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import ServiceCard from "../components/common/ServiceCard";
 import SectionHeader from "../components/common/SectionHeader";
-import { Zap, Plug, Cog, Wind, Droplets, Home } from "lucide-react";
+import { Zap } from "lucide-react";
+import { SERVICES } from "../data/services";
 
 function ServicesPage() {
   const { isDarkMode } = useTheme();
-
-  const services = [
-    {
-      id: "instalaciones-residenciales",
-      title: "Instalaciones eléctricas residenciales y generales",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
-    },
-    {
-      id: "climatizacion",
-      title: "Instalación y mantenimiento de sistemas de climatización",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
-    },
-    {
-      id: "domotica",
-      title: "Sistemas de domótica y dispositivos inteligentes",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
-    },
-    {
-      id: "motores-electricos",
-      title: "Instalación y revisión de motores eléctricos",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
-    },
-    {
-      id: "portones-automaticos",
-      title: "Instalación y programación de portones eléctricos",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
-    },
-    {
-      id: "sistemas-piscinas",
-      title: "Instalación de sistemas para piscinas",
-      image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
-    },
-  ];
 
   return (
     <div
@@ -56,7 +24,7 @@ function ServicesPage() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          {services.map((service) => (
+          {SERVICES.map((service) => (
             <ServiceCard
               key={service.id}
               id={service.id}
