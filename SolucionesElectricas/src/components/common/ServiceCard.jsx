@@ -3,30 +3,31 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { ArrowRight } from "lucide-react";
 
-function ServiceCard({ id, title, icon }) {
+function ServiceCard({ id, title, icon: Icon, image }) {
   const { isDarkMode } = useTheme();
 
   return (
     <div
       className={`group rounded-lg overflow-hidden transition-all duration-300 flex flex-col h-full ${
         isDarkMode
-          ? "bg-dark-bg-secondary hover:bg-dark-bg-tertiary"
-          : "bg-light-bg-secondary hover:bg-light-bg-tertiary"
-      } hover:shadow-xl hover:shadow-brand-cyan/10`}
+          ? "bg-dark-bg-secondary hover:bg-dark-bg-tertiary shadow-lg shadow-black/20"
+          : "bg-light-bg-secondary hover:bg-light-bg-tertiary shadow-md shadow-gray-300/50"
+      } hover:shadow-xl hover:shadow-brand-cyan/20`}
     >
-      {/* Imagen más grande */}
+      {/* Imagen */}
       <div className="relative h-64 overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
         <div
           className={`absolute inset-0 bg-gradient-to-br transition-all duration-300 ${
             isDarkMode
               ? "from-brand-cyan/20 to-brand-cyan-dark/20 group-hover:from-brand-cyan/30 group-hover:to-brand-cyan-dark/30"
               : "from-brand-cyan/10 to-brand-cyan-dark/10 group-hover:from-brand-cyan/20 group-hover:to-brand-cyan-dark/20"
           }`}
-        >
-          <div className="flex items-center justify-center h-full">
-            <span className="text-7xl">{icon}</span>
-          </div>
-        </div>
+        />
       </div>
 
       {/* Contenido - flex-grow para empujar el botón abajo */}
