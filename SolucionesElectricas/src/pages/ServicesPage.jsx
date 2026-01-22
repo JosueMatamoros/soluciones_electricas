@@ -9,51 +9,32 @@ function ServicesPage() {
     {
       id: "instalaciones-residenciales",
       title: "Instalaciones eléctricas residenciales y generales",
-      description:
-        "Diseño e instalación completa de sistemas eléctricos para hogares, oficinas y espacios comerciales con los más altos estándares de calidad y seguridad.",
       icon: "🏠",
-    },
-    {
-      id: "reparacion-averias",
-      title: "Reparación de averías eléctricas",
-      description:
-        "Diagnóstico rápido y reparación eficiente de fallas eléctricas. Servicio de emergencia disponible para solucionar problemas urgentes en tu instalación eléctrica.",
-      icon: "🔧",
-    },
-    {
-      id: "motores-electricos",
-      title: "Instalación y revisión de motores eléctricos",
-      description:
-        "Instalación profesional, mantenimiento preventivo y correctivo de motores eléctricos industriales y comerciales para garantizar su óptimo funcionamiento.",
-      icon: "⚙️",
-    },
-    {
-      id: "portones-automaticos",
-      title: "Automatización de portones eléctricos",
-      description:
-        "Instalación y automatización de portones eléctricos con sistemas modernos de apertura y cierre. Control remoto, sensores y sistemas de seguridad integrados.",
-      icon: "🚪",
     },
     {
       id: "climatizacion",
       title: "Instalación y mantenimiento de sistemas de climatización",
-      description:
-        "Instalación experta de sistemas de aire acondicionado y climatización. Mantenimiento preventivo y correctivo para máxima eficiencia y durabilidad.",
       icon: "❄️",
     },
     {
-      id: "sistemas-piscinas",
-      title: "Instalaciones eléctricas para sistemas de piscinas",
-      description:
-        "Instalaciones eléctricas especializadas para piscinas, incluyendo iluminación submarina, sistemas de filtrado y calefacción cumpliendo normas de seguridad.",
-      icon: "🏊",
+      id: "domotica",
+      title: "Sistemas de domótica y dispositivos inteligentes",
+      icon: "💡",
     },
     {
-      id: "domotica",
-      title: "Instalación de sistemas domóticos y dispositivos inteligentes",
-      description:
-        "Transforme su hogar u oficina en un espacio inteligente con sistemas domóticos. Control de iluminación, seguridad, climatización y más desde su smartphone.",
-      icon: "💡",
+      id: "motores-electricos",
+      title: "Instalación y revisión de motores eléctricos",
+      icon: "⚙️",
+    },
+    {
+      id: "portones-automaticos",
+      title: "Instalación y programación de portones eléctricos",
+      icon: "🚪",
+    },
+    {
+      id: "sistemas-piscinas",
+      title: "Instalación de sistemas para piscinas",
+      icon: "🏊",
     },
   ];
 
@@ -93,7 +74,6 @@ function ServicesPage() {
                 key={service.id}
                 id={service.id}
                 title={service.title}
-                description={service.description}
                 icon={service.icon}
               />
             ))}

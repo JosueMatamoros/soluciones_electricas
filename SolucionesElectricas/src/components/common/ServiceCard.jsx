@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { ArrowRight } from "lucide-react";
 
-function ServiceCard({ id, title, description, image, icon }) {
+function ServiceCard({ id, title, icon }) {
   const { isDarkMode } = useTheme();
 
   return (
     <div
-      className={`group rounded-lg overflow-hidden transition-all duration-300 ${
+      className={`group rounded-lg overflow-hidden transition-all duration-300 flex flex-col h-full ${
         isDarkMode
           ? "bg-dark-bg-secondary hover:bg-dark-bg-tertiary"
           : "bg-light-bg-secondary hover:bg-light-bg-tertiary"
       } hover:shadow-xl hover:shadow-brand-cyan/10`}
     >
-      {/* Imagen */}
-      <div className="relative h-48 overflow-hidden">
+      {/* Imagen más grande */}
+      <div className="relative h-64 overflow-hidden">
         <div
           className={`absolute inset-0 bg-gradient-to-br transition-all duration-300 ${
             isDarkMode
@@ -24,33 +24,25 @@ function ServiceCard({ id, title, description, image, icon }) {
           }`}
         >
           <div className="flex items-center justify-center h-full">
-            <span className="text-6xl">{icon}</span>
+            <span className="text-7xl">{icon}</span>
           </div>
         </div>
       </div>
 
-      {/* Contenido */}
-      <div className="p-6 space-y-4">
+      {/* Contenido - flex-grow para empujar el botón abajo */}
+      <div className="p-6 flex flex-col flex-grow space-y-4">
         <h3
-          className={`text-xl font-bold transition-colors duration-300 ${
+          className={`text-lg font-bold transition-colors duration-300 flex-grow ${
             isDarkMode ? "text-dark-text" : "text-light-text"
           }`}
         >
           {title}
         </h3>
-        
-        <p
-          className={`text-sm leading-relaxed transition-colors duration-300 ${
-            isDarkMode ? "text-dark-text-muted" : "text-light-text-muted"
-          }`}
-        >
-          {description}
-        </p>
 
-        {/* Botón */}
+        {/* Botón alineado al final */}
         <Link
           to={`/servicios/${id}`}
-          className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+          className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 ${
             isDarkMode
               ? "bg-brand-cyan text-dark-bg hover:bg-brand-cyan-light"
               : "bg-brand-cyan-dark text-white hover:bg-brand-cyan"
