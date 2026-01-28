@@ -5,6 +5,7 @@ import { Button } from "@material-tailwind/react";
 import { Award, Wrench, ShieldCheck, Users, Wallet } from "lucide-react";
 import { FeatureCard } from "../components/services/FeatureCard";
 import ProcessTimeline from "../components/services/ProcessTimeline";
+import ServicesCarousel from "../components/services/ServicesCarousel";
 
 export default function HomePage() {
   const { isDarkMode } = useTheme();
@@ -38,11 +39,11 @@ export default function HomePage() {
 
   return (
     <div
-      className={`flex flex-col min-h-screen w-full transition-colors duration-300 ${
+      className={`flex flex-col min-h-screen w-full transition-colors duration-300 px-4 ${
         isDarkMode ? "bg-dark-bg" : "bg-light-bg"
       }`}
     >
-      <section className="py-10 px-2">
+      <section className="py-10">
         <div className="mx-auto max-w-6xl flex flex-col lg:flex-row-reverse items-center gap-6 lg:gap-10">
           <div className="w-full flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-5 min-h-[320px]">
             <h1 className="text-5xl lg:text-6xl font-roboto-slab font-bold max-w-xl text-center lg:text-left transition-colors duration-300 text-light-text dark:text-dark-text">
@@ -79,9 +80,11 @@ export default function HomePage() {
         </div>
       </section>
 
+              <ServicesCarousel />
+
       {/* Features Section */}
       <section className="mx-auto max-w-6xl py-16">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-start">
+        <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:items-start">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-light-border dark:border-dark-border bg-light-bg-tertiary dark:bg-dark-bg-tertiary px-4 py-2 text-sm font-semibold text-brand-cyan">
               <Award className="h-4 w-4" />
