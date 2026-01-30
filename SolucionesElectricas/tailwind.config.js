@@ -7,6 +7,7 @@ module.exports = withMT({
   theme: {
     extend: {
       fontFamily: {
+        sans: ['Roboto', 'Arial', 'sans-serif'],
         "roboto-slab": ['"Roboto Slab"', "serif"],
         roboto: ['"Roboto"', "sans-serif"],
       },
