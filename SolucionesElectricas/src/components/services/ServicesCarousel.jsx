@@ -9,7 +9,7 @@ export default function ServicesCarousel() {
       description:
         "Diseño, montaje y modernización de sistemas eléctricos para hogares, comercios y fábricas. Seguridad, eficiencia y cumplimiento de normativas garantizados.",
       image:
-        "./public/services/instalaciones-electricas.png",
+        "/services/instalaciones-electricas.png",
       tags: ["Tableros eléctricos", "Iluminación LED", "Certificación"],
     },
     {
@@ -17,7 +17,7 @@ export default function ServicesCarousel() {
       description:
         "Venta, instalación profesional y servicio preventivo/correctivo para equipos de aire acondicionado split, central y más. Climatización confiable todo el año.",
       image:
-        "./public/services/aire-acondicionado.jpg",
+        "/services/aire-acondicionado.jpg",
       tags: ["Carga de gas", "Limpieza profunda", "Reparación de fallas"],
     },
     {
@@ -25,7 +25,7 @@ export default function ServicesCarousel() {
       description:
         "Instalación y automatización de bombas, filtros y sistemas eléctricos para piscinas y jacuzzis. Disfruta de agua limpia y segura con tecnología eficiente.",
       image:
-        "./public/services/piscinas-jacuzzis.png",
+        "/services/piscinas-jacuzzis.png",
       tags: ["Bombas automáticas", "Tableros de control", "Mantenimiento"],
     },
     {
@@ -33,7 +33,7 @@ export default function ServicesCarousel() {
       description:
         "Automatiza tu acceso con motores eléctricos para portones corredizos y batientes. Instalación segura, rápida y con garantía de funcionamiento.",
       image:
-        "./public/services/portones-electricos.png",
+        "/services/portones-electricos.png",
       tags: ["Control remoto", "Sensores de seguridad", "Soporte técnico"],
     },
   ];
@@ -67,7 +67,7 @@ export default function ServicesCarousel() {
       </div>
 
       {/* Carrusel clásico solo en pantallas pequeñas */}
-      <div className="relative 2xl:hidden flex justify-center">
+      <div className="relative 2xl:hidden flex justify-center mt-6">
         <div className="w-full max-w-3xl">
           <div className="relative">
             <ServiceCard service={services[index]} selected={true}>
@@ -90,12 +90,12 @@ export default function ServicesCarousel() {
         </div>
       </div>
 
-      <div className="mt-12 flex justify-center">
+      <div className="mt-8 flex justify-center">
         <button
-          className="flex items-center gap-2 rounded-full bg-brand-cyan px-6 py-3 font-semibold text-white text-lg shadow-lg hover:bg-brand-cyan-dark transition-colors duration-200 group/button focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800/40"
+          className="inline-flex items-center gap-2 rounded-full bg-brand-cyan px-5 py-2 text-base font-bold text-white hover:bg-brand-cyan-dark transition-colors duration-200 shadow-sm min-w-[180px] group focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800/40"
         >
-          <span>Ver todos los servicios</span>
-          <span className="inline-block transition-transform duration-300 group-hover/button:translate-x-2">
+          Ver todos los servicios
+          <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
             <ArrowRight className="h-5 w-6" />
           </span>
         </button>

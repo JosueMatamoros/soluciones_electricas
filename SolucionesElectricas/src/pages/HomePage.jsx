@@ -4,8 +4,13 @@ import videoFile from "../assets/videos/lightbulb.mp4";
 import { Button } from "@material-tailwind/react";
 import { Award, Wrench, ShieldCheck, Users, Wallet } from "lucide-react";
 import { FeatureCard } from "../components/services/FeatureCard";
+
 import ProcessTimeline from "../components/services/ProcessTimeline";
+
 import ServicesCarousel from "../components/services/ServicesCarousel";
+import FeaturedProjectsSection from "../components/gallery/FeaturedProjectsSection";
+
+
 
 export default function HomePage() {
   const { isDarkMode } = useTheme();
@@ -46,7 +51,7 @@ export default function HomePage() {
       <section className="py-6 md:py-10">
         <div className="mx-auto max-w-6xl flex flex-col lg:flex-row-reverse items-center gap-6 lg:gap-10">
           <div className="w-full flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-5 min-h-[320px]">
-            <h1 className="text-4xl lg:text-8xl font-roboto-slab font-bold max-w-xl text-center lg:text-left transition-colors duration-300 text-light-text dark:text-dark-text">
+            <h1 className="text-4xl md:text-6xl   font-roboto-slab font-bold max-w-xl text-center lg:text-left transition-colors duration-300 text-light-text dark:text-dark-text">
               <span className="block sm:inline">Soluciones Eléctricas</span>
               <span className="block sm:inline"> del Norte</span>
             </h1>
@@ -85,6 +90,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
 
       <ServicesCarousel />
 
@@ -143,6 +149,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+            <FeaturedProjectsSection />
 
       {/* Process Timeline Section */}
       <ProcessTimeline />
