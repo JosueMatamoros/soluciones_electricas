@@ -9,7 +9,7 @@ export default function ServicesCarousel() {
       description:
         "Diseño, montaje y modernización de sistemas eléctricos para hogares, comercios y fábricas. Seguridad, eficiencia y cumplimiento de normativas garantizados.",
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1600&auto=format&fit=crop",
+        "./public/services/instalaciones-electricas.png",
       tags: ["Tableros eléctricos", "Iluminación LED", "Certificación"],
     },
     {
@@ -25,7 +25,7 @@ export default function ServicesCarousel() {
       description:
         "Instalación y automatización de bombas, filtros y sistemas eléctricos para piscinas y jacuzzis. Disfruta de agua limpia y segura con tecnología eficiente.",
       image:
-        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop",
+        "./public/services/piscinas-jacuzzis.png",
       tags: ["Bombas automáticas", "Tableros de control", "Mantenimiento"],
     },
     {
@@ -33,7 +33,7 @@ export default function ServicesCarousel() {
       description:
         "Automatiza tu acceso con motores eléctricos para portones corredizos y batientes. Instalación segura, rápida y con garantía de funcionamiento.",
       image:
-        "https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1600&auto=format&fit=crop",
+        "./public/services/portones-electricos.png",
       tags: ["Control remoto", "Sensores de seguridad", "Soporte técnico"],
     },
   ];
