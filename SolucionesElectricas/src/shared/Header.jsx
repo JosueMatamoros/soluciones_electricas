@@ -42,7 +42,9 @@ function NavList({ isDarkMode }) {
       <Typography as={Link} to="/" variant="small" className="font-medium">
         <ListItem
           className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
-            isDarkMode ? "text-dark-text" : "text-light-text"
+            isDarkMode
+              ? "text-dark-text hover:text-blue-400"
+              : "text-light-text hover:text-blue-600"
           }`}
         >
           Inicio
@@ -51,7 +53,9 @@ function NavList({ isDarkMode }) {
       <Typography as={Link} to="/servicios" variant="small" className="font-medium">
         <ListItem
           className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
-            isDarkMode ? "text-dark-text" : "text-light-text"
+            isDarkMode
+              ? "text-dark-text hover:text-blue-400"
+              : "text-light-text hover:text-blue-600"
           }`}
         >
           Servicios
@@ -60,25 +64,20 @@ function NavList({ isDarkMode }) {
       <Typography as={Link} to="/galeria" variant="small" className="font-medium">
         <ListItem
           className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
-            isDarkMode ? "text-dark-text" : "text-light-text"
+            isDarkMode
+              ? "text-dark-text hover:text-blue-400"
+              : "text-light-text hover:text-blue-600"
           }`}
         >
           Galería de Proyectos
         </ListItem>
       </Typography>
-      <Typography as={Link} to="/nosotros" variant="small" className="font-medium">
-        <ListItem
-          className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
-            isDarkMode ? "text-dark-text" : "text-light-text"
-          }`}
-        >
-          Sobre Nosotros
-        </ListItem>
-      </Typography>
       <Typography as={Link} to="/contacto" variant="small" className="font-medium">
         <ListItem
           className={`flex items-center gap-2 py-2 pr-4 transition-colors duration-300 ${
-            isDarkMode ? "text-dark-text" : "text-light-text"
+            isDarkMode
+              ? "text-dark-text hover:text-blue-400"
+              : "text-light-text hover:text-blue-600"
           }`}
         >
           Contáctanos
@@ -125,7 +124,12 @@ export function NavbarWithMegaMenu() {
               isDarkMode ? "text-dark-text" : "text-light-text"
             }`}
           >
-            Grupo SEN
+            <span
+              className="ml-2 text-2xl italic font-[cursive] font-light"
+              style={{ fontFamily: 'Dancing Script, cursive' }}
+            >
+              Si hay de otra...
+            </span>
           </Typography>
         </div>
 

@@ -18,7 +18,7 @@ const LanguageSelector = () => {
       <MenuHandler>
         <IconButton
           variant="text"
-          className={`text-2xl transition-all duration-300 ${
+          className={`text-2xl transition-all duration-300 rounded-full ${
             isDarkMode ? "text-dark-text hover:bg-dark-bg-tertiary" : "text-light-text hover:bg-light-bg-tertiary"
           }`}
         >
