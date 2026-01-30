@@ -52,7 +52,7 @@ export default function HomePage() {
             </h1>
             <p className="text-lg md:text-xl max-w-lg text-slate-600 dark:text-slate-300 font-medium">
               Somos expertos en instalaciones y mantenimiento eléctrico. Si tienes una idea, la transformamos en realidad con soluciones a medida.<br />
-              <span className="font-roboto-slab font-bold text-black dark:text-white">Grupo SEN</span>,
+              <span className="font-roboto-slab font-bold  transition-colors duration-300 text-light-text dark:text-dark-text ">Grupo SEN</span>,
               <span
                 className="ml-2 text-2xl italic font-light text-[#22d3ee]"
                 style={{ fontFamily: 'Dancing Script, cursive' }}

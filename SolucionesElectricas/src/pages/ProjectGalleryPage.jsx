@@ -7,15 +7,6 @@ import SectionHeader from "../components/common/SectionHeader";
 import { useTheme } from "../context/ThemeContext";
 import { Layers, Droplets, Zap, Cog, Snowflake } from "lucide-react";
 
-/**
- * ProjectGalleryPage.jsx
- * - Tabs para filtrar por categoría
- * - Bento grid (tarjetas con distintos tamaños)
- * - Hover overlay con título y descripción
- *
- * Requisitos: TailwindCSS
- */
-
 const CATEGORIES = [
   { label: "Todos", icon: Layers },
   { label: "Piscinas", icon: Droplets },
@@ -66,7 +57,7 @@ export default function ProjectGalleryPage() {
       "min-h-screen transition-colors duration-300",
       isDarkMode ? "bg-dark-bg" : "bg-light-bg"
     )}>
-      <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10">
+      <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 transition-colors duration-300">
         {/* Nuevo SectionHeader */}
         <SectionHeader
           badge="Galería"

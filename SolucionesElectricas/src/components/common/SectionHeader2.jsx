@@ -29,7 +29,7 @@ export default function SectionHeader2({
 
         {/* Title */}
         {title && (
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-2 text-balance leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 dark:text-white mb-2 text-balance leading-tight transition-colors duration-300">
             {title}
           </h2>
         )}

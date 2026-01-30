@@ -22,10 +22,10 @@ export default function ProjectCard({ project, spanClass }) {
   return (
     <article
       className={cx(
-        "group relative overflow-hidden rounded-2xl border",
+        "group relative overflow-hidden rounded-2xl border transition-colors duration-300",
         isDarkMode
-          ? "border-dark-border bg-dark-bg-secondary"
-          : "border-slate-200 bg-slate-100",
+          ? "border-dark-border bg-dark-bg-secondary transition-colors duration-300"
+          : "border-slate-200 bg-slate-100 transition-colors duration-300",
         "shadow-sm hover:shadow-md transition-shadow",
         "min-h-[180px]",
         spanClass
@@ -47,14 +47,14 @@ export default function ProjectCard({ project, spanClass }) {
       <div className="absolute left-2 top-2">
         <span
           className={cx(
-            "inline-flex items-center justify-center rounded-full backdrop-blur",
+            "inline-flex items-center justify-center rounded-full backdrop-blur transition-colors duration-300",
             isDarkMode
               ? "bg-dark-bg/80 text-brand-cyan border border-dark-border"
               : "bg-white/90 text-brand-cyan-dark border border-slate-200",
             "w-8 h-8"
           )}
         >
-          {CategoryIcon && <CategoryIcon size={22} />}
+          {CategoryIcon && <CategoryIcon size={22} className="transition-colors duration-300" />}
         </span>
       </div>
 

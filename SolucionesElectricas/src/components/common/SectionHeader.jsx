@@ -28,7 +28,7 @@ export default function SectionHeader({ badge, badgeIcon: BadgeIcon, title, desc
         )}
 
         {/* Title with gradient accent */}
-        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] dark:text-white mb-8 text-balance leading-tight">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#0F172A] dark:text-white mb-8 text-balance leading-tight transition-colors duration-300">
           <span className="relative inline">
             <span
               className="absolute -bottom-1 left-0 right-0 h-3 sm:h-4 bg-[#22D3EE]/25 -rotate-[0.5deg] rounded-sm"
