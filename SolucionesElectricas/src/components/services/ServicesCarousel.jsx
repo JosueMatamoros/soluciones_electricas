@@ -44,7 +44,7 @@ export default function ServicesCarousel() {
   const next = () => setIndex((i) => (i === services.length - 1 ? 0 : i + 1));
 
   return (
-    <section className="w-full bg-light-bg dark:bg-dark-bg py-10 md:py-16">
+    <section className="w-full dark:bg-dark-bg py-6 md:py-10">
       <SectionHeader
         badge="Servicios"
         title="Nuestros Servicios Destacados"

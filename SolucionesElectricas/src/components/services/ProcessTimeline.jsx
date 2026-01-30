@@ -42,7 +42,7 @@ export default function ProcessTimeline() {
 
   return (
     <section className="w-full bg-slate-950">
-      <div className="mx-auto max-w-6xl px-6 py-20">
+      <div className="mx-auto max-w-6xl px-6 py-6 md:py-10">
         <SectionHeader
           badge="Cómo Trabajamos"
           badgeIcon={Zap}

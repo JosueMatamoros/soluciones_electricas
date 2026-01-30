@@ -43,16 +43,22 @@ export default function HomePage() {
         isDarkMode ? "bg-dark-bg" : "bg-light-bg"
       }`}
     >
-      <section className="py-10">
+      <section className="py-6 md:py-10">
         <div className="mx-auto max-w-6xl flex flex-col lg:flex-row-reverse items-center gap-6 lg:gap-10">
           <div className="w-full flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-5 min-h-[320px]">
-            <h1 className="text-5xl lg:text-6xl font-roboto-slab font-bold max-w-xl text-center lg:text-left transition-colors duration-300 text-light-text dark:text-dark-text">
+            <h1 className="text-4xl lg:text-8xl font-roboto-slab font-bold max-w-xl text-center lg:text-left transition-colors duration-300 text-light-text dark:text-dark-text">
               <span className="block sm:inline">Soluciones Eléctricas</span>
               <span className="block sm:inline"> del Norte</span>
             </h1>
             <p className="text-lg md:text-xl max-w-lg text-slate-600 dark:text-slate-300 font-medium">
               Somos expertos en instalaciones y mantenimiento eléctrico. Si tienes una idea, la transformamos en realidad con soluciones a medida.<br />
-              <span className="font-bold text-black dark:text-white">Grupo SEN</span>, <span className="italic text-[#22d3ee]">sí hay de otra</span>.
+              <span className="font-roboto-slab font-bold text-black dark:text-white">Grupo SEN</span>,
+              <span
+                className="ml-2 text-2xl italic font-light text-[#22d3ee]"
+                style={{ fontFamily: 'Dancing Script, cursive' }}
+              >
+                sí hay de otra.
+              </span>
             </p>
             <Button
               className="mt-2 px-8 py-3 rounded-full bg-[#22d3ee] hover:bg-[#0891b2] text-white font-bold text-lg shadow-lg transition-colors duration-200"
@@ -80,10 +86,10 @@ export default function HomePage() {
         </div>
       </section>
 
-              <ServicesCarousel />
+      <ServicesCarousel />
 
       {/* Features Section */}
-      <section className="mx-auto max-w-6xl py-16">
+      <section className="mx-auto max-w-6xl py-6  md:py-10">
         <div className="grid grid-cols-1 gap-2 lg:grid-cols-2 lg:items-start">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-light-border dark:border-dark-border bg-light-bg-tertiary dark:bg-dark-bg-tertiary px-4 py-2 text-sm font-semibold text-brand-cyan">
@@ -91,7 +97,7 @@ export default function HomePage() {
               Por Qué Elegirnos
             </div>
 
-            <h2 className="mt-3 text-5xl font-extrabold leading-[1.05] text-light-text dark:text-dark-text">
+            <h2 className="mt-3 text-4xl font-extrabold leading-[1.05] text-light-text dark:text-dark-text">
               Referentes en <span className="text-brand-cyan">Soluciones</span>
               <br />
               de Climatización
