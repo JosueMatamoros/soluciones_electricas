@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import Routing from "./routes";
 import { NavbarWithMegaMenu } from "./shared/Header";
+import Footer from "./shared/Footer";
 
 function AppContent() {
   const { isDarkMode } = useTheme();
@@ -10,8 +11,8 @@ function AppContent() {
   return (
     <div
       className={`flex flex-col min-h-screen transition-colors duration-300 ${
-        isDarkMode 
-          ? "bg-dark-bg text-dark-text" 
+        isDarkMode
+          ? "bg-dark-bg text-dark-text"
           : "bg-light-bg text-light-text"
       }`}
     >
@@ -28,6 +29,7 @@ function App() {
     <ThemeProvider>
       <Router>
         <AppContent />
+        <Footer />
       </Router>
     </ThemeProvider>
   );
