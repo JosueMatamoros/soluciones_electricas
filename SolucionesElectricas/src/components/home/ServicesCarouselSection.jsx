@@ -44,7 +44,7 @@ export default function ServicesCarousel() {
   const next = () => setIndex((i) => (i === services.length - 1 ? 0 : i + 1));
 
   return (
-    <section className="w-full dark:bg-dark-bg py-6 md:py-10">
+    <section className="w-full bg-light-bg dark:bg-dark-bg transition-colors duration-300 py-6 md:py-10 ">
       <SectionHeader
         badge="Servicios"
         title="Nuestros Servicios Destacados"
@@ -107,7 +107,11 @@ export default function ServicesCarousel() {
 function ServiceCard({ service, selected, children }) {
   return (
     <article
-      className={`overflow-hidden rounded-3xl bg-light-bg dark:bg-dark-bg shadow-lg transition-transform duration-300 border border-light-border dark:border-dark-border ${selected ? 'scale-105 shadow-2xl' : 'scale-95'}`}
+      className={`overflow-hidden rounded-3xl bg-light-bg dark:bg-dark-bg shadow-lg transition-transform duration-300 border-2
+        ${selected
+          ? 'border-brand-cyan dark:border-cyan-400 scale-105 shadow-2xl'
+          : 'border-light-border dark:border-dark-border scale-95'}
+        transition-colors duration-300`}
     >
       <div className="relative h-[420px] w-full overflow-hidden flex items-end">
         <img
@@ -117,22 +121,25 @@ function ServiceCard({ service, selected, children }) {
         />
         {children}
         <div
-          className={`relative z-10 w-full p-6 pb-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent transition-all duration-500
+          className={`relative z-10 w-full h-full flex flex-col justify-end p-4 pb-6 md:p-5 md:pb-7 2xl:p-4 2xl:pb-4
+            bg-gradient-to-t from-black/90 via-black/60 to-transparent transition-colors duration-300
             ${selected ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}
             md:${selected ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}
             absolute left-0 bottom-0`}
         >
-          <p className="text-base md:text-lg text-white/90 mb-4 max-w-xl">
-            {service.description}
-          </p>
-          <button
-            className="flex items-center gap-2 rounded-full bg-brand-cyan px-4 py-2 font-semibold text-white text-sm shadow-lg hover:bg-brand-cyan-dark transition-colors duration-200 group/button"
-          >
-            <span>Más información</span>
-            <span className="inline-block transition-transform duration-300 group-hover/button:translate-x-2">
-              <ArrowRight className="h-4 w-4" />
-            </span>
-          </button>
+          <div>
+            <p className="text-sm md:text-base 2xl:text-[1.05rem] text-white font-medium mb-3 2xl:mb-2 max-w-2xl 2xl:leading-snug drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+              {service.description}
+            </p>
+            <button
+              className="flex items-center gap-2 rounded-full bg-brand-cyan/90 px-3 py-1.5 font-semibold text-white text-xs md:text-sm shadow-lg hover:bg-brand-cyan-dark transition-colors duration-200 group/button"
+            >
+              <span>Más información</span>
+              <span className="inline-block transition-transform duration-300 group-hover/button:translate-x-2">
+                <ArrowRight className="h-4 w-4" />
+              </span>
+            </button>
+          </div>
         </div>
       </div>
     </article>
