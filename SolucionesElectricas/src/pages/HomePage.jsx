@@ -9,6 +9,7 @@ import ProcessTimeline from "../components/services/ProcessTimeline";
 
 import ServicesCarousel from "../components/services/ServicesCarousel";
 import FeaturedProjectsSection from "../components/gallery/FeaturedProjectsSection";
+import ProjectCTA from "../components/home/ProjectCTA";
 
 
 
@@ -153,6 +154,7 @@ export default function HomePage() {
 
       {/* Process Timeline Section */}
       <ProcessTimeline />
+      <ProjectCTA />
     </div>
   );
 }
