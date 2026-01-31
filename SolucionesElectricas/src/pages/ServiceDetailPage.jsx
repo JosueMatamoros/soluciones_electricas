@@ -22,7 +22,7 @@ function ServiceDetailPage() {
           }`}>
             Servicio no encontrado
           </h2>
-          <Link 
+          <Link
             to="/servicios"
             className="text-brand-cyan hover:text-brand-cyan-light"
           >
@@ -71,7 +71,7 @@ function ServiceDetailPage() {
                 ? "bg-gradient-to-t from-dark-bg via-dark-bg/50 to-transparent"
                 : "bg-gradient-to-t from-light-bg via-light-bg/50 to-transparent"
             }`} />
-            
+
             {/* Título y icono sobre la imagen */}
             <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
               <div className="flex items-center gap-4 mb-4">
@@ -177,7 +177,7 @@ function ServiceDetailPage() {
               }`}>
                 Contáctanos para una cotización personalizada sin compromiso
               </p>
-              
+
               <div className="space-y-3">
                 <Link
                   to="/contacto"
@@ -190,7 +190,7 @@ function ServiceDetailPage() {
                   <Mail className="w-4 h-4" />
                   Solicitar cotización
                 </Link>
-                
+
                 <a
                   href="https://wa.me/1234567890"
                   target="_blank"

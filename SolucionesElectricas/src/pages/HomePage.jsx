@@ -71,7 +71,7 @@ export default function HomePage() {
               </span>
             </p>
             <Button
-              className="mt-2 px-8 py-3 rounded-full bg-[#22d3ee] hover:bg-[#0891b2] text-white font-bold text-lg shadow-lg transition-colors duration-200"
+              className="mt-2 px-8 py-2 rounded-full bg-[#22d3ee] hover:bg-[#0891b2] text-white font-bold text-lg shadow-lg transition-colors duration-200"
               size="lg"
             >
               Solicita una Cotización
