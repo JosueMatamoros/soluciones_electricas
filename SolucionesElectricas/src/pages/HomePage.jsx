@@ -3,15 +3,13 @@ import { useTheme } from "../context/ThemeContext";
 import videoFile from "../assets/videos/lightbulb.mp4";
 import { Button } from "@material-tailwind/react";
 import { Award, Wrench, ShieldCheck, Users, Wallet } from "lucide-react";
-import { FeatureCard } from "../components/services/FeatureCard";
+import { FeatureCard } from "../components/home/FeatureCard";
 
-import ProcessTimeline from "../components/services/ProcessTimeline";
+import ProcessTimeline from "../components/home/ProcessTimelineSection";
 
-import ServicesCarousel from "../components/services/ServicesCarousel";
-import FeaturedProjectsSection from "../components/gallery/FeaturedProjectsSection";
+import ServicesCarousel from "../components/home/ServicesCarouselSection";
+import FeaturedProjectsSection from "../components/home/FeaturedProjectsSection";
 import ProjectCTA from "../components/home/ProjectCTA";
-
-
 
 export default function HomePage() {
   const { isDarkMode } = useTheme();
@@ -57,11 +55,17 @@ export default function HomePage() {
               <span className="block sm:inline"> del Norte</span>
             </h1>
             <p className="text-lg md:text-xl max-w-lg text-slate-600 dark:text-slate-300 font-medium">
-              Somos expertos en instalaciones y mantenimiento eléctrico. Si tienes una idea, la transformamos en realidad con soluciones a medida.<br />
-              <span className="font-roboto-slab font-bold  transition-colors duration-300 text-light-text dark:text-dark-text ">Grupo SEN</span>,
+              Somos expertos en instalaciones y mantenimiento eléctrico. Si
+              tienes una idea, la transformamos en realidad con soluciones a
+              medida.
+              <br />
+              <span className="font-roboto-slab font-bold  transition-colors duration-300 text-light-text dark:text-dark-text ">
+                Grupo SEN
+              </span>
+              ,
               <span
                 className="ml-2 text-2xl italic font-light text-[#22d3ee]"
-                style={{ fontFamily: 'Dancing Script, cursive' }}
+                style={{ fontFamily: "Dancing Script, cursive" }}
               >
                 sí hay de otra.
               </span>
@@ -74,7 +78,14 @@ export default function HomePage() {
             </Button>
           </div>
           <div className="w-full flex items-center justify-center min-h-[380px]">
-            <div className="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl border-4 border-[#22d3ee]/30 flex-1 p-0 bg-white dark:bg-dark-bg" style={{ aspectRatio: '16/9', minHeight: '300px', height: '320px' }}>
+            <div
+              className="w-full max-w-xl rounded-3xl overflow-hidden shadow-2xl border-4 border-[#22d3ee]/30 flex-1 p-0 bg-white dark:bg-dark-bg"
+              style={{
+                aspectRatio: "16/9",
+                minHeight: "300px",
+                height: "320px",
+              }}
+            >
               <video
                 autoPlay
                 loop
@@ -82,7 +93,11 @@ export default function HomePage() {
                 playsInline
                 className="w-full h-full object-cover rounded-2xl"
                 aria-label="Video de Soluciones Eléctricas"
-                style={{ minHeight: '300px', height: '320px', background: 'transparent' }}
+                style={{
+                  minHeight: "300px",
+                  height: "320px",
+                  background: "transparent",
+                }}
               >
                 <source src={videoFile} type="video/mp4" />
                 Tu navegador no soporta videos HTML5.
@@ -91,7 +106,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
 
       <ServicesCarousel />
 
@@ -150,7 +164,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-            <FeaturedProjectsSection />
+      <FeaturedProjectsSection />
 
       {/* Process Timeline Section */}
       <ProcessTimeline />
