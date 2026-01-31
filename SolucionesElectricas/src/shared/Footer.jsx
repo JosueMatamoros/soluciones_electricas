@@ -11,7 +11,16 @@ export default function Footer() {
     <footer className="w-full bg-light-bg-secondary dark:bg-dark-bg-secondary text-light-text dark:text-dark-text border-t border-light-border dark:border-dark-border  transition-colors duration-300">
       <div className="max-w-6xl mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Logo" className="h-10 w-auto" />
+          <img
+            src="/logo.png"
+            alt="Logo"
+            className="h-10 w-auto block dark:hidden"
+          />
+          <img
+            src="/logoWhite.png"
+            alt="Logo White"
+            className="h-10 w-auto hidden dark:block"
+          />
           <span className="text-xl font-roboto-slab italic font-light text-brand-cyan-dark dark:text-brand-cyan" style={{ fontFamily: 'Dancing Script, cursive' }}>
             Si hay de otra...
           </span>

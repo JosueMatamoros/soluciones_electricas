@@ -35,6 +35,7 @@ import LanguageSelector from "./LanguageSelector";
 import { useTheme } from "../context/ThemeContext";
 
 const logo = "/logo.png";
+const logoWhite = "/logoWhite.png";
 
 function NavList({ isDarkMode }) {
   return (
@@ -114,18 +115,29 @@ export function NavbarWithMegaMenu() {
       }`}
     >
       <div className="flex items-center justify-between">
-        <div className="flex items-center">
-          <img src={logo} alt="Logo" className="h-12 w-auto mb-2 lg:mb-0" />
+        <div className="flex  items-center ">
+          <div className="w-[60px]  flex-shrink-0 flex items-start justify-start p-0 m-0">{/* ancho fijo para el logo */}
+            <img
+              src={logo}
+              alt="Logo"
+              className="h-12 w-full object-contain mb-2 lg:mb-0 block dark:hidden transition-opacity duration-500"
+            />
+            <img
+              src={logoWhite}
+              alt="Logo White"
+              className="h-12 w-full object-contain mb-2 lg:mb-0 hidden dark:block transition-opacity duration-500"
+            />
+          </div>
           <Typography
             as={Link}
             to="/"
             variant="h6"
-            className={`cursor-pointer py-1.5 lg:ml-2 font-roboto-slab transition-colors duration-300 ${
+            className={`cursor-pointer py-1.5 font-roboto-slab transition-colors duration-300 ${
               isDarkMode ? "text-dark-text" : "text-light-text"
             }`}
           >
             <span
-              className="ml-2 text-2xl italic font-[cursive] font-light"
+              className="text-2xl italic font-[cursive] font-light"
               style={{ fontFamily: 'Dancing Script, cursive' }}
             >
               Si hay de otra...
