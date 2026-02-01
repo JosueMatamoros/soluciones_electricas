@@ -6,7 +6,14 @@ import ProjectGalleryPage from "./pages/ProjectGalleryPage";
 import ServicesPage from "./pages/ServicesPage";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 import ContactPage from "./pages/ContactPage";
+
+// Service-specific pages
+import ResidentialInstallationsPage from "./pages/servicesPages/ResidentialInstallationsPage";
 import AirConditioningPage from "./pages/servicesPages/AirConditioningPage";
+import DomoticsPage from "./pages/servicesPages/DomoticsPage";
+import ElectricMotorsPage from "./pages/servicesPages/ElectricMotorsPage";
+import AutomaticGatesPage from "./pages/servicesPages/AutomaticGatesPage";
+import PoolSystemsPage from "./pages/servicesPages/PoolSystemsPage";
 
 const Routing = () => {
     return (
@@ -14,9 +21,18 @@ const Routing = () => {
             <Route path="/" element={<HomePage />} />
             <Route path="/galeria" element={<ProjectGalleryPage />} />
             <Route path="/servicios" element={<ServicesPage />} />
-            <Route path="/servicios/:serviceId" element={<ServiceDetailPage />} />
             <Route path="/contacto" element={<ContactPage />} />
-            <Route path="/servicios/aire-acondicionado" element={<AirConditioningPage />} />
+            
+            {/* Rutas específicas para cada servicio con diseño personalizado */}
+            <Route path="/servicios/instalaciones-residenciales" element={<ResidentialInstallationsPage />} />
+            <Route path="/servicios/climatizacion" element={<AirConditioningPage />} />
+            <Route path="/servicios/domotica" element={<DomoticsPage />} />
+            <Route path="/servicios/motores-electricos" element={<ElectricMotorsPage />} />
+            <Route path="/servicios/portones-automaticos" element={<AutomaticGatesPage />} />
+            <Route path="/servicios/sistemas-piscinas" element={<PoolSystemsPage />} />
+            
+            {/* Fallback para servicios no específicos (usa la página genérica) */}
+            <Route path="/servicios/:serviceId" element={<ServiceDetailPage />} />
         </Routes>
     );
 }
