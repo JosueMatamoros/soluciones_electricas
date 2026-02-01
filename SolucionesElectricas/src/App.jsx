@@ -4,6 +4,8 @@ import { ThemeProvider, useTheme } from "./context/ThemeContext";
 import Routing from "./routes";
 import { NavbarWithMegaMenu } from "./shared/Header";
 import Footer from "./shared/Footer";
+import WhatsAppBubble from "./shared/WhatsAppBubble";
+
 
 function AppContent() {
   const { isDarkMode } = useTheme();
@@ -20,6 +22,7 @@ function AppContent() {
       <div className="flex-grow">
         <Routing />
       </div>
+      <WhatsAppBubble />
     </div>
   );
 }
