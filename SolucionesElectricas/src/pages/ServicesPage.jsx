@@ -22,8 +22,8 @@ function ServicesPage() {
           description="Soluciones eléctricas profesionales adaptadas a tus necesidades. Calidad, seguridad y experiencia en cada proyecto."
         />
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+        {/* Services Grid - solo dos por línea */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
           {SERVICES.map((service) => (
             <ServiceCard
               key={service.id}

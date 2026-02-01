@@ -3,66 +3,58 @@ import { Link } from "react-router-dom";
 import { useTheme } from "../../context/ThemeContext";
 import { ArrowRight } from "lucide-react";
 
-function ServiceCard({ id, title, icon: Icon, image, description }) {
+function ServiceCard({ id, title, image, description }) {
   const { isDarkMode } = useTheme();
 
   return (
     <div
-      className={`group rounded-lg overflow-hidden transition-all duration-300 flex flex-col h-full transform hover:scale-105 ${
+      className={`flex flex-col md:flex-row rounded-xl overflow-hidden transition-all duration-300 border min-h-[280px] h-full ${
         isDarkMode
-          ? "bg-dark-bg-secondary hover:bg-dark-bg-tertiary shadow-lg shadow-black/20"
-          : "bg-light-bg-secondary hover:bg-light-bg-tertiary shadow-md shadow-gray-300/50"
-      } hover:shadow-xl hover:shadow-brand-cyan/20`}
+          ? "bg-dark-bg-secondary shadow-lg shadow-black/20 border-dark-border hover:border-brand-cyan"
+          : "bg-light-bg-secondary shadow-md shadow-gray-300/40 border-light-border hover:border-brand-cyan"
+      } hover:shadow-xl hover:scale-105`}
+      style={{height: '100%'}}
     >
       {/* Imagen */}
-      <div className="relative h-64 overflow-hidden">
+      <div className="md:w-[48%] h-56 md:h-auto min-h-[200px] md:min-h-0 flex-shrink-0 flex-grow-0 h-full">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <div
-          className={`absolute inset-0 bg-gradient-to-br transition-all duration-300 ${
-            isDarkMode
-              ? "from-brand-cyan/20 to-brand-cyan-dark/20 group-hover:from-brand-cyan/30 group-hover:to-brand-cyan-dark/30"
-              : "from-brand-cyan/10 to-brand-cyan-dark/10 group-hover:from-brand-cyan/20 group-hover:to-brand-cyan-dark/20"
-          }`}
+          className="w-full h-full object-cover transition-transform duration-500"
         />
       </div>
 
-      {/* Contenido - flex-grow para empujar el botón abajo */}
-      <div className="p-6 flex flex-col flex-grow space-y-4">
-        <h3
-          className={`text-lg font-bold transition-colors duration-300 ${
-            isDarkMode ? "text-dark-text" : "text-light-text"
-          }`}
-        >
-          {title}
-        </h3>
+      {/* Contenido */}
+      <div className="flex flex-col justify-between p-4 md:w-[52%] h-full">
+        <div>
+          <h3
+            className={`text-xl font-bold mb-3 ${
+              isDarkMode ? "text-white" : "text-gray-900"
+            }`}
+          >
+            {title}
+          </h3>
 
-        {/* Descripción que aparece solo en hover */}
-        <div className="relative overflow-hidden">
           <p
-            className={`text-sm transition-all duration-300 transform ${
-              isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
-            } opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 max-h-0 group-hover:max-h-20`}
+            className={`text-sm leading-relaxed ${
+              isDarkMode ? "text-gray-300" : "text-gray-600"
+            }`}
           >
             {description}
           </p>
         </div>
 
-        {/* Botón alineado al final */}
-        <Link
-          to={`/servicios/${id}`}
-          className={`inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-300 transform hover:scale-105 ${
-            isDarkMode
-              ? "bg-brand-cyan text-dark-bg hover:bg-brand-cyan-light"
-              : "bg-brand-cyan-dark text-white hover:bg-brand-cyan"
-          }`}
-        >
-          Ver detalles
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-        </Link>
+        <div className="mt-6">
+          <Link
+            to={`/servicios/${id}`}
+            className="inline-flex items-center gap-2 rounded-full border border-brand-cyan/10 px-5 py-2 text-base font-bold text-brand-cyan hover:bg-brand-cyan/10 transition-colors duration-200 shadow-sm min-w-[150px] group"
+          >
+            Ver detalles
+            <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
+              <ArrowRight className="h-5 w-5" />
+            </span>
+          </Link>
+        </div>
       </div>
     </div>
   );
