@@ -4,7 +4,8 @@ import { SERVICES } from "../../data/services";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
-import { Snowflake, Wind, ThermometerSnowflake } from "lucide-react";
+import { Snowflake, Wind, Wrench } from "lucide-react";
+import AirConditioningModels from "../../components/services/AirConditioningModels";
 
 /**
  * Climatización - Estilo Banner Top
@@ -23,14 +24,13 @@ export default function AirConditioningPage() {
       {/* Animated background elements */}
       <div className="absolute top-0 left-1/4 w-72 h-72 bg-blue-400/5 rounded-full blur-[120px] animate-pulse pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-400/5 rounded-full blur-[120px] animate-pulse pointer-events-none" style={{ animationDelay: '1s' }} />
-      
+
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 relative z-10">
         <ServiceHero
           title={service.title}
           image={service.image}
           icon={service.icon}
           variant="overlay"
-          description={service.description}
         />
 
         {/* Info cards con iconos */}
@@ -67,7 +67,7 @@ export default function AirConditioningPage() {
               Aire Limpio
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Limpieza profunda y mantenimiento preventivo
+              Limpieza profunda, desinfección y mantenimiento preventivo
             </p>
           </div>
 
@@ -79,32 +79,34 @@ export default function AirConditioningPage() {
             <div className={`inline-flex p-3 rounded-xl mb-3 transition-transform duration-300 group-hover:scale-110 ${
               isDarkMode ? "bg-sky-500/10" : "bg-sky-100"
             }`}>
-              <ThermometerSnowflake className="w-6 h-6 text-sky-500" />
+              <Wrench className="w-6 h-6 text-sky-500" />
             </div>
             <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Control Total
+              Solución de Averías
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Temperatura perfecta todo el año
+              Reparación rápida y eficiente de fallas en tu sistema
             </p>
           </div>
         </div>
 
         {/* CTA Banner superior */}
         <div className="mb-8">
-          <ServiceCTA 
+          <ServiceCTA
             variant="banner"
-            title="¿Necesitas instalar o mantener tu aire acondicionado?"
+            title="¿Necesitas instalar o restaurar tu aire acondicionado?"
             description="Obtén una cotización inmediata y programa tu servicio con nuestros técnicos especializados"
           />
         </div>
 
         {/* Características en grid */}
-        <ServiceFeatures 
+        <ServiceFeatures
           features={service.features}
           variant="grid"
           title="Todo lo que necesitas saber"
         />
+        {/* Modelos de aire acondicionado */}
+        <AirConditioningModels />
       </div>
     </div>
   );

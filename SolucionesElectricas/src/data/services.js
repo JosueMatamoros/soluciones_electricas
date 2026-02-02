@@ -35,10 +35,8 @@ export const SERVICES = [
     features: [
       "Instalación de aires acondicionados split y centrales",
       "Mantenimiento preventivo y correctivo",
-      "Limpieza profunda de equipos",
       "Recarga de gas refrigerante",
       "Reparación de fallas y averías",
-      "Asesoría en selección de equipos",
     ],
     benefits: [
       "Ambiente confortable todo el año",
@@ -67,7 +65,7 @@ export const SERVICES = [
       "Mayor confort y comodidad",
       "Ahorro energético significativo",
       "Seguridad mejorada",
-      "Control total desde cualquier lugar",
+      "Atención rápida y eficaz ante averías",
     ],
   },
   {
