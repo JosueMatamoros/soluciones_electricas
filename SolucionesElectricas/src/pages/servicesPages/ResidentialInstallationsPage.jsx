@@ -172,7 +172,7 @@ export default function ResidentialInstallationsPage() {
               description="Obtén una cotización personalizada para tu proyecto residencial o comercial"
             />
             {/* FAQ solo en pantallas grandes */}
-            <div className="hidden lg:block mt-7">
+            <div className="mt-7">
               <FAQAccordion
                 faqs={[
                   {
