@@ -7,10 +7,10 @@ import { useTheme } from "../../context/ThemeContext";
  * ServiceHero - Componente hero reutilizable para páginas de servicios
  * @param {string} variant - Variante del estilo: "classic", "overlay", "split", "minimal"
  */
-export default function ServiceHero({ 
-  title, 
-  image, 
-  icon: Icon, 
+export default function ServiceHero({
+  title,
+  image,
+  icon: Icon,
   variant = "classic",
   showBackButton = true,
   description
@@ -80,7 +80,7 @@ export default function ServiceHero({
             )}
             <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 ${
               isDarkMode ? "text-dark-text" : "text-light-text"
-            }`}>
+            } text-3xl sm:text-4xl md:text-5xl`}>
               {title}
             </h1>
             {description && (
@@ -98,20 +98,6 @@ export default function ServiceHero({
 
   return (
     <>
-      {showBackButton && (
-        <button
-          onClick={() => navigate("/servicios")}
-          className={`inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-lg transition-colors ${
-            isDarkMode
-              ? "text-dark-text hover:bg-dark-bg-secondary"
-              : "text-light-text hover:bg-light-bg-secondary"
-          }`}
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Volver a servicios
-        </button>
-      )}
-
       <div className={`${styles.container} ${
         isDarkMode
           ? "bg-dark-bg-secondary shadow-lg shadow-black/20"
@@ -124,20 +110,32 @@ export default function ServiceHero({
             className="w-full h-full object-cover"
           />
           <div className={`absolute inset-0 ${styles.overlay}`} />
-          
+
+          {/* Botón volver a servicios en la esquina superior derecha */}
+          {showBackButton && (
+            <button
+              onClick={() => navigate("/servicios")}
+              className="group absolute top-4 right-4 sm:top-6 sm:right-6 bg-brand-cyan text-white shadow-lg shadow-brand-cyan/30 hover:bg-brand-cyan-dark hover:scale-105 transition-all px-4 py-2 rounded-full flex items-center gap-2 text-sm font-semibold z-20 backdrop-blur-md/60 border border-white/30"
+              style={{backdropFilter: 'blur(6px)'}}
+            >
+              <ArrowLeft className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-x-1" />
+              Volver a servicios
+            </button>
+          )}
+
           <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
             {Icon && (
-              <div className={`inline-flex p-3 rounded-xl mb-4 ${
+              <div className={`inline-flex md:p-3 p-1.5  rounded-xl mb-4 ${
                 isDarkMode
                   ? "bg-brand-cyan/20 backdrop-blur-sm"
                   : "bg-brand-cyan/10 backdrop-blur-sm"
               }`}>
-                <Icon className="w-8 h-8 text-brand-cyan" strokeWidth={1.5} />
+                <Icon className=" h-6 w-6 sm:w-8 sm:h-8 text-brand-cyan" strokeWidth={1.5} />
               </div>
             )}
             <h1 className={`text-3xl sm:text-4xl md:text-5xl font-bold ${
               variant === "overlay" ? "text-white" : isDarkMode ? "text-white" : "text-dark-bg"
-            }`}>
+            } text-2xl sm:text-3xl md:text-4xl`}>
               {title}
             </h1>
             {description && variant === "overlay" && (

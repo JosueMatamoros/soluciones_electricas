@@ -7,7 +7,7 @@ import { useTheme } from "../../context/ThemeContext";
  * ServiceCTA - Componente Call-to-Action reutilizable
  * @param {string} variant - "sidebar", "banner", "card", "floating", "minimal", "bottom"
  */
-export default function ServiceCTA({ 
+export default function ServiceCTA({
   variant = "sidebar",
   title = "¿Te interesa este servicio?",
   description = "Contáctanos para una cotización personalizada sin compromiso",
@@ -33,7 +33,7 @@ export default function ServiceCTA({
         }`}>
           {description}
         </p>
-        
+
         <div className="space-y-3">
           <Link
             to="/contacto"
@@ -46,7 +46,7 @@ export default function ServiceCTA({
             <Mail className="w-4 h-4" />
             Solicitar cotización
           </Link>
-          
+
           <a
             href={`https://wa.me/${phoneNumber}`}
             target="_blank"
@@ -62,18 +62,14 @@ export default function ServiceCTA({
           </a>
         </div>
 
-        <div className={`mt-6 pt-6 border-t ${
+        <div className={`mt-4 pt-2 border-t ${
           isDarkMode ? "border-dark-bg-tertiary" : "border-light-bg-tertiary"
         }`}>
-          <p className={`text-xs ${
-            isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
-          }`}>
-            • Respuesta en menos de 24 horas
-            <br />
-            • Cotización gratuita
-            <br />
-            • Profesionales certificados
-          </p>
+          <ul className="list-disc pl-5 space-y-1">
+            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">Respuesta rápida</li>
+            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">Cotización gratuita</li>
+            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">Profesionales certificados</li>
+          </ul>
         </div>
       </div>
     );
@@ -97,7 +93,7 @@ export default function ServiceCTA({
         }`}>
           {description}
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Link
             to="/contacto"
@@ -111,7 +107,7 @@ export default function ServiceCTA({
             Solicitar cotización
             <ArrowRight className="w-5 h-5" />
           </Link>
-          
+
           <a
             href={`https://wa.me/${phoneNumber}`}
             target="_blank"
@@ -157,7 +153,7 @@ export default function ServiceCTA({
             </p>
           </div>
         </div>
-        
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <Link
             to="/contacto"
@@ -170,7 +166,7 @@ export default function ServiceCTA({
             <Mail className="w-4 h-4" />
             Cotización
           </Link>
-          
+
           <a
             href={`https://wa.me/${phoneNumber}`}
             target="_blank"
@@ -208,7 +204,7 @@ export default function ServiceCTA({
           }`}>
             {description}
           </p>
-          
+
           <div className="flex gap-2">
             <Link
               to="/contacto"
@@ -221,7 +217,7 @@ export default function ServiceCTA({
               <Mail className="w-3 h-3" />
               Cotizar
             </Link>
-            
+
             <a
               href={`https://wa.me/${phoneNumber}`}
               target="_blank"
@@ -252,7 +248,7 @@ export default function ServiceCTA({
         }`}>
           {title}
         </h4>
-        
+
         <div className="flex flex-wrap gap-3">
           <Link
             to="/contacto"
@@ -265,7 +261,7 @@ export default function ServiceCTA({
             <Mail className="w-4 h-4" />
             Contactar
           </Link>
-          
+
           <a
             href={`https://wa.me/${phoneNumber}`}
             target="_blank"
@@ -305,7 +301,7 @@ export default function ServiceCTA({
               {description}
             </p>
           </div>
-          
+
           <div className="flex gap-3 flex-shrink-0">
             <Link
               to="/contacto"
@@ -318,7 +314,7 @@ export default function ServiceCTA({
               <Mail className="w-4 h-4" />
               Cotizar
             </Link>
-            
+
             <a
               href={`https://wa.me/${phoneNumber}`}
               target="_blank"

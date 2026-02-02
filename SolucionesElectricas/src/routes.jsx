@@ -4,7 +4,6 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import ProjectGalleryPage from "./pages/ProjectGalleryPage";
 import ServicesPage from "./pages/ServicesPage";
-import ServiceDetailPage from "./pages/ServiceDetailPage";
 import ContactPage from "./pages/ContactPage";
 
 // Service-specific pages
@@ -22,7 +21,7 @@ const Routing = () => {
             <Route path="/galeria" element={<ProjectGalleryPage />} />
             <Route path="/servicios" element={<ServicesPage />} />
             <Route path="/contacto" element={<ContactPage />} />
-            
+
             {/* Rutas específicas para cada servicio con diseño personalizado */}
             <Route path="/servicios/instalaciones-residenciales" element={<ResidentialInstallationsPage />} />
             <Route path="/servicios/climatizacion" element={<AirConditioningPage />} />
@@ -30,9 +29,7 @@ const Routing = () => {
             <Route path="/servicios/motores-electricos" element={<ElectricMotorsPage />} />
             <Route path="/servicios/portones-automaticos" element={<AutomaticGatesPage />} />
             <Route path="/servicios/sistemas-piscinas" element={<PoolSystemsPage />} />
-            
-            {/* Fallback para servicios no específicos (usa la página genérica) */}
-            <Route path="/servicios/:serviceId" element={<ServiceDetailPage />} />
+
         </Routes>
     );
 }
