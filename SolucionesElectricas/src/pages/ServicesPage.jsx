@@ -1,7 +1,7 @@
 import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import ServiceCard from "../components/common/ServiceCard";
-import VerticalCarousel from "../components/common/VerticalCarousel";
+import CardsList from "../components/common/CardsList";
 import SectionHeader from "../components/common/SectionHeader";
 import { SERVICES } from "../data/services";
 
@@ -14,7 +14,7 @@ function ServicesPage() {
         isDarkMode ? "bg-dark-bg" : "bg-light-bg"
       } pb-10`}
     >
-      <div className="sm:hidden h-[100svh] overflow-y-auto snap-y snap-mandatory">
+      <div className="sm:hidden">
         <section className="snap-start">
           <div className="mx-auto max-w-6xl px-2 py-6">
             <SectionHeader
@@ -27,7 +27,7 @@ function ServicesPage() {
 
         <section className="snap-start">
           <div className="mx-auto max-w-6xl">
-            <VerticalCarousel services={SERVICES} />
+            <CardsList services={SERVICES} />
           </div>
         </section>
 
