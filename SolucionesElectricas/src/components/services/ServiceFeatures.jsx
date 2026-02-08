@@ -6,8 +6,8 @@ import { useTheme } from "../../context/ThemeContext";
  * ServiceFeatures - Componente para mostrar características del servicio
  * @param {string} variant - "list", "grid", "cards", "timeline"
  */
-export default function ServiceFeatures({ 
-  features, 
+export default function ServiceFeatures({
+  features,
   variant = "list",
   title = "Características del servicio"
 }) {
@@ -28,8 +28,8 @@ export default function ServiceFeatures({
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {features.map((feature, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className={`p-4 rounded-lg flex items-start gap-3 ${
                 isDarkMode ? "bg-dark-bg-tertiary" : "bg-light-bg-tertiary"
               }`}
@@ -51,21 +51,21 @@ export default function ServiceFeatures({
         <h2 className={`text-2xl font-bold flex items-center gap-2 ${
           isDarkMode ? "text-dark-text" : "text-light-text"
         }`}>
-          <Zap className="w-6 h-6 text-brand-cyan" />
+          <Zap className="w-8 h-8 md:w-6 md:h-6 text-brand-cyan" />
           {title}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className={`p-5 rounded-xl transition-all duration-300 hover:scale-105 ${
-                isDarkMode 
-                  ? "bg-dark-bg-secondary shadow-lg shadow-black/20 hover:shadow-brand-cyan/20" 
+            <div
+              key={index}
+              className={`p-5 rounded-xl transition-all duration-300 hover:scale-105 flex items-center gap-3 ${
+                isDarkMode
+                  ? "bg-dark-bg-secondary shadow-lg shadow-black/20 hover:shadow-brand-cyan/20"
                   : "bg-light-bg-secondary shadow-md shadow-gray-300/50 hover:shadow-brand-cyan/20"
               }`}
             >
-              <CheckCircle2 className="w-6 h-6 text-brand-cyan mb-3" />
-              <p className={`text-sm font-medium ${
+              <CheckCircle2 className="w-6 h-6 text-brand-cyan flex-shrink-0" />
+              <p className={`text-sm font-medium m-0 ${
                 isDarkMode ? "text-dark-text" : "text-light-text"
               }`}>
                 {feature}
