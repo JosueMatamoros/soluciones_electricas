@@ -30,7 +30,8 @@ export default function AirConditioningPage() {
           title={service.title}
           image={service.image}
           icon={service.icon}
-          variant="overlay"
+          variant="classic"
+          showBackButton={true}
         />
 
         {/* Info cards con iconos */}
@@ -46,10 +47,10 @@ export default function AirConditioningPage() {
               <Snowflake className="w-6 h-6 text-blue-500" />
             </div>
             <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Frío Instantáneo
+              Instalación Profesional
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Instalación rápida y eficiente para tu confort inmediato
+              Servicio rápido y eficiente para confort
             </p>
           </div>
 
@@ -64,10 +65,10 @@ export default function AirConditioningPage() {
               <Wind className="w-6 h-6 text-cyan-500" />
             </div>
             <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Aire Limpio
+              Limpieza Profunda
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Limpieza profunda, desinfección y mantenimiento preventivo
+              Limpieza profunda y preventiva de equipos
             </p>
           </div>
 
@@ -82,10 +83,10 @@ export default function AirConditioningPage() {
               <Wrench className="w-6 h-6 text-sky-500" />
             </div>
             <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Solución de Averías
+              Reparación de Aires
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Reparación rápida y eficiente de fallas en tu sistema
+              Solución rápida y eficiente de averías
             </p>
           </div>
         </div>

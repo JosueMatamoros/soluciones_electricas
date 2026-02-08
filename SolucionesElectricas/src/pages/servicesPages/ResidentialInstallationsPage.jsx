@@ -34,6 +34,7 @@ export default function ResidentialInstallationsPage() {
           image={service.image}
           icon={service.icon}
           variant="classic"
+          showBackButton={true}
         />
 
         {/* Stats badges */}

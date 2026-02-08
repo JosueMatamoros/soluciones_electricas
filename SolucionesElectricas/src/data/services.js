@@ -34,9 +34,11 @@ export const SERVICES = [
       "Servicios especializados en instalación, mantenimiento y reparación de equipos de aire acondicionado y climatización.",
     features: [
       "Instalación de aires acondicionados split y centrales",
-      "Mantenimiento preventivo y correctivo",
+      "Mantenimiento correctivo y reparaciones",
+      "Limpieza profunda y preventiva de equipos",
       "Recarga de gas refrigerante",
       "Reparación de fallas y averías",
+      "Diagnóstico técnico especializado",
     ],
     benefits: [
       "Ambiente confortable todo el año",
