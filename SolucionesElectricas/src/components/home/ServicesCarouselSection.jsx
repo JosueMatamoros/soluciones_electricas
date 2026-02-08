@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Check, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import SectionHeader from "../common/SectionHeader";
 
 export default function ServicesCarousel() {
+  const navigate = useNavigate();
+  
   const services = [
     {
       title: "Instalaciones eléctricas industriales y residenciales",
@@ -11,6 +14,7 @@ export default function ServicesCarousel() {
       image:
         "/services/instalaciones-electricas.png",
       tags: ["Tableros eléctricos", "Iluminación LED", "Certificación"],
+      link: "/servicios/instalaciones-residenciales",
     },
     {
       title: "Instalación y mantenimiento de aires acondicionados",
@@ -19,6 +23,7 @@ export default function ServicesCarousel() {
       image:
         "/services/aire-acondicionado.jpg",
       tags: ["Carga de gas", "Limpieza profunda", "Reparación de fallas"],
+      link: "/servicios/climatizacion",
     },
     {
       title: "Sistemas eléctricos y motores para jacuzzis y piscinas",
@@ -27,6 +32,7 @@ export default function ServicesCarousel() {
       image:
         "/services/piscinas-jacuzzis.png",
       tags: ["Bombas automáticas", "Tableros de control", "Mantenimiento"],
+      link: "/servicios/sistemas-piscinas",
     },
     {
       title: "Instalación de motores eléctricos para portones",
@@ -35,6 +41,7 @@ export default function ServicesCarousel() {
       image:
         "/services/portones-electricos.png",
       tags: ["Control remoto", "Sensores de seguridad", "Soporte técnico"],
+      link: "/servicios/portones-automaticos",
     },
   ];
 
@@ -92,6 +99,7 @@ export default function ServicesCarousel() {
 
       <div className="mt-8 flex justify-center">
         <button
+          onClick={() => navigate("/servicios")}
           className="inline-flex items-center gap-2 rounded-full bg-brand-cyan px-5 py-2 text-base font-bold text-white hover:bg-brand-cyan-dark transition-colors duration-200 shadow-sm min-w-[180px] group focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800/40"
         >
           Ver todos los servicios
@@ -105,6 +113,8 @@ export default function ServicesCarousel() {
 }
 
 function ServiceCard({ service, selected, children }) {
+  const navigate = useNavigate();
+  
   return (
     <article
       className={`overflow-hidden rounded-3xl bg-light-bg dark:bg-dark-bg shadow-lg transition-transform duration-300 border-2
@@ -132,6 +142,7 @@ function ServiceCard({ service, selected, children }) {
               {service.description}
             </p>
             <button
+              onClick={() => navigate(service.link)}
               className="flex items-center gap-2 rounded-full bg-brand-cyan/90 px-3 py-1.5 font-semibold text-white text-xs md:text-sm shadow-lg hover:bg-brand-cyan-dark transition-colors duration-200 group/button"
             >
               <span>Más información</span>
