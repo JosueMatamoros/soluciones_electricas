@@ -348,7 +348,7 @@ export default function PoolSystemsPage() {
                 <div
                   className={`group relative overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:-rotate-1 ${
                     isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                  } h-[320px] md:h-auto md:aspect-[16/10]`}
+                  } h-[320px]`}
                 >
                   <img
                     src="/temporales/piscinas-jacuzzis.png"
@@ -372,7 +372,7 @@ export default function PoolSystemsPage() {
                 <div
                   className={`group overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-3 ${
                     isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                  } h-[160px] md:h-auto md:aspect-square`}
+                  } h-[320px]`}
                 >
                   <img
                     src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop"
@@ -390,31 +390,6 @@ export default function PoolSystemsPage() {
                     </div>
                   </div>
                 </div>
-
-                <div className="mt-4 md:mt-0 md:hidden">
-                  <div
-                    className={`group overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-3 ${
-                      isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                    } h-[160px]`}
-                  >
-                    <img
-                      src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop"
-                      alt="Iluminación LED"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <h4 className="text-white text-base font-bold mb-1">
-                          Iluminación LED
-                        </h4>
-                        <p className="text-white/90 text-xs">
-                          Sistema RGB multicolor
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
 
@@ -422,7 +397,7 @@ export default function PoolSystemsPage() {
               <div
                 className={`group overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-2 ${
                   isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                } h-[220px] md:h-auto md:aspect-[3/4]`}
+                } h-[240px]`}
               >
                 <img
                   src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop"
@@ -445,7 +420,7 @@ export default function PoolSystemsPage() {
                 <div
                   className={`group relative overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:rotate-1 ${
                     isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                  } h-[220px] md:h-auto md:aspect-[16/9]`}
+                  } h-[240px]`}
                 >
                   <img
                     src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop"
@@ -468,7 +443,7 @@ export default function PoolSystemsPage() {
               <div
                 className={`group overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-2 ${
                   isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                } h-[220px] md:h-auto md:aspect-[3/4]`}
+                } h-[240px]`}
               >
                 <img
                   src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop"
@@ -492,7 +467,7 @@ export default function PoolSystemsPage() {
               <div
                 className={`group overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-3 ${
                   isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                } h-[260px] md:h-auto md:aspect-square`}
+                } h-[280px]`}
               >
                 <img
                   src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop"
@@ -515,7 +490,7 @@ export default function PoolSystemsPage() {
                 <div
                   className={`group relative overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:rotate-1 ${
                     isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                  } h-[320px] md:h-auto md:aspect-[16/10]`}
+                  } h-[280px]`}
                 >
                   <img
                     src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop"
