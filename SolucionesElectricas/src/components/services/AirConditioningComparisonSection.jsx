@@ -13,10 +13,10 @@ function InverterLogo({ isDarkMode }) {
   const color = isDarkMode ? "#67e8f9" : "#0891b2";
   return (
     <div
-      className="grid h-16 w-16 place-items-center rounded-2xl border"
+      className="grid rounded-2xl border place-items-center h-10 w-10 md:h-16 md:w-16"
       style={{ backgroundColor: bg, borderColor: border }}
     >
-      <Waves className="h-10 w-10" color={color} />
+      <Waves className="h-6 w-6 md:h-10 md:w-10" color={color} />
     </div>
   );
 }
@@ -28,10 +28,10 @@ function ConventionalLogo({ isDarkMode }) {
   const color = isDarkMode ? "rgba(255,255,255,0.70)" : "#475569";
   return (
     <div
-      className="grid h-16 w-16 place-items-center rounded-2xl border"
+      className="grid rounded-2xl border place-items-center h-10 w-10 md:h-16 md:w-16"
       style={{ backgroundColor: bg, borderColor: border }}
     >
-      <Gauge className="h-10 w-10" color={color} />
+      <Gauge className="h-6 w-6 md:h-10 md:w-10" color={color} />
     </div>
   );
 }
@@ -164,14 +164,14 @@ function CompareCard({
   return (
     <div className={`relative rounded-[28px] border p-7 shadow-sm ${bg} ${border}`}>
       {recommended && (
-        <div className="absolute right-6 top-6">
+        <div className="hidden md:block absolute right-6 top-6 ">
           <div className="rounded-full px-4 py-2 text-xs font-semibold shadow-sm bg-cyan-500 text-white">
             Recomendado
           </div>
         </div>
       )}
 
-      <div className="flex items-start gap-5">
+      <div className="flex items-start gap-2 md:gap-5">
         {tone === "cyan" ? (
           <InverterLogo isDarkMode={isDarkMode} />
         ) : (
