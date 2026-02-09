@@ -2,7 +2,7 @@ import React from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { SERVICES } from "../../data/services";
 import ServiceHero from "../../components/services/ServiceHero";
-import { Gauge, Settings, Wrench, TrendingUp, Zap, ArrowRight, CheckCircle2 } from "lucide-react";
+import { Gauge, Settings, Wrench, TrendingUp, Zap, ArrowRight, CheckCircle2, Factory, Home, Droplet, Package } from "lucide-react";
 
 /**
  * Motores Eléctricos - Timeline Serpiente
@@ -20,7 +20,7 @@ export default function ElectricMotorsPage() {
     { number: 3, title: "Reparación/Instalación", description: "Trabajo especializado con herramientas de precisión", icon: Wrench },
     { number: 4, title: "Pruebas de calidad", description: "Verificación de funcionamiento óptimo y seguridad", icon: CheckCircle2 },
     { number: 5, title: "Optimización", description: "Ajustes finales para máxima eficiencia energética", icon: TrendingUp },
-    { number: 6, title: "Entrega y garantía", description: "Puesta en marcha y certificación del servicio", icon: Zap },
+    { number: 6, title: "Entrega y puesta en marcha", description: "Activación y verificación final del sistema", icon: Zap },
   ];
 
   return (
@@ -46,17 +46,17 @@ export default function ElectricMotorsPage() {
           showBackButton={true}
         />
 
-        {/* Stats industriales con paleta azul */}
+        {/* Lugares de instalación */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           <div className={`p-5 rounded-xl border-l-4 border-brand-cyan transition-all duration-300 hover:scale-105 ${
             isDarkMode
               ? "bg-dark-bg-secondary shadow-lg shadow-brand-cyan/10"
               : "bg-white shadow-md shadow-brand-cyan/20"
           }`}>
-            <Gauge className="w-8 h-8 text-brand-cyan mb-2" />
-            <p className="text-2xl font-bold text-brand-cyan">99.9%</p>
+            <Factory className="w-8 h-8 text-brand-cyan mb-2" />
+            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>Fábricas</p>
             <p className={`text-xs ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Eficiencia
+              Maquinaria industrial
             </p>
           </div>
 
@@ -65,10 +65,10 @@ export default function ElectricMotorsPage() {
               ? "bg-dark-bg-secondary shadow-lg shadow-blue-500/10"
               : "bg-white shadow-md shadow-blue-500/20"
           }`}>
-            <Settings className="w-8 h-8 text-blue-500 mb-2" />
-            <p className="text-2xl font-bold text-blue-500">24/7</p>
+            <Package className="w-8 h-8 text-blue-500 mb-2" />
+            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>Empacadoras</p>
             <p className={`text-xs ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Soporte
+              Sistemas de empaque
             </p>
           </div>
 
@@ -77,10 +77,10 @@ export default function ElectricMotorsPage() {
               ? "bg-dark-bg-secondary shadow-lg shadow-cyan-500/10"
               : "bg-white shadow-md shadow-cyan-500/20"
           }`}>
-            <Wrench className="w-8 h-8 text-cyan-500 mb-2" />
-            <p className="text-2xl font-bold text-cyan-500">+10</p>
+            <Droplet className="w-8 h-8 text-cyan-500 mb-2" />
+            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>Pozos</p>
             <p className={`text-xs ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Años Exp.
+              Bombas de agua
             </p>
           </div>
 
@@ -89,10 +89,10 @@ export default function ElectricMotorsPage() {
               ? "bg-dark-bg-secondary shadow-lg shadow-blue-600/10"
               : "bg-white shadow-md shadow-blue-600/20"
           }`}>
-            <TrendingUp className="w-8 h-8 text-blue-600 mb-2" />
-            <p className="text-2xl font-bold text-blue-600">100+</p>
+            <Home className="w-8 h-8 text-blue-600 mb-2" />
+            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>Residencias</p>
             <p className={`text-xs ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Proyectos
+              Uso doméstico
             </p>
           </div>
         </div>
@@ -195,7 +195,7 @@ export default function ElectricMotorsPage() {
                 {/* Row 2: 3 ← 4 (reversed) */}
                 <div className="grid grid-cols-2 gap-6 mb-6">
                   {/* Step 4 */}
-                  <div className="relative order-2">
+                  <div className="relative">
                     <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
                       isDarkMode
                         ? "bg-gradient-to-br from-blue-600/20 to-blue-600/5 border-blue-600/40 hover:border-blue-600"
@@ -225,7 +225,7 @@ export default function ElectricMotorsPage() {
                   </div>
 
                   {/* Step 3 */}
-                  <div className="relative order-1">
+                  <div className="relative">
                     <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
                       isDarkMode
                         ? "bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border-cyan-500/40 hover:border-cyan-500"
@@ -249,7 +249,7 @@ export default function ElectricMotorsPage() {
                       </div>
                     </div>
                     {/* Arrow left */}
-                    <ArrowRight className={`absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 rotate-180 ${
+                    <ArrowRight className={`absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 rotate-180 ${
                       isDarkMode ? "text-blue-600" : "text-blue-600"
                     }`} />
                   </div>
@@ -313,35 +313,6 @@ export default function ElectricMotorsPage() {
                 </div>
               </div>
             </div>
-
-            {/* Beneficios adicionales */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className={`p-6 rounded-xl border ${
-                isDarkMode
-                  ? "bg-gradient-to-br from-brand-cyan/10 to-transparent border-brand-cyan/20"
-                  : "bg-gradient-to-br from-brand-cyan/5 to-white border-brand-cyan/30"
-              }`}>
-                <h4 className={`font-bold mb-3 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-                  Garantía extendida
-                </h4>
-                <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                  Todos nuestros servicios incluyen garantía de 12 meses en mano de obra y componentes instalados.
-                </p>
-              </div>
-              
-              <div className={`p-6 rounded-xl border ${
-                isDarkMode
-                  ? "bg-gradient-to-br from-blue-500/10 to-transparent border-blue-500/20"
-                  : "bg-gradient-to-br from-blue-100/50 to-white border-blue-300/30"
-              }`}>
-                <h4 className={`font-bold mb-3 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-                  Mantenimiento preventivo
-                </h4>
-                <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                  Programas personalizados de mantenimiento para prolongar la vida útil de tus equipos.
-                </p>
-              </div>
-            </div>
           </div>
 
           {/* Sidebar - CTA */}
@@ -355,14 +326,7 @@ export default function ElectricMotorsPage() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/20 rounded-full blur-3xl" />
               
               <div className="relative z-10">
-                <div className={`inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4 ${
-                  isDarkMode ? "bg-brand-cyan/20" : "bg-brand-cyan/30"
-                }`}>
-                  <span className="w-2 h-2 bg-brand-cyan rounded-full animate-pulse" />
-                  <span className={`text-xs font-semibold ${isDarkMode ? "text-brand-cyan-light" : "text-brand-cyan-dark"}`}>
-                    Disponible 24/7
-                  </span>
-                </div>
+
                 
                 <h3 className={`text-xl font-bold mb-3 ${
                   isDarkMode ? "text-dark-text" : "text-light-text"
@@ -402,31 +366,56 @@ export default function ElectricMotorsPage() {
               </div>
             </div>
             
-            {/* Quick info - llenar espacio */}
-            <div className={`mt-6 p-4 rounded-xl ${
+            {/* Potencias disponibles */}
+            <div className={`mt-6 p-6 rounded-xl ${
               isDarkMode
-                ? "bg-dark-bg-secondary border border-brand-cyan/20"
-                : "bg-light-bg-secondary border border-brand-cyan/30"
+                ? "bg-dark-bg-secondary border border-blue-500/20"
+                : "bg-light-bg-secondary border border-blue-500/30"
             }`}>
-              <h4 className={`text-sm font-bold mb-3 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-                Servicios Rápidos
+              <h4 className={`text-base font-bold mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+                Rango de Potencias
               </h4>
-              <ul className="space-y-2 text-xs">
-                <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                  <div className="w-2 h-2 rounded-full bg-brand-cyan" />
-                  Diagnóstico express
-                </li>
+              <ul className="space-y-2 text-sm">
                 <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
                   <div className="w-2 h-2 rounded-full bg-blue-500" />
-                  Reparación urgente
+                  0.5 - 5 HP (Residencial)
                 </li>
                 <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
                   <div className="w-2 h-2 rounded-full bg-cyan-500" />
-                  Mantenimiento preventivo
+                  5 - 50 HP (Comercial)
                 </li>
-                <li className={`flex items-center gap-2 ${isDarkMode ? "textdark-text-secondary" : "text-light-text-secondary"}`}>
+                <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                  <div className="w-2 h-2 rounded-full bg-brand-cyan" />
+                  50+ HP (Industrial)
+                </li>
+              </ul>
+            </div>
+
+            {/* Tipos de motores */}
+            <div className={`mt-6 p-6 rounded-xl ${
+              isDarkMode
+                ? "bg-dark-bg-secondary border border-cyan-500/20"
+                : "bg-light-bg-secondary border border-cyan-500/30"
+            }`}>
+              <h4 className={`text-base font-bold mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+                Tipos de Motores
+              </h4>
+              <ul className="space-y-2 text-sm">
+                <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                  <div className="w-2 h-2 rounded-full bg-cyan-500" />
+                  Monofásicos
+                </li>
+                <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                  <div className="w-2 h-2 rounded-full bg-blue-500" />
+                  Trifásicos
+                </li>
+                <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                  <div className="w-2 h-2 rounded-full bg-brand-cyan" />
+                  DC / Corriente directa
+                </li>
+                <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
                   <div className="w-2 h-2 rounded-full bg-blue-400" />
-                  Instalación de motores
+                  Sumergibles
                 </li>
               </ul>
             </div>
