@@ -45,12 +45,30 @@ export default function Footer() {
       </div>
       <div className="w-full max-w-6xl mx-auto text-center text-xs text-light-text-muted dark:text-dark-text-muted pb-4 flex flex-col md:flex-row justify-between items-center gap-1 md:gap-2">
         <span>© 2026 Soluciones Eléctricas del Norte.</span>
-        <a
-          href="mailto:1002matamroos@gmail.com"
-          className="text-light-text dark:text-dark-text font-semibold hover:no-underline focus:no-underline"
-        >
-          Designed &amp; developed by <span className="text-brand-cyan-dark dark:text-brand-cyan">Josué Matamoros</span>
-        </a>
+        <div className="text-light-text dark:text-dark-text font-semibold text-right">
+          <div className="mb-1">
+            Designed &amp; developed by{" "}
+            <a
+              href="https://josue-matamoros.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-cyan-dark dark:text-brand-cyan hover:underline"
+            >
+              Josué Matamoros
+            </a>
+          </div>
+          <div className="text-right">
+            &amp;{" "}
+            <a
+              href="https://luis-cubillo.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-brand-cyan-dark dark:text-brand-cyan hover:underline"
+            >
+              Luis Cubillo
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );
