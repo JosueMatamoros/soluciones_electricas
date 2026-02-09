@@ -351,7 +351,7 @@ export default function PoolSystemsPage() {
                   } h-[320px] md:h-auto md:aspect-[16/10]`}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop"
+                    src="/temporales/piscinas-jacuzzis.png"
                     alt="Piscina Residencial Premium"
                     className="absolute inset-0 w-full h-full object-cover"
                   />

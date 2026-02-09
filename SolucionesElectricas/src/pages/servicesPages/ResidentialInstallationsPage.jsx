@@ -151,7 +151,7 @@ export default function ResidentialInstallationsPage() {
                 badge="Iluminación"
                 title="Iluminación Interior"
                 description="Diseño e instalación de iluminación eficiente y moderna"
-                image="/images/iluminacion-interior.jpg"
+                image="/temporales/iluminacion-interior.jpg"
               />
               <ServiceFeatureCard
                 badge="Iluminación"

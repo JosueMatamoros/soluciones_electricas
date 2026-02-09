@@ -5,14 +5,14 @@ import SectionHeader from "../common/SectionHeader";
 
 export default function ServicesCarousel() {
   const navigate = useNavigate();
-  
+
   const services = [
     {
       title: "Instalaciones eléctricas industriales y residenciales",
       description:
         "Diseño, montaje y modernización de sistemas eléctricos para hogares, comercios y fábricas. Seguridad, eficiencia y cumplimiento de normativas garantizados.",
       image:
-        "/services/instalaciones-electricas.png",
+        "/temporales/iluminacion-interior.jpg",
       tags: ["Tableros eléctricos", "Iluminación LED", "Certificación"],
       link: "/servicios/instalaciones-residenciales",
     },
@@ -21,7 +21,7 @@ export default function ServicesCarousel() {
       description:
         "Venta, instalación profesional y servicio preventivo/correctivo para equipos de aire acondicionado split, central y más. Climatización confiable todo el año.",
       image:
-        "/services/aire-acondicionado.jpg",
+        "/temporales/aire-acondicionado.png",
       tags: ["Carga de gas", "Limpieza profunda", "Reparación de fallas"],
       link: "/servicios/climatizacion",
     },
@@ -114,7 +114,7 @@ export default function ServicesCarousel() {
 
 function ServiceCard({ service, selected, children }) {
   const navigate = useNavigate();
-  
+
   return (
     <article
       className={`overflow-hidden rounded-3xl bg-light-bg dark:bg-dark-bg shadow-lg transition-transform duration-300 border-2
