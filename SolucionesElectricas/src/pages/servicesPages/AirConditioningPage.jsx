@@ -29,7 +29,12 @@ export default function AirConditioningPage() {
 
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 relative z-10">
         <ServiceHero
-          title={service.title}
+          title={
+            <>
+              <span className="hidden sm:inline">{service.title}</span>
+              <span className="sm:hidden">Sistemas de climatización</span>
+            </>
+          }
           image={service.image}
           icon={service.icon}
           variant="classic"
