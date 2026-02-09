@@ -6,6 +6,8 @@ import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
 import { Snowflake, Wind, Wrench } from "lucide-react";
 import AirConditioningModels from "../../components/services/AirConditioningModels";
+import AirConditioningComparisonSection from "../../components/services/AirConditioningComparisonSection";
+import AirConditioningDecisionHelper from "../../components/services/AirConditioningDecisionHelper";
 
 /**
  * Climatización - Estilo Banner Top
@@ -108,6 +110,9 @@ export default function AirConditioningPage() {
         />
         {/* Modelos de aire acondicionado */}
         <AirConditioningModels />
+
+        <AirConditioningComparisonSection />
+        <AirConditioningDecisionHelper />
       </div>
     </div>
   );

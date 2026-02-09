@@ -11,7 +11,7 @@ function StatusIcon({ status }) {
   }
 
   if (status === "bad") {
-    return <X className="h-5 w-5 text-slate-400" />;
+    return <X className="h-5 w-5 text-slate-400 dark:text-slate-500" />;
   }
 
   return null;
@@ -20,9 +20,11 @@ function StatusIcon({ status }) {
 function SpecRow({ label, value, status }) {
   return (
     <div className="flex items-center justify-between gap-4 px-4 py-3 text-sm">
-      <span className="text-slate-600">{label}</span>
+      <span className="text-slate-600 dark:text-dark-text-muted">{label}</span>
       <div className="flex items-center gap-3">
-        <span className="font-semibold text-slate-900">{value}</span>
+        <span className="font-semibold text-slate-900 dark:text-dark-text">
+          {value}
+        </span>
         <StatusIcon status={status} />
       </div>
     </div>
@@ -35,7 +37,7 @@ function Chips({ items }) {
       {items.map((item) => (
         <span
           key={item}
-          className="rounded-full bg-cyan-100 px-4 py-1.5 text-sm font-semibold text-cyan-700"
+          className="rounded-full bg-cyan-100 px-4 py-1.5 text-sm font-semibold text-cyan-700 dark:bg-cyan-500/15 dark:text-cyan-300"
         >
           {item}
         </span>
@@ -44,34 +46,24 @@ function Chips({ items }) {
   );
 }
 
-function ModelCard({
-  btu,
-  area,
-  title,
-  imageSrc,
-  popular,
-  specs,
-  idealFor,
-}) {
+function ModelCard({ btu, area, title, imageSrc, popular, specs, idealFor }) {
   return (
-    <div className={`group relative overflow-hidden rounded-[28px] border bg-white shadow-sm transition-colors ${
-      popular ? 'border-brand-cyan' : 'border-slate-200 hover:border-cyan-400'
-    }`}>
-      <div className="relative h-56 w-full bg-slate-50">
-        <img
-          src={imageSrc}
-          alt={title}
-          className="h-full w-full object-cover"
-        />
+    <div
+      className={`group relative overflow-hidden rounded-[28px] border shadow-sm transition-colors ${
+        popular
+          ? "border-brand-cyan"
+          : "border-light-border dark:border-dark-border hover:border-cyan-400"
+      } bg-white dark:bg-dark-bg-tertiary`}
+    >
+      <div className="relative h-56 w-full bg-slate-50 dark:bg-dark-bg">
+        <img src={imageSrc} alt={title} className="h-full w-full object-cover" />
 
-        <div className="absolute left-5 bottom-5 rounded-full bg-white/90 px-4 py-2 text-xs font-semibold text-slate-800 backdrop-blur">
+        <div className="absolute left-5 bottom-5 rounded-full px-4 py-2 text-xs font-semibold backdrop-blur bg-white/90 text-slate-800 dark:bg-dark-bg/80 dark:text-dark-text">
           {btu}
         </div>
 
         {popular && (
-          <div
-            className="absolute top-4 right-4 rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm bg-brand-cyan"
-          >
+          <div className="absolute top-4 right-4 rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm bg-brand-cyan">
             Más Popular
           </div>
         )}
@@ -80,34 +72,31 @@ function ModelCard({
       <div className="p-6">
         <div className="flex items-center gap-3 text-cyan-500">
           <Home className="h-5 w-5" />
-          <span className="text-sm font-semibold">{area}</span>
+          <span className="text-sm font-semibold text-slate-700 dark:text-dark-text-muted">
+            {area}
+          </span>
         </div>
 
-        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900">
+        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 dark:text-dark-text">
           {title}
         </h2>
 
         <div className="mt-7">
-          <div className="text-sm font-semibold text-slate-900">
+          <div className="text-sm font-semibold text-slate-900 dark:text-dark-text">
             Especificaciones:
           </div>
 
-          <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200">
-            <div className="divide-y divide-slate-200">
+          <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200 dark:border-dark-border">
+            <div className="divide-y divide-slate-200 dark:divide-dark-border">
               {specs.map((s) => (
-                <SpecRow
-                  key={s.label}
-                  label={s.label}
-                  value={s.value}
-                  status={s.status}
-                />
+                <SpecRow key={s.label} label={s.label} value={s.value} status={s.status} />
               ))}
             </div>
           </div>
         </div>
 
         <div className="mt-7">
-          <div className="text-sm font-semibold text-slate-900">
+          <div className="text-sm font-semibold text-slate-900 dark:text-dark-text">
             Ideal para:
           </div>
           <Chips items={idealFor} />
@@ -116,6 +105,7 @@ function ModelCard({
     </div>
   );
 }
+
 
 export default function AirConditioningModels() {
   return (
