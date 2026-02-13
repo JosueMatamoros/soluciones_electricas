@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import ScrollToTop from "./utils/ScrollToTop";
 
 import HomePage from "./pages/HomePage";
 import ProjectGalleryPage from "./pages/ProjectGalleryPage";
@@ -16,21 +17,23 @@ import PoolSystemsPage from "./pages/servicesPages/PoolSystemsPage";
 
 const Routing = () => {
     return (
-        <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/galeria" element={<ProjectGalleryPage />} />
-            <Route path="/servicios" element={<ServicesPage />} />
-            <Route path="/contacto" element={<ContactPage />} />
+        <>
+            <ScrollToTop />
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/galeria" element={<ProjectGalleryPage />} />
+                <Route path="/servicios" element={<ServicesPage />} />
+                <Route path="/contacto" element={<ContactPage />} />
 
-            {/* Rutas específicas para cada servicio con diseño personalizado */}
-            <Route path="/servicios/instalaciones-residenciales" element={<ResidentialInstallationsPage />} />
-            <Route path="/servicios/climatizacion" element={<AirConditioningPage />} />
-            <Route path="/servicios/domotica" element={<DomoticsPage />} />
-            <Route path="/servicios/motores-electricos" element={<ElectricMotorsPage />} />
-            <Route path="/servicios/portones-automaticos" element={<AutomaticGatesPage />} />
-            <Route path="/servicios/sistemas-piscinas" element={<PoolSystemsPage />} />
-
-        </Routes>
+                {/* Rutas específicas para cada servicio con diseño personalizado */}
+                <Route path="/servicios/instalaciones-residenciales" element={<ResidentialInstallationsPage />} />
+                <Route path="/servicios/climatizacion" element={<AirConditioningPage />} />
+                <Route path="/servicios/domotica" element={<DomoticsPage />} />
+                <Route path="/servicios/motores-electricos" element={<ElectricMotorsPage />} />
+                <Route path="/servicios/portones-automaticos" element={<AutomaticGatesPage />} />
+                <Route path="/servicios/sistemas-piscinas" element={<PoolSystemsPage />} />
+            </Routes>
+        </>
     );
 }
 
