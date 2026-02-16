@@ -46,22 +46,21 @@ export default function ServiceHero({
   if (variant === "split") {
     return (
       <div className="mb-8">
-        {showBackButton && (
-          <button
-            onClick={() => navigate("/servicios")}
-            className={`inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-lg transition-colors ${
-              isDarkMode
-                ? "text-dark-text hover:bg-dark-bg-secondary"
-                : "text-light-text hover:bg-light-bg-secondary"
-            }`}
-          >
-            <ArrowLeft className="w-4 h-4" />
-            Volver a servicios
-          </button>
-        )}
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-3xl overflow-hidden ${
+        <div className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-3xl overflow-hidden ${
           isDarkMode ? "bg-dark-bg-secondary" : "bg-light-bg-secondary"
         }`}>
+          {/* Botón volver a servicios en la esquina superior derecha */}
+          {showBackButton && (
+            <button
+              onClick={() => navigate("/servicios")}
+              className="group absolute top-4 right-4 sm:top-6 sm:right-6 bg-brand-cyan text-white shadow-lg shadow-brand-cyan/30 hover:bg-brand-cyan-dark hover:scale-105 transition-all px-4 py-2 rounded-full flex items-center gap-2 text-sm font-semibold z-20 backdrop-blur-md/60 border border-white/30"
+              style={{backdropFilter: 'blur(6px)'}}
+            >
+              <ArrowLeft className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-x-1" />
+              Volver a servicios
+            </button>
+          )}
+          
           <div className="relative h-[400px] lg:h-[500px] overflow-hidden">
             <img
               src={image}
