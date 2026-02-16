@@ -116,12 +116,12 @@ export default function ElectricMotorsPage() {
             </div>
 
             {/* Timeline en serpiente (zigzag) */}
-            <div className={`p-8 rounded-2xl ${
+            <div className={`p-4 md:p-8 rounded-2xl ${
               isDarkMode
                 ? "bg-dark-bg-secondary shadow-lg"
                 : "bg-light-bg-secondary shadow-md"
             }`}>
-              <h3 className={`text-2xl font-bold mb-8 text-center ${
+              <h3 className={`text-xl md:text-2xl font-bold mb-6 md:mb-8 text-center ${
                 isDarkMode ? "text-dark-text" : "text-light-text"
               }`}>
                 Nuestro Proceso de Servicio
@@ -130,7 +130,7 @@ export default function ElectricMotorsPage() {
               {/* Grid para timeline serpiente */}
               <div className="relative">
                 {/* Row 1: 1 → 2 */}
-                <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   {/* Step 1 */}
                   <div className="relative">
                     <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
@@ -156,7 +156,7 @@ export default function ElectricMotorsPage() {
                       </div>
                     </div>
                     {/* Arrow right */}
-                    <ArrowRight className={`absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 ${
+                    <ArrowRight className={`hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 ${
                       isDarkMode ? "text-blue-400" : "text-blue-500"
                     }`} />
                   </div>
@@ -186,16 +186,16 @@ export default function ElectricMotorsPage() {
                       </div>
                     </div>
                     {/* Arrow down */}
-                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-3 w-6 h-6 z-10">
+                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-3 w-6 h-6 z-10">
                       <ArrowRight className={`w-6 h-6 rotate-90 ${isDarkMode ? "text-cyan-400" : "text-cyan-500"}`} />
                     </div>
                   </div>
                 </div>
 
                 {/* Row 2: 3 ← 4 (reversed) */}
-                <div className="grid grid-cols-2 gap-6 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   {/* Step 4 */}
-                  <div className="relative">
+                  <div className="relative md:order-1">
                     <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
                       isDarkMode
                         ? "bg-gradient-to-br from-blue-600/20 to-blue-600/5 border-blue-600/40 hover:border-blue-600"
@@ -219,13 +219,13 @@ export default function ElectricMotorsPage() {
                       </div>
                     </div>
                     {/* Arrow down */}
-                    <div className="absolute left-1/2 -translate-x-1/2 -bottom-3 w-6 h-6 z-10">
+                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-3 w-6 h-6 z-10">
                       <ArrowRight className={`w-6 h-6 rotate-90 ${isDarkMode ? "text-brand-cyan-light" : "text-brand-cyan"}`} />
                     </div>
                   </div>
 
                   {/* Step 3 */}
-                  <div className="relative">
+                  <div className="relative md:order-2">
                     <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
                       isDarkMode
                         ? "bg-gradient-to-br from-cyan-500/20 to-cyan-500/5 border-cyan-500/40 hover:border-cyan-500"
@@ -249,14 +249,14 @@ export default function ElectricMotorsPage() {
                       </div>
                     </div>
                     {/* Arrow left */}
-                    <ArrowRight className={`absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 rotate-180 ${
+                    <ArrowRight className={`hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 rotate-180 ${
                       isDarkMode ? "text-blue-600" : "text-blue-600"
                     }`} />
                   </div>
                 </div>
 
                 {/* Row 3: 5 → 6 */}
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Step 5 */}
                   <div className="relative">
                     <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
@@ -282,7 +282,7 @@ export default function ElectricMotorsPage() {
                       </div>
                     </div>
                     {/* Arrow right */}
-                    <ArrowRight className={`absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 ${
+                    <ArrowRight className={`hidden md:block absolute -right-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 ${
                       isDarkMode ? "text-cyan-400" : "text-cyan-500"
                     }`} />
                   </div>
