@@ -46,10 +46,63 @@ export default function ServiceHero({
   if (variant === "split") {
     return (
       <div className="mb-8">
-        <div className={`relative grid grid-cols-1 lg:grid-cols-2 gap-8 rounded-3xl overflow-hidden ${
+        {/* Vista móvil - Título sobre imagen */}
+        <div className="lg:hidden">
+          <div className={`relative rounded-3xl overflow-hidden mb-6 ${
+            isDarkMode ? "bg-dark-bg-secondary" : "bg-light-bg-secondary"
+          }`}>
+            <div className="relative h-[400px] overflow-hidden">
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              
+              {/* Botón volver en móvil */}
+              {showBackButton && (
+                <button
+                  onClick={() => navigate("/servicios")}
+                  className="group absolute top-4 right-4 bg-brand-cyan text-white shadow-lg shadow-brand-cyan/30 hover:bg-brand-cyan-dark hover:scale-105 transition-all px-4 py-2 rounded-full flex items-center gap-2 text-sm font-semibold z-20 backdrop-blur-md/60 border border-white/30"
+                  style={{backdropFilter: 'blur(6px)'}}
+                >
+                  <ArrowLeft className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-x-1" />
+                  Volver a servicios
+                </button>
+              )}
+
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                {Icon && (
+                  <div className="inline-flex p-3 rounded-xl mb-4 bg-brand-cyan/20 backdrop-blur-sm">
+                    <Icon className="w-8 h-8 text-brand-cyan" strokeWidth={1.5} />
+                  </div>
+                )}
+                <h1 className="text-3xl sm:text-4xl font-bold text-white">
+                  Programación de Portones Eléctricos
+                </h1>
+              </div>
+            </div>
+          </div>
+          
+          {/* Descripción como quote en móvil */}
+          {description && (
+            <blockquote className={`relative p-6 rounded-2xl border-l-4 border-brand-cyan italic ${
+              isDarkMode 
+                ? "bg-dark-bg-secondary/50 text-dark-text-secondary" 
+                : "bg-light-bg-secondary/50 text-light-text-secondary"
+            }`}>
+              <p className="text-lg">
+                {description}
+              </p>
+            </blockquote>
+          )}
+        </div>
+
+        {/* Vista desktop - Split original */}
+        <div className={`hidden lg:block relative rounded-3xl overflow-hidden ${
           isDarkMode ? "bg-dark-bg-secondary" : "bg-light-bg-secondary"
         }`}>
-          {/* Botón volver a servicios en la esquina superior derecha */}
+          {/* Botón volver a servicios en desktop */}
           {showBackButton && (
             <button
               onClick={() => navigate("/servicios")}
@@ -61,34 +114,36 @@ export default function ServiceHero({
             </button>
           )}
           
-          <div className="relative h-[400px] lg:h-[500px] overflow-hidden">
-            <img
-              src={image}
-              alt={title}
-              className="w-full h-full object-cover"
-            />
-            <div className={`absolute inset-0 ${styles.overlay}`} />
-          </div>
-          <div className="p-8 flex flex-col justify-center">
-            {Icon && (
-              <div className={`inline-flex p-4 rounded-2xl mb-6 w-fit ${
-                isDarkMode ? "bg-brand-cyan/20" : "bg-brand-cyan/10"
+          <div className="grid grid-cols-2 gap-8">
+            <div className="relative h-[500px] overflow-hidden">
+              <img
+                src={image}
+                alt={title}
+                className="w-full h-full object-cover"
+              />
+              <div className={`absolute inset-0 ${styles.overlay}`} />
+            </div>
+            <div className="p-8 flex flex-col justify-center">
+              {Icon && (
+                <div className={`inline-flex p-4 rounded-2xl mb-6 w-fit ${
+                  isDarkMode ? "bg-brand-cyan/20" : "bg-brand-cyan/10"
+                }`}>
+                  <Icon className="w-10 h-10 text-brand-cyan" strokeWidth={1.5} />
+                </div>
+              )}
+              <h1 className={`text-4xl sm:text-5xl font-bold mb-4 ${
+                isDarkMode ? "text-dark-text" : "text-light-text"
               }`}>
-                <Icon className="w-10 h-10 text-brand-cyan" strokeWidth={1.5} />
-              </div>
-            )}
-            <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 ${
-              isDarkMode ? "text-dark-text" : "text-light-text"
-            } text-3xl sm:text-4xl md:text-5xl`}>
-              {title}
-            </h1>
-            {description && (
-              <p className={`text-lg ${
-                isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
-              }`}>
-                {description}
-              </p>
-            )}
+                {title}
+              </h1>
+              {description && (
+                <p className={`text-lg ${
+                  isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
+                }`}>
+                  {description}
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </div>

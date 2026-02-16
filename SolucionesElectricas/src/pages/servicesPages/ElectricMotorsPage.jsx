@@ -194,36 +194,6 @@ export default function ElectricMotorsPage() {
 
                 {/* Row 2: 3 ← 4 (reversed) */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  {/* Step 4 */}
-                  <div className="relative md:order-1">
-                    <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
-                      isDarkMode
-                        ? "bg-gradient-to-br from-blue-600/20 to-blue-600/5 border-blue-600/40 hover:border-blue-600"
-                        : "bg-gradient-to-br from-blue-200/50 to-white border-blue-400/30 hover:border-blue-600"
-                    }`}>
-                      <div className="flex items-start gap-4">
-                        <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${
-                          isDarkMode ? "bg-blue-600/30 text-blue-500" : "bg-blue-600 text-white"
-                        }`}>
-                          4
-                        </div>
-                        <div className="flex-1">
-                          <h4 className={`font-bold mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-                            {timelineSteps[3].title}
-                          </h4>
-                          <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                            {timelineSteps[3].description}
-                          </p>
-                        </div>
-                        {React.createElement(timelineSteps[3].icon, { className: "w-6 h-6 text-blue-600 flex-shrink-0" })}
-                      </div>
-                    </div>
-                    {/* Arrow down */}
-                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-3 w-6 h-6 z-10">
-                      <ArrowRight className={`w-6 h-6 rotate-90 ${isDarkMode ? "text-brand-cyan-light" : "text-brand-cyan"}`} />
-                    </div>
-                  </div>
-
                   {/* Step 3 */}
                   <div className="relative md:order-2">
                     <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
@@ -252,6 +222,36 @@ export default function ElectricMotorsPage() {
                     <ArrowRight className={`hidden md:block absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 z-10 rotate-180 ${
                       isDarkMode ? "text-blue-600" : "text-blue-600"
                     }`} />
+                  </div>
+
+                  {/* Step 4 */}
+                  <div className="relative md:order-1">
+                    <div className={`group p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
+                      isDarkMode
+                        ? "bg-gradient-to-br from-blue-600/20 to-blue-600/5 border-blue-600/40 hover:border-blue-600"
+                        : "bg-gradient-to-br from-blue-200/50 to-white border-blue-400/30 hover:border-blue-600"
+                    }`}>
+                      <div className="flex items-start gap-4">
+                        <div className={`flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center font-bold text-lg ${
+                          isDarkMode ? "bg-blue-600/30 text-blue-500" : "bg-blue-600 text-white"
+                        }`}>
+                          4
+                        </div>
+                        <div className="flex-1">
+                          <h4 className={`font-bold mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+                            {timelineSteps[3].title}
+                          </h4>
+                          <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                            {timelineSteps[3].description}
+                          </p>
+                        </div>
+                        {React.createElement(timelineSteps[3].icon, { className: "w-6 h-6 text-blue-600 flex-shrink-0" })}
+                      </div>
+                    </div>
+                    {/* Arrow down */}
+                    <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-3 w-6 h-6 z-10">
+                      <ArrowRight className={`w-6 h-6 rotate-90 ${isDarkMode ? "text-brand-cyan-light" : "text-brand-cyan"}`} />
+                    </div>
                   </div>
                 </div>
 
