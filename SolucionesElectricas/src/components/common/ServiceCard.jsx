@@ -12,9 +12,14 @@ function ServiceCard({ id, title, image, description }) {
         isDarkMode
           ? "bg-dark-bg-secondary shadow-lg shadow-black/20 border-dark-border hover:border-brand-cyan"
           : "bg-light-bg-secondary shadow-md shadow-gray-300/40 border-light-border hover:border-brand-cyan"
-      } hover:shadow-xl hover:scale-105`}
+      } hover:shadow-xl hover:scale-105 relative`}
       style={{height: '100%'}}
     >
+      <Link
+        to={`/servicios/${id}`}
+        className="absolute inset-0 z-10 md:hidden"
+        aria-label={`Ver detalles de ${title}`}
+      />
       {/* Imagen */}
       <div className="md:w-[48%] h-56 md:h-auto min-h-[200px] md:min-h-0 flex-shrink-0 flex-grow-0 h-full">
         <img

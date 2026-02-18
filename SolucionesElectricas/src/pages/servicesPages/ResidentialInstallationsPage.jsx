@@ -142,10 +142,10 @@ export default function ResidentialInstallationsPage() {
                 image="/images/instalacion-residencial.jpg"
               />
               <ServiceFeatureCard
-                badge="Industrial"
-                title="Instalación Industrial"
-                description="Sistemas eléctricos de alta potencia para fábricas y naves industriales"
-                image="/images/instalacion-industrial.jpg"
+                badge="Comercial"
+                title="Instalación Comercial"
+                description="Sistemas eléctricos de alta potencia para locales comerciales y oficinas"
+                image="/images/instalacion-comercial.jpg"
               />
               <ServiceFeatureCard
                 badge="Iluminación"
@@ -185,7 +185,7 @@ export default function ResidentialInstallationsPage() {
                   {
                     question: "¿Qué tipo de instalaciones realizan?",
                     answer:
-                    "Volvemos realidad cualquier sueño, proyecto o idea que tengas en mente, desde instalaciones residenciales hasta comerciales e industriales.",
+                    "Volvemos realidad cualquier sueño, proyecto o idea que tengas en mente, desde instalaciones residenciales hasta comerciales.",
                   },
                   {
                     question: "¿Puedo pedir una cotización sin compromiso?",
@@ -195,7 +195,7 @@ export default function ResidentialInstallationsPage() {
                   {
                     question: "¿Trabajan con materiales de una marca específica?",
                     answer:
-                      "No, los materiales varían según el presupuesto o gusto del cliente, sin embargo en nuestras cotizaciones siempre recomendaremos los adecuados a tu trabajo.",
+                      "No, los materiales varían según el presupuesto o necesidad del cliente, sin embargo en nuestras cotizaciones siempre recomendaremos los adecuados a tu trabajo.",
                   },
                   {
                     question:

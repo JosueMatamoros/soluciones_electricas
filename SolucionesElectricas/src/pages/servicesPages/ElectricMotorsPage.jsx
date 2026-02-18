@@ -32,11 +32,11 @@ export default function ElectricMotorsPage() {
         backgroundImage: `repeating-linear-gradient(45deg, ${isDarkMode ? '#0ea5e9' : '#06b6d4'} 0, ${isDarkMode ? '#0ea5e9' : '#06b6d4'} 1px, transparent 0, transparent 50%)`,
         backgroundSize: '10px 10px'
       }} />
-      
+
       {/* Glowing orbs azules */}
       <div className="absolute top-20 right-10 w-96 h-96 bg-brand-cyan/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-20 left-10 w-80 h-80 bg-blue-400/10 rounded-full blur-[120px] pointer-events-none" />
-      
+
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 relative z-10">
         <ServiceHero
           title={service.title}
@@ -107,7 +107,7 @@ export default function ElectricMotorsPage() {
                 : "bg-light-bg-secondary shadow-md shadow-gray-300/50"
             }`}>
               <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-brand-cyan via-brand-cyan-light to-brand-cyan animate-pulse" />
-              
+
               <p className={`text-lg leading-relaxed pl-4 ${
                 isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
               }`}>
@@ -126,7 +126,7 @@ export default function ElectricMotorsPage() {
               }`}>
                 Nuestro Proceso de Servicio
               </h3>
-              
+
               {/* Grid para timeline serpiente */}
               <div className="relative">
                 {/* Row 1: 1 → 2 */}
@@ -324,10 +324,10 @@ export default function ElectricMotorsPage() {
             }`}>
               {/* Decorative element */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-cyan/20 rounded-full blur-3xl" />
-              
+
               <div className="relative z-10">
 
-                
+
                 <h3 className={`text-xl font-bold mb-3 ${
                   isDarkMode ? "text-dark-text" : "text-light-text"
                 }`}>
@@ -336,9 +336,9 @@ export default function ElectricMotorsPage() {
                 <p className={`text-sm mb-6 ${
                   isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
                 }`}>
-                  Contáctanos para mantenimiento o reparación de motores
+                  Contáctanos para mantenimiento o revisión de motores
                 </p>
-                
+
                 <div className="space-y-3">
                   <a
                     href="/contacto"
@@ -350,7 +350,7 @@ export default function ElectricMotorsPage() {
                   >
                     Solicitar Cotización
                   </a>
-                  
+
                   <a
                     href="https://wa.me/1234567890"
                     target="_blank"
@@ -365,7 +365,7 @@ export default function ElectricMotorsPage() {
                 </div>
               </div>
             </div>
-            
+
             {/* Potencias disponibles */}
             <div className={`mt-6 p-6 rounded-xl ${
               isDarkMode
@@ -411,7 +411,7 @@ export default function ElectricMotorsPage() {
                 </li>
                 <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
                   <div className="w-2 h-2 rounded-full bg-brand-cyan" />
-                  DC / Corriente directa
+                  Portones
                 </li>
                 <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
                   <div className="w-2 h-2 rounded-full bg-blue-400" />
@@ -446,9 +446,9 @@ export default function ElectricMotorsPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop" 
-                  alt="Motor monofásico" 
+                <img
+                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop"
+                  alt="Motor monofásico"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -465,9 +465,9 @@ export default function ElectricMotorsPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop" 
-                  alt="Motor trifásico industrial" 
+                <img
+                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop"
+                  alt="Motor trifásico industrial"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -484,9 +484,9 @@ export default function ElectricMotorsPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&auto=format&fit=crop" 
-                  alt="Motor de corriente directa" 
+                <img
+                  src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&auto=format&fit=crop"
+                  alt="Motor de corriente directa"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -503,9 +503,9 @@ export default function ElectricMotorsPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop" 
-                  alt="Motor sumergible para pozos" 
+                <img
+                  src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop"
+                  alt="Motor sumergible para pozos"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -517,14 +517,13 @@ export default function ElectricMotorsPage() {
               </div>
             </div>
 
-            {/* Bobinado y Reparación */}
             <div className="group relative">
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&auto=format&fit=crop" 
-                  alt="Bobinado de motores" 
+                <img
+                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&auto=format&fit=crop"
+                  alt="Bobinado de motores"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -541,9 +540,9 @@ export default function ElectricMotorsPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&auto=format&fit=crop" 
-                  alt="Variador de frecuencia" 
+                <img
+                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&auto=format&fit=crop"
+                  alt="Variador de frecuencia"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -560,9 +559,9 @@ export default function ElectricMotorsPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop" 
-                  alt="Mantenimiento preventivo de motores" 
+                <img
+                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop"
+                  alt="Mantenimiento preventivo de motores"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -579,9 +578,9 @@ export default function ElectricMotorsPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop" 
-                  alt="Diagnóstico de fallas en motores" 
+                <img
+                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop"
+                  alt="Diagnóstico de fallas en motores"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">

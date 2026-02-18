@@ -3,12 +3,12 @@ import { Plug, Wind, Home, Cog, Droplets } from "lucide-react";
 export const SERVICES = [
   {
     id: "instalaciones-residenciales",
-    title: "Instalaciones eléctricas residenciales y generales",
+    title: "Instalaciones eléctricas residenciales y comerciales",
     icon: Plug,
     image:
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
     description:
-      "Realizamos instalaciones eléctricas completas para viviendas, comercios e industrias, garantizando seguridad y eficiencia energética.",
+      "Realizamos instalaciones eléctricas completas para viviendas y comercios, garantizando seguridad y eficiencia energética.",
     features: [
       "Instalación de sistemas eléctricos completos",
       "Actualización de instalaciones antiguas",
@@ -26,7 +26,7 @@ export const SERVICES = [
   },
   {
     id: "climatizacion",
-    title: "Instalación y mantenimiento de sistemas de climatización",
+    title: "Instalación, mantenimiento y venta de aires acondicionados",
     icon: Wind,
     image:
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
@@ -57,9 +57,9 @@ export const SERVICES = [
       "Automatización inteligente del hogar para mayor comodidad, seguridad y eficiencia energética.",
     features: [
       "Control de iluminación inteligente",
-      "Automatización de persianas y cortinas",
+      "Automatización para motores de portones ",
       "Sistemas de seguridad integrados",
-      "Control de climatización",
+      "Control de sistemas de bombeo ",
       "Integración con asistentes de voz",
       "Control remoto vía smartphone",
     ],
@@ -72,7 +72,7 @@ export const SERVICES = [
   },
   {
     id: "motores-electricos",
-    title: "Instalación y revisión de motores eléctricos",
+    title: "Instalación y automatización de motores eléctricos",
     icon: Cog,
     image:
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
@@ -118,7 +118,7 @@ export const SERVICES = [
   },
   {
     id: "sistemas-piscinas",
-    title: "Instalación de sistemas para piscinas",
+    title: "Instalación de sistemas electromecánicos para piscinas y jacuzzis",
     icon: Droplets,
     image:
       "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",

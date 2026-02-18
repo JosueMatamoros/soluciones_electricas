@@ -5,7 +5,7 @@ import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
 import SmartDeviceCard from "../../components/services/SmartDeviceCard";
-import { Lightbulb, Camera, DoorOpen, Blinds, Speaker, Thermometer, ArrowLeft, Smartphone, Cpu } from "lucide-react";
+import { Lightbulb, Camera, DoorOpen, Droplets, Speaker, Waves, ArrowLeft, Smartphone, Cpu } from "lucide-react";
 
 /**
  * Domótica - Estilo Cards Modern
@@ -25,7 +25,7 @@ export default function DomoticsPage() {
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
     },
     {
-      title: "Cámaras WiFi",  
+      title: "Cámaras WiFi",
       description: "Vigilancia en tiempo real desde cualquier lugar. Detección de movimiento, visión nocturna y grabación en la nube.",
       icon: Camera,
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
@@ -37,9 +37,9 @@ export default function DomoticsPage() {
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
     },
     {
-      title: "Automatización de Persianas",
-      description: "Control automático según la hora del día o temperatura. Programa aperturas y cierres para máximo confort.",
-      icon: Blinds,
+      title: "Control de Sistemas de Bombeo",
+      description: "Gestiona y automatiza el funcionamiento de sistemas de bombeo de agua para garantizar eficiencia y ahorro energético.",
+      icon: Droplets,
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
     },
     {
@@ -49,9 +49,9 @@ export default function DomoticsPage() {
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
     },
     {
-      title: "Termostatos Inteligentes",
-      description: "Control preciso de temperatura con aprendizaje automático. Optimiza el consumo y mantén el confort ideal.",
-      icon: Thermometer,
+      title: "Piscinas y Jacuzzis Inteligentes",
+      description: "Controla la temperatura, iluminación y limpieza de tu piscina o jacuzzi desde tu smartphone. Disfruta de un ambiente perfecto en todo momento.",
+      icon: Waves,
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
     },
   ];
@@ -67,11 +67,11 @@ export default function DomoticsPage() {
           backgroundSize: '50px 50px'
         }} />
       </div>
-      
+
       {/* Glowing orbs - azules/celestes */}
       <div className="absolute top-1/4 right-10 w-96 h-96 bg-blue-400/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 left-10 w-80 h-80 bg-cyan-400/10 rounded-full blur-[120px] pointer-events-none" />
-      
+
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 relative z-10">
         <ServiceHero
           title={service.title}
@@ -91,7 +91,7 @@ export default function DomoticsPage() {
             {/* Decorative elements sutiles */}
             <div className="absolute top-0 right-0 w-48 h-48 bg-brand-cyan/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-400/5 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10 max-w-3xl mx-auto text-center">
               <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full mb-4 ${
                 isDarkMode ? "bg-brand-cyan/20" : "bg-brand-cyan/10"
@@ -101,7 +101,7 @@ export default function DomoticsPage() {
                   Disponible ahora
                 </span>
               </div>
-              
+
               <h3 className={`text-3xl font-bold mb-3 ${
                 isDarkMode ? "text-dark-text" : "text-light-text"
               }`}>
@@ -112,7 +112,7 @@ export default function DomoticsPage() {
               }`}>
                 Consulta con nuestros expertos y descubre cómo transformar tu vida diaria
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
                 <a
                   href="/contacto"
@@ -125,7 +125,7 @@ export default function DomoticsPage() {
                   Solicitar Cotización
                   <ArrowLeft className="w-4 h-4 rotate-180 transition-transform group-hover:translate-x-1" />
                 </a>
-                
+
                 <a
                   href="https://wa.me/1234567890"
                   target="_blank"
@@ -170,7 +170,7 @@ export default function DomoticsPage() {
         </div>
 
         {/* Funcionalidades - movidas abajo */}
-        <ServiceFeatures 
+        <ServiceFeatures
           features={service.features}
           variant="cards"
           title="Funcionalidades inteligentes"

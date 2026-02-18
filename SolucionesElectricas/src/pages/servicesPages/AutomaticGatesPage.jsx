@@ -25,7 +25,7 @@ export default function AutomaticGatesPage() {
         <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-brand-cyan/30 to-transparent animate-pulse" />
         <div className="absolute bottom-1/4 right-0 w-full h-px bg-gradient-to-r from-transparent via-brand-cyan/30 to-transparent animate-pulse" style={{ animationDelay: '1s' }} />
       </div>
-      
+
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 relative z-10">
         {/* Hero split screen */}
         <ServiceHero
@@ -46,7 +46,7 @@ export default function AutomaticGatesPage() {
           }`}>
             <div className="absolute top-0 right-0 w-48 h-48 bg-brand-cyan/5 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 w-48 h-48 bg-blue-400/5 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10 max-w-4xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
                 <div className="lg:col-span-2">
@@ -69,7 +69,7 @@ export default function AutomaticGatesPage() {
                     Instalación profesional con respuesta rápida
                   </p>
                 </div>
-                
+
                 <div className="flex flex-col gap-3">
                   <a
                     href="/contacto"
@@ -82,7 +82,7 @@ export default function AutomaticGatesPage() {
                     Cotizar ahora
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth="2" />
                   </a>
-                  
+
                   <a
                     href="https://wa.me/1234567890"
                     target="_blank"
@@ -107,13 +107,13 @@ export default function AutomaticGatesPage() {
             : "bg-gradient-to-br from-white via-gray-50 to-white border-brand-cyan/40"
         }`}>
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-cyan/5 rounded-full blur-[100px] pointer-events-none" />
-          
+
           <h3 className={`text-2xl font-bold mb-6 text-center ${
             isDarkMode ? "text-dark-text" : "text-light-text"
           }`}>
             Seguridad y Tecnología
           </h3>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div className="text-center group">
               <div className={`inline-flex p-4 rounded-2xl mb-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
@@ -175,7 +175,7 @@ export default function AutomaticGatesPage() {
 
         {/* Características en grid */}
         <div className="mt-8 mb-8">
-          <ServiceFeatures 
+          <ServiceFeatures
             features={service.features}
             variant="grid"
             title="Características del servicio"
@@ -193,7 +193,7 @@ export default function AutomaticGatesPage() {
               Motores de Alta Potencia
             </h4>
             <p className={`text-sm mb-4 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Instalamos motores industriales para portones de hasta 600kg.
+              Instalamos motores industriales para portones de hasta 2000kg.
             </p>
             <ul className="space-y-2 text-xs">
               <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
@@ -276,9 +276,9 @@ export default function AutomaticGatesPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop" 
-                  alt="Motor de brazo para portón" 
+                <img
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
+                  alt="Motor de brazo para portón"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -295,9 +295,9 @@ export default function AutomaticGatesPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop" 
-                  alt="Motor de cremallera para portón corredizo" 
+                <img
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop"
+                  alt="Motor de cremallera para portón corredizo"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -314,15 +314,15 @@ export default function AutomaticGatesPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&auto=format&fit=crop" 
-                  alt="Motor industrial alta potencia" 
+                <img
+                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&auto=format&fit=crop"
+                  alt="Motor industrial alta potencia"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-4 left-4 right-4">
                     <h4 className="text-white text-base font-bold mb-1">Motor Industrial</h4>
-                    <p className="text-white/90 text-xs">Hasta 600kg</p>
+                    <p className="text-white/90 text-xs">Hasta 2000kg</p>
                   </div>
                 </div>
               </div>
@@ -333,9 +333,9 @@ export default function AutomaticGatesPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop" 
-                  alt="Motor subterráneo para portón" 
+                <img
+                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop"
+                  alt="Motor subterráneo para portón"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -352,9 +352,9 @@ export default function AutomaticGatesPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop" 
-                  alt="Control WiFi inteligente" 
+                <img
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop"
+                  alt="Control WiFi inteligente"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -371,9 +371,9 @@ export default function AutomaticGatesPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=900&auto=format&fit=crop" 
-                  alt="Panel táctil control de acceso" 
+                <img
+                  src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=900&auto=format&fit=crop"
+                  alt="Panel táctil control de acceso"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -390,9 +390,9 @@ export default function AutomaticGatesPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop" 
-                  alt="Sensores de seguridad para portón" 
+                <img
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
+                  alt="Sensores de seguridad para portón"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -409,9 +409,9 @@ export default function AutomaticGatesPage() {
               <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                 isDarkMode ? "bg-dark-surface" : "bg-gray-200"
               }`}>
-                <img 
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop" 
-                  alt="Central de control para portones" 
+                <img
+                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop"
+                  alt="Central de control para portones"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">

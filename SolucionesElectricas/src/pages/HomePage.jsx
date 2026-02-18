@@ -4,6 +4,7 @@ import videoFile from "../assets/videos/lightbulb.mp4";
 import { Button } from "@material-tailwind/react";
 import { Award, Wrench, ShieldCheck, Users, Wallet } from "lucide-react";
 import { FeatureCard } from "../components/home/FeatureCard";
+import { useNavigate } from "react-router-dom";
 
 import ProcessTimeline from "../components/home/ProcessTimelineSection";
 
@@ -13,6 +14,7 @@ import ProjectCTA from "../components/home/ProjectCTA";
 
 export default function HomePage() {
   const { isDarkMode } = useTheme();
+  const navigate = useNavigate();
 
   const features = [
     {
@@ -73,6 +75,7 @@ export default function HomePage() {
             <Button
               className="mt-2 px-8 py-2 rounded-full bg-[#22d3ee] hover:bg-[#0891b2] text-white font-bold text-lg shadow-lg transition-colors duration-200"
               size="lg"
+              onClick={() => navigate("/contacto")}
             >
               Solicita una Cotización
             </Button>
@@ -131,23 +134,15 @@ export default function HomePage() {
               cada proyecto.
             </p>
 
-            <div className="mt-6 grid grid-cols-2 gap-10 ">
-              <div>
-                <div className="text-4xl font-extrabold text-brand-cyan">
-                  Miles de
-                </div>
-                <div className="mt-2 text-base text-light-text-muted dark:text-dark-text-muted">
-                  Clientes Felices
-                </div>
-              </div>
-
-              <div>
-                <div className="text-4xl font-extrabold text-brand-cyan">
-                  +10 Años
-                </div>
-                <div className="mt-2 text-base text-light-text-muted dark:text-dark-text-muted">
-                  de Experiencia
-                </div>
+            <div className="mt-2 md:mt-4 flex lg:justify-start justify-center text-3xl md:text-4xl ">
+              <div className="flex flex-row flex-wrap items-end gap-2">
+                    <span className=" font-extrabold text-brand-cyan tracking-tight">+15</span>
+                    <span className=" font-extrabold text-brand-cyan ml-1 tracking-tight">
+                      años
+                    </span>
+                    <span className=" font-black text-light-text dark:text-dark-text ml-2 tracking-tight">
+                      de experiencia
+                </span>
               </div>
             </div>
           </div>

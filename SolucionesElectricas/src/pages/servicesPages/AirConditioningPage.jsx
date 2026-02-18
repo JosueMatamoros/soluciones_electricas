@@ -57,7 +57,7 @@ export default function AirConditioningPage() {
               Instalación Profesional
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Servicio rápido y eficiente para confort
+              Servicio rápido y eficiente para su confort
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function AirConditioningPage() {
               Limpieza Profunda
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Limpieza profunda y preventiva de equipos
+              Mantenimiento correctivo y preventivo de equipos
             </p>
           </div>
 

@@ -46,7 +46,7 @@ function Chips({ items }) {
   );
 }
 
-function ModelCard({ btu, area, title, imageSrc, popular, specs, idealFor }) {
+function ModelCard({ btu, area, title, imageSrc, popular, idealFor }) {
   return (
     <div
       className={`group relative overflow-hidden rounded-[28px] border shadow-sm transition-colors ${
@@ -81,25 +81,35 @@ function ModelCard({ btu, area, title, imageSrc, popular, specs, idealFor }) {
           {title}
         </h2>
 
-        <div className="mt-7">
-          <div className="text-sm font-semibold text-slate-900 dark:text-dark-text">
-            Especificaciones:
-          </div>
-
-          <div className="mt-3 overflow-hidden rounded-2xl border border-slate-200 dark:border-dark-border">
-            <div className="divide-y divide-slate-200 dark:divide-dark-border">
-              {specs.map((s) => (
-                <SpecRow key={s.label} label={s.label} value={s.value} status={s.status} />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-7">
+        <div className="mt-3">
           <div className="text-sm font-semibold text-slate-900 dark:text-dark-text">
             Ideal para:
           </div>
           <Chips items={idealFor} />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function SharedSpecs() {
+  const specs = [
+    { label: "Consumo energético", value: "Bajo", status: "ok" },
+    { label: "Nivel de ruido", value: "Bajo", status: "ok" },
+    { label: "Eficiencia", value: "Muy buena", status: "ok" },
+    { label: "Instalación", value: "Media", status: "ok" },
+  ];
+
+  return (
+    <div className="mt-12 rounded-[28px] border border-light-border dark:border-dark-border bg-white dark:bg-dark-bg-tertiary p-6 md:p-8">
+      <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-dark-text text-center">
+        Todos nuestros aires acondicionados cuentan con las siguientes especificaciones
+      </h3>
+      <div className="mt-6 max-w-xl mx-auto overflow-hidden rounded-2xl border border-slate-200 dark:border-dark-border">
+        <div className="divide-y divide-slate-200 dark:divide-dark-border">
+          {specs.map((s) => (
+            <SpecRow key={s.label} label={s.label} value={s.value} status={s.status} />
+          ))}
         </div>
       </div>
     </div>
@@ -119,13 +129,6 @@ export default function AirConditioningModels() {
           title="Mini Split 12,000 BTU"
           imageSrc="/services/aire-acondicionado.jpg"
           popular={false}
-          specs={[
-            { label: "Consumo energético", value: "Bajo", status: "ok" },
-            { label: "Nivel de ruido", value: "Bajo", status: "ok" },
-            { label: "Potencia", value: "Baja", status: "bad" },
-            { label: "Eficiencia", value: "Buena", status: "ok" },
-            { label: "Instalación", value: "Sencilla", status: "ok" },
-          ]}
           idealFor={[
             "Habitaciones",
             "Oficinas pequeñas",
@@ -135,17 +138,10 @@ export default function AirConditioningModels() {
 
         <ModelCard
           btu="18,000 BTU"
-          area="25-40 m²"
+          area="20-35 m²"
           title="Mini Split 18,000 BTU"
           imageSrc="/services/aire-acondicionado.jpg"
           popular={true}
-          specs={[
-            { label: "Consumo energético", value: "Medio", status: "ok" },
-            { label: "Nivel de ruido", value: "Bajo", status: "ok" },
-            { label: "Potencia", value: "Media", status: "ok" },
-            { label: "Eficiencia", value: "Muy buena", status: "ok" },
-            { label: "Instalación", value: "Sencilla", status: "ok" },
-          ]}
           idealFor={[
             "Salas medianas",
             "Oficinas",
@@ -155,17 +151,10 @@ export default function AirConditioningModels() {
 
         <ModelCard
           btu="24,000 BTU"
-          area="40-60 m²"
+          area="35-45 m²"
           title="Mini Split 24,000 BTU"
           imageSrc="/services/aire-acondicionado.jpg"
           popular={false}
-          specs={[
-            { label: "Consumo energético", value: "Medio", status: "ok" },
-            { label: "Nivel de ruido", value: "Medio", status: "ok" },
-            { label: "Potencia", value: "Alta", status: "ok" },
-            { label: "Eficiencia", value: "Muy buena", status: "ok" },
-            { label: "Instalación", value: "Media", status: "ok" },
-          ]}
           idealFor={[
             "Salas grandes",
             "Locales comerciales",
@@ -179,13 +168,6 @@ export default function AirConditioningModels() {
           title="Piso Cielo"
           imageSrc="/services/aire-acondicionado.jpg"
           popular={false}
-          specs={[
-            { label: "Consumo energético", value: "Alto", status: "bad" },
-            { label: "Nivel de ruido", value: "Medio", status: "ok" },
-            { label: "Potencia", value: "Alta", status: "ok" },
-            { label: "Eficiencia", value: "Excelente", status: "ok" },
-            { label: "Instalación", value: "Compleja", status: "bad" },
-          ]}
           idealFor={[
             "Salones grandes",
             "Restaurantes",
@@ -193,6 +175,8 @@ export default function AirConditioningModels() {
           ]}
         />
       </div>
+
+      <SharedSpecs />
     </section>
   );
 }

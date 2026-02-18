@@ -8,29 +8,26 @@ export default function ServicesCarousel() {
 
   const services = [
     {
-      title: "Instalaciones eléctricas industriales y residenciales",
-      description:
-        "Diseño, montaje y modernización de sistemas eléctricos para hogares, comercios y fábricas. Seguridad, eficiencia y cumplimiento de normativas garantizados.",
-      image:
-        "/temporales/iluminacion-interior.jpg",
-      tags: ["Tableros eléctricos", "Iluminación LED", "Certificación"],
-      link: "/servicios/instalaciones-residenciales",
-    },
-    {
       title: "Instalación y mantenimiento de aires acondicionados",
       description:
         "Venta, instalación profesional y servicio preventivo/correctivo para equipos de aire acondicionado split, central y más. Climatización confiable todo el año.",
-      image:
-        "/temporales/aire-acondicionado.png",
+      image: "/temporales/aire-acondicionado.png",
       tags: ["Carga de gas", "Limpieza profunda", "Reparación de fallas"],
       link: "/servicios/climatizacion",
+    },
+    {
+      title: "Instalaciones eléctricas comerciales y residenciales",
+      description:
+        "Diseño, montaje y modernización de sistemas eléctricos para hogares, comercios y fábricas. Seguridad, eficiencia y cumplimiento de normativas garantizados.",
+      image: "/temporales/iluminacion-interior.jpg",
+      tags: ["Tableros eléctricos", "Iluminación LED", "Certificación"],
+      link: "/servicios/instalaciones-residenciales",
     },
     {
       title: "Sistemas eléctricos y motores para jacuzzis y piscinas",
       description:
         "Instalación y automatización de bombas, filtros y sistemas eléctricos para piscinas y jacuzzis. Disfruta de agua limpia y segura con tecnología eficiente.",
-      image:
-        "/services/piscinas-jacuzzis.png",
+      image: "/services/piscinas-jacuzzis.png",
       tags: ["Bombas automáticas", "Tableros de control", "Mantenimiento"],
       link: "/servicios/sistemas-piscinas",
     },
@@ -38,8 +35,7 @@ export default function ServicesCarousel() {
       title: "Instalación de motores eléctricos para portones",
       description:
         "Automatiza tu acceso con motores eléctricos para portones corredizos y batientes. Instalación segura, rápida y con garantía de funcionamiento.",
-      image:
-        "/services/portones-electricos.png",
+      image: "/services/portones-electricos.png",
       tags: ["Control remoto", "Sensores de seguridad", "Soporte técnico"],
       link: "/servicios/portones-automaticos",
     },
@@ -63,8 +59,8 @@ export default function ServicesCarousel() {
           {services.map((s, i) => (
             <div
               key={s.title}
-              className={`transition-all duration-300  ${i === index ? 'w-[370px] md:w-[420px] z-10' : 'w-[260px] md:w-[300px] opacity-80'} cursor-pointer`}
-              style={{ minHeight: '420px' }}
+              className={`transition-all duration-300  ${i === index ? "w-[370px] md:w-[420px] z-10" : "w-[260px] md:w-[300px] opacity-80"} cursor-pointer`}
+              style={{ minHeight: "420px" }}
               onClick={() => setIndex(i)}
             >
               <ServiceCard service={s} selected={i === index} />
@@ -80,15 +76,15 @@ export default function ServicesCarousel() {
             <ServiceCard service={services[index]} selected={true}>
               <button
                 onClick={prev}
-                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow z-20"
-                style={{ pointerEvents: 'auto' }}
+                className="absolute left-3 top-1/2 -translate-y-1/2 rounded-full p-2 shadow z-20 transition-colors duration-200 bg-white/90 dark:bg-slate-800/90 dark:text-white hover:bg-brand-cyan/90 dark:hover:bg-cyan-600"
+                style={{ pointerEvents: "auto" }}
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={next}
-                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 shadow z-20"
-                style={{ pointerEvents: 'auto' }}
+                className="absolute right-3 top-1/2 -translate-y-1/2 rounded-full p-2 shadow z-20 transition-colors duration-200 bg-white/90 dark:bg-slate-800/90 dark:text-white hover:bg-brand-cyan/90 dark:hover:bg-cyan-600"
+                style={{ pointerEvents: "auto" }}
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -118,9 +114,11 @@ function ServiceCard({ service, selected, children }) {
   return (
     <article
       className={`overflow-hidden rounded-3xl bg-light-bg dark:bg-dark-bg shadow-lg transition-transform duration-300 border-2
-        ${selected
-          ? 'border-brand-cyan dark:border-cyan-400 scale-105 shadow-2xl'
-          : 'border-light-border dark:border-dark-border scale-95'}
+        ${
+          selected
+            ? "border-brand-cyan dark:border-cyan-400 scale-105 shadow-2xl"
+            : "border-light-border dark:border-dark-border scale-95"
+        }
         transition-colors duration-300`}
     >
       <div className="relative h-[420px] w-full overflow-hidden flex items-end">
@@ -133,8 +131,8 @@ function ServiceCard({ service, selected, children }) {
         <div
           className={`relative z-10 w-full h-full flex flex-col justify-end p-4 pb-6 md:p-5 md:pb-7 2xl:p-4 2xl:pb-4
             bg-gradient-to-t from-black/90 via-black/60 to-transparent transition-colors duration-300
-            ${selected ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}
-            md:${selected ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-8 pointer-events-none'}
+            ${selected ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-8 pointer-events-none"}
+            md:${selected ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 translate-y-8 pointer-events-none"}
             absolute left-0 bottom-0`}
         >
           <div>

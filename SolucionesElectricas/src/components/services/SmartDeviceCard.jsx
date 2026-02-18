@@ -33,7 +33,7 @@ export default function SmartDeviceCard({ title, description, image, icon: Icon 
 
       {/* Contenido */}
       <div className="p-5">
-        <div className="flex items-start gap-3 mb-2">
+        <div className="flex items-center gap-3 mb-2">
           {Icon && (
             <div className={`p-2 rounded-lg transition-transform duration-300 group-hover:scale-110 ${
               isDarkMode ? "bg-brand-cyan/10" : "bg-brand-cyan/20"
