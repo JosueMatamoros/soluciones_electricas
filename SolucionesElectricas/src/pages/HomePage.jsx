@@ -1,6 +1,6 @@
 import React from "react";
 import { useTheme } from "../context/ThemeContext";
-import videoFile from "../assets/videos/lightbulb.mp4";
+import videoFile from "../assets/videos/lightbulb_web.mp4";
 import { Button } from "@material-tailwind/react";
 import { Award, Wrench, ShieldCheck, Users, Wallet } from "lucide-react";
 import { FeatureCard } from "../components/home/FeatureCard";
