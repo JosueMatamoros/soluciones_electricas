@@ -1,0 +1,29 @@
+{
+  "common": {
+    "backToServices": "Volver a servicios",
+    "requestQuote": "Solicitar Cotización",
+    "contact": "Contacto",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "home": "Inicio",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro"
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "gallery": "Galería de Proyectos",
+    "contact": "Contáctanos",
+    "slogan": "Si hay de otra..."
+  },
+  "footer": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "contact": "Contáctanos",
+    "slogan": "Si hay de otra...",
+    "designed": "Diseñado y desarrollado por",
+    "copyright": "© 2026 Soluciones Eléctricas del Norte."
+  }
+}
+

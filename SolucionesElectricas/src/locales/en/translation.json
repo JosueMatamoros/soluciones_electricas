@@ -1,0 +1,28 @@
+{
+  "common": {
+    "backToServices": "Back to services",
+    "requestQuote": "Request Quote",
+    "contact": "Contact",
+    "services": "Services",
+    "gallery": "Gallery",
+    "home": "Home",
+    "darkMode": "Dark mode",
+    "lightMode": "Light mode"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "slogan": "There's another way..."
+  },
+  "footer": {
+    "home": "Home",
+    "services": "Services",
+    "gallery": "Gallery",
+    "contact": "Contact",
+    "slogan": "There's another way...",
+    "designed": "Designed & developed by",
+    "copyright": "© 2026 Soluciones Eléctricas del Norte."
+  }
+}

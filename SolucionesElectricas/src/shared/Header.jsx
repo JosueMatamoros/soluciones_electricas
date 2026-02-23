@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import {
   Navbar,
   Collapse,
@@ -38,6 +39,8 @@ const logo = "/logo.png";
 const logoWhite = "/logoWhite.png";
 
 function NavList({ isDarkMode }) {
+  const { t } = useTranslation();
+  
   return (
     <List className="flex flex-col lg:flex-row items-center justify-center w-full">
       <Typography as={Link} to="/" variant="small" className="font-medium">
@@ -48,7 +51,7 @@ function NavList({ isDarkMode }) {
               : "text-light-text hover:text-blue-600"
           }`}
         >
-          Inicio
+          {t('nav.home')}
         </ListItem>
       </Typography>
       <Typography as={Link} to="/servicios" variant="small" className="font-medium">
@@ -59,7 +62,7 @@ function NavList({ isDarkMode }) {
               : "text-light-text hover:text-blue-600"
           }`}
         >
-          Servicios
+          {t('nav.services')}
         </ListItem>
       </Typography>
       <Typography as={Link} to="/galeria" variant="small" className="font-medium">
@@ -70,7 +73,7 @@ function NavList({ isDarkMode }) {
               : "text-light-text hover:text-blue-600"
           }`}
         >
-          Galería de Proyectos
+          {t('nav.gallery')}
         </ListItem>
       </Typography>
       <Typography as={Link} to="/contacto" variant="small" className="font-medium">
@@ -81,7 +84,7 @@ function NavList({ isDarkMode }) {
               : "text-light-text hover:text-blue-600"
           }`}
         >
-          Contáctanos
+          {t('nav.contact')}
         </ListItem>
       </Typography>
     </List>
@@ -90,6 +93,7 @@ function NavList({ isDarkMode }) {
 
 export function NavbarWithMegaMenu() {
   const { isDarkMode, setIsDarkMode } = useTheme();
+  const { t } = useTranslation();
   const [openNav, setOpenNav] = React.useState(false);
 
   React.useEffect(() => {
@@ -140,7 +144,7 @@ export function NavbarWithMegaMenu() {
               className="text-2xl italic font-[cursive] font-light"
               style={{ fontFamily: 'Dancing Script, cursive' }}
             >
-              Si hay de otra...
+              {t('nav.slogan')}
             </span>
           </Typography>
         </div>

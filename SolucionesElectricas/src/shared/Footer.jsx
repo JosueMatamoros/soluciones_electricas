@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const whatsappNumber = "50661350349";
@@ -7,6 +8,8 @@ const whatsappMessage = "Hola, me gustaría obtener más información.";
 const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
 export default function Footer() {
+  const { t } = useTranslation();
+  
   return (
     <footer className="w-full bg-light-bg-secondary dark:bg-dark-bg-secondary text-light-text dark:text-dark-text border-t border-light-border dark:border-dark-border  transition-colors duration-300">
       <div className="max-w-6xl mx-auto py-8 flex flex-col md:flex-row justify-between items-center gap-4">
@@ -22,14 +25,14 @@ export default function Footer() {
             className="h-10 w-auto hidden dark:block"
           />
           <span className="text-xl font-roboto-slab italic font-light text-brand-cyan-dark dark:text-brand-cyan" style={{ fontFamily: 'Dancing Script, cursive' }}>
-            Si hay de otra...
+            {t('footer.slogan')}
           </span>
         </div>
         <nav className="flex flex-col md:flex-row gap-2 md:gap-6 text-base items-center">
-          <Link to="/" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">Inicio</Link>
-          <Link to="/servicios" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">Servicios</Link>
-          <Link to="/galeria" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">Galería</Link>
-          <Link to="/contacto" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">Contáctanos</Link>
+          <Link to="/" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">{t('footer.home')}</Link>
+          <Link to="/servicios" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">{t('footer.services')}</Link>
+          <Link to="/galeria" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">{t('footer.gallery')}</Link>
+          <Link to="/contacto" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">{t('footer.contact')}</Link>
         </nav>
         <div className="flex items-center gap-4">
           <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">
@@ -44,10 +47,10 @@ export default function Footer() {
         </div>
       </div>
       <div className="w-full max-w-6xl mx-auto text-center text-xs text-light-text-muted dark:text-dark-text-muted pb-4 flex flex-col md:flex-row justify-between items-center gap-1 md:gap-2">
-        <span>© 2026 Soluciones Eléctricas del Norte.</span>
+        <span>{t('footer.copyright')}</span>
         <div className="text-light-text dark:text-dark-text font-semibold text-center md:text-right">
           <div className="mb-1">
-            Designed &amp; developed by
+            {t('footer.designed')}
           </div>
           <div>
             <a

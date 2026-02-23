@@ -1,17 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import { Menu, MenuHandler, MenuList, MenuItem, IconButton } from "@material-tailwind/react";
 import { useTheme } from "../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 
 const LanguageSelector = () => {
   const { isDarkMode } = useTheme();
-  const [selectedLanguage, setSelectedLanguage] = useState("es");
+  const { i18n } = useTranslation();
 
   const languages = [
     { code: "es", flag: "🇨🇷", name: "Español" },
     { code: "en", flag: "🇺🇸", name: "English" },
   ];
 
-  const currentLanguage = languages.find((lang) => lang.code === selectedLanguage);
+  const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
+
+  const changeLanguage = (langCode) => {
+    i18n.changeLanguage(langCode);
+    // Guardar en localStorage
+    localStorage.setItem('language', langCode);
+  };
 
   return (
     <Menu placement="bottom-end">
@@ -35,9 +42,9 @@ const LanguageSelector = () => {
         {languages.map((lang) => (
           <MenuItem
             key={lang.code}
-            onClick={() => setSelectedLanguage(lang.code)}
+            onClick={() => changeLanguage(lang.code)}
             className={`flex items-center gap-2 transition-all duration-300 ${
-              selectedLanguage === lang.code
+              i18n.language === lang.code
                 ? isDarkMode
                   ? "bg-dark-bg-tertiary"
                   : "bg-light-bg-tertiary"
