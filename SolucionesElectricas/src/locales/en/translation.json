@@ -130,5 +130,37 @@
       "message": "No projects in this category.",
       "subtitle": "Incredibly, sometimes it happens."
     }
+  },
+  "contact": {
+    "header": {
+      "badge": "We're here to help",
+      "title": "Contact Us",
+      "description": "Do you have an electrical project in mind? We're ready to help you. Write or call us and we'll respond promptly."
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "We are available to assist you through any of these channels.",
+      "location": "La Fortuna, San Carlos, Costa Rica",
+      "email": "contacto@empresaelectrica.com"
+    },
+    "buttons": {
+      "whatsapp": "WhatsApp",
+      "whatsappAction": "Open",
+      "call": "Call",
+      "callAction": "Dial"
+    },
+    "form": {
+      "title": "Send us a message",
+      "description": "Fill out the form and we'll respond promptly.",
+      "namePlaceholder": "Your name",
+      "phonePlaceholder": "Your phone (e.g: +506 8888-8888)",
+      "messagePlaceholder": "Describe your project or inquiry...",
+      "submit": "SEND",
+      "validationAlert": "Please complete name, phone and message.",
+      "emailSubject": "New message from website",
+      "emailNameLabel": "Name: ",
+      "emailPhoneLabel": "Phone: ",
+      "emailMessageLabel": "Message:"
+    }
   }
 }

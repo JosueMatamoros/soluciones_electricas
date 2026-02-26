@@ -130,5 +130,37 @@
       "message": "No hay proyectos en esta categoría.",
       "subtitle": "Increíblemente, a veces pasa."
     }
+  },
+  "contact": {
+    "header": {
+      "badge": "Estamos para ayudarte",
+      "title": "Contáctanos",
+      "description": "¿Tienes un proyecto eléctrico en mente? Estamos listos para ayudarte. Escríbenos o llámanos y te responderemos a la brevedad."
+    },
+    "info": {
+      "title": "Información de Contacto",
+      "description": "Estamos disponibles para atenderte por cualquiera de estos medios.",
+      "location": "La Fortuna, San Carlos, Costa Rica",
+      "email": "contacto@empresaelectrica.com"
+    },
+    "buttons": {
+      "whatsapp": "WhatsApp",
+      "whatsappAction": "Abrir",
+      "call": "Llamar",
+      "callAction": "Marcar"
+    },
+    "form": {
+      "title": "Envíanos un mensaje",
+      "description": "Completa el formulario y te responderemos a la brevedad.",
+      "namePlaceholder": "Tu nombre",
+      "phonePlaceholder": "Tu teléfono (ej: +506 8888-8888)",
+      "messagePlaceholder": "Describe tu proyecto o consulta...",
+      "submit": "ENVIAR",
+      "validationAlert": "Por favor completa nombre, teléfono y mensaje.",
+      "emailSubject": "Nuevo mensaje desde el sitio web",
+      "emailNameLabel": "Nombre: ",
+      "emailPhoneLabel": "Teléfono: ",
+      "emailMessageLabel": "Mensaje:"
+    }
   }
 }

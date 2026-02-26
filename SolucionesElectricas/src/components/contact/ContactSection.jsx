@@ -1,9 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { MapPin, Mail, Phone, Facebook, Instagram, Send } from "lucide-react";
 
 const TO_EMAIL = "1002matamoros@gmail.com";
 
 export default function ContactSection() {
+  const { t } = useTranslation();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -11,15 +14,15 @@ export default function ContactSection() {
     const data = Object.fromEntries(form.entries());
 
     if (!data.name || !data.phone || !data.message) {
-      alert("Por favor completa nombre, teléfono y mensaje.");
+      alert(t("contact.form.validationAlert"));
       return;
     }
 
-    const subject = "Nuevo mensaje desde el sitio web";
+    const subject = t("contact.form.emailSubject");
     const body =
-      `Nombre: ${data.name}\n` +
-      `Teléfono: ${data.phone}\n\n` +
-      `Mensaje:\n${data.message}\n`;
+      `${t("contact.form.emailNameLabel")}${data.name}\n` +
+      `${t("contact.form.emailPhoneLabel")}${data.phone}\n\n` +
+      `${t("contact.form.emailMessageLabel")}\n${data.message}\n`;
 
     const mailto = `mailto:${TO_EMAIL}?subject=${encodeURIComponent(
       subject,
@@ -40,22 +43,21 @@ export default function ContactSection() {
             {/* CONTACTO (arriba completo) */}
             <aside className="relative bg-[#0b1b2b] px-8 py-10 text-white">
               <h2 className="text-3xl font-bold tracking-tight">
-                Información de Contacto
+                {t("contact.info.title")}
               </h2>
               <p className="mt-3 max-w-sm text-sm text-white/70">
-                Estamos disponibles para atenderte por cualquiera de estos
-                medios.
+                {t("contact.info.description")}
               </p>
 
               <div className="mt-10 space-y-6">
                 <InfoRow
                   icon={MapPin}
-                  text="La Fortuna, San Carlos, Costa Rica"
+                  text={t("contact.info.location")}
                   alignText
                 />
                 <InfoRow
                   icon={Mail}
-                  text="contacto@empresaelectrica.com"
+                  text={t("contact.info.email")}
                   alignText
                 />
 
@@ -63,8 +65,14 @@ export default function ContactSection() {
                   <WhatsAppButton
                     phoneE164="50661350349"
                     label="+506 6135-0349"
+                    actionText={t("contact.buttons.whatsappAction")}
                   />
-                  <CallButton phoneE164="50661350349" label="+506 6135-0349" />
+                  <CallButton
+                    phoneE164="50661350349"
+                    label="+506 6135-0349"
+                    callText={t("contact.buttons.call")}
+                    actionText={t("contact.buttons.callAction")}
+                  />
                 </div>
               </div>
 
@@ -83,32 +91,32 @@ export default function ContactSection() {
             {/* FORM (abajo completo) */}
             <div className="bg-white px-8 py-10">
               <h2 className="text-3xl font-bold tracking-tight text-black">
-                Envíanos un mensaje
+                {t("contact.form.title")}
               </h2>
               <p className="mt-3 text-sm text-slate-600">
-                Completa el formulario y te responderemos a la brevedad.
+                {t("contact.form.description")}
               </p>
 
               <form className="mt-10 space-y-8" onSubmit={handleSubmit}>
                 <Field
-                  label="Tu nombre"
+                  label={t("contact.form.namePlaceholder")}
                   name="name"
-                  placeholder="Tu nombre"
+                  placeholder={t("contact.form.namePlaceholder")}
                   required
                 />
 
                 <Field
-                  label="Tu teléfono"
+                  label={t("contact.form.phonePlaceholder")}
                   name="phone"
                   type="tel"
-                  placeholder="Tu teléfono (ej: +506 8888-8888)"
+                  placeholder={t("contact.form.phonePlaceholder")}
                   required
                 />
 
                 <TextArea
-                  label="Mensaje"
+                  label={t("contact.form.messagePlaceholder")}
                   name="message"
-                  placeholder="Describe tu proyecto o consulta..."
+                  placeholder={t("contact.form.messagePlaceholder")}
                   rows={5}
                   required
                 />
@@ -119,7 +127,7 @@ export default function ContactSection() {
                 >
                   <span className="inline-flex items-center justify-center gap-2">
                     <Send className="h-4 w-4" />
-                    ENVIAR
+                    {t("contact.form.submit")}
                   </span>
                 </button>
               </form>
@@ -135,28 +143,27 @@ export default function ContactSection() {
                 {/* FILA 1: TITULOS */}
                 <div className="bg-[#0b1b2b] px-10 pt-10 text-white">
                   <h2 className="text-3xl font-bold tracking-tight">
-                    Información de Contacto
+                    {t("contact.info.title")}
                   </h2>
                 </div>
 
                 {/* derecha por fila: bg-white */}
                 <div className="bg-white px-10 pt-10">
                   <h2 className="text-3xl font-bold tracking-tight text-black">
-                    Envíanos un mensaje
+                    {t("contact.form.title")}
                   </h2>
                 </div>
 
                 {/* FILA 2: DESCRIPCIONES */}
                 <div className="bg-[#0b1b2b] px-10 pb-6 text-white">
                   <p className="mt-3 max-w-sm text-sm text-white/70">
-                    Estamos disponibles para atenderte por cualquiera de estos
-                    medios.
+                    {t("contact.info.description")}
                   </p>
                 </div>
 
                 <div className="bg-white px-10 pb-6">
                   <p className="mt-3 text-sm text-black dark:text-black">
-                    Completa el formulario y te responderemos a la brevedad.
+                    {t("contact.form.description")}
                   </p>
                 </div>
 
@@ -164,16 +171,16 @@ export default function ContactSection() {
                 <div className="bg-[#0b1b2b] px-10 py-4 text-white">
                   <InfoRow
                     icon={MapPin}
-                    text="La Fortuna, San Carlos, Costa Rica"
+                    text={t("contact.info.location")}
                     alignText
                   />
                 </div>
 
                 <div className="bg-white px-10 py-4">
                   <Field
-                    label="Tu nombre"
+                    label={t("contact.form.namePlaceholder")}
                     name="name"
-                    placeholder="Tu nombre"
+                    placeholder={t("contact.form.namePlaceholder")}
                     required
                   />
                 </div>
@@ -182,17 +189,17 @@ export default function ContactSection() {
                 <div className="bg-[#0b1b2b] px-10 py-4 text-white">
                   <InfoRow
                     icon={Mail}
-                    text="contacto@empresaelectrica.com"
+                    text={t("contact.info.email")}
                     alignText
                   />
                 </div>
 
                 <div className="bg-white px-10 py-4">
                   <Field
-                    label="Tu teléfono"
+                    label={t("contact.form.phonePlaceholder")}
                     name="phone"
                     type="tel"
-                    placeholder="Tu teléfono (ej: +506 8888-8888)"
+                    placeholder={t("contact.form.phonePlaceholder")}
                     required
                   />
                 </div>
@@ -204,12 +211,15 @@ export default function ContactSection() {
                       <WhatsAppButton
                         phoneE164="50661350349"
                         label="+506 6135-0349"
+                        actionText={t("contact.buttons.whatsappAction")}
                       />
                     </div>
                     <div className="h-full">
                       <CallButton
                         phoneE164="50661350349"
                         label="+506 6135-0349"
+                        callText={t("contact.buttons.call")}
+                        actionText={t("contact.buttons.callAction")}
                       />
                     </div>
                   </div>
@@ -217,9 +227,9 @@ export default function ContactSection() {
 
                 <div className="bg-white px-10 py-4">
                   <TextArea
-                    label="Mensaje"
+                    label={t("contact.form.messagePlaceholder")}
                     name="message"
-                    placeholder="Describe tu proyecto o consulta..."
+                    placeholder={t("contact.form.messagePlaceholder")}
                     required
                     className="min-h-[140px]"
                   />
@@ -252,7 +262,7 @@ export default function ContactSection() {
                   >
                     <span className="inline-flex items-center justify-center gap-2">
                       <Send className="h-4 w-4" />
-                      ENVIAR
+                      {t("contact.form.submit")}
                     </span>
                   </button>
                 </div>
@@ -280,7 +290,7 @@ function InfoRow({ icon: Icon, text, iconClass = "text-cyan-400", alignText }) {
   );
 }
 
-function WhatsAppButton({ phoneE164, label }) {
+function WhatsAppButton({ phoneE164, label, actionText }) {
   return (
     <button
       type="button"
@@ -298,13 +308,13 @@ function WhatsAppButton({ phoneE164, label }) {
       </span>
 
       <span className="ml-auto text-xs text-white/60 group-hover:text-white/80">
-        Abrir
+        {actionText}
       </span>
     </button>
   );
 }
 
-function CallButton({ phoneE164, label }) {
+function CallButton({ phoneE164, label, callText, actionText }) {
   return (
     <a
       href={`tel:+${phoneE164}`}
@@ -316,12 +326,12 @@ function CallButton({ phoneE164, label }) {
       </span>
 
       <span className="flex flex-col">
-        <span className="text-sm font-semibold leading-5">Llamar</span>
+        <span className="text-sm font-semibold leading-5">{callText}</span>
         <span className="text-xs text-white/70">{label}</span>
       </span>
 
       <span className="ml-auto text-xs text-white/60 group-hover:text-white/80">
-        Marcar
+        {actionText}
       </span>
     </a>
   );
