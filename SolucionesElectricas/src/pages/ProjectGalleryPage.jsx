@@ -1,19 +1,12 @@
 
 import React, { useMemo, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { PROJECTS } from "../data/Projects/projects";
 import ProjectCard from "../components/gallery/ProjectCard";
 import TabButton from "../components/gallery/TabButton";
 import SectionHeader from "../components/common/SectionHeader";
 import { useTheme } from "../context/ThemeContext";
 import { Layers, Droplets, Zap, Cog, Snowflake } from "lucide-react";
-
-const CATEGORIES = [
-  { label: "Todos", icon: Layers },
-  { label: "Piscinas", icon: Droplets },
-  { label: "Electricidad General", icon: Zap },
-  { label: "Motores", icon: Cog },
-  { label: "Aires Acondicionados", icon: Snowflake },
-];
 
 // Utilidades y layout para la galería
 function cx(...classes) {
@@ -34,8 +27,17 @@ const BENTO_SPANS = [
 
 
 export default function ProjectGalleryPage() {
-  const [activeCategory, setActiveCategory] = useState("Todos");
+  const { t } = useTranslation();
+  const [activeCategory, setActiveCategory] = useState("all");
   const { isDarkMode } = useTheme();
+
+  const CATEGORIES = [
+    { label: t('gallery.categories.all'), value: "all", icon: Layers },
+    { label: t('gallery.categories.pools'), value: "pools", icon: Droplets },
+    { label: t('gallery.categories.electrical'), value: "electrical", icon: Zap },
+    { label: t('gallery.categories.motors'), value: "motors", icon: Cog },
+    { label: t('gallery.categories.airConditioning'), value: "airConditioning", icon: Snowflake },
+  ];
 
   // Shuffle para mezclar proyectos solo en "Todos"
   function shuffle(array) {
@@ -48,8 +50,16 @@ export default function ProjectGalleryPage() {
   }
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === "Todos") return shuffle(PROJECTS);
-    return PROJECTS.filter((p) => p.category === activeCategory);
+    if (activeCategory === "all") return shuffle(PROJECTS);
+    return PROJECTS.filter((p) => {
+      const categoryMap = {
+        "pools": "Piscinas",
+        "electrical": "Electricidad General",
+        "motors": "Motores",
+        "airConditioning": "Aires Acondicionados"
+      };
+      return p.category === categoryMap[activeCategory];
+    });
   }, [activeCategory]);
 
   return (
@@ -60,19 +70,19 @@ export default function ProjectGalleryPage() {
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 transition-colors duration-300">
         {/* Nuevo SectionHeader */}
         <SectionHeader
-          badge="Galería"
+          badge={t('gallery.badge')}
           badgeIcon={Layers}
-          title="Proyectos"
-          description="Galería con filtro por categorías y layout tipo bento. Porque a la gente le encanta ver tarjetas bonitas."
+          title={t('gallery.title')}
+          description={t('gallery.description')}
         />
         {/* Tabs */}
         <div className="flex items-center justify-center gap-2 overflow-x-auto px-4 mb-4">
-          {CATEGORIES.map(({ label, icon }, idx) => (
+          {CATEGORIES.map(({ label, value, icon }, idx) => (
             <TabButton
-              key={label}
+              key={value}
               icon={icon}
-              active={activeCategory === label}
-              onClick={() => setActiveCategory(label)}
+              active={activeCategory === value}
+              onClick={() => setActiveCategory(value)}
             >
               {label}
             </TabButton>
@@ -101,8 +111,8 @@ export default function ProjectGalleryPage() {
               "mt-10 rounded-2xl border p-10 text-center transition-colors duration-300",
               isDarkMode ? "border-dark-border bg-dark-bg-secondary text-dark-text-secondary" : "border-light-border bg-white text-light-text-secondary"
             )}>
-              <p className="font-medium">No hay proyectos en esta categoría.</p>
-              <p className="mt-1 text-sm">Increíblemente, a veces pasa.</p>
+              <p className="font-medium">{t('gallery.empty.message')}</p>
+              <p className="mt-1 text-sm">{t('gallery.empty.subtitle')}</p>
             </div>
           )}
         </section>

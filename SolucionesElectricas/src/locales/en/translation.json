@@ -15,7 +15,7 @@
   "nav": {
     "home": "Home",
     "services": "Services",
-    "gallery": "Gallery",
+    "gallery": "Projects Gallery",
     "contact": "Contact",
     "slogan": "There's another way..."
   },
@@ -113,6 +113,22 @@
       "guarantee": "Fast response guaranteed",
       "quoteButton": "Request Quote",
       "callButton": "Call Now"
+    }
+  },
+  "gallery": {
+    "badge": "Gallery",
+    "title": "Projects",
+    "description": "Gallery with category filters and bento-style layout. Because people love seeing beautiful cards.",
+    "categories": {
+      "all": "All",
+      "pools": "Pools",
+      "electrical": "General Electrical",
+      "motors": "Motors",
+      "airConditioning": "Air Conditioning"
+    },
+    "empty": {
+      "message": "No projects in this category.",
+      "subtitle": "Incredibly, sometimes it happens."
     }
   }
 }

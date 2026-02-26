@@ -114,6 +114,21 @@
       "quoteButton": "Solicitar Cotización",
       "callButton": "Llamar Ahora"
     }
+  },
+  "gallery": {
+    "badge": "Galería",
+    "title": "Proyectos",
+    "description": "Galería con filtro por categorías y layout tipo bento. Porque a la gente le encanta ver tarjetas bonitas.",
+    "categories": {
+      "all": "Todos",
+      "pools": "Piscinas",
+      "electrical": "Electricidad General",
+      "motors": "Motores",
+      "airConditioning": "Aires Acondicionados"
+    },
+    "empty": {
+      "message": "No hay proyectos en esta categoría.",
+      "subtitle": "Increíblemente, a veces pasa."
+    }
   }
 }
-
