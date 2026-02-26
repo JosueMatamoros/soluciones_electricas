@@ -10,7 +10,8 @@
     "lightMode": "Light mode",
     "moreInfo": "More information",
     "viewAll": "View all",
-    "callNow": "Call Now"
+    "callNow": "Call Now",
+    "viewDetails": "View details"
   },
   "nav": {
     "home": "Home",
@@ -161,6 +162,39 @@
       "emailNameLabel": "Name: ",
       "emailPhoneLabel": "Phone: ",
       "emailMessageLabel": "Message:"
+    }
+  },
+  "services": {
+    "header": {
+      "badge": "Services",
+      "title": "Our Services",
+      "description": "Professional electrical solutions tailored to your needs. Quality, safety, and experience in every project."
+    },
+    "cards": {
+      "instalaciones-residenciales": {
+        "title": "Residential and commercial electrical installations",
+        "description": "We perform complete electrical installations for homes and businesses, ensuring safety and energy efficiency."
+      },
+      "climatizacion": {
+        "title": "Air conditioning installation, maintenance and sales",
+        "description": "Specialized services in installation, maintenance and repair of air conditioning and climate control equipment."
+      },
+      "domotica": {
+        "title": "Home automation systems and smart devices",
+        "description": "Intelligent home automation for greater comfort, security and energy efficiency."
+      },
+      "motores-electricos": {
+        "title": "Electric motor installation and automation",
+        "description": "Specialized services in installation, maintenance and repair of industrial and commercial electric motors."
+      },
+      "portones-automaticos": {
+        "title": "Electric gate installation and programming",
+        "description": "Automation of residential and commercial gates with modern and secure systems."
+      },
+      "sistemas-piscinas": {
+        "title": "Electromechanical systems installation for pools and jacuzzis",
+        "description": "Specialized electrical installations for pools, complying with all safety regulations."
+      }
     }
   }
 }

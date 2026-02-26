@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../context/ThemeContext";
 import ServiceCard from "../components/common/ServiceCard";
 import CardsList from "../components/common/CardsList";
@@ -6,6 +7,7 @@ import SectionHeader from "../components/common/SectionHeader";
 import { SERVICES } from "../data/services";
 
 function ServicesPage() {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
 
   return (
@@ -18,9 +20,9 @@ function ServicesPage() {
         <section className="snap-start">
           <div className="mx-auto max-w-6xl px-2 py-6">
             <SectionHeader
-              badge="Servicios"
-              title="Nuestros Servicios"
-              description="Soluciones eléctricas profesionales adaptadas a tus necesidades. Calidad, seguridad y experiencia en cada proyecto."
+              badge={t("services.header.badge")}
+              title={t("services.header.title")}
+              description={t("services.header.description")}
             />
           </div>
         </section>
@@ -36,9 +38,9 @@ function ServicesPage() {
       <div className="hidden sm:block min-h-screen">
         <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10">
           <SectionHeader
-            badge="Servicios"
-            title="Nuestros Servicios"
-            description="Soluciones eléctricas profesionales adaptadas a tus necesidades. Calidad, seguridad y experiencia en cada proyecto."
+            badge={t("services.header.badge")}
+            title={t("services.header.title")}
+            description={t("services.header.description")}
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">

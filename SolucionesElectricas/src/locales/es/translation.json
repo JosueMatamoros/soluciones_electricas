@@ -10,7 +10,8 @@
     "lightMode": "Modo claro",
     "moreInfo": "Más información",
     "viewAll": "Ver todos",
-    "callNow": "Llamar Ahora"
+    "callNow": "Llamar Ahora",
+    "viewDetails": "Ver detalles"
   },
   "nav": {
     "home": "Inicio",
@@ -161,6 +162,39 @@
       "emailNameLabel": "Nombre: ",
       "emailPhoneLabel": "Teléfono: ",
       "emailMessageLabel": "Mensaje:"
+    }
+  },
+  "services": {
+    "header": {
+      "badge": "Servicios",
+      "title": "Nuestros Servicios",
+      "description": "Soluciones eléctricas profesionales adaptadas a tus necesidades. Calidad, seguridad y experiencia en cada proyecto."
+    },
+    "cards": {
+      "instalaciones-residenciales": {
+        "title": "Instalaciones eléctricas residenciales y comerciales",
+        "description": "Realizamos instalaciones eléctricas completas para viviendas y comercios, garantizando seguridad y eficiencia energética."
+      },
+      "climatizacion": {
+        "title": "Instalación, mantenimiento y venta de aires acondicionados",
+        "description": "Servicios especializados en instalación, mantenimiento y reparación de equipos de aire acondicionado y climatización."
+      },
+      "domotica": {
+        "title": "Sistemas de domótica y dispositivos inteligentes",
+        "description": "Automatización inteligente del hogar para mayor comodidad, seguridad y eficiencia energética."
+      },
+      "motores-electricos": {
+        "title": "Instalación y automatización de motores eléctricos",
+        "description": "Servicios especializados en instalación, mantenimiento y reparación de motores eléctricos industriales y comerciales."
+      },
+      "portones-automaticos": {
+        "title": "Instalación y programación de portones eléctricos",
+        "description": "Automatización de portones residenciales y comerciales con sistemas modernos y seguros."
+      },
+      "sistemas-piscinas": {
+        "title": "Instalación de sistemas electromecánicos para piscinas y jacuzzis",
+        "description": "Instalaciones eléctricas especializadas para piscinas, cumpliendo con todas las normativas de seguridad."
+      }
     }
   }
 }

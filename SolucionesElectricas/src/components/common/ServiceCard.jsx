@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { ArrowRight } from "lucide-react";
 
 function ServiceCard({ id, title, image, description }) {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
 
   return (
@@ -18,13 +20,13 @@ function ServiceCard({ id, title, image, description }) {
       <Link
         to={`/servicios/${id}`}
         className="absolute inset-0 z-10 md:hidden"
-        aria-label={`Ver detalles de ${title}`}
+        aria-label={`Ver detalles de ${t(`services.cards.${id}.title`)}`}
       />
       {/* Imagen */}
       <div className="md:w-[48%] h-56 md:h-auto min-h-[200px] md:min-h-0 flex-shrink-0 flex-grow-0 h-full">
         <img
           src={image}
-          alt={title}
+          alt={t(`services.cards.${id}.title`)}
           className="w-full h-full object-cover transition-transform duration-500"
         />
       </div>
@@ -37,7 +39,7 @@ function ServiceCard({ id, title, image, description }) {
               isDarkMode ? "text-white" : "text-gray-900"
             }`}
           >
-            {title}
+            {t(`services.cards.${id}.title`)}
           </h3>
 
           <p
@@ -45,7 +47,7 @@ function ServiceCard({ id, title, image, description }) {
               isDarkMode ? "text-gray-300" : "text-gray-600"
             }`}
           >
-            {description}
+            {t(`services.cards.${id}.description`)}
           </p>
         </div>
 
@@ -54,7 +56,7 @@ function ServiceCard({ id, title, image, description }) {
             to={`/servicios/${id}`}
             className="inline-flex items-center gap-2 rounded-full border border-brand-cyan/10 px-5 py-2 text-base font-bold text-brand-cyan hover:bg-brand-cyan/10 transition-colors duration-200 shadow-sm min-w-[150px] group"
           >
-            Ver detalles
+            {t("common.viewDetails")}
             <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
               <ArrowRight className="h-5 w-5" />
             </span>
