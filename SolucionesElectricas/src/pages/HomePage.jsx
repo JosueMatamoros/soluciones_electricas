@@ -1,5 +1,6 @@
 import React from "react";
 import { useTheme } from "../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 import videoFile from "../assets/videos/lightbulb_web.mp4";
 import { Button } from "@material-tailwind/react";
 import { Award, Wrench, ShieldCheck, Users, Wallet } from "lucide-react";
@@ -14,31 +15,28 @@ import ProjectCTA from "../components/home/ProjectCTA";
 
 export default function HomePage() {
   const { isDarkMode } = useTheme();
+  const { t } = useTranslation();
   const navigate = useNavigate();
 
   const features = [
     {
-      title: "Técnicos Profesionales",
-      description:
-        "Personal capacitado y con experiencia en todas las marcas del mercado.",
+      title: t('home.features.professional.title'),
+      description: t('home.features.professional.description'),
       Icon: Wrench,
     },
     {
-      title: "Trabajo de Calidad",
-      description:
-        "Utilizamos las mejores técnicas y herramientas para garantizar resultados óptimos.",
+      title: t('home.features.quality.title'),
+      description: t('home.features.quality.description'),
       Icon: ShieldCheck,
     },
     {
-      title: "Atención Personalizada",
-      description:
-        "Te asesoramos para encontrar la mejor solución según tus necesidades específicas.",
+      title: t('home.features.personalized.title'),
+      description: t('home.features.personalized.description'),
       Icon: Users,
     },
     {
-      title: "Precios Adecuados",
-      description:
-        "Cotizaciones claras y justas. Presupuesto previo sin compromiso ni sorpresas.",
+      title: t('home.features.pricing.title'),
+      description: t('home.features.pricing.description'),
       Icon: Wallet,
     },
   ];
@@ -53,23 +51,20 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl flex flex-col lg:flex-row-reverse items-center gap-6 lg:gap-10">
           <div className="w-full flex flex-col items-center lg:items-start justify-center text-center lg:text-left space-y-5 min-h-[320px]">
             <h1 className="text-4xl md:text-6xl   font-roboto-slab font-bold max-w-xl text-center lg:text-left transition-colors duration-300 text-light-text dark:text-dark-text">
-              <span className="block sm:inline">Soluciones Eléctricas</span>
-              <span className="block sm:inline"> del Norte</span>
+              {t('home.hero.title')}
             </h1>
             <p className="text-lg md:text-xl max-w-lg text-slate-600 dark:text-slate-300 font-medium">
-              Somos expertos en instalaciones y mantenimiento eléctrico. Si
-              tienes una idea, la transformamos en realidad con soluciones a
-              medida.
+              {t('home.hero.description')}
               <br />
               <span className="font-roboto-slab font-bold  transition-colors duration-300 text-light-text dark:text-dark-text ">
-                Grupo SEN
+                {t('home.hero.groupName')}
               </span>
               ,
               <span
                 className="ml-2 text-2xl italic font-light text-[#22d3ee]"
                 style={{ fontFamily: "Dancing Script, cursive" }}
               >
-                sí hay de otra.
+                {t('home.hero.slogan')}
               </span>
             </p>
             <Button
@@ -77,7 +72,7 @@ export default function HomePage() {
               size="lg"
               onClick={() => navigate("/contacto")}
             >
-              Solicita una Cotización
+              {t('home.hero.cta')}
             </Button>
           </div>
           <div className="w-full flex items-center justify-center min-h-[380px]">
@@ -103,7 +98,7 @@ export default function HomePage() {
                 }}
               >
                 <source src={videoFile} type="video/mp4" />
-                Tu navegador no soporta videos HTML5.
+                {t('home.hero.videoError')}
               </video>
             </div>
           </div>
@@ -118,30 +113,27 @@ export default function HomePage() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-light-border dark:border-dark-border bg-light-bg-tertiary dark:bg-dark-bg-tertiary px-4 py-2 text-sm font-semibold text-brand-cyan">
               <Award className="h-4 w-4" />
-              Por Qué Elegirnos
+              {t('home.whyChoose.badge')}
             </div>
 
             <h2 className="mt-3 text-4xl font-extrabold leading-[1.05] text-light-text dark:text-dark-text">
-              Referentes en <span className="text-brand-cyan">Soluciones</span>
+              {t('home.whyChoose.title')} <span className="text-brand-cyan">{t('home.whyChoose.titleHighlight')}</span>
               <br />
-              de Climatización
+              {t('home.whyChoose.titleLine2')}
             </h2>
 
             <p className="mt-2 max-w-xl text-base leading-7 text-light-text-muted dark:text-dark-text-muted">
-              Con más de 10 años de experiencia, nos hemos consolidado como
-              referentes en soluciones de climatización en la región, ofreciendo
-              servicios confiables y eficientes para garantizar el confort en
-              cada proyecto.
+              {t('home.whyChoose.description')}
             </p>
 
             <div className="mt-2 md:mt-4 flex lg:justify-start justify-center text-3xl md:text-4xl ">
               <div className="flex flex-row flex-wrap items-end gap-2">
-                    <span className=" font-extrabold text-brand-cyan tracking-tight">+15</span>
+                    <span className=" font-extrabold text-brand-cyan tracking-tight">{t('home.whyChoose.experienceYears')}</span>
                     <span className=" font-extrabold text-brand-cyan ml-1 tracking-tight">
-                      años
+                      {t('home.whyChoose.experienceLabel')}
                     </span>
                     <span className=" font-black text-light-text dark:text-dark-text ml-2 tracking-tight">
-                      de experiencia
+                      {t('home.whyChoose.experienceText')}
                 </span>
               </div>
             </div>

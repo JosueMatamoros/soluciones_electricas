@@ -7,7 +7,10 @@
     "gallery": "Gallery",
     "home": "Home",
     "darkMode": "Dark mode",
-    "lightMode": "Light mode"
+    "lightMode": "Light mode",
+    "moreInfo": "More information",
+    "viewAll": "View all",
+    "callNow": "Call Now"
   },
   "nav": {
     "home": "Home",
@@ -24,5 +27,92 @@
     "slogan": "There's another way...",
     "designed": "Designed & developed by",
     "copyright": "© 2026 Soluciones Eléctricas del Norte."
+  },
+  "home": {
+    "hero": {
+      "title": "Soluciones Eléctricas del Norte",
+      "description": "We are experts in electrical installations and maintenance. If you have an idea, we transform it into reality with custom solutions.",
+      "groupName": "Grupo SEN",
+      "slogan": "there's another way.",
+      "cta": "Request a Quote",
+      "videoError": "Your browser does not support HTML5 videos."
+    },
+    "whyChoose": {
+      "badge": "Why Choose Us",
+      "title": "Leaders in",
+      "titleHighlight": "Solutions",
+      "titleLine2": "for Climate Control",
+      "description": "With over 10 years of experience, we have established ourselves as leaders in climate control solutions in the region, offering reliable and efficient services to ensure comfort in every project.",
+      "experienceYears": "+15",
+      "experienceLabel": "years",
+      "experienceText": "of experience"
+    },
+    "features": {
+      "professional": {
+        "title": "Professional Technicians",
+        "description": "Trained personnel with experience in all market brands."
+      },
+      "quality": {
+        "title": "Quality Work",
+        "description": "We use the best techniques and tools to guarantee optimal results."
+      },
+      "personalized": {
+        "title": "Personalized Service",
+        "description": "We advise you to find the best solution according to your specific needs."
+      },
+      "pricing": {
+        "title": "Fair Pricing",
+        "description": "Clear and fair quotes. Prior budget without commitment or surprises."
+      }
+    },
+    "services": {
+      "badge": "Services",
+      "title": "Our Featured Services",
+      "description": "We are Electrical Solutions: we solve any problem or make any dream come true. Trust us for safe, efficient, and customized service.",
+      "viewAll": "View all services"
+    },
+    "projects": {
+      "badge": "Our Work",
+      "title": "Featured",
+      "titleHighlight": "Projects",
+      "description": "Discover some of our most recent work and see the quality that sets us apart.",
+      "viewAll": "View all projects"
+    },
+    "process": {
+      "badge": "How We Work",
+      "title": "Simple and",
+      "titleHighlight": "Transparent",
+      "description": "From the first contact to final delivery, we accompany you every step of the way.",
+      "steps": {
+        "contact": {
+          "title": "Contact",
+          "description": "Contact us via WhatsApp, phone, or form. Tell us what you need."
+        },
+        "evaluation": {
+          "title": "Evaluation",
+          "description": "We perform a technical visit to evaluate your equipment and give you an exact quote."
+        },
+        "execution": {
+          "title": "Execution",
+          "description": "Our certified technicians perform the service to the highest standards."
+        },
+        "delivery": {
+          "title": "Delivery",
+          "description": "We deliver the finished work and explain its operation and what was done."
+        }
+      }
+    },
+    "cta": {
+      "badge": "We're here to help",
+      "title": "Do you have a",
+      "titleHighlight": "project",
+      "titleEnd": "in mind?",
+      "description": "Tell us your idea and we'll help you make it a reality.",
+      "descriptionLine2": "Quote without commitment and response in less than 24 hours.",
+      "schedule": "Mon - Sat: 8am - 6pm",
+      "guarantee": "Fast response guaranteed",
+      "quoteButton": "Request Quote",
+      "callButton": "Call Now"
+    }
   }
 }

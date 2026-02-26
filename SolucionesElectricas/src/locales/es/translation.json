@@ -7,7 +7,10 @@
     "gallery": "Galería",
     "home": "Inicio",
     "darkMode": "Modo oscuro",
-    "lightMode": "Modo claro"
+    "lightMode": "Modo claro",
+    "moreInfo": "Más información",
+    "viewAll": "Ver todos",
+    "callNow": "Llamar Ahora"
   },
   "nav": {
     "home": "Inicio",
@@ -24,6 +27,93 @@
     "slogan": "Si hay de otra...",
     "designed": "Diseñado y desarrollado por",
     "copyright": "© 2026 Soluciones Eléctricas del Norte."
+  },
+  "home": {
+    "hero": {
+      "title": "Soluciones Eléctricas del Norte",
+      "description": "Somos expertos en instalaciones y mantenimiento eléctrico. Si tienes una idea, la transformamos en realidad con soluciones a medida.",
+      "groupName": "Grupo SEN",
+      "slogan": "sí hay de otra.",
+      "cta": "Solicita una Cotización",
+      "videoError": "Tu navegador no soporta videos HTML5."
+    },
+    "whyChoose": {
+      "badge": "Por Qué Elegirnos",
+      "title": "Referentes en",
+      "titleHighlight": "Soluciones",
+      "titleLine2": "de Climatización",
+      "description": "Con más de 10 años de experiencia, nos hemos consolidado como referentes en soluciones de climatización en la región, ofreciendo servicios confiables y eficientes para garantizar el confort en cada proyecto.",
+      "experienceYears": "+15",
+      "experienceLabel": "años",
+      "experienceText": "de experiencia"
+    },
+    "features": {
+      "professional": {
+        "title": "Técnicos Profesionales",
+        "description": "Personal capacitado y con experiencia en todas las marcas del mercado."
+      },
+      "quality": {
+        "title": "Trabajo de Calidad",
+        "description": "Utilizamos las mejores técnicas y herramientas para garantizar resultados óptimos."
+      },
+      "personalized": {
+        "title": "Atención Personalizada",
+        "description": "Te asesoramos para encontrar la mejor solución según tus necesidades específicas."
+      },
+      "pricing": {
+        "title": "Precios Adecuados",
+        "description": "Cotizaciones claras y justas. Presupuesto previo sin compromiso ni sorpresas."
+      }
+    },
+    "services": {
+      "badge": "Servicios",
+      "title": "Nuestros Servicios Destacados",
+      "description": "Somos Soluciones Eléctricas: resolvemos cualquier problema o hacemos realidad cualquier sueño . Confía en nosotros para un servicio seguro, eficiente y a tu medida.",
+      "viewAll": "Ver todos los servicios"
+    },
+    "projects": {
+      "badge": "Nuestro Trabajo",
+      "title": "Proyectos",
+      "titleHighlight": "Destacados",
+      "description": "Conoce algunos de nuestros trabajos más recientes y descubre la calidad que nos distingue.",
+      "viewAll": "Ver todos los proyectos"
+    },
+    "process": {
+      "badge": "Cómo Trabajamos",
+      "title": "Proceso Simple y",
+      "titleHighlight": "Transparente",
+      "description": "Desde el primer contacto hasta la entrega final, te acompañamos en cada paso del proceso.",
+      "steps": {
+        "contact": {
+          "title": "Contacto",
+          "description": "Contáctanos por WhatsApp, teléfono o formulario. Cuéntanos qué necesitas."
+        },
+        "evaluation": {
+          "title": "Evaluación",
+          "description": "Realizamos una visita técnica para evaluar tu equipo y darte un presupuesto exacto."
+        },
+        "execution": {
+          "title": "Ejecución",
+          "description": "Nuestros técnicos certificados realizan el servicio con los más altos estándares."
+        },
+        "delivery": {
+          "title": "Entrega",
+          "description": "Te entregamos el trabajo terminado y explicamos su funcionamiento y lo realizado."
+        }
+      }
+    },
+    "cta": {
+      "badge": "Estamos para ayudarte",
+      "title": "¿Tienes un",
+      "titleHighlight": "proyecto",
+      "titleEnd": "en mente?",
+      "description": "Cuéntanos tu idea y te ayudamos a hacerla realidad.",
+      "descriptionLine2": "Cotización sin compromiso y respuesta en menos de 24 horas.",
+      "schedule": "Lun - Sáb: 8am - 6pm",
+      "guarantee": "Respuesta rápida garantizada",
+      "quoteButton": "Solicitar Cotización",
+      "callButton": "Llamar Ahora"
+    }
   }
 }
 

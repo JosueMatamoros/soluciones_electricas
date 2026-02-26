@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Check, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import SectionHeader from "../common/SectionHeader";
 
 export default function ServicesCarousel() {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const services = [
     {
@@ -49,9 +51,9 @@ export default function ServicesCarousel() {
   return (
     <section className="w-full bg-light-bg dark:bg-dark-bg transition-colors duration-300 py-6 md:py-10 ">
       <SectionHeader
-        badge="Servicios"
-        title="Nuestros Servicios Destacados"
-        description="Somos Soluciones Eléctricas: resolvemos cualquier problema o hacemos realidad cualquier sueño . Confía en nosotros para un servicio seguro, eficiente y a tu medida."
+        badge={t('home.services.badge')}
+        title={t('home.services.title')}
+        description={t('home.services.description')}
       />
       {/* Carrusel horizontal solo en pantallas md+ */}
       <div className="hidden 2xl:flex justify-center">
@@ -98,7 +100,7 @@ export default function ServicesCarousel() {
           onClick={() => navigate("/servicios")}
           className="inline-flex items-center gap-2 rounded-full bg-brand-cyan px-5 py-2 text-base font-bold text-white hover:bg-brand-cyan-dark transition-colors duration-200 shadow-sm min-w-[180px] group focus:ring-4 focus:ring-cyan-300 dark:bg-cyan-600 dark:hover:bg-cyan-700 dark:focus:ring-cyan-800/40"
         >
-          Ver todos los servicios
+          {t('home.services.viewAll')}
           <span className="inline-block transition-transform duration-300 group-hover:translate-x-2">
             <ArrowRight className="h-5 w-6" />
           </span>
@@ -110,6 +112,7 @@ export default function ServicesCarousel() {
 
 function ServiceCard({ service, selected, children }) {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   return (
     <article
@@ -143,7 +146,7 @@ function ServiceCard({ service, selected, children }) {
               onClick={() => navigate(service.link)}
               className="flex items-center gap-2 rounded-full bg-brand-cyan/90 px-3 py-1.5 font-semibold text-white text-xs md:text-sm shadow-lg hover:bg-brand-cyan-dark transition-colors duration-200 group/button"
             >
-              <span>Más información</span>
+              <span>{t('common.moreInfo')}</span>
               <span className="inline-block transition-transform duration-300 group-hover/button:translate-x-2">
                 <ArrowRight className="h-4 w-4" />
               </span>

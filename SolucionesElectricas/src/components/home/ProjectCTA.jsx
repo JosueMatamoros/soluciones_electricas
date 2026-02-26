@@ -1,7 +1,10 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Zap, Phone, MessageCircle } from 'lucide-react';
 
 const ProjectCTA = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="flex items-center justify-center  max-w-6xl mx-auto py-6 md:py-12">
       <div
@@ -25,7 +28,7 @@ const ProjectCTA = () => {
         {/* Badge superior */}
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-cyan/30 bg-brand-cyan/10 mb-8">
           <Zap className="w-4 h-4 text-brand-cyan" />
-          <span className="text-brand-cyan text-sm font-medium">Estamos para ayudarte</span>
+          <span className="text-brand-cyan text-sm font-medium">{t('home.cta.badge')}</span>
         </div>
 
         {/* Contenido principal */}
@@ -33,26 +36,26 @@ const ProjectCTA = () => {
           {/* Texto */}
           <div className="flex flex-col md:h-full md:justify-start md:items-start">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-text mb-4 md:mb-2 text-left md:text-left">
-              ¿Tienes un{' '}
-              <span className="text-brand-cyan">proyecto</span>{' '}
-              <span className="text-dark-text">en mente?</span>
+              {t('home.cta.title')}{' '}
+              <span className="text-brand-cyan">{t('home.cta.titleHighlight')}</span>{' '}
+              <span className="text-dark-text">{t('home.cta.titleEnd')}</span>
             </h1>
 
             <p className="text-dark-text-secondary text-lg mb-6 md:mb-4 text-left">
-              Cuéntanos tu idea y te ayudamos a hacerla realidad.
+              {t('home.cta.description')}
               <br />
-              Cotización sin compromiso y respuesta en menos de 24 horas.
+              {t('home.cta.descriptionLine2')}
             </p>
 
             {/* Info adicional */}
             <div className="flex flex-wrap gap-6 text-dark-text-muted text-sm md:items-end md:justify-between mt-2 ">
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-brand-cyan" />
-                <span>Lun - Sáb: 8am - 6pm</span>
+                <span>{t('home.cta.schedule')}</span>
               </div>
               <div className="flex items-center gap-2">
                 <MessageCircle className="w-4 h-4 text-brand-cyan" />
-                <span>Respuesta rápida garantizada</span>
+                <span>{t('home.cta.guarantee')}</span>
               </div>
             </div>
           </div>
@@ -67,7 +70,7 @@ const ProjectCTA = () => {
             <div className="flex flex-col gap-4 w-full md:flex-row md:gap-4 md:items-center">
               <button className="group relative w-full md:w-auto px-8 py-4 bg-gradient-to-r from-brand-cyan to-brand-cyan-dark text-dark-bg font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-brand-cyan/50 hover:scale-105 text-left flex items-center gap-1 whitespace-nowrap">
                 <span className="relative z-10 flex items-center gap-1 whitespace-nowrap">
-                  Solicitar Cotización
+                  {t('home.cta.quoteButton')}
                 </span>
                 <span className="ml-auto inline-block transition-transform duration-300 group-hover:translate-x-2">
                   <svg
@@ -85,7 +88,7 @@ const ProjectCTA = () => {
               <button className="group w-full md:w-auto px-8 py-4 bg-transparent text-dark-text font-semibold rounded-full border-2 border-dark-border transition-all duration-300 hover:border-brand-cyan hover:bg-dark-bg-tertiary/50 hover:scale-105 text-left flex items-center gap-2">
                 <span className="flex items-center gap-2">
                   <Phone className="w-5 h-5 text-brand-cyan" />
-                  Llamar Ahora
+                  {t('home.cta.callButton')}
                 </span>
               </button>
             </div>

@@ -6,36 +6,35 @@ import {
   CheckCircle2,
   Zap,
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import SectionHeader from "../common/SectionHeader";
 
 export default function ProcessTimeline() {
+  const { t } = useTranslation();
+  
   const steps = [
     {
       step: 1,
-      title: "Contacto",
-      description:
-        "Contáctanos por WhatsApp, teléfono o formulario. Cuéntanos qué necesitas.",
+      title: t('home.process.steps.contact.title'),
+      description: t('home.process.steps.contact.description'),
       Icon: PhoneCall,
     },
     {
       step: 2,
-      title: "Evaluación",
-      description:
-        "Realizamos una visita técnica para evaluar tu equipo y darte un presupuesto exacto.",
+      title: t('home.process.steps.evaluation.title'),
+      description: t('home.process.steps.evaluation.description'),
       Icon: ClipboardCheck,
     },
     {
       step: 3,
-      title: "Ejecución",
-      description:
-        "Nuestros técnicos certificados realizan el servicio con los más altos estándares.",
+      title: t('home.process.steps.execution.title'),
+      description: t('home.process.steps.execution.description'),
       Icon: Wrench,
     },
     {
       step: 4,
-      title: "Entrega",
-      description:
-        "Te entregamos el trabajo terminado y explicamos su funcionamiento y lo realizado.",
+      title: t('home.process.steps.delivery.title'),
+      description: t('home.process.steps.delivery.description'),
       Icon: CheckCircle2,
     },
   ];
@@ -44,15 +43,15 @@ export default function ProcessTimeline() {
     <section className="w-full max-w-6xl mx-auto">
       <div className="w-full py-6 md:py-10">
         <SectionHeader
-          badge="Cómo Trabajamos"
+          badge={t('home.process.badge')}
           badgeIcon={Zap}
           title={
             <>
-              Proceso Simple y{" "}
-              <span className="text-black dark:text-white">Transparente</span>
+              {t('home.process.title')}{" "}
+              <span className="text-black dark:text-white">{t('home.process.titleHighlight')}</span>
             </>
           }
-          description="Desde el primer contacto hasta la entrega final, te acompañamos en cada paso del proceso."
+          description={t('home.process.description')}
         />
 
         <div className="relative mt-10 lg:mt-16">
