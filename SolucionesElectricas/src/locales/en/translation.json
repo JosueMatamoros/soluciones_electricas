@@ -411,6 +411,52 @@
             ]
           }
         }
+      },
+      "domotica": {
+        "heroTitle": "Smart home systems and intelligent devices",
+        "cta": {
+          "badge": "Available now",
+          "title": "Automate your home today",
+          "description": "Consult with our experts and discover how to transform your daily life"
+        },
+        "smartDevices": {
+          "title": "Smart Devices",
+          "devices": [
+            {
+              "title": "Smart Switches",
+              "description": "Total control of lighting from your smartphone. Schedule times, create scenes and save energy automatically."
+            },
+            {
+              "title": "WiFi Cameras",
+              "description": "Real-time surveillance from anywhere. Motion detection, night vision and cloud recording."
+            },
+            {
+              "title": "Gate Control",
+              "description": "Open and close your gate remotely. Integrate with security systems and receive access notifications."
+            },
+            {
+              "title": "Pump System Control",
+              "description": "Manage and automate water pump system operation to ensure efficiency and energy savings."
+            },
+            {
+              "title": "Voice Assistants",
+              "description": "Control all your devices with voice commands. Compatible with Alexa, Google Assistant and more."
+            },
+            {
+              "title": "Smart Pools and Jacuzzis",
+              "description": "Control temperature, lighting and cleaning of your pool or jacuzzi from your smartphone. Enjoy a perfect environment at all times."
+            }
+          ]
+        },
+        "featuresTitle": "Smart features",
+        "features": [
+          "Smart lighting control",
+          "Automation for gate motors",
+          "Integrated security systems",
+          "Pump system control",
+          "Integration with voice assistants",
+          "Remote control via smartphone"
+        ]
       }
     }
   }

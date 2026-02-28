@@ -411,6 +411,52 @@
             ]
           }
         }
+      },
+      "domotica": {
+        "heroTitle": "Sistemas de domótica y dispositivos inteligentes",
+        "cta": {
+          "badge": "Disponible ahora",
+          "title": "Automatiza tu hogar hoy mismo",
+          "description": "Consulta con nuestros expertos y descubre cómo transformar tu vida diaria"
+        },
+        "smartDevices": {
+          "title": "Dispositivos Inteligentes",
+          "devices": [
+            {
+              "title": "Interruptores Inteligentes",
+              "description": "Control total de la iluminación desde tu smartphone. Programa horarios, crea escenas y ahorra energía automáticamente."
+            },
+            {
+              "title": "Cámaras WiFi",
+              "description": "Vigilancia en tiempo real desde cualquier lugar. Detección de movimiento, visión nocturna y grabación en la nube."
+            },
+            {
+              "title": "Control de Portones",
+              "description": "Abre y cierra tu portón remotamente. Integra con sistemas de seguridad y recibe notificaciones de acceso."
+            },
+            {
+              "title": "Control de Sistemas de Bombeo",
+              "description": "Gestiona y automatiza el funcionamiento de sistemas de bombeo de agua para garantizar eficiencia y ahorro energético."
+            },
+            {
+              "title": "Asistentes de Voz",
+              "description": "Controla todos tus dispositivos con comandos de voz. Compatible con Alexa, Google Assistant y más."
+            },
+            {
+              "title": "Piscinas y Jacuzzis Inteligentes",
+              "description": "Controla la temperatura, iluminación y limpieza de tu piscina o jacuzzi desde tu smartphone. Disfruta de un ambiente perfecto en todo momento."
+            }
+          ]
+        },
+        "featuresTitle": "Funcionalidades inteligentes",
+        "features": [
+          "Control de iluminación inteligente",
+          "Automatización para motores de portones ",
+          "Sistemas de seguridad integrados",
+          "Control de sistemas de bombeo ",
+          "Integración con asistentes de voz",
+          "Control remoto vía smartphone"
+        ]
       }
     }
   }
