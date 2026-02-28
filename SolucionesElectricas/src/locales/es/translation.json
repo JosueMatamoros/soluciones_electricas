@@ -536,6 +536,73 @@
           ]
         },
         "galleryTitle": "Nuestros Trabajos"
+      },
+      "portones-automaticos": {
+        "heroTitle": "Instalación y programación de portones eléctricos",
+        "description": "Automatización de portones residenciales y comerciales con sistemas modernos y seguros.",
+        "cta": {
+          "badge": "Respuesta rápida",
+          "title": "¿Quieres automatizar tu portón?",
+          "description": "Instalación profesional con respuesta rápida",
+          "buttonQuote": "Cotizar ahora"
+        },
+        "securitySection": {
+          "title": "Seguridad y Tecnología",
+          "features": [
+            {
+              "title": "Protección Total",
+              "description": "Sensores de seguridad"
+            },
+            {
+              "title": "Control Remoto",
+              "description": "Desde cualquier lugar"
+            },
+            {
+              "title": "Acceso Inteligente",
+              "description": "Biométrico opcional"
+            },
+            {
+              "title": "Instalación Rápida",
+              "description": "En 1-2 días"
+            }
+          ]
+        },
+        "featuresTitle": "Características del servicio",
+        "features": [
+          "Instalación de motores para portones",
+          "Programación de controles remotos",
+          "Sistemas de seguridad y sensores",
+          "Mantenimiento preventivo",
+          "Reparación de fallas",
+          "Integración con domótica"
+        ],
+        "infoCards": {
+          "powerMotors": {
+            "title": "Motores de Alta Potencia",
+            "description": "Instalamos motores industriales para portones de hasta 2000kg.",
+            "features": [
+              "Corredizos y batientes",
+              "Residencial e industrial"
+            ]
+          },
+          "modernControls": {
+            "title": "Controles Modernos",
+            "description": "Control remoto RF, smartphone y acceso biométrico para máxima comodidad.",
+            "features": [
+              "App móvil incluida",
+              "Control de accesos"
+            ]
+          },
+          "technicalSupport": {
+            "title": "Soporte Técnico",
+            "description": "Reparaciones y mantenimiento preventivo para tu portón.",
+            "features": [
+              "Mantenimiento preventivo",
+              "Reparaciones urgentes"
+            ]
+          }
+        },
+        "galleryTitle": "Nuestras Instalaciones"
       }
     }
   }

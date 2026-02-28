@@ -1,5 +1,6 @@
 import React from "react";
 import { useTheme } from "../../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
@@ -12,6 +13,7 @@ import { ShieldCheck, Radio, Fingerprint, Clock, ArrowRight, Image } from "lucid
  */
 export default function AutomaticGatesPage() {
   const { isDarkMode } = useTheme();
+  const { t } = useTranslation();
   const service = SERVICES.find((s) => s.id === "portones-automaticos");
 
   if (!service) return null;
@@ -29,11 +31,11 @@ export default function AutomaticGatesPage() {
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 relative z-10">
         {/* Hero split screen */}
         <ServiceHero
-          title={service.title}
+          title={t("services.detail.portones-automaticos.heroTitle")}
           image={service.image}
           icon={service.icon}
           variant="split"
-          description={service.description}
+          description={t("services.detail.portones-automaticos.description")}
           showBackButton={true}
         />
 
@@ -55,18 +57,18 @@ export default function AutomaticGatesPage() {
                   }`}>
                     <span className="w-2 h-2 bg-brand-cyan rounded-full animate-pulse" />
                     <span className={`text-sm font-semibold ${isDarkMode ? "text-brand-cyan-light" : "text-brand-cyan-dark"}`}>
-                      Respuesta rápida
+                      {t("services.detail.portones-automaticos.cta.badge")}
                     </span>
                   </div>
                   <h3 className={`text-2xl font-bold mb-2 ${
                     isDarkMode ? "text-dark-text" : "text-light-text"
                   }`}>
-                    ¿Quieres automatizar tu portón?
+                    {t("services.detail.portones-automaticos.cta.title")}
                   </h3>
                   <p className={`text-sm ${
                     isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
                   }`}>
-                    Instalación profesional con respuesta rápida
+                    {t("services.detail.portones-automaticos.cta.description")}
                   </p>
                 </div>
 
@@ -79,7 +81,7 @@ export default function AutomaticGatesPage() {
                         : "bg-brand-cyan-dark text-white hover:bg-brand-cyan shadow-brand-cyan/40"
                     }`}
                   >
-                    Cotizar ahora
+                    {t("services.detail.portones-automaticos.cta.buttonQuote")}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" strokeWidth="2" />
                   </a>
 
@@ -92,7 +94,7 @@ export default function AutomaticGatesPage() {
                     <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                     </svg>
-                    Chat por WhatsApp
+                    {t("common.chatWhatsApp")}
                   </a>
                 </div>
               </div>
@@ -111,74 +113,44 @@ export default function AutomaticGatesPage() {
           <h3 className={`text-2xl font-bold mb-6 text-center ${
             isDarkMode ? "text-dark-text" : "text-light-text"
           }`}>
-            Seguridad y Tecnología
+            {t("services.detail.portones-automaticos.securitySection.title")}
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="text-center group">
-              <div className={`inline-flex p-4 rounded-2xl mb-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
-                isDarkMode ? "bg-brand-cyan/10" : "bg-brand-cyan/20"
-              }`}>
-                <ShieldCheck className="w-8 h-8 text-brand-cyan" />
-              </div>
-              <p className={`font-semibold mb-1 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-                Protección Total
-              </p>
-              <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                Sensores de seguridad
-              </p>
-            </div>
+            {t("services.detail.portones-automaticos.securitySection.features", { returnObjects: true }).map((feature, index) => {
+              const icons = [ShieldCheck, Radio, Fingerprint, Clock];
+              const colors = [
+                { bg: isDarkMode ? "bg-brand-cyan/10" : "bg-brand-cyan/20", icon: "text-brand-cyan" },
+                { bg: isDarkMode ? "bg-blue-500/10" : "bg-blue-100", icon: "text-blue-500" },
+                { bg: isDarkMode ? "bg-cyan-500/10" : "bg-cyan-100", icon: "text-cyan-500" },
+                { bg: isDarkMode ? "bg-blue-600/10" : "bg-blue-200", icon: "text-blue-600" }
+              ];
+              const Icon = icons[index];
+              const color = colors[index];
 
-            <div className="text-center group">
-              <div className={`inline-flex p-4 rounded-2xl mb-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
-                isDarkMode ? "bg-blue-500/10" : "bg-blue-100"
-              }`}>
-                <Radio className="w-8 h-8 text-blue-500" />
-              </div>
-              <p className={`font-semibold mb-1 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-                Control Remoto
-              </p>
-              <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                Desde cualquier lugar
-              </p>
-            </div>
-
-            <div className="text-center group">
-              <div className={`inline-flex p-4 rounded-2xl mb-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
-                isDarkMode ? "bg-cyan-500/10" : "bg-cyan-100"
-              }`}>
-                <Fingerprint className="w-8 h-8 text-cyan-500" />
-              </div>
-              <p className={`font-semibold mb-1 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-                Acceso Inteligente
-              </p>
-              <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                Biométrico opcional
-              </p>
-            </div>
-
-            <div className="text-center group">
-              <div className={`inline-flex p-4 rounded-2xl mb-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${
-                isDarkMode ? "bg-blue-600/10" : "bg-blue-200"
-              }`}>
-                <Clock className="w-8 h-8 text-blue-600" />
-              </div>
-              <p className={`font-semibold mb-1 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-                Instalación Rápida
-              </p>
-              <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                En 1-2 días
-              </p>
-            </div>
+              return (
+                <div key={index} className="text-center group">
+                  <div className={`inline-flex p-4 rounded-2xl mb-3 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 ${color.bg}`}>
+                    <Icon className={`w-8 h-8 ${color.icon}`} />
+                  </div>
+                  <p className={`font-semibold mb-1 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+                    {feature.title}
+                  </p>
+                  <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                    {feature.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
         </div>
 
         {/* Características en grid */}
         <div className="mt-8 mb-8">
           <ServiceFeatures
-            features={service.features}
+            features={t("services.detail.portones-automaticos.features", { returnObjects: true })}
             variant="grid"
-            title="Características del servicio"
+            title={t("services.detail.portones-automaticos.featuresTitle")}
           />
         </div>
 
@@ -190,20 +162,18 @@ export default function AutomaticGatesPage() {
               : "bg-gradient-to-br from-brand-cyan/5 to-white border-brand-cyan/30"
           }`}>
             <h4 className={`font-bold mb-3 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Motores de Alta Potencia
+              {t("services.detail.portones-automaticos.infoCards.powerMotors.title")}
             </h4>
             <p className={`text-sm mb-4 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Instalamos motores industriales para portones de hasta 2000kg.
+              {t("services.detail.portones-automaticos.infoCards.powerMotors.description")}
             </p>
             <ul className="space-y-2 text-xs">
-              <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                <div className="w-1.5 h-1.5 rounded-full bg-brand-cyan" />
-                Corredizos y batientes
-              </li>
-              <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                Residencial e industrial
-              </li>
+              {t("services.detail.portones-automaticos.infoCards.powerMotors.features", { returnObjects: true }).map((feature, index) => (
+                <li key={index} className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                  <div className={`w-1.5 h-1.5 rounded-full ${index === 0 ? "bg-brand-cyan" : "bg-blue-500"}`} />
+                  {feature}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -213,20 +183,18 @@ export default function AutomaticGatesPage() {
               : "bg-gradient-to-br from-blue-100/50 to-white border-blue-300/30"
           }`}>
             <h4 className={`font-bold mb-3 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Controles Modernos
+              {t("services.detail.portones-automaticos.infoCards.modernControls.title")}
             </h4>
             <p className={`text-sm mb-4 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Control remoto RF, smartphone y acceso biométrico para máxima comodidad.
+              {t("services.detail.portones-automaticos.infoCards.modernControls.description")}
             </p>
             <ul className="space-y-2 text-xs">
-              <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-500" />
-                App móvil incluida
-              </li>
-              <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
-                Control de accesos
-              </li>
+              {t("services.detail.portones-automaticos.infoCards.modernControls.features", { returnObjects: true }).map((feature, index) => (
+                <li key={index} className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                  <div className={`w-1.5 h-1.5 rounded-full ${index === 0 ? "bg-blue-500" : "bg-cyan-500"}`} />
+                  {feature}
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -236,20 +204,18 @@ export default function AutomaticGatesPage() {
               : "bg-gradient-to-br from-cyan-100/50 to-white border-cyan-300/30"
           }`}>
             <h4 className={`font-bold mb-3 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Soporte Técnico
+              {t("services.detail.portones-automaticos.infoCards.technicalSupport.title")}
             </h4>
             <p className={`text-sm mb-4 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Reparaciones y mantenimiento preventivo para tu portón.
+              {t("services.detail.portones-automaticos.infoCards.technicalSupport.description")}
             </p>
             <ul className="space-y-2 text-xs">
-              <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
-                Mantenimiento preventivo
-              </li>
-              <li className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-                <div className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                Reparaciones urgentes
-              </li>
+              {t("services.detail.portones-automaticos.infoCards.technicalSupport.features", { returnObjects: true }).map((feature, index) => (
+                <li key={index} className={`flex items-center gap-2 ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                  <div className={`w-1.5 h-1.5 rounded-full ${index === 0 ? "bg-cyan-500" : "bg-blue-600"}`} />
+                  {feature}
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -265,7 +231,7 @@ export default function AutomaticGatesPage() {
             <h2 className={`text-2xl font-bold ${
               isDarkMode ? "text-dark-text" : "text-light-text"
             }`}>
-              Nuestras Instalaciones
+              {t("services.detail.portones-automaticos.galleryTitle")}
             </h2>
           </div>
 

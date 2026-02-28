@@ -536,6 +536,73 @@
           ]
         },
         "galleryTitle": "Our Work"
+      },
+      "portones-automaticos": {
+        "heroTitle": "Electric gate installation and programming",
+        "description": "Automation of residential and commercial gates with modern and secure systems.",
+        "cta": {
+          "badge": "Quick response",
+          "title": "Want to automate your gate?",
+          "description": "Professional installation with quick response",
+          "buttonQuote": "Get a quote now"
+        },
+        "securitySection": {
+          "title": "Security and Technology",
+          "features": [
+            {
+              "title": "Total Protection",
+              "description": "Safety sensors"
+            },
+            {
+              "title": "Remote Control",
+              "description": "From anywhere"
+            },
+            {
+              "title": "Smart Access",
+              "description": "Optional biometric"
+            },
+            {
+              "title": "Quick Installation",
+              "description": "In 1-2 days"
+            }
+          ]
+        },
+        "featuresTitle": "Service features",
+        "features": [
+          "Gate motor installation",
+          "Remote control programming",
+          "Security systems and sensors",
+          "Preventive maintenance",
+          "Fault repair",
+          "Home automation integration"
+        ],
+        "infoCards": {
+          "powerMotors": {
+            "title": "High Power Motors",
+            "description": "We install industrial motors for gates up to 2000kg.",
+            "features": [
+              "Sliding and swing gates",
+              "Residential and industrial"
+            ]
+          },
+          "modernControls": {
+            "title": "Modern Controls",
+            "description": "RF remote control, smartphone and biometric access for maximum convenience.",
+            "features": [
+              "Mobile app included",
+              "Access control"
+            ]
+          },
+          "technicalSupport": {
+            "title": "Technical Support",
+            "description": "Repairs and preventive maintenance for your gate.",
+            "features": [
+              "Preventive maintenance",
+              "Emergency repairs"
+            ]
+          }
+        },
+        "galleryTitle": "Our Installations"
       }
     }
   }
