@@ -1,5 +1,6 @@
 import React from "react";
 import { useTheme } from "../../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
@@ -8,6 +9,7 @@ import { Waves, Droplets, Lightbulb, Thermometer, ArrowRight, Camera } from "luc
 
 export default function PoolSystemsPage() {
   const { isDarkMode } = useTheme();
+  const { t } = useTranslation();
   const service = SERVICES.find((s) => s.id === "sistemas-piscinas");
 
   if (!service) return null;
@@ -30,7 +32,7 @@ export default function PoolSystemsPage() {
 
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 relative z-10">
         <ServiceHero
-          title={service.title}
+          title={t("services.detail.sistemas-piscinas.heroTitle")}
           image={service.image}
           icon={service.icon}
           variant="overlay"
@@ -97,7 +99,7 @@ export default function PoolSystemsPage() {
                     isDarkMode ? "text-brand-cyan-light" : "text-brand-cyan-dark"
                   }`}
                 >
-                  Especialistas en piscinas
+                  {t("services.detail.sistemas-piscinas.cta.badge")}
                 </span>
               </div>
 
@@ -106,7 +108,7 @@ export default function PoolSystemsPage() {
                   isDarkMode ? "text-dark-text" : "text-light-text"
                 }`}
               >
-                ¿Listo para disfrutar de tu piscina?
+                {t("services.detail.sistemas-piscinas.cta.title")}
               </h3>
               <p
                 className={`text-base mb-6 ${
@@ -115,8 +117,7 @@ export default function PoolSystemsPage() {
                     : "text-light-text-secondary"
                 }`}
               >
-                Instalación profesional con garantía completa. Consulta sin
-                compromiso.
+                {t("services.detail.sistemas-piscinas.cta.description")}
               </p>
 
               <div className="flex flex-col md:flex-row gap-4 justify-center items-center max-w-2xl mx-auto w-full">
@@ -128,7 +129,7 @@ export default function PoolSystemsPage() {
                       : "bg-brand-cyan-dark text-white hover:bg-brand-cyan shadow-brand-cyan/40"
                   }`}
                 >
-                  Solicitar Cotización
+                  {t("services.detail.sistemas-piscinas.cta.buttonQuote")}
                   <ArrowRight className="h-5 w-6 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
@@ -140,7 +141,7 @@ export default function PoolSystemsPage() {
                   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                   </svg>
-                  Chat por WhatsApp
+                  {t("common.chatWhatsApp")}
                 </a>
               </div>
             </div>
@@ -148,121 +149,55 @@ export default function PoolSystemsPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-          <div
-            className={`group p-6 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer ${
-              isDarkMode
-                ? "bg-gradient-to-br from-blue-500/10 to-cyan-500/10 border-blue-400/30 hover:border-blue-400/60"
-                : "bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-300 hover:border-blue-500"
-            }`}
-          >
-            <div className="relative mb-4">
-              <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <Waves className="w-10 h-10 text-blue-500 relative z-10 mx-auto" />
-            </div>
-            <h4
-              className={`font-bold text-center mb-2 ${
-                isDarkMode ? "text-dark-text" : "text-light-text"
-              }`}
-            >
-              Filtración
-            </h4>
-            <p
-              className={`text-xs text-center ${
-                isDarkMode
-                  ? "text-dark-text-secondary"
-                  : "text-light-text-secondary"
-              }`}
-            >
-              Agua cristalina siempre
-            </p>
-          </div>
+          {t("services.detail.sistemas-piscinas.systemCards", { returnObjects: true }).map((card, index) => {
+            const icons = [Waves, Droplets, Lightbulb, Thermometer];
+            const colors = [
+              {
+                gradient: isDarkMode ? "from-blue-500/10 to-cyan-500/10" : "from-blue-50 to-cyan-50",
+                border: isDarkMode ? "border-blue-400/30 hover:border-blue-400/60" : "border-blue-300 hover:border-blue-500",
+                glow: "bg-blue-400/20",
+                icon: "text-blue-500"
+              },
+              {
+                gradient: isDarkMode ? "from-cyan-500/10 to-blue-500/10" : "from-cyan-50 to-blue-50",
+                border: isDarkMode ? "border-cyan-400/30 hover:border-cyan-400/60" : "border-cyan-300 hover:border-cyan-500",
+                glow: "bg-cyan-400/20",
+                icon: "text-cyan-500"
+              },
+              {
+                gradient: isDarkMode ? "from-brand-cyan/10 to-blue-400/10" : "from-brand-cyan/20 to-blue-50",
+                border: isDarkMode ? "border-brand-cyan/30 hover:border-brand-cyan/60" : "border-brand-cyan/40 hover:border-brand-cyan",
+                glow: "bg-brand-cyan/20",
+                icon: "text-brand-cyan"
+              },
+              {
+                gradient: isDarkMode ? "from-blue-600/10 to-cyan-400/10" : "from-blue-100 to-cyan-100",
+                border: isDarkMode ? "border-blue-500/30 hover:border-blue-500/60" : "border-blue-400/40 hover:border-blue-600",
+                glow: "bg-blue-400/20",
+                icon: "text-blue-600"
+              }
+            ];
+            const Icon = icons[index];
+            const color = colors[index];
 
-          <div
-            className={`group p-6 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer ${
-              isDarkMode
-                ? "bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border-cyan-400/30 hover:border-cyan-400/60"
-                : "bg-gradient-to-br from-cyan-50 to-blue-50 border-cyan-300 hover:border-cyan-500"
-            }`}
-          >
-            <div className="relative mb-4">
-              <div className="absolute inset-0 bg-cyan-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <Droplets className="w-10 h-10 text-cyan-500 relative z-10 mx-auto" />
-            </div>
-            <h4
-              className={`font-bold text-center mb-2 ${
-                isDarkMode ? "text-dark-text" : "text-light-text"
-              }`}
-            >
-              Tratamiento
-            </h4>
-            <p
-              className={`text-xs text-center ${
-                isDarkMode
-                  ? "text-dark-text-secondary"
-                  : "text-light-text-secondary"
-              }`}
-            >
-              Balance químico perfecto
-            </p>
-          </div>
-
-          <div
-            className={`group p-6 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer ${
-              isDarkMode
-                ? "bg-gradient-to-br from-brand-cyan/10 to-blue-400/10 border-brand-cyan/30 hover:border-brand-cyan/60"
-                : "bg-gradient-to-br from-brand-cyan/20 to-blue-50 border-brand-cyan/40 hover:border-brand-cyan"
-            }`}
-          >
-            <div className="relative mb-4">
-              <div className="absolute inset-0 bg-brand-cyan/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <Lightbulb className="w-10 h-10 text-brand-cyan relative z-10 mx-auto" />
-            </div>
-            <h4
-              className={`font-bold text-center mb-2 ${
-                isDarkMode ? "text-dark-text" : "text-light-text"
-              }`}
-            >
-              Iluminación LED
-            </h4>
-            <p
-              className={`text-xs text-center ${
-                isDarkMode
-                  ? "text-dark-text-secondary"
-                  : "text-light-text-secondary"
-              }`}
-            >
-              Ambiente espectacular
-            </p>
-          </div>
-
-          <div
-            className={`group p-6 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer ${
-              isDarkMode
-                ? "bg-gradient-to-br from-blue-600/10 to-cyan-400/10 border-blue-500/30 hover:border-blue-500/60"
-                : "bg-gradient-to-br from-blue-100 to-cyan-100 border-blue-400/40 hover:border-blue-600"
-            }`}
-          >
-            <div className="relative mb-4">
-              <div className="absolute inset-0 bg-blue-400/20 rounded-full blur-xl group-hover:blur-2xl transition-all duration-300" />
-              <Thermometer className="w-10 h-10 text-blue-600 relative z-10 mx-auto" />
-            </div>
-            <h4
-              className={`font-bold text-center mb-2 ${
-                isDarkMode ? "text-dark-text" : "text-light-text"
-              }`}
-            >
-              Control Auto
-            </h4>
-            <p
-              className={`text-xs text-center ${
-                isDarkMode
-                  ? "text-dark-text-secondary"
-                  : "text-light-text-secondary"
-              }`}
-            >
-              Gestión inteligente
-            </p>
-          </div>
+            return (
+              <div
+                key={index}
+                className={`group p-6 rounded-2xl backdrop-blur-sm border transition-all duration-300 hover:scale-105 hover:shadow-2xl cursor-pointer bg-gradient-to-br ${color.gradient} ${color.border}`}
+              >
+                <div className="relative mb-4">
+                  <div className={`absolute inset-0 ${color.glow} rounded-full blur-xl group-hover:blur-2xl transition-all duration-300`} />
+                  <Icon className={`w-10 h-10 ${color.icon} relative z-10 mx-auto`} />
+                </div>
+                <h4 className={`font-bold text-center mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+                  {card.title}
+                </h4>
+                <p className={`text-xs text-center ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
+                  {card.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
         <div
@@ -314,14 +249,14 @@ export default function PoolSystemsPage() {
               isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"
             }`}
           >
-            {service.description}
+            {t("services.detail.sistemas-piscinas.description")}
           </p>
         </div>
 
         <ServiceFeatures
-          features={service.features}
+          features={t("services.detail.sistemas-piscinas.features", { returnObjects: true })}
           variant="cards"
-          title="Servicios especializados para tu piscina"
+          title={t("services.detail.sistemas-piscinas.featuresTitle")}
         />
 
         <div className="mt-8 mb-4">
@@ -338,7 +273,7 @@ export default function PoolSystemsPage() {
                 isDarkMode ? "text-dark-text" : "text-light-text"
               }`}
             >
-              Nuestros Proyectos de Piscinas
+              {t("services.detail.sistemas-piscinas.galleryTitle")}
             </h2>
           </div>
 

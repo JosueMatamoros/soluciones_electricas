@@ -603,6 +603,44 @@
           }
         },
         "galleryTitle": "Nuestras Instalaciones"
+      },
+      "sistemas-piscinas": {
+        "heroTitle": "Instalación de sistemas electromecánicos para piscinas y jacuzzis",
+        "description": "Instalaciones eléctricas especializadas para piscinas, cumpliendo con todas las normativas de seguridad.",
+        "cta": {
+          "badge": "Especialistas en piscinas",
+          "title": "¿Listo para disfrutar de tu piscina?",
+          "description": "Instalación profesional con garantía completa. Consulta sin compromiso.",
+          "buttonQuote": "Solicitar Cotización"
+        },
+        "systemCards": [
+          {
+            "title": "Filtración",
+            "description": "Agua cristalina siempre"
+          },
+          {
+            "title": "Tratamiento",
+            "description": "Balance químico perfecto"
+          },
+          {
+            "title": "Iluminación LED",
+            "description": "Ambiente espectacular"
+          },
+          {
+            "title": "Control Auto",
+            "description": "Gestión inteligente"
+          }
+        ],
+        "featuresTitle": "Servicios especializados para tu piscina",
+        "features": [
+          "Instalación de bombas y filtros",
+          "Iluminación subacuática LED",
+          "Sistemas de calefacción",
+          "Automatización y control",
+          "Tableros eléctricos especiales",
+          "Cumplimiento de normativas de seguridad"
+        ],
+        "galleryTitle": "Nuestros Proyectos de Piscinas"
       }
     }
   }

@@ -603,6 +603,44 @@
           }
         },
         "galleryTitle": "Our Installations"
+      },
+      "sistemas-piscinas": {
+        "heroTitle": "Installation of electromechanical systems for pools and jacuzzis",
+        "description": "Specialized electrical installations for pools, complying with all safety regulations.",
+        "cta": {
+          "badge": "Pool specialists",
+          "title": "Ready to enjoy your pool?",
+          "description": "Professional installation with full warranty. Consultation without commitment.",
+          "buttonQuote": "Request Quote"
+        },
+        "systemCards": [
+          {
+            "title": "Filtration",
+            "description": "Crystal clear water always"
+          },
+          {
+            "title": "Treatment",
+            "description": "Perfect chemical balance"
+          },
+          {
+            "title": "LED Lighting",
+            "description": "Spectacular ambiance"
+          },
+          {
+            "title": "Auto Control",
+            "description": "Smart management"
+          }
+        ],
+        "featuresTitle": "Specialized services for your pool",
+        "features": [
+          "Pump and filter installation",
+          "Underwater LED lighting",
+          "Heating systems",
+          "Automation and control",
+          "Special electrical panels",
+          "Compliance with safety regulations"
+        ],
+        "galleryTitle": "Our Pool Projects"
       }
     }
   }
