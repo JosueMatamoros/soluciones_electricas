@@ -16,7 +16,11 @@
     "quickResponse": "Respuesta rápida",
     "freeQuote": "Cotización gratuita",
     "certifiedProfessionals": "Profesionales certificados",
-    "featuresTitle": "Características del servicio"
+    "featuresTitle": "Características del servicio",
+    "chatWhatsApp": "Chat por WhatsApp",
+    "chat": "Chat",
+    "getQuote": "Cotizar",
+    "quote": "Cotización"
   },
   "nav": {
     "home": "Inicio",
@@ -257,6 +261,156 @@
             "answer": "Sí, podemos coordinar una visita técnica para evaluar tu proyecto y brindarte la mejor asesoría sin compromiso."
           }
         ]
+      },
+      "climatizacion": {
+        "heroTitle": "Instalación, mantenimiento y venta de aires acondicionados",
+        "heroTitleMobile": "Sistemas de climatización",
+        "infoCards": {
+          "installation": {
+            "title": "Instalación Profesional",
+            "description": "Servicio rápido y eficiente para su confort"
+          },
+          "cleaning": {
+            "title": "Limpieza Profunda",
+            "description": "Mantenimiento correctivo y preventivo de equipos"
+          },
+          "repair": {
+            "title": "Reparación de Aires",
+            "description": "Solución rápida y eficiente de averías"
+          }
+        },
+        "cta": {
+          "title": "¿Necesitas instalar o restaurar tu aire acondicionado?",
+          "description": "Obtén una cotización inmediata y programa tu servicio con nuestros técnicos especializados"
+        },
+        "featuresTitle": "Todo lo que necesitas saber",
+        "features": [
+          "Instalación de aires acondicionados split y centrales",
+          "Mantenimiento correctivo y reparaciones",
+          "Limpieza profunda y preventiva de equipos",
+          "Recarga de gas refrigerante",
+          "Reparación de fallas y averías",
+          "Diagnóstico técnico especializado"
+        ],
+        "models": {
+          "popularBadge": "Más Popular",
+          "idealFor": "Ideal para:",
+          "cards": {
+            "model12k": {
+              "btu": "12,000 BTU",
+              "area": "15-25 m²",
+              "title": "Mini Split 12,000 BTU",
+              "idealFor": [
+                "Habitaciones",
+                "Oficinas pequeñas",
+                "Estudios"
+              ]
+            },
+            "model18k": {
+              "btu": "18,000 BTU",
+              "area": "20-35 m²",
+              "title": "Mini Split 18,000 BTU",
+              "idealFor": [
+                "Salas medianas",
+                "Oficinas",
+                "Comercios pequeños"
+              ]
+            },
+            "model24k": {
+              "btu": "24,000 BTU",
+              "area": "35-45 m²",
+              "title": "Mini Split 24,000 BTU",
+              "idealFor": [
+                "Salas grandes",
+                "Locales comerciales",
+                "Areas comunes"
+              ]
+            },
+            "floorCeiling": {
+              "btu": "24,000 - 60,000 BTU",
+              "area": "50-100+ m²",
+              "title": "Piso Cielo",
+              "idealFor": [
+                "Salones grandes",
+                "Restaurantes",
+                "Espacios industriales"
+              ]
+            }
+          },
+          "sharedSpecs": {
+            "title": "Todos nuestros aires acondicionados cuentan con las siguientes especificaciones",
+            "specs": {
+              "energyConsumption": {
+                "label": "Consumo energético",
+                "value": "Bajo"
+              },
+              "noiseLevel": {
+                "label": "Nivel de ruido",
+                "value": "Bajo"
+              },
+              "efficiency": {
+                "label": "Eficiencia",
+                "value": "Muy buena"
+              },
+              "installation": {
+                "label": "Instalación",
+                "value": "Media"
+              }
+            }
+          }
+        },
+        "comparison": {
+          "compressorBehavior": "COMPORTAMIENTO DEL COMPRESOR",
+          "tempLabel": "Temp.",
+          "smoothAdjustment": "Ajuste continuo y suave",
+          "onOffCycles": "Ciclos de encendido y apagado",
+          "recommendedBadge": "Recomendado",
+          "mainAdvantages": "Ventajas principales:",
+          "inverter": {
+            "title": "Aire Inverter",
+            "subtitle": "VELOCIDAD VARIABLE",
+            "description": "El compresor ajusta su velocidad de forma continua, manteniendo la temperatura estable sin apagarse por completo. Esto se traduce en mayor confort y menor consumo.",
+            "advantages": [
+              "Ahorra entre 40% y 60% en tu factura eléctrica",
+              "Funcionamiento silencioso, ideal para dormitorios",
+              "Temperatura constante sin variaciones bruscas",
+              "Mayor vida útil del compresor y equipo",
+              "Menor impacto ambiental y huella de carbono"
+            ]
+          },
+          "conventional": {
+            "title": "Aire Convencional",
+            "subtitle": "VELOCIDAD FIJA",
+            "description": "El compresor funciona a velocidad fija, encendiéndose y apagándose repetidamente para regular la temperatura. Es una tecnología probada y más económica de adquirir.",
+            "advantages": [
+              "Precio de compra más accesible y económico",
+              "Amplia disponibilidad de repuestos en el mercado",
+              "Instalación y reparación más sencilla y rápida",
+              "Técnicos familiares con su funcionamiento",
+              "Buena opción para uso esporádico o temporal"
+            ]
+          }
+        },
+        "decision": {
+          "inverter": {
+            "title": "Elige Inverter si...",
+            "items": [
+              "Usas el aire más de 6 horas al día",
+              "Buscas ahorrar en la factura eléctrica",
+              "Necesitas un ambiente silencioso",
+              "Valoras una inversión a largo plazo"
+            ]
+          },
+          "conventional": {
+            "title": "Elige Convencional si...",
+            "items": [
+              "Tienes un presupuesto limitado",
+              "Usas el aire pocas horas al día",
+              "Es para uso temporal o esporádico",
+              "Prefieres reparaciones más económicas"
+            ]
+          }
+        }
       }
     }
   }

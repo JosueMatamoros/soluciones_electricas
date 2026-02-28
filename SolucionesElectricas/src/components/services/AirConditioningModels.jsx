@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
   Home,
   Check,
@@ -46,7 +47,7 @@ function Chips({ items }) {
   );
 }
 
-function ModelCard({ btu, area, title, imageSrc, popular, idealFor }) {
+function ModelCard({ btu, area, title, imageSrc, popular, idealFor, popularBadgeText, idealForLabel }) {
   return (
     <div
       className={`group relative overflow-hidden rounded-[28px] border shadow-sm transition-colors ${
@@ -64,7 +65,7 @@ function ModelCard({ btu, area, title, imageSrc, popular, idealFor }) {
 
         {popular && (
           <div className="absolute top-4 right-4 rounded-full px-4 py-2 text-xs font-semibold text-white shadow-sm bg-brand-cyan">
-            Más Popular
+            {popularBadgeText}
           </div>
         )}
       </div>
@@ -83,7 +84,7 @@ function ModelCard({ btu, area, title, imageSrc, popular, idealFor }) {
 
         <div className="mt-3">
           <div className="text-sm font-semibold text-slate-900 dark:text-dark-text">
-            Ideal para:
+            {idealForLabel}
           </div>
           <Chips items={idealFor} />
         </div>
@@ -92,18 +93,11 @@ function ModelCard({ btu, area, title, imageSrc, popular, idealFor }) {
   );
 }
 
-function SharedSpecs() {
-  const specs = [
-    { label: "Consumo energético", value: "Bajo", status: "ok" },
-    { label: "Nivel de ruido", value: "Bajo", status: "ok" },
-    { label: "Eficiencia", value: "Muy buena", status: "ok" },
-    { label: "Instalación", value: "Media", status: "ok" },
-  ];
-
+function SharedSpecs({ title, specs }) {
   return (
     <div className="mt-12 rounded-[28px] border border-light-border dark:border-dark-border bg-white dark:bg-dark-bg-tertiary p-6 md:p-8">
       <h3 className="text-xl md:text-2xl font-extrabold text-slate-900 dark:text-dark-text text-center">
-        Todos nuestros aires acondicionados cuentan con las siguientes especificaciones
+        {title}
       </h3>
       <div className="mt-6 max-w-xl mx-auto overflow-hidden rounded-2xl border border-slate-200 dark:border-dark-border">
         <div className="divide-y divide-slate-200 dark:divide-dark-border">
@@ -118,65 +112,61 @@ function SharedSpecs() {
 
 
 export default function AirConditioningModels() {
+  const { t } = useTranslation();
+  
+  const models = [
+    {
+      ...t("services.detail.climatizacion.models.cards.model12k", { returnObjects: true }),
+      popular: false,
+      imageSrc: "/services/aire-acondicionado.jpg"
+    },
+    {
+      ...t("services.detail.climatizacion.models.cards.model18k", { returnObjects: true }),
+      popular: true,
+      imageSrc: "/services/aire-acondicionado.jpg"
+    },
+    {
+      ...t("services.detail.climatizacion.models.cards.model24k", { returnObjects: true }),
+      popular: false,
+      imageSrc: "/services/aire-acondicionado.jpg"
+    },
+    {
+      ...t("services.detail.climatizacion.models.cards.floorCeiling", { returnObjects: true }),
+      popular: false,
+      imageSrc: "/services/aire-acondicionado.jpg"
+    }
+  ];
+
+  const specsData = t("services.detail.climatizacion.models.sharedSpecs.specs", { returnObjects: true });
+  const specs = [
+    { label: specsData.energyConsumption.label, value: specsData.energyConsumption.value, status: "ok" },
+    { label: specsData.noiseLevel.label, value: specsData.noiseLevel.value, status: "ok" },
+    { label: specsData.efficiency.label, value: specsData.efficiency.value, status: "ok" },
+    { label: specsData.installation.label, value: specsData.installation.value, status: "ok" },
+  ];
+
   return (
     <section className="mt-10">
-
-
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <ModelCard
-          btu="12,000 BTU"
-          area="15-25 m²"
-          title="Mini Split 12,000 BTU"
-          imageSrc="/services/aire-acondicionado.jpg"
-          popular={false}
-          idealFor={[
-            "Habitaciones",
-            "Oficinas pequeñas",
-            "Estudios",
-          ]}
-        />
-
-        <ModelCard
-          btu="18,000 BTU"
-          area="20-35 m²"
-          title="Mini Split 18,000 BTU"
-          imageSrc="/services/aire-acondicionado.jpg"
-          popular={true}
-          idealFor={[
-            "Salas medianas",
-            "Oficinas",
-            "Comercios pequeños",
-          ]}
-        />
-
-        <ModelCard
-          btu="24,000 BTU"
-          area="35-45 m²"
-          title="Mini Split 24,000 BTU"
-          imageSrc="/services/aire-acondicionado.jpg"
-          popular={false}
-          idealFor={[
-            "Salas grandes",
-            "Locales comerciales",
-            "Areas comunes",
-          ]}
-        />
-
-        <ModelCard
-          btu="24,000 - 60,000 BTU"
-          area="50-100+ m²"
-          title="Piso Cielo"
-          imageSrc="/services/aire-acondicionado.jpg"
-          popular={false}
-          idealFor={[
-            "Salones grandes",
-            "Restaurantes",
-            "Espacios industriales",
-          ]}
-        />
+        {models.map((model, index) => (
+          <ModelCard
+            key={index}
+            btu={model.btu}
+            area={model.area}
+            title={model.title}
+            imageSrc={model.imageSrc}
+            popular={model.popular}
+            idealFor={model.idealFor}
+            popularBadgeText={t("services.detail.climatizacion.models.popularBadge")}
+            idealForLabel={t("services.detail.climatizacion.models.idealFor")}
+          />
+        ))}
       </div>
 
-      <SharedSpecs />
+      <SharedSpecs 
+        title={t("services.detail.climatizacion.models.sharedSpecs.title")}
+        specs={specs}
+      />
     </section>
   );
 }

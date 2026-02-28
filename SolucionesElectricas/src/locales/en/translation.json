@@ -16,7 +16,11 @@
     "quickResponse": "Quick response",
     "freeQuote": "Free quote",
     "certifiedProfessionals": "Certified professionals",
-    "featuresTitle": "Service features"
+    "featuresTitle": "Service features",
+    "chatWhatsApp": "Chat on WhatsApp",
+    "chat": "Chat",
+    "getQuote": "Get Quote",
+    "quote": "Quote"
   },
   "nav": {
     "home": "Home",
@@ -257,6 +261,156 @@
             "answer": "Yes, we can coordinate a technical visit to evaluate your project and provide you with the best advice without commitment."
           }
         ]
+      },
+      "climatizacion": {
+        "heroTitle": "Air Conditioning Installation, Maintenance and Sales",
+        "heroTitleMobile": "Air Conditioning Systems",
+        "infoCards": {
+          "installation": {
+            "title": "Professional Installation",
+            "description": "Fast and efficient service for your comfort"
+          },
+          "cleaning": {
+            "title": "Deep Cleaning",
+            "description": "Corrective and preventive equipment maintenance"
+          },
+          "repair": {
+            "title": "AC Repair",
+            "description": "Fast and efficient troubleshooting"
+          }
+        },
+        "cta": {
+          "title": "Need to install or restore your air conditioner?",
+          "description": "Get an immediate quote and schedule your service with our specialized technicians"
+        },
+        "featuresTitle": "Everything you need to know",
+        "features": [
+          "Installation of split and central air conditioners",
+          "Corrective maintenance and repairs",
+          "Deep and preventive equipment cleaning",
+          "Refrigerant gas recharge",
+          "Fault and breakdown repair",
+          "Specialized technical diagnosis"
+        ],
+        "models": {
+          "popularBadge": "Most Popular",
+          "idealFor": "Ideal for:",
+          "cards": {
+            "model12k": {
+              "btu": "12,000 BTU",
+              "area": "15-25 m²",
+              "title": "Mini Split 12,000 BTU",
+              "idealFor": [
+                "Bedrooms",
+                "Small offices",
+                "Studios"
+              ]
+            },
+            "model18k": {
+              "btu": "18,000 BTU",
+              "area": "20-35 m²",
+              "title": "Mini Split 18,000 BTU",
+              "idealFor": [
+                "Medium living rooms",
+                "Offices",
+                "Small businesses"
+              ]
+            },
+            "model24k": {
+              "btu": "24,000 BTU",
+              "area": "35-45 m²",
+              "title": "Mini Split 24,000 BTU",
+              "idealFor": [
+                "Large living rooms",
+                "Commercial spaces",
+                "Common areas"
+              ]
+            },
+            "floorCeiling": {
+              "btu": "24,000 - 60,000 BTU",
+              "area": "50-100+ m²",
+              "title": "Floor Ceiling",
+              "idealFor": [
+                "Large halls",
+                "Restaurants",
+                "Industrial spaces"
+              ]
+            }
+          },
+          "sharedSpecs": {
+            "title": "All our air conditioners have the following specifications",
+            "specs": {
+              "energyConsumption": {
+                "label": "Energy consumption",
+                "value": "Low"
+              },
+              "noiseLevel": {
+                "label": "Noise level",
+                "value": "Low"
+              },
+              "efficiency": {
+                "label": "Efficiency",
+                "value": "Very good"
+              },
+              "installation": {
+                "label": "Installation",
+                "value": "Medium"
+              }
+            }
+          }
+        },
+        "comparison": {
+          "compressorBehavior": "COMPRESSOR BEHAVIOR",
+          "tempLabel": "Temp.",
+          "smoothAdjustment": "Continuous and smooth adjustment",
+          "onOffCycles": "On and off cycles",
+          "recommendedBadge": "Recommended",
+          "mainAdvantages": "Main advantages:",
+          "inverter": {
+            "title": "Inverter AC",
+            "subtitle": "VARIABLE SPEED",
+            "description": "The compressor adjusts its speed continuously, maintaining stable temperature without turning off completely. This translates into greater comfort and lower consumption.",
+            "advantages": [
+              "Save between 40% and 60% on your electricity bill",
+              "Silent operation, ideal for bedrooms",
+              "Constant temperature without abrupt variations",
+              "Longer lifespan of the compressor and equipment",
+              "Lower environmental impact and carbon footprint"
+            ]
+          },
+          "conventional": {
+            "title": "Conventional AC",
+            "subtitle": "FIXED SPEED",
+            "description": "The compressor operates at a fixed speed, turning on and off repeatedly to regulate temperature. It's a proven technology and more economical to acquire.",
+            "advantages": [
+              "More accessible and economical purchase price",
+              "Wide availability of spare parts in the market",
+              "Simpler and faster installation and repair",
+              "Technicians familiar with its operation",
+              "Good option for sporadic or temporary use"
+            ]
+          }
+        },
+        "decision": {
+          "inverter": {
+            "title": "Choose Inverter if...",
+            "items": [
+              "You use the AC more than 6 hours a day",
+              "You want to save on electricity bills",
+              "You need a quiet environment",
+              "You value a long-term investment"
+            ]
+          },
+          "conventional": {
+            "title": "Choose Conventional if...",
+            "items": [
+              "You have a limited budget",
+              "You use the AC few hours a day",
+              "It's for temporary or sporadic use",
+              "You prefer more economical repairs"
+            ]
+          }
+        }
       }
     }
   }

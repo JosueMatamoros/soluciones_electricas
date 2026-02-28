@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { Zap, DollarSign } from "lucide-react";
 
@@ -63,35 +64,29 @@ function DecisionCard({ title, icon: Icon, items, accent, isDarkMode }) {
 
 
 export default function AirConditioningDecisionHelper() {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
+
+  const inverter = t("services.detail.climatizacion.decision.inverter", { returnObjects: true });
+  const conventional = t("services.detail.climatizacion.decision.conventional", { returnObjects: true });
 
   return (
     <section className="mt-12">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <DecisionCard
-          title="Elige Inverter si..."
+          title={inverter.title}
           icon={Zap}
           accent="cyan"
           isDarkMode={isDarkMode}
-          items={[
-            "Usas el aire más de 6 horas al día",
-            "Buscas ahorrar en la factura eléctrica",
-            "Necesitas un ambiente silencioso",
-            "Valoras una inversión a largo plazo",
-          ]}
+          items={inverter.items}
         />
 
         <DecisionCard
-          title="Elige Convencional si..."
+          title={conventional.title}
           icon={DollarSign}
           accent="slate"
           isDarkMode={isDarkMode}
-          items={[
-            "Tienes un presupuesto limitado",
-            "Usas el aire pocas horas al día",
-            "Es para uso temporal o esporádico",
-            "Prefieres reparaciones más económicas",
-          ]}
+          items={conventional.items}
         />
       </div>
     </section>

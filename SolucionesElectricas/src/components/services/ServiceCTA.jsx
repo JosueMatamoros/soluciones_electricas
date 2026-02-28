@@ -106,7 +106,7 @@ export default function ServiceCTA({
             }`}
           >
             <Mail className="w-5 h-5" />
-            Solicitar cotización
+            {t("common.requestQuote")}
             <ArrowRight className="w-5 h-5" />
           </Link>
 
@@ -121,7 +121,7 @@ export default function ServiceCTA({
             }`}
           >
             <MessageCircle className="w-5 h-5" />
-            Chat por WhatsApp
+            {t("common.chatWhatsApp")}
           </a>
         </div>
       </div>
@@ -166,7 +166,7 @@ export default function ServiceCTA({
             }`}
           >
             <Mail className="w-4 h-4" />
-            Cotización
+            {t("common.quote")}
           </Link>
 
           <a
@@ -180,7 +180,7 @@ export default function ServiceCTA({
             }`}
           >
             <Phone className="w-4 h-4" />
-            WhatsApp
+            {t("common.whatsapp")}
           </a>
         </div>
       </div>
@@ -217,7 +217,7 @@ export default function ServiceCTA({
               }`}
             >
               <Mail className="w-3 h-3" />
-              Cotizar
+              {t("common.getQuote")}
             </Link>
 
             <a
@@ -231,7 +231,7 @@ export default function ServiceCTA({
               }`}
             >
               <MessageCircle className="w-3 h-3" />
-              Chat
+              {t("common.chat")}
             </a>
           </div>
         </div>
@@ -261,7 +261,7 @@ export default function ServiceCTA({
             }`}
           >
             <Mail className="w-4 h-4" />
-            Contactar
+            {t("common.contact")}
           </Link>
 
           <a
@@ -275,7 +275,7 @@ export default function ServiceCTA({
             }`}
           >
             <MessageCircle className="w-4 h-4" />
-            WhatsApp
+            {t("common.whatsapp")}
           </a>
         </div>
       </div>
@@ -314,7 +314,7 @@ export default function ServiceCTA({
               }`}
             >
               <Mail className="w-4 h-4" />
-              Cotizar
+              {t("common.getQuote")}
             </Link>
 
             <a
@@ -328,7 +328,7 @@ export default function ServiceCTA({
               }`}
             >
               <MessageCircle className="w-4 h-4" />
-              WhatsApp
+              {t("common.whatsapp")}
             </a>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { SERVICES } from "../../data/services";
 import ServiceHero from "../../components/services/ServiceHero";
@@ -14,6 +15,7 @@ import AirConditioningDecisionHelper from "../../components/services/AirConditio
  * Layout con CTA banner superior destacado
  */
 export default function AirConditioningPage() {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
   const service = SERVICES.find((s) => s.id === "climatizacion");
 
@@ -31,8 +33,8 @@ export default function AirConditioningPage() {
         <ServiceHero
           title={
             <>
-              <span className="hidden sm:inline">{service.title}</span>
-              <span className="sm:hidden">Sistemas de climatización</span>
+              <span className="hidden sm:inline">{t("services.detail.climatizacion.heroTitle")}</span>
+              <span className="sm:hidden">{t("services.detail.climatizacion.heroTitleMobile")}</span>
             </>
           }
           image={service.image}
@@ -54,10 +56,10 @@ export default function AirConditioningPage() {
               <Snowflake className="w-6 h-6 text-blue-500" />
             </div>
             <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Instalación Profesional
+              {t("services.detail.climatizacion.infoCards.installation.title")}
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Servicio rápido y eficiente para su confort
+              {t("services.detail.climatizacion.infoCards.installation.description")}
             </p>
           </div>
 
@@ -72,10 +74,10 @@ export default function AirConditioningPage() {
               <Wind className="w-6 h-6 text-cyan-500" />
             </div>
             <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Limpieza Profunda
+              {t("services.detail.climatizacion.infoCards.cleaning.title")}
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Mantenimiento correctivo y preventivo de equipos
+              {t("services.detail.climatizacion.infoCards.cleaning.description")}
             </p>
           </div>
 
@@ -90,10 +92,10 @@ export default function AirConditioningPage() {
               <Wrench className="w-6 h-6 text-sky-500" />
             </div>
             <h3 className={`font-bold text-lg mb-2 ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
-              Reparación de Aires
+              {t("services.detail.climatizacion.infoCards.repair.title")}
             </h3>
             <p className={`text-sm ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Solución rápida y eficiente de averías
+              {t("services.detail.climatizacion.infoCards.repair.description")}
             </p>
           </div>
         </div>
@@ -102,16 +104,16 @@ export default function AirConditioningPage() {
         <div className="mb-8">
           <ServiceCTA
             variant="banner"
-            title="¿Necesitas instalar o restaurar tu aire acondicionado?"
-            description="Obtén una cotización inmediata y programa tu servicio con nuestros técnicos especializados"
+            title={t("services.detail.climatizacion.cta.title")}
+            description={t("services.detail.climatizacion.cta.description")}
           />
         </div>
 
         {/* Características en grid */}
         <ServiceFeatures
-          features={service.features}
+          features={t("services.detail.climatizacion.features", { returnObjects: true })}
           variant="grid"
-          title="Todo lo que necesitas saber"
+          title={t("services.detail.climatizacion.featuresTitle")}
         />
         {/* Modelos de aire acondicionado */}
         <AirConditioningModels />

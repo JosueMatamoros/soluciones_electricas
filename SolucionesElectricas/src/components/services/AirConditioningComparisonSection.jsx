@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { Check, Waves, Gauge } from "lucide-react";
 
@@ -36,7 +37,7 @@ function ConventionalLogo({ isDarkMode }) {
   );
 }
 
-function MiniChart({ variant, isDarkMode }) {
+function MiniChart({ variant, isDarkMode, behaviorLabel, tempLabel, smoothLabel, onOffLabel }) {
   const gridStroke = isDarkMode ? "rgba(255,255,255,0.10)" : "rgba(148,163,184,0.35)";
   const axisStroke = isDarkMode ? "rgba(255,255,255,0.22)" : "rgba(100,116,139,0.40)";
   const textFill = isDarkMode ? "rgba(255,255,255,0.60)" : "rgba(15,23,42,0.65)";
@@ -65,7 +66,7 @@ function MiniChart({ variant, isDarkMode }) {
   return (
     <div className={`mt-4 rounded-2xl border p-5 ${wrapper}`}>
       <div className={`${isDarkMode ? "text-dark-text-muted" : "text-slate-500"} text-xs font-semibold tracking-wide`}>
-        COMPORTAMIENTO DEL COMPRESOR
+        {behaviorLabel}
       </div>
 
       <div className="mt-3">
@@ -76,7 +77,7 @@ function MiniChart({ variant, isDarkMode }) {
 
           <line x1="560" y1="28" x2="720" y2="28" stroke={axisStroke} strokeWidth="3" />
           <text x="610" y="20" fill={textFill} fontSize="14" fontWeight="700">
-            Temp.
+            {tempLabel}
           </text>
 
           {variant === "inverter" ? (
@@ -100,7 +101,7 @@ function MiniChart({ variant, isDarkMode }) {
         </svg>
 
         <div className={`mt-2 text-center text-sm font-semibold ${subtitle}`}>
-          {variant === "inverter" ? "Ajuste continuo y suave" : "Ciclos de encendido y apagado"}
+          {variant === "inverter" ? smoothLabel : onOffLabel}
         </div>
       </div>
     </div>
@@ -137,6 +138,12 @@ function CompareCard({
   description,
   advantages,
   isDarkMode,
+  recommendedBadgeText,
+  mainAdvantagesText,
+  behaviorLabel,
+  tempLabel,
+  smoothLabel,
+  onOffLabel
 }) {
   const bg = isDarkMode ? "bg-dark-bg-tertiary" : "bg-white";
 
@@ -166,7 +173,7 @@ function CompareCard({
       {recommended && (
         <div className="hidden md:block absolute right-6 top-6 ">
           <div className="rounded-full px-4 py-2 text-xs font-semibold shadow-sm bg-cyan-500 text-white">
-            Recomendado
+            {recommendedBadgeText}
           </div>
         </div>
       )}
@@ -184,11 +191,18 @@ function CompareCard({
         </div>
       </div>
 
-      <MiniChart variant={tone === "cyan" ? "inverter" : "conventional"} isDarkMode={isDarkMode} />
+      <MiniChart 
+        variant={tone === "cyan" ? "inverter" : "conventional"} 
+        isDarkMode={isDarkMode}
+        behaviorLabel={behaviorLabel}
+        tempLabel={tempLabel}
+        smoothLabel={smoothLabel}
+        onOffLabel={onOffLabel}
+      />
 
       <p className={`mt-6 text-base leading-7 ${bodyColor}`}>{description}</p>
 
-      <div className={`mt-6 text-base font-extrabold ${titleColor}`}>Ventajas principales:</div>
+      <div className={`mt-6 text-base font-extrabold ${titleColor}`}>{mainAdvantagesText}</div>
 
       <div className="mt-4 space-y-4">
         {advantages.map((a) => (
@@ -202,35 +216,11 @@ function CompareCard({
 }
 
 export default function AirConditioningComparisonSection() {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
 
-  const inverter = {
-    title: "Aire Inverter",
-    subtitle: "VELOCIDAD VARIABLE",
-    description:
-      "El compresor ajusta su velocidad de forma continua, manteniendo la temperatura estable sin apagarse por completo. Esto se traduce en mayor confort y menor consumo.",
-    advantages: [
-      "Ahorra entre 40% y 60% en tu factura eléctrica",
-      "Funcionamiento silencioso, ideal para dormitorios",
-      "Temperatura constante sin variaciones bruscas",
-      "Mayor vida útil del compresor y equipo",
-      "Menor impacto ambiental y huella de carbono",
-    ],
-  };
-
-  const conventional = {
-    title: "Aire Convencional",
-    subtitle: "VELOCIDAD FIJA",
-    description:
-      "El compresor funciona a velocidad fija, encendiéndose y apagándose repetidamente para regular la temperatura. Es una tecnología probada y más económica de adquirir.",
-    advantages: [
-      "Precio de compra más accesible y económico",
-      "Amplia disponibilidad de repuestos en el mercado",
-      "Instalación y reparación más sencilla y rápida",
-      "Técnicos familiares con su funcionamiento",
-      "Buena opción para uso esporádico o temporal",
-    ],
-  };
+  const inverter = t("services.detail.climatizacion.comparison.inverter", { returnObjects: true });
+  const conventional = t("services.detail.climatizacion.comparison.conventional", { returnObjects: true });
 
   return (
     <section className="mt-10">
@@ -243,6 +233,12 @@ export default function AirConditioningComparisonSection() {
           description={inverter.description}
           advantages={inverter.advantages}
           isDarkMode={isDarkMode}
+          recommendedBadgeText={t("services.detail.climatizacion.comparison.recommendedBadge")}
+          mainAdvantagesText={t("services.detail.climatizacion.comparison.mainAdvantages")}
+          behaviorLabel={t("services.detail.climatizacion.comparison.compressorBehavior")}
+          tempLabel={t("services.detail.climatizacion.comparison.tempLabel")}
+          smoothLabel={t("services.detail.climatizacion.comparison.smoothAdjustment")}
+          onOffLabel={t("services.detail.climatizacion.comparison.onOffCycles")}
         />
         <CompareCard
           tone="slate"
@@ -252,6 +248,12 @@ export default function AirConditioningComparisonSection() {
           description={conventional.description}
           advantages={conventional.advantages}
           isDarkMode={isDarkMode}
+          recommendedBadgeText={t("services.detail.climatizacion.comparison.recommendedBadge")}
+          mainAdvantagesText={t("services.detail.climatizacion.comparison.mainAdvantages")}
+          behaviorLabel={t("services.detail.climatizacion.comparison.compressorBehavior")}
+          tempLabel={t("services.detail.climatizacion.comparison.tempLabel")}
+          smoothLabel={t("services.detail.climatizacion.comparison.smoothAdjustment")}
+          onOffLabel={t("services.detail.climatizacion.comparison.onOffCycles")}
         />
       </div>
     </section>
