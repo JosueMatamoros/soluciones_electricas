@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
+import ImageModal from "../../components/common/ImageModal";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
@@ -11,6 +12,45 @@ export default function PoolSystemsPage() {
   const { isDarkMode } = useTheme();
   const { t } = useTranslation();
   const service = SERVICES.find((s) => s.id === "sistemas-piscinas");
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const poolImages = [
+    {
+      src: "/temporales/piscinas-jacuzzis.png",
+      alt: "Piscina Residencial Premium",
+      title: "Piscina Residencial Premium"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop",
+      alt: "Iluminación LED",
+      title: "Iluminación LED"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop",
+      alt: "Filtración",
+      title: "Filtración Avanzada"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop",
+      alt: "Piscina con Jacuzzi",
+      title: "Piscina con Jacuzzi"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop",
+      alt: "Climatización",
+      title: "Climatización Total"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop",
+      alt: "Piscina Natural",
+      title: "Piscina Natural"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop",
+      alt: "Piscina Infinity",
+      title: "Piscina Infinity"
+    }
+  ];
 
   if (!service) return null;
 
@@ -284,16 +324,17 @@ export default function PoolSystemsPage() {
                   className={`group relative overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:-rotate-1 ${
                     isDarkMode ? "bg-dark-surface" : "bg-gray-200"
                   } h-[320px]`}
+                  onClick={() => setSelectedImage(poolImages[0])}
                 >
                   <img
-                    src="/temporales/piscinas-jacuzzis.png"
-                    alt="Piscina Residencial Premium"
+                    src={poolImages[0].src}
+                    alt={poolImages[0].alt}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute bottom-6 left-6 right-6">
                       <h4 className="text-white text-xl font-bold mb-2">
-                        Piscina Residencial Premium
+                        {poolImages[0].title}
                       </h4>
                       <p className="text-white/90 text-sm">
                         Sistema completo de filtración y climatización
@@ -308,16 +349,17 @@ export default function PoolSystemsPage() {
                   className={`group overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-3 ${
                     isDarkMode ? "bg-dark-surface" : "bg-gray-200"
                   } h-[320px]`}
+                  onClick={() => setSelectedImage(poolImages[1])}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop"
-                    alt="Iluminación LED"
+                    src={poolImages[1].src}
+                    alt={poolImages[1].alt}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute bottom-4 left-4 right-4">
                       <h4 className="text-white text-base font-bold mb-1">
-                        Iluminación LED
+                        {poolImages[1].title}
                       </h4>
                       <p className="text-white/90 text-xs">
                         Sistema RGB multicolor
@@ -333,16 +375,17 @@ export default function PoolSystemsPage() {
                 className={`group overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-2 ${
                   isDarkMode ? "bg-dark-surface" : "bg-gray-200"
                 } h-[240px]`}
+                onClick={() => setSelectedImage(poolImages[2])}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop"
-                  alt="Filtración"
+                  src={poolImages[2].src}
+                  alt={poolImages[2].alt}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-3 left-3 right-3">
                     <h4 className="text-white text-sm font-bold mb-1">
-                      Filtración Avanzada
+                      {poolImages[2].title}
                     </h4>
                     <p className="text-white/90 text-xs">
                       Sistema de purificación
@@ -356,16 +399,17 @@ export default function PoolSystemsPage() {
                   className={`group relative overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:rotate-1 ${
                     isDarkMode ? "bg-dark-surface" : "bg-gray-200"
                   } h-[240px]`}
+                  onClick={() => setSelectedImage(poolImages[3])}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop"
-                    alt="Piscina con Jacuzzi"
+                    src={poolImages[3].src}
+                    alt={poolImages[3].alt}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute bottom-4 left-4 right-4">
                       <h4 className="text-white text-lg font-bold mb-1">
-                        Piscina con Jacuzzi
+                        {poolImages[3].title}
                       </h4>
                       <p className="text-white/90 text-sm">
                         Diseño moderno con cascada
@@ -379,16 +423,17 @@ export default function PoolSystemsPage() {
                 className={`group overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-2 ${
                   isDarkMode ? "bg-dark-surface" : "bg-gray-200"
                 } h-[240px]`}
+                onClick={() => setSelectedImage(poolImages[4])}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop"
-                  alt="Climatización"
+                  src={poolImages[4].src}
+                  alt={poolImages[4].alt}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-3 left-3 right-3">
                     <h4 className="text-white text-sm font-bold mb-1">
-                      Climatización Total
+                      {poolImages[4].title}
                     </h4>
                     <p className="text-white/90 text-xs">
                       Control de temperatura
@@ -403,16 +448,17 @@ export default function PoolSystemsPage() {
                 className={`group overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-3 ${
                   isDarkMode ? "bg-dark-surface" : "bg-gray-200"
                 } h-[280px]`}
+                onClick={() => setSelectedImage(poolImages[5])}
               >
                 <img
-                  src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop"
-                  alt="Piscina Natural"
+                  src={poolImages[5].src}
+                  alt={poolImages[5].alt}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-4 left-4 right-4">
                     <h4 className="text-white text-base font-bold mb-1">
-                      Piscina Natural
+                      {poolImages[5].title}
                     </h4>
                     <p className="text-white/90 text-xs">
                       Filtración ecológica
@@ -426,16 +472,17 @@ export default function PoolSystemsPage() {
                   className={`group relative overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:rotate-1 ${
                     isDarkMode ? "bg-dark-surface" : "bg-gray-200"
                   } h-[280px]`}
+                  onClick={() => setSelectedImage(poolImages[6])}
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop"
-                    alt="Piscina Infinity"
+                    src={poolImages[6].src}
+                    alt={poolImages[6].alt}
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute bottom-6 left-6 right-6">
                       <h4 className="text-white text-xl font-bold mb-2">
-                        Piscina Infinity
+                        {poolImages[6].title}
                       </h4>
                       <p className="text-white/90 text-sm">
                         Borde infinito con vista panorámica
@@ -453,6 +500,14 @@ export default function PoolSystemsPage() {
 
         </div>
       </div>
+
+      {/* Modal de imagen */}
+      <ImageModal
+        imageUrl={selectedImage?.src}
+        alt={selectedImage?.alt}
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 }

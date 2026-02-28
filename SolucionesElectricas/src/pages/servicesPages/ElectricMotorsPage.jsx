@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
 import ServiceHero from "../../components/services/ServiceHero";
+import ImageModal from "../../components/common/ImageModal";
 import { Gauge, Settings, Wrench, TrendingUp, Zap, ArrowRight, CheckCircle2, Factory, Home, Droplet, Package } from "lucide-react";
 
 /**
@@ -13,6 +14,8 @@ export default function ElectricMotorsPage() {
   const { isDarkMode } = useTheme();
   const { t } = useTranslation();
   const service = SERVICES.find((s) => s.id === "motores-electricos");
+  
+  const [selectedImage, setSelectedImage] = useState(null);
 
   if (!service) return null;
 
@@ -20,6 +23,58 @@ export default function ElectricMotorsPage() {
   
   // Mapeo de iconos para cada paso del timeline
   const timelineIcons = [Gauge, Settings, Wrench, TrendingUp, Zap, CheckCircle2];
+
+  // Datos de las imágenes del grid
+  const motorImages = [
+    {
+      src: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop",
+      alt: "Motor monofásico",
+      title: "Motor Monofásico",
+      description: "Aplicaciones domésticas"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop",
+      alt: "Motor trifásico industrial",
+      title: "Motor Trifásico",
+      description: "Uso industrial"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&auto=format&fit=crop",
+      alt: "Motor DC",
+      title: "Motor DC",
+      description: "Corriente directa"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
+      alt: "Motor sumergible",
+      title: "Motor Sumergible",
+      description: "Pozos de agua"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop",
+      alt: "Bobinado de motores",
+      title: "Bobinado",
+      description: "Reparación especializada"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900&auto=format&fit=crop",
+      alt: "Variadores de frecuencia",
+      title: "Variadores",
+      description: "Control de velocidad"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&auto=format&fit=crop",
+      alt: "Mantenimiento de motores",
+      title: "Mantenimiento",
+      description: "Preventivo y correctivo"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=900&auto=format&fit=crop",
+      alt: "Diagnóstico de fallas",
+      title: "Diagnóstico",
+      description: "Detección de problemas"
+    }
+  ];
 
   return (
     <div className={`min-h-screen transition-colors duration-300 relative ${
@@ -435,159 +490,39 @@ export default function ElectricMotorsPage() {
 
           {/* Layout uniforme - Grid de tipos de motores */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {/* Motor Monofásico */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop"
-                  alt="Motor monofásico"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Motor Monofásico</h4>
-                    <p className="text-white/90 text-xs">Aplicaciones domésticas</p>
+            {motorImages.map((motor, index) => (
+              <div key={index} className="group relative">
+                <div 
+                  className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 ${index % 2 === 0 ? 'hover:-rotate-1' : 'hover:rotate-1'} ${
+                    isDarkMode ? "bg-dark-surface" : "bg-gray-200"
+                  }`}
+                  onClick={() => setSelectedImage(motor)}
+                >
+                  <img
+                    src={motor.src}
+                    alt={motor.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h4 className="text-white text-base font-bold mb-1">{motor.title}</h4>
+                      <p className="text-white/90 text-xs">{motor.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Motor Trifásico */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop"
-                  alt="Motor trifásico industrial"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Motor Trifásico</h4>
-                    <p className="text-white/90 text-xs">Uso industrial</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Motor DC */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=800&auto=format&fit=crop"
-                  alt="Motor de corriente directa"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Motor DC</h4>
-                    <p className="text-white/90 text-xs">Corriente directa</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Motor Sumergible */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&auto=format&fit=crop"
-                  alt="Motor sumergible para pozos"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Motor Sumergible</h4>
-                    <p className="text-white/90 text-xs">Sistemas de agua</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&auto=format&fit=crop"
-                  alt="Bobinado de motores"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Bobinado</h4>
-                    <p className="text-white/90 text-xs">Reparación especializada</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Variadores de Frecuencia */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&auto=format&fit=crop"
-                  alt="Variador de frecuencia"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Variadores</h4>
-                    <p className="text-white/90 text-xs">Control de velocidad</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mantenimiento Preventivo */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop"
-                  alt="Mantenimiento preventivo de motores"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Mantenimiento</h4>
-                    <p className="text-white/90 text-xs">Preventivo y correctivo</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Diagnóstico y Análisis */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop"
-                  alt="Diagnóstico de fallas en motores"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Diagnóstico</h4>
-                    <p className="text-white/90 text-xs">Análisis de fallas</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Modal de imagen */}
+      <ImageModal
+        imageUrl={selectedImage?.src}
+        alt={selectedImage?.alt}
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 }

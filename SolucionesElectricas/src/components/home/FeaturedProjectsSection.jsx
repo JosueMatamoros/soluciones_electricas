@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import SectionHeader from "../common/SectionHeader";
 import ProjectCard from "../gallery/ProjectCard";
+import ImageModal from "../common/ImageModal";
 import { PROJECTS } from "../../data/Projects/projects";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 
 export default function FeaturedProjectsSection() {
   const { t } = useTranslation();
+  const [selectedImage, setSelectedImage] = useState(null);
   
   return (
     <section className="mx-auto max-w-6xl py-6 md:py-12">
@@ -18,7 +20,11 @@ export default function FeaturedProjectsSection() {
       />
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-2">
         {PROJECTS.slice(0, 3).map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard 
+            key={project.id} 
+            project={project}
+            onClick={() => setSelectedImage({ src: project.imageUrl, alt: project.title })}
+          />
         ))}
       </div>
       <div className="flex justify-center mt-4">
@@ -32,6 +38,14 @@ export default function FeaturedProjectsSection() {
           </span>
         </Link>
       </div>
+
+      {/* Modal de imagen */}
+      <ImageModal
+        imageUrl={selectedImage?.src}
+        alt={selectedImage?.alt}
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </section>
   );
 }

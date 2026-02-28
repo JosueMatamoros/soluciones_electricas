@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { SERVICES } from "../../data/services";
+import ImageModal from "../../components/common/ImageModal";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
@@ -17,6 +18,30 @@ export default function ResidentialInstallationsPage() {
   const { t } = useTranslation();
   const { isDarkMode } = useTheme();
   const service = SERVICES.find((s) => s.id === "instalaciones-residenciales");
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const installationImages = [
+    {
+      src: "/images/instalacion-residencial.jpg",
+      alt: "Instalación Residencial",
+      title: "Instalación Residencial"
+    },
+    {
+      src: "/images/instalacion-comercial.jpg",
+      alt: "Instalación Comercial",
+      title: "Instalación Comercial"
+    },
+    {
+      src: "/temporales/iluminacion-interior.jpg",
+      alt: "Iluminación Interior",
+      title: "Iluminación Interior"
+    },
+    {
+      src: "/images/iluminacion-exterior.jpg",
+      alt: "Iluminación Exterior",
+      title: "Iluminación Exterior"
+    }
+  ];
 
   if (!service) return null;
 
@@ -141,25 +166,29 @@ export default function ResidentialInstallationsPage() {
                 badge="Residencial"
                 title="Instalación Residencial"
                 description="Tableros eléctricos modernos con protecciones para viviendas"
-                image="/images/instalacion-residencial.jpg"
+                image={installationImages[0].src}
+                onClick={() => setSelectedImage(installationImages[0])}
               />
               <ServiceFeatureCard
                 badge="Comercial"
                 title="Instalación Comercial"
                 description="Sistemas eléctricos de alta potencia para locales comerciales y oficinas"
-                image="/images/instalacion-comercial.jpg"
+                image={installationImages[1].src}
+                onClick={() => setSelectedImage(installationImages[1])}
               />
               <ServiceFeatureCard
                 badge="Iluminación"
                 title="Iluminación Interior"
                 description="Diseño e instalación de iluminación eficiente y moderna"
-                image="/temporales/iluminacion-interior.jpg"
+                image={installationImages[2].src}
+                onClick={() => setSelectedImage(installationImages[2])}
               />
               <ServiceFeatureCard
                 badge="Iluminación"
                 title="Iluminación Exterior"
                 description="Soluciones de iluminación para exteriores, jardines y fachadas"
-                image="/images/iluminacion-exterior.jpg"
+                image={installationImages[3].src}
+                onClick={() => setSelectedImage(installationImages[3])}
               />
             </div>
 
@@ -183,6 +212,14 @@ export default function ResidentialInstallationsPage() {
           </div>
         </div>
       </div>
+
+      {/* Modal de imagen */}
+      <ImageModal
+        imageUrl={selectedImage?.src}
+        alt={selectedImage?.alt}
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 }

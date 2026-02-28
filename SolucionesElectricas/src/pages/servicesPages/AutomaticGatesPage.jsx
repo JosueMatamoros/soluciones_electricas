@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
+import ImageModal from "../../components/common/ImageModal";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
@@ -15,6 +16,58 @@ export default function AutomaticGatesPage() {
   const { isDarkMode } = useTheme();
   const { t } = useTranslation();
   const service = SERVICES.find((s) => s.id === "portones-automaticos");
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const gateImages = [
+    {
+      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop",
+      alt: "Motor de brazo para portón",
+      title: "Motor de Brazo",
+      description: "Portones batientes"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop",
+      alt: "Motor de cremallera para portón corredizo",
+      title: "Motor Cremallera",
+      description: "Portones corredizos"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&auto=format&fit=crop",
+      alt: "Motor industrial alta potencia",
+      title: "Motor Industrial",
+      description: "Hasta 2000kg"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop",
+      alt: "Motor subterráneo para portón",
+      title: "Motor Subterráneo",
+      description: "Instalación oculta"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop",
+      alt: "Control WiFi inteligente",
+      title: "Control WiFi",
+      description: "Acceso remoto"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=900&auto=format&fit=crop",
+      alt: "Panel táctil control de acceso",
+      title: "Panel Táctil",
+      description: "Control de accesos"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop",
+      alt: "Sensores de seguridad para portón",
+      title: "Sensores",
+      description: "Máxima seguridad"
+    },
+    {
+      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop",
+      alt: "Central de control para portones",
+      title: "Central Control",
+      description: "Gestión completa"
+    }
+  ];
 
   if (!service) return null;
 
@@ -237,160 +290,39 @@ export default function AutomaticGatesPage() {
 
           {/* Layout uniforme - Grid de tipos de motores */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {/* Motor de Brazo */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
-                  alt="Motor de brazo para portón"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Motor de Brazo</h4>
-                    <p className="text-white/90 text-xs">Portones batientes</p>
+            {gateImages.map((gate, index) => (
+              <div key={index} className="group relative">
+                <div 
+                  className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 ${index % 2 === 0 ? 'hover:-rotate-1' : 'hover:rotate-1'} ${
+                    isDarkMode ? "bg-dark-surface" : "bg-gray-200"
+                  }`}
+                  onClick={() => setSelectedImage(gate)}
+                >
+                  <img
+                    src={gate.src}
+                    alt={gate.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h4 className="text-white text-base font-bold mb-1">{gate.title}</h4>
+                      <p className="text-white/90 text-xs">{gate.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Motor de Cremallera */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop"
-                  alt="Motor de cremallera para portón corredizo"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Motor Cremallera</h4>
-                    <p className="text-white/90 text-xs">Portones corredizos</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Motor Industrial */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&auto=format&fit=crop"
-                  alt="Motor industrial alta potencia"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Motor Industrial</h4>
-                    <p className="text-white/90 text-xs">Hasta 2000kg</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Motor Subterráneo */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop"
-                  alt="Motor subterráneo para portón"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Motor Subterráneo</h4>
-                    <p className="text-white/90 text-xs">Instalación oculta</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Control WiFi */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop"
-                  alt="Control WiFi inteligente"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Control WiFi</h4>
-                    <p className="text-white/90 text-xs">Acceso remoto</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Panel Táctil */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=900&auto=format&fit=crop"
-                  alt="Panel táctil control de acceso"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Panel Táctil</h4>
-                    <p className="text-white/90 text-xs">Control de accesos</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Sensores de Seguridad */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
-                  alt="Sensores de seguridad para portón"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Sensores</h4>
-                    <p className="text-white/90 text-xs">Máxima seguridad</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Central de Control */}
-            <div className="group relative">
-              <div className={`overflow-hidden rounded-2xl aspect-square cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-1 ${
-                isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-              }`}>
-                <img
-                  src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop"
-                  alt="Central de control para portones"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">Central Control</h4>
-                    <p className="text-white/90 text-xs">Gestión completa</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
+
+      {/* Modal de imagen */}
+      <ImageModal
+        imageUrl={selectedImage?.src}
+        alt={selectedImage?.alt}
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 }

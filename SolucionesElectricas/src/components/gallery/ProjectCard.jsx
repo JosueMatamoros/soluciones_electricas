@@ -7,7 +7,7 @@ function cx(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function ProjectCard({ project, spanClass }) {
+export default function ProjectCard({ project, spanClass, onClick }) {
   const { isDarkMode } = useTheme();
 
   // Mapeo de categoría a icono
@@ -28,8 +28,10 @@ export default function ProjectCard({ project, spanClass }) {
           : "border-slate-200 bg-slate-100 transition-colors duration-300",
         "shadow-sm hover:shadow-md transition-shadow",
         "min-h-[180px]",
+        onClick ? "cursor-pointer" : "",
         spanClass
       )}
+      onClick={onClick}
     >
       {/* Imagen */}
       <img

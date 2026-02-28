@@ -5,6 +5,7 @@ import { PROJECTS } from "../data/Projects/projects";
 import ProjectCard from "../components/gallery/ProjectCard";
 import TabButton from "../components/gallery/TabButton";
 import SectionHeader from "../components/common/SectionHeader";
+import ImageModal from "../components/common/ImageModal";
 import { useTheme } from "../context/ThemeContext";
 import { Layers, Droplets, Zap, Cog, Snowflake } from "lucide-react";
 
@@ -29,6 +30,7 @@ const BENTO_SPANS = [
 export default function ProjectGalleryPage() {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState("all");
+  const [selectedImage, setSelectedImage] = useState(null);
   const { isDarkMode } = useTheme();
 
   const CATEGORIES = [
@@ -102,6 +104,7 @@ export default function ProjectGalleryPage() {
                 key={project.id}
                 project={project}
                 spanClass={BENTO_SPANS[index % BENTO_SPANS.length]}
+                onClick={() => setSelectedImage({ src: project.imageUrl, alt: project.title })}
               />
             ))}
           </div>
@@ -117,6 +120,14 @@ export default function ProjectGalleryPage() {
           )}
         </section>
       </div>
+
+      {/* Modal de imagen */}
+      <ImageModal
+        imageUrl={selectedImage?.src}
+        alt={selectedImage?.alt}
+        isOpen={!!selectedImage}
+        onClose={() => setSelectedImage(null)}
+      />
     </div>
   );
 }
