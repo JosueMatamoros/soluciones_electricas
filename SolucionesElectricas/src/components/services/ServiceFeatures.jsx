@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckCircle2, Zap } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 
 /**
@@ -9,9 +10,11 @@ import { useTheme } from "../../context/ThemeContext";
 export default function ServiceFeatures({
   features,
   variant = "list",
-  title = "Características del servicio"
+  title
 }) {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
+  const displayTitle = title || t("common.featuresTitle");
 
   if (variant === "grid") {
     return (
@@ -24,7 +27,7 @@ export default function ServiceFeatures({
           isDarkMode ? "text-dark-text" : "text-light-text"
         }`}>
           <Zap className="w-6 h-6 text-brand-cyan" />
-          {title}
+          {displayTitle}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {features.map((feature, index) => (
@@ -52,7 +55,7 @@ export default function ServiceFeatures({
           isDarkMode ? "text-dark-text" : "text-light-text"
         }`}>
           <Zap className="w-8 h-8 md:w-6 md:h-6 text-brand-cyan" />
-          {title}
+          {displayTitle}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {features.map((feature, index) => (
@@ -88,7 +91,7 @@ export default function ServiceFeatures({
           isDarkMode ? "text-dark-text" : "text-light-text"
         }`}>
           <Zap className="w-6 h-6 text-brand-cyan" />
-          {title}
+          {displayTitle}
         </h2>
         <div className="relative space-y-6">
           {features.map((feature, index) => (
@@ -126,7 +129,7 @@ export default function ServiceFeatures({
         isDarkMode ? "text-dark-text" : "text-light-text"
       }`}>
         <Zap className="w-6 h-6 text-brand-cyan" />
-        {title}
+        {displayTitle}
       </h2>
       <ul className="space-y-3">
         {features.map((feature, index) => (

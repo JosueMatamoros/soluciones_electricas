@@ -1,5 +1,6 @@
 import React from "react";
 import { useTheme } from "../../context/ThemeContext";
+import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
 import ServiceHero from "../../components/services/ServiceHero";
 import { Gauge, Settings, Wrench, TrendingUp, Zap, ArrowRight, CheckCircle2, Factory, Home, Droplet, Package } from "lucide-react";
@@ -10,18 +11,12 @@ import { Gauge, Settings, Wrench, TrendingUp, Zap, ArrowRight, CheckCircle2, Fac
  */
 export default function ElectricMotorsPage() {
   const { isDarkMode } = useTheme();
+  const { t } = useTranslation();
   const service = SERVICES.find((s) => s.id === "motores-electricos");
 
   if (!service) return null;
 
-  const timelineSteps = [
-    { number: 1, title: "Diagnóstico inicial", description: "Evaluación completa del sistema eléctrico y estado del motor", icon: Gauge },
-    { number: 2, title: "Análisis técnico", description: "Medición de parámetros y detección de fallas potenciales", icon: Settings },
-    { number: 3, title: "Reparación/Instalación", description: "Trabajo especializado con herramientas de precisión", icon: Wrench },
-    { number: 4, title: "Pruebas de calidad", description: "Verificación de funcionamiento óptimo y seguridad", icon: CheckCircle2 },
-    { number: 5, title: "Optimización", description: "Ajustes finales para máxima eficiencia energética", icon: TrendingUp },
-    { number: 6, title: "Entrega y puesta en marcha", description: "Activación y verificación final del sistema", icon: Zap },
-  ];
+  const timelineSteps = t("services.detail.motores-electricos.timeline.steps", { returnObjects: true });
 
   return (
     <div className={`min-h-screen transition-colors duration-300 relative ${
@@ -54,9 +49,11 @@ export default function ElectricMotorsPage() {
               : "bg-white shadow-md shadow-brand-cyan/20"
           }`}>
             <Factory className="w-8 h-8 text-brand-cyan mb-2" />
-            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>Fábricas</p>
+            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+              {t("services.detail.motores-electricos.locations.factories.title")}
+            </p>
             <p className={`text-xs ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Maquinaria industrial
+              {t("services.detail.motores-electricos.locations.factories.description")}
             </p>
           </div>
 
@@ -66,9 +63,11 @@ export default function ElectricMotorsPage() {
               : "bg-white shadow-md shadow-blue-500/20"
           }`}>
             <Package className="w-8 h-8 text-blue-500 mb-2" />
-            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>Empacadoras</p>
+            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+              {t("services.detail.motores-electricos.locations.packaging.title")}
+            </p>
             <p className={`text-xs ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Sistemas de empaque
+              {t("services.detail.motores-electricos.locations.packaging.description")}
             </p>
           </div>
 
@@ -78,9 +77,11 @@ export default function ElectricMotorsPage() {
               : "bg-white shadow-md shadow-cyan-500/20"
           }`}>
             <Droplet className="w-8 h-8 text-cyan-500 mb-2" />
-            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>Pozos</p>
+            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+              {t("services.detail.motores-electricos.locations.wells.title")}
+            </p>
             <p className={`text-xs ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Bombas de agua
+              {t("services.detail.motores-electricos.locations.wells.description")}
             </p>
           </div>
 
@@ -90,9 +91,11 @@ export default function ElectricMotorsPage() {
               : "bg-white shadow-md shadow-blue-600/20"
           }`}>
             <Home className="w-8 h-8 text-blue-600 mb-2" />
-            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>Residencias</p>
+            <p className={`text-base font-bold ${isDarkMode ? "text-dark-text" : "text-light-text"}`}>
+              {t("services.detail.motores-electricos.locations.residential.title")}
+            </p>
             <p className={`text-xs ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}>
-              Uso doméstico
+              {t("services.detail.motores-electricos.locations.residential.description")}
             </p>
           </div>
         </div>
@@ -120,7 +123,7 @@ export default function ElectricMotorsPage() {
               isDarkMode
                 ? "bg-dark-bg-secondary shadow-lg"
                 : "bg-light-bg-secondary shadow-md"
-            }`}>
+            }`}>{t("services.detail.motores-electricos.timeline.title")}
               <h3 className={`text-xl md:text-2xl font-bold mb-6 md:mb-8 text-center ${
                 isDarkMode ? "text-dark-text" : "text-light-text"
               }`}>

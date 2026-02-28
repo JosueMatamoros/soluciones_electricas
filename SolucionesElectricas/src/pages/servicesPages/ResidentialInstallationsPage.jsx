@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { SERVICES } from "../../data/services";
 import ServiceHero from "../../components/services/ServiceHero";
@@ -13,6 +14,7 @@ import { BadgeCheck, Hammer, MessageCircle } from "lucide-react";
  * Layout clásico con sidebar CTA
  */
 export default function ResidentialInstallationsPage() {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
   const service = SERVICES.find((s) => s.id === "instalaciones-residenciales");
 
@@ -30,7 +32,7 @@ export default function ResidentialInstallationsPage() {
 
       <div className="mx-auto max-w-6xl px-2 sm:px-4 py-6 sm:py-10 relative z-10">
         <ServiceHero
-          title={service.title}
+          title={t("services.detail.instalaciones-residenciales.heroTitle")}
           image={service.image}
           icon={service.icon}
           variant="classic"
@@ -54,9 +56,9 @@ export default function ResidentialInstallationsPage() {
                 <p
                   className={`text-sm font-medium ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}
                 >
-                  Calidad Garantizada
+                  {t("services.detail.instalaciones-residenciales.stats.quality.title")}
                 </p>
-                <p className="text-xs text-brand-cyan">100% profesional</p>
+                <p className="text-xs text-brand-cyan">{t("services.detail.instalaciones-residenciales.stats.quality.subtitle")}</p>
               </div>
             </div>
           </div>
@@ -76,10 +78,10 @@ export default function ResidentialInstallationsPage() {
                 <p
                   className={`text-sm font-medium ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}
                 >
-                  Trabajo a tu Medida
+                  {t("services.detail.instalaciones-residenciales.stats.custom.title")}
                 </p>
                 <p className="text-xs text-brand-cyan">
-                  Soluciones personalizadas
+                  {t("services.detail.instalaciones-residenciales.stats.custom.subtitle")}
                 </p>
               </div>
             </div>
@@ -100,10 +102,10 @@ export default function ResidentialInstallationsPage() {
                 <p
                   className={`text-sm font-medium ${isDarkMode ? "text-dark-text-secondary" : "text-light-text-secondary"}`}
                 >
-                  Constante Comunicación
+                  {t("services.detail.instalaciones-residenciales.stats.communication.title")}
                 </p>
                 <p className="text-xs text-brand-cyan">
-                  Te informamos en cada paso
+                  {t("services.detail.instalaciones-residenciales.stats.communication.subtitle")}
                 </p>
               </div>
             </div>
@@ -129,7 +131,7 @@ export default function ResidentialInstallationsPage() {
                     : "text-light-text-secondary"
                 }`}
               >
-                {service.description}
+                {t("services.detail.instalaciones-residenciales.description")}
               </p>
             </div>
 
@@ -162,53 +164,20 @@ export default function ResidentialInstallationsPage() {
             </div>
 
             {/* Características */}
-            <ServiceFeatures features={service.features} variant="list" />
+            <ServiceFeatures features={t("services.detail.instalaciones-residenciales.features", { returnObjects: true })} variant="list" />
           </div>
 
           {/* Sidebar - CTA */}
           <div className="lg:col-span-1">
             <ServiceCTA
               variant="sidebar"
-              title="¿Necesitas una instalación eléctrica?"
-              description="Obtén una cotización personalizada para tu proyecto residencial o comercial"
+              title={t("services.detail.instalaciones-residenciales.cta.title")}
+              description={t("services.detail.instalaciones-residenciales.cta.description")}
             />
             {/* FAQ solo en pantallas grandes */}
             <div className="mt-7">
               <FAQAccordion
-                faqs={[
-                  {
-                    question:
-                      "¿Cuánto tarda una instalación residencial de una casa nueva?",
-                    answer:
-                      "El tiempo depende del tamaño y complejidad, pero la mayoría de proyectos residenciales se completan en 1 a 3 días hábiles.",
-                  },
-                  {
-                    question: "¿Qué tipo de instalaciones realizan?",
-                    answer:
-                    "Volvemos realidad cualquier sueño, proyecto o idea que tengas en mente, desde instalaciones residenciales hasta comerciales.",
-                  },
-                  {
-                    question: "¿Puedo pedir una cotización sin compromiso?",
-                    answer:
-                      "¡Por supuesto! Todas nuestras cotizaciones son gratuitas y sin compromiso.",
-                  },
-                  {
-                    question: "¿Trabajan con materiales de una marca específica?",
-                    answer:
-                      "No, los materiales varían según el presupuesto o necesidad del cliente, sin embargo en nuestras cotizaciones siempre recomendaremos los adecuados a tu trabajo.",
-                  },
-                  {
-                    question:
-                      "¿Pueden asesorarme en el diseño eléctrico de mi vivienda?",
-                    answer:
-                      "Sí, nuestro equipo puede ayudarte a planificar y optimizar el diseño eléctrico para mayor eficiencia y seguridad.",
-                  },
-                  {
-                    question: "¿Puedo agendar una visita técnica antes de contratar?",
-                    answer:
-                      " Sí, podemos coordinar una visita técnica para evaluar tu proyecto y brindarte la mejor asesoría sin compromiso.",
-                  },
-                ]}
+                faqs={t("services.detail.instalaciones-residenciales.faq", { returnObjects: true })}
               />
             </div>
           </div>

@@ -11,7 +11,12 @@
     "moreInfo": "Más información",
     "viewAll": "Ver todos",
     "callNow": "Llamar Ahora",
-    "viewDetails": "Ver detalles"
+    "viewDetails": "Ver detalles",
+    "whatsapp": "WhatsApp",
+    "quickResponse": "Respuesta rápida",
+    "freeQuote": "Cotización gratuita",
+    "certifiedProfessionals": "Profesionales certificados",
+    "featuresTitle": "Características del servicio"
   },
   "nav": {
     "home": "Inicio",
@@ -194,6 +199,64 @@
       "sistemas-piscinas": {
         "title": "Instalación de sistemas electromecánicos para piscinas y jacuzzis",
         "description": "Instalaciones eléctricas especializadas para piscinas, cumpliendo con todas las normativas de seguridad."
+      }
+    },
+    "detail": {
+      "instalaciones-residenciales": {
+        "heroTitle": "Instalaciones eléctricas residenciales y comerciales",
+        "description": "Realizamos instalaciones eléctricas completas para viviendas y comercios, garantizando seguridad y eficiencia energética.",
+        "stats": {
+          "quality": {
+            "title": "Calidad Garantizada",
+            "subtitle": "100% profesional"
+          },
+          "custom": {
+            "title": "Trabajo a tu Medida",
+            "subtitle": "Soluciones personalizadas"
+          },
+          "communication": {
+            "title": "Constante Comunicación",
+            "subtitle": "Te informamos en cada paso"
+          }
+        },
+        "features": [
+          "Instalación de sistemas eléctricos completos",
+          "Actualización de instalaciones antiguas",
+          "Cableado estructurado y distribución",
+          "Tableros eléctricos y protecciones",
+          "Certificación y cumplimiento normativo",
+          "Iluminación interior y exterior"
+        ],
+        "cta": {
+          "title": "¿Necesitas una instalación eléctrica?",
+          "description": "Obtén una cotización personalizada para tu proyecto residencial o comercial"
+        },
+        "faq": [
+          {
+            "question": "¿Cuánto tarda una instalación residencial de una casa nueva?",
+            "answer": "El tiempo depende del tamaño y complejidad, pero la mayoría de proyectos residenciales se completan en 1 a 3 días hábiles."
+          },
+          {
+            "question": "¿Qué tipo de instalaciones realizan?",
+            "answer": "Volvemos realidad cualquier sueño, proyecto o idea que tengas en mente, desde instalaciones residenciales hasta comerciales."
+          },
+          {
+            "question": "¿Puedo pedir una cotización sin compromiso?",
+            "answer": "¡Por supuesto! Todas nuestras cotizaciones son gratuitas y sin compromiso."
+          },
+          {
+            "question": "¿Trabajan con materiales de una marca específica?",
+            "answer": "No, los materiales varían según el presupuesto o necesidad del cliente, sin embargo en nuestras cotizaciones siempre recomendaremos los adecuados a tu trabajo."
+          },
+          {
+            "question": "¿Pueden asesorarme en el diseño eléctrico de mi vivienda?",
+            "answer": "Sí, nuestro equipo puede ayudarte a planificar y optimizar el diseño eléctrico para mayor eficiencia y seguridad."
+          },
+          {
+            "question": "¿Puedo agendar una visita técnica antes de contratar?",
+            "answer": "Sí, podemos coordinar una visita técnica para evaluar tu proyecto y brindarte la mejor asesoría sin compromiso."
+          }
+        ]
       }
     }
   }

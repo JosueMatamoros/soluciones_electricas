@@ -11,7 +11,12 @@
     "moreInfo": "More information",
     "viewAll": "View all",
     "callNow": "Call Now",
-    "viewDetails": "View details"
+    "viewDetails": "View details",
+    "whatsapp": "WhatsApp",
+    "quickResponse": "Quick response",
+    "freeQuote": "Free quote",
+    "certifiedProfessionals": "Certified professionals",
+    "featuresTitle": "Service features"
   },
   "nav": {
     "home": "Home",
@@ -194,6 +199,64 @@
       "sistemas-piscinas": {
         "title": "Electromechanical systems installation for pools and jacuzzis",
         "description": "Specialized electrical installations for pools, complying with all safety regulations."
+      }
+    },
+    "detail": {
+      "instalaciones-residenciales": {
+        "heroTitle": "Residential and commercial electrical installations",
+        "description": "We perform complete electrical installations for homes and businesses, ensuring safety and energy efficiency.",
+        "stats": {
+          "quality": {
+            "title": "Guaranteed Quality",
+            "subtitle": "100% professional"
+          },
+          "custom": {
+            "title": "Tailored Work",
+            "subtitle": "Customized solutions"
+          },
+          "communication": {
+            "title": "Constant Communication",
+            "subtitle": "We inform you at every step"
+          }
+        },
+        "features": [
+          "Complete electrical system installation",
+          "Upgrade of old installations",
+          "Structured cabling and distribution",
+          "Electrical panels and protections",
+          "Certification and regulatory compliance",
+          "Interior and exterior lighting"
+        ],
+        "cta": {
+          "title": "Need an electrical installation?",
+          "description": "Get a personalized quote for your residential or commercial project"
+        },
+        "faq": [
+          {
+            "question": "How long does a residential installation for a new house take?",
+            "answer": "The time depends on size and complexity, but most residential projects are completed in 1 to 3 business days."
+          },
+          {
+            "question": "What types of installations do you perform?",
+            "answer": "We make any dream, project or idea you have in mind a reality, from residential to commercial installations."
+          },
+          {
+            "question": "Can I request a quote without commitment?",
+            "answer": "Of course! All our quotes are free and without commitment."
+          },
+          {
+            "question": "Do you work with materials from a specific brand?",
+            "answer": "No, materials vary according to the customer's budget or needs, however in our quotes we will always recommend the right ones for your job."
+          },
+          {
+            "question": "Can you advise me on the electrical design of my home?",
+            "answer": "Yes, our team can help you plan and optimize the electrical design for greater efficiency and safety."
+          },
+          {
+            "question": "Can I schedule a technical visit before hiring?",
+            "answer": "Yes, we can coordinate a technical visit to evaluate your project and provide you with the best advice without commitment."
+          }
+        ]
       }
     }
   }

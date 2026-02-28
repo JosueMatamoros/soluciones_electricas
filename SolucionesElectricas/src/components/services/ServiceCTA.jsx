@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Mail, Phone, MessageCircle, ArrowRight } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -13,6 +14,7 @@ export default function ServiceCTA({
   description = "Contáctanos para una cotización personalizada sin compromiso",
   phoneNumber = "1234567890"
 }) {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
 
   // Variant: Sidebar (sticky lateral)
@@ -44,7 +46,7 @@ export default function ServiceCTA({
             }`}
           >
             <Mail className="w-4 h-4" />
-            Solicitar cotización
+            {t("common.requestQuote")}
           </Link>
 
           <a
@@ -58,7 +60,7 @@ export default function ServiceCTA({
             }`}
           >
             <Phone className="w-4 h-4" />
-            WhatsApp
+            {t("common.whatsapp")}
           </a>
         </div>
 
@@ -66,9 +68,9 @@ export default function ServiceCTA({
           isDarkMode ? "border-dark-bg-tertiary" : "border-light-bg-tertiary"
         }`}>
           <ul className="list-disc pl-5 space-y-1">
-            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">Respuesta rápida</li>
-            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">Cotización gratuita</li>
-            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">Profesionales certificados</li>
+            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">{t("common.quickResponse")}</li>
+            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">{t("common.freeQuote")}</li>
+            <li className="text-base font-medium text-black marker:text-brand-cyan dark:text-white">{t("common.certifiedProfessionals")}</li>
           </ul>
         </div>
       </div>

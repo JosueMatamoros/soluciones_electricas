@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
 import { useTheme } from "../../context/ThemeContext";
 
@@ -15,6 +16,7 @@ export default function ServiceHero({
   showBackButton = true,
   description
 }) {
+  const { t } = useTranslation();
   const { isDarkMode } = useTheme();
   const navigate = useNavigate();
 
@@ -67,7 +69,7 @@ export default function ServiceHero({
                   style={{backdropFilter: 'blur(6px)'}}
                 >
                   <ArrowLeft className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-x-1" />
-                  Volver a servicios
+                  {t("common.backToServices")}
                 </button>
               )}
 
@@ -110,7 +112,7 @@ export default function ServiceHero({
               style={{backdropFilter: 'blur(6px)'}}
             >
               <ArrowLeft className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-x-1" />
-              Volver a servicios
+              {t("common.backToServices")}
             </button>
           )}
           
@@ -173,7 +175,7 @@ export default function ServiceHero({
               style={{backdropFilter: 'blur(6px)'}}
             >
               <ArrowLeft className="w-4 h-4 transform transition-transform duration-300 group-hover:-translate-x-1" />
-              Volver a servicios
+              {t("common.backToServices")}
             </button>
           )}
 
