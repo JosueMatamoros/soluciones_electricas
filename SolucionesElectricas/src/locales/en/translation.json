@@ -457,6 +457,85 @@
           "Integration with voice assistants",
           "Remote control via smartphone"
         ]
+      },
+      "motores-electricos": {
+        "heroTitle": "Electric motor installation and automation",
+        "description": "Specialized services in installation, maintenance and repair of industrial and commercial electric motors.",
+        "locations": {
+          "factories": {
+            "title": "Factories",
+            "description": "Industrial motors"
+          },
+          "packaging": {
+            "title": "Packaging Machines",
+            "description": "Automation"
+          },
+          "wells": {
+            "title": "Water Wells",
+            "description": "Pumping systems"
+          },
+          "residential": {
+            "title": "Residential",
+            "description": "Gates and pumps"
+          }
+        },
+        "timeline": {
+          "title": "Our Service Process",
+          "steps": [
+            {
+              "title": "Initial Consultation",
+              "description": "We assess your specific needs and the type of motor required"
+            },
+            {
+              "title": "Technical Diagnosis",
+              "description": "Detailed analysis of the motor and its electrical components"
+            },
+            {
+              "title": "Repair or Installation",
+              "description": "We execute the work with specialized tools and techniques"
+            },
+            {
+              "title": "Quality Testing",
+              "description": "We verify proper operation and motor performance"
+            },
+            {
+              "title": "Optimization",
+              "description": "We adjust parameters for maximum energy efficiency"
+            },
+            {
+              "title": "Delivery and Follow-up",
+              "description": "We guarantee your satisfaction with ongoing support"
+            }
+          ]
+        },
+        "cta": {
+          "title": "Need service?",
+          "description": "Contact us for motor maintenance or inspection"
+        },
+        "powerRanges": {
+          "title": "Power Range",
+          "ranges": [
+            {
+              "label": "0.5 - 5 HP (Residential)"
+            },
+            {
+              "label": "5 - 50 HP (Commercial)"
+            },
+            {
+              "label": "50+ HP (Industrial)"
+            }
+          ]
+        },
+        "motorTypes": {
+          "title": "Motor Types",
+          "types": [
+            "Single-phase",
+            "Three-phase",
+            "Gates",
+            "Submersible"
+          ]
+        },
+        "galleryTitle": "Our Work"
       }
     }
   }

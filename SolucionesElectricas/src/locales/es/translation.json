@@ -457,6 +457,85 @@
           "Integración con asistentes de voz",
           "Control remoto vía smartphone"
         ]
+      },
+      "motores-electricos": {
+        "heroTitle": "Instalación y automatización de motores eléctricos",
+        "description": "Servicios especializados en instalación, mantenimiento y reparación de motores eléctricos industriales y comerciales.",
+        "locations": {
+          "factories": {
+            "title": "Fábricas",
+            "description": "Motores industriales"
+          },
+          "packaging": {
+            "title": "Empaquetadoras",
+            "description": "Automatización"
+          },
+          "wells": {
+            "title": "Pozos de agua",
+            "description": "Sistemas de bombeo"
+          },
+          "residential": {
+            "title": "Residencial",
+            "description": "Portones y bombas"
+          }
+        },
+        "timeline": {
+          "title": "Nuestro Proceso de Servicio",
+          "steps": [
+            {
+              "title": "Consulta Inicial",
+              "description": "Evaluamos tus necesidades específicas y el tipo de motor requerido"
+            },
+            {
+              "title": "Diagnóstico Técnico",
+              "description": "Análisis detallado del motor y sus componentes eléctricos"
+            },
+            {
+              "title": "Reparación o Instalación",
+              "description": "Ejecutamos el trabajo con herramientas y técnicas especializadas"
+            },
+            {
+              "title": "Pruebas de Calidad",
+              "description": "Verificamos el correcto funcionamiento y rendimiento del motor"
+            },
+            {
+              "title": "Optimización",
+              "description": "Ajustamos parámetros para máxima eficiencia energética"
+            },
+            {
+              "title": "Entrega y Seguimiento",
+              "description": "Garantizamos tu satisfacción con soporte continuo"
+            }
+          ]
+        },
+        "cta": {
+          "title": "¿Necesitas servicio?",
+          "description": "Contáctanos para mantenimiento o revisión de motores"
+        },
+        "powerRanges": {
+          "title": "Rango de Potencias",
+          "ranges": [
+            {
+              "label": "0.5 - 5 HP (Residencial)"
+            },
+            {
+              "label": "5 - 50 HP (Comercial)"
+            },
+            {
+              "label": "50+ HP (Industrial)"
+            }
+          ]
+        },
+        "motorTypes": {
+          "title": "Tipos de Motores",
+          "types": [
+            "Monofásicos",
+            "Trifásicos",
+            "Portones",
+            "Sumergibles"
+          ]
+        },
+        "galleryTitle": "Nuestros Trabajos"
       }
     }
   }
