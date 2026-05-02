@@ -8,6 +8,8 @@
     "home": "Inicio",
     "darkMode": "Modo oscuro",
     "lightMode": "Modo claro",
+    "toggleDark": "Activar modo oscuro",
+    "toggleLight": "Activar modo claro",
     "moreInfo": "Más información",
     "viewAll": "Ver todos",
     "callNow": "Llamar Ahora",
@@ -123,6 +125,28 @@
       "guarantee": "Respuesta rápida garantizada",
       "quoteButton": "Solicitar Cotización",
       "callButton": "Llamar Ahora"
+    },
+    "carouselServices": {
+      "climatizacion": {
+        "title": "Instalación y mantenimiento de aires acondicionados",
+        "description": "Venta, instalación profesional y servicio preventivo/correctivo para equipos de aire acondicionado split, central y más. Climatización confiable todo el año.",
+        "tags": ["Carga de gas", "Limpieza profunda", "Reparación de fallas"]
+      },
+      "instalaciones-residenciales": {
+        "title": "Instalaciones eléctricas comerciales y residenciales",
+        "description": "Diseño, montaje y modernización de sistemas eléctricos para hogares, comercios y fábricas. Seguridad, eficiencia y cumplimiento de normativas garantizados.",
+        "tags": ["Tableros eléctricos", "Iluminación LED", "Certificación"]
+      },
+      "sistemas-piscinas": {
+        "title": "Sistemas eléctricos y motores para jacuzzis y piscinas",
+        "description": "Instalación y automatización de bombas, filtros y sistemas eléctricos para piscinas y jacuzzis. Disfruta de agua limpia y segura con tecnología eficiente.",
+        "tags": ["Bombas automáticas", "Tableros de control", "Mantenimiento"]
+      },
+      "portones-automaticos": {
+        "title": "Instalación de motores eléctricos para portones",
+        "description": "Automatiza tu acceso con motores eléctricos para portones corredizos y batientes. Instalación segura, rápida y con garantía de funcionamiento.",
+        "tags": ["Control remoto", "Sensores de seguridad", "Soporte técnico"]
+      }
     }
   },
   "gallery": {
@@ -235,6 +259,12 @@
           "title": "¿Necesitas una instalación eléctrica?",
           "description": "Obtén una cotización personalizada para tu proyecto residencial o comercial"
         },
+        "featureCards": [
+          { "badge": "Residencial", "title": "Instalación Residencial", "description": "Tableros eléctricos modernos con protecciones para viviendas" },
+          { "badge": "Comercial", "title": "Instalación Comercial", "description": "Sistemas eléctricos de alta potencia para locales comerciales y oficinas" },
+          { "badge": "Iluminación", "title": "Iluminación Interior", "description": "Diseño e instalación de iluminación eficiente y moderna" },
+          { "badge": "Iluminación", "title": "Iluminación Exterior", "description": "Soluciones de iluminación para exteriores, jardines y fachadas" }
+        ],
         "faq": [
           {
             "question": "¿Cuánto tarda una instalación residencial de una casa nueva?",
@@ -535,7 +565,17 @@
             "Sumergibles"
           ]
         },
-        "galleryTitle": "Nuestros Trabajos"
+        "galleryTitle": "Nuestros Trabajos",
+        "galleryImages": [
+          { "alt": "Motor monofásico", "title": "Motor Monofásico", "description": "Aplicaciones domésticas" },
+          { "alt": "Motor trifásico industrial", "title": "Motor Trifásico", "description": "Uso industrial" },
+          { "alt": "Motor DC", "title": "Motor DC", "description": "Corriente directa" },
+          { "alt": "Motor sumergible", "title": "Motor Sumergible", "description": "Pozos de agua" },
+          { "alt": "Bobinado de motores", "title": "Bobinado", "description": "Reparación especializada" },
+          { "alt": "Variadores de frecuencia", "title": "Variadores", "description": "Control de velocidad" },
+          { "alt": "Mantenimiento de motores", "title": "Mantenimiento", "description": "Preventivo y correctivo" },
+          { "alt": "Diagnóstico de fallas", "title": "Diagnóstico", "description": "Detección de problemas" }
+        ]
       },
       "portones-automaticos": {
         "heroTitle": "Instalación y programación de portones eléctricos",
@@ -602,7 +642,17 @@
             ]
           }
         },
-        "galleryTitle": "Nuestras Instalaciones"
+        "galleryTitle": "Nuestras Instalaciones",
+        "galleryImages": [
+          { "alt": "Motor de brazo para portón", "title": "Motor de Brazo", "description": "Portones batientes" },
+          { "alt": "Motor de cremallera para portón corredizo", "title": "Motor Cremallera", "description": "Portones corredizos" },
+          { "alt": "Motor industrial alta potencia", "title": "Motor Industrial", "description": "Hasta 2000kg" },
+          { "alt": "Motor subterráneo para portón", "title": "Motor Subterráneo", "description": "Instalación oculta" },
+          { "alt": "Control WiFi inteligente", "title": "Control WiFi", "description": "Acceso remoto" },
+          { "alt": "Panel táctil control de acceso", "title": "Panel Táctil", "description": "Control de accesos" },
+          { "alt": "Sensores de seguridad para portón", "title": "Sensores", "description": "Máxima seguridad" },
+          { "alt": "Central de control para portones", "title": "Central Control", "description": "Gestión completa" }
+        ]
       },
       "sistemas-piscinas": {
         "heroTitle": "Instalación de sistemas electromecánicos para piscinas y jacuzzis",
@@ -640,7 +690,16 @@
           "Tableros eléctricos especiales",
           "Cumplimiento de normativas de seguridad"
         ],
-        "galleryTitle": "Nuestros Proyectos de Piscinas"
+        "galleryTitle": "Nuestros Proyectos de Piscinas",
+        "galleryImages": [
+          { "alt": "Piscina Residencial Premium", "title": "Piscina Residencial Premium", "caption": "Sistema completo de filtración y climatización" },
+          { "alt": "Iluminación LED", "title": "Iluminación LED", "caption": "Sistema RGB multicolor" },
+          { "alt": "Filtración Avanzada", "title": "Filtración Avanzada", "caption": "Sistema de purificación" },
+          { "alt": "Piscina con Jacuzzi", "title": "Piscina con Jacuzzi", "caption": "Diseño moderno con cascada" },
+          { "alt": "Climatización Total", "title": "Climatización Total", "caption": "Control de temperatura" },
+          { "alt": "Piscina Natural", "title": "Piscina Natural", "caption": "Filtración ecológica" },
+          { "alt": "Piscina Infinity", "title": "Piscina Infinity", "caption": "Borde infinito con vista panorámica" }
+        ]
       }
     }
   }

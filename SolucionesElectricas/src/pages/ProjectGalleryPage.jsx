@@ -1,18 +1,14 @@
 
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { PROJECTS } from "../data/Projects/projects";
 import ProjectCard from "../components/gallery/ProjectCard";
 import TabButton from "../components/gallery/TabButton";
 import SectionHeader from "../components/common/SectionHeader";
 import ImageModal from "../components/common/ImageModal";
 import { useTheme } from "../context/ThemeContext";
+import { useProjectFilter } from "../hooks/useProjectFilter";
+import { cx } from "../utils/classNames";
 import { Layers, Droplets, Zap, Cog, Snowflake } from "lucide-react";
-
-// Utilidades y layout para la galería
-function cx(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 // Patrón de “bento spans”: se repite por índice.
 const BENTO_SPANS = [
@@ -29,9 +25,9 @@ const BENTO_SPANS = [
 
 export default function ProjectGalleryPage() {
   const { t } = useTranslation();
-  const [activeCategory, setActiveCategory] = useState("all");
   const [selectedImage, setSelectedImage] = useState(null);
   const { isDarkMode } = useTheme();
+  const { activeCategory, setActiveCategory, filteredProjects } = useProjectFilter();
 
   const CATEGORIES = [
     { label: t('gallery.categories.all'), value: "all", icon: Layers },
@@ -40,29 +36,6 @@ export default function ProjectGalleryPage() {
     { label: t('gallery.categories.motors'), value: "motors", icon: Cog },
     { label: t('gallery.categories.airConditioning'), value: "airConditioning", icon: Snowflake },
   ];
-
-  // Shuffle para mezclar proyectos solo en "Todos"
-  function shuffle(array) {
-    const arr = array.slice();
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    }
-    return arr;
-  }
-
-  const filteredProjects = useMemo(() => {
-    if (activeCategory === "all") return shuffle(PROJECTS);
-    return PROJECTS.filter((p) => {
-      const categoryMap = {
-        "pools": "Piscinas",
-        "electrical": "Electricidad General",
-        "motors": "Motores",
-        "airConditioning": "Aires Acondicionados"
-      };
-      return p.category === categoryMap[activeCategory];
-    });
-  }, [activeCategory]);
 
   return (
     <div className={cx(

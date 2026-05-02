@@ -2,15 +2,13 @@ import React from "react";
 import { Menu, MenuHandler, MenuList, MenuItem, IconButton } from "@material-tailwind/react";
 import { useTheme } from "../context/ThemeContext";
 import { useTranslation } from "react-i18next";
+import { LANGUAGES } from "../data/languages";
 
 const LanguageSelector = () => {
   const { isDarkMode } = useTheme();
   const { i18n } = useTranslation();
 
-  const languages = [
-    { code: "es", flag: "🇨🇷", name: "Español" },
-    { code: "en", flag: "🇺🇸", name: "English" },
-  ];
+  const languages = LANGUAGES;
 
   const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
 

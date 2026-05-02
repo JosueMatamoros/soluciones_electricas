@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { ArrowRight } from "lucide-react";
 
-function ServiceCard({ id, title, image, description }) {
+function ServiceCard({ id, image }) {
   const { t } = useTranslation();
   const { isDarkMode } = useTheme();
 

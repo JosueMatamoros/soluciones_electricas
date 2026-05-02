@@ -2,72 +2,22 @@ import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
+import { GATE_IMAGES } from "../../data/galleryImages/gateImages";
+import { WHATSAPP_URL } from "../../constants/contact";
 import ImageModal from "../../components/common/ImageModal";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
 import { ShieldCheck, Radio, Fingerprint, Clock, ArrowRight, Image } from "lucide-react";
 
-/**
- * Portones Automáticos - Estilo Split Screen con CTA sticky
- * Layout split con CTA mejorado en esquina superior derecha
- */
 export default function AutomaticGatesPage() {
   const { isDarkMode } = useTheme();
   const { t } = useTranslation();
   const service = SERVICES.find((s) => s.id === "portones-automaticos");
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const gateImages = [
-    {
-      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop",
-      alt: "Motor de brazo para portón",
-      title: "Motor de Brazo",
-      description: "Portones batientes"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop",
-      alt: "Motor de cremallera para portón corredizo",
-      title: "Motor Cremallera",
-      description: "Portones corredizos"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&auto=format&fit=crop",
-      alt: "Motor industrial alta potencia",
-      title: "Motor Industrial",
-      description: "Hasta 2000kg"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&auto=format&fit=crop",
-      alt: "Motor subterráneo para portón",
-      title: "Motor Subterráneo",
-      description: "Instalación oculta"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop",
-      alt: "Control WiFi inteligente",
-      title: "Control WiFi",
-      description: "Acceso remoto"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600573472592-401b489a3cdc?w=900&auto=format&fit=crop",
-      alt: "Panel táctil control de acceso",
-      title: "Panel Táctil",
-      description: "Control de accesos"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop",
-      alt: "Sensores de seguridad para portón",
-      title: "Sensores",
-      description: "Máxima seguridad"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000&auto=format&fit=crop",
-      alt: "Central de control para portones",
-      title: "Central Control",
-      description: "Gestión completa"
-    }
-  ];
+  const galleryTexts = t("services.detail.portones-automaticos.galleryImages", { returnObjects: true });
+  const gateImages = GATE_IMAGES.map((img, i) => ({ src: img.src, ...galleryTexts[i] }));
 
   if (!service) return null;
 
@@ -139,7 +89,7 @@ export default function AutomaticGatesPage() {
                   </a>
 
                   <a
-                    href="https://wa.me/1234567890"
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl hover:scale-105 shadow-green-600/30"

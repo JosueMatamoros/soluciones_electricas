@@ -1,8 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { MapPin, Mail, Phone, Facebook, Instagram, Send } from "lucide-react";
-
-const TO_EMAIL = "1002matamoros@gmail.com";
+import { BUSINESS_EMAIL, WHATSAPP_NUMBER, FACEBOOK_URL, INSTAGRAM_URL } from "../../constants/contact";
 
 export default function ContactSection() {
   const { t } = useTranslation();
@@ -24,7 +23,7 @@ export default function ContactSection() {
       `${t("contact.form.emailPhoneLabel")}${data.phone}\n\n` +
       `${t("contact.form.emailMessageLabel")}\n${data.message}\n`;
 
-    const mailto = `mailto:${TO_EMAIL}?subject=${encodeURIComponent(
+    const mailto = `mailto:${BUSINESS_EMAIL}?subject=${encodeURIComponent(
       subject,
     )}&body=${encodeURIComponent(body)}`;
 
@@ -63,12 +62,12 @@ export default function ContactSection() {
 
                 <div className="flex flex-col gap-3 pt-2">
                   <WhatsAppButton
-                    phoneE164="50661350349"
+                    phoneE164={WHATSAPP_NUMBER}
                     label="+506 6135-0349"
                     actionText={t("contact.buttons.whatsappAction")}
                   />
                   <CallButton
-                    phoneE164="50661350349"
+                    phoneE164={WHATSAPP_NUMBER}
                     label="+506 6135-0349"
                     callText={t("contact.buttons.call")}
                     actionText={t("contact.buttons.callAction")}
@@ -77,10 +76,10 @@ export default function ContactSection() {
               </div>
 
               <div className="mt-10 flex w-full gap-4">
-                <SocialLink ariaLabel="Facebook" href="https://facebook.com/">
+                <SocialLink ariaLabel="Facebook" href={FACEBOOK_URL}>
                   <Facebook className="h-7 w-7" />
                 </SocialLink>
-                <SocialLink ariaLabel="Instagram" href="https://instagram.com/">
+                <SocialLink ariaLabel="Instagram" href={INSTAGRAM_URL}>
                   <Instagram className="h-7 w-7" />
                 </SocialLink>
               </div>

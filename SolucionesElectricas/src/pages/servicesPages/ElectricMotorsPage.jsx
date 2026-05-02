@@ -2,79 +2,26 @@ import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
+import { MOTOR_IMAGES } from "../../data/galleryImages/motorImages";
+import { WHATSAPP_URL } from "../../constants/contact";
 import ServiceHero from "../../components/services/ServiceHero";
 import ImageModal from "../../components/common/ImageModal";
 import { Gauge, Settings, Wrench, TrendingUp, Zap, ArrowRight, CheckCircle2, Factory, Home, Droplet, Package } from "lucide-react";
 
-/**
- * Motores Eléctricos - Timeline Serpiente
- * Layout con timeline en zigzag y paleta azul
- */
 export default function ElectricMotorsPage() {
   const { isDarkMode } = useTheme();
   const { t } = useTranslation();
   const service = SERVICES.find((s) => s.id === "motores-electricos");
-  
+
   const [selectedImage, setSelectedImage] = useState(null);
 
   if (!service) return null;
 
   const timelineSteps = t("services.detail.motores-electricos.timeline.steps", { returnObjects: true });
-  
-  // Mapeo de iconos para cada paso del timeline
   const timelineIcons = [Gauge, Settings, Wrench, TrendingUp, Zap, CheckCircle2];
 
-  // Datos de las imágenes del grid
-  const motorImages = [
-    {
-      src: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&auto=format&fit=crop",
-      alt: "Motor monofásico",
-      title: "Motor Monofásico",
-      description: "Aplicaciones domésticas"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=800&auto=format&fit=crop",
-      alt: "Motor trifásico industrial",
-      title: "Motor Trifásico",
-      description: "Uso industrial"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&auto=format&fit=crop",
-      alt: "Motor DC",
-      title: "Motor DC",
-      description: "Corriente directa"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
-      alt: "Motor sumergible",
-      title: "Motor Sumergible",
-      description: "Pozos de agua"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&auto=format&fit=crop",
-      alt: "Bobinado de motores",
-      title: "Bobinado",
-      description: "Reparación especializada"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900&auto=format&fit=crop",
-      alt: "Variadores de frecuencia",
-      title: "Variadores",
-      description: "Control de velocidad"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=900&auto=format&fit=crop",
-      alt: "Mantenimiento de motores",
-      title: "Mantenimiento",
-      description: "Preventivo y correctivo"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=900&auto=format&fit=crop",
-      alt: "Diagnóstico de fallas",
-      title: "Diagnóstico",
-      description: "Detección de problemas"
-    }
-  ];
+  const galleryTexts = t("services.detail.motores-electricos.galleryImages", { returnObjects: true });
+  const motorImages = MOTOR_IMAGES.map((img, i) => ({ src: img.src, ...galleryTexts[i] }));
 
   return (
     <div className={`min-h-screen transition-colors duration-300 relative ${
@@ -413,7 +360,7 @@ export default function ElectricMotorsPage() {
                   </a>
 
                   <a
-                    href="https://wa.me/1234567890"
+                    href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg text-sm font-semibold transition-all duration-300 bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl hover:scale-105 shadow-green-600/30"

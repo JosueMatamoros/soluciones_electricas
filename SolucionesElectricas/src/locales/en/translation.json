@@ -8,6 +8,8 @@
     "home": "Home",
     "darkMode": "Dark mode",
     "lightMode": "Light mode",
+    "toggleDark": "Activate dark mode",
+    "toggleLight": "Activate light mode",
     "moreInfo": "More information",
     "viewAll": "View all",
     "callNow": "Call Now",
@@ -123,6 +125,28 @@
       "guarantee": "Fast response guaranteed",
       "quoteButton": "Request Quote",
       "callButton": "Call Now"
+    },
+    "carouselServices": {
+      "climatizacion": {
+        "title": "Air conditioning installation and maintenance",
+        "description": "Sale, professional installation and preventive/corrective service for split, central and more air conditioning equipment. Reliable air conditioning all year round.",
+        "tags": ["Gas recharge", "Deep cleaning", "Fault repair"]
+      },
+      "instalaciones-residenciales": {
+        "title": "Commercial and residential electrical installations",
+        "description": "Design, assembly and modernization of electrical systems for homes, businesses and factories. Safety, efficiency and regulatory compliance guaranteed.",
+        "tags": ["Electrical panels", "LED lighting", "Certification"]
+      },
+      "sistemas-piscinas": {
+        "title": "Electrical systems and motors for jacuzzis and pools",
+        "description": "Installation and automation of pumps, filters and electrical systems for pools and jacuzzis. Enjoy clean, safe water with efficient technology.",
+        "tags": ["Automatic pumps", "Control panels", "Maintenance"]
+      },
+      "portones-automaticos": {
+        "title": "Electric motor installation for gates",
+        "description": "Automate your access with electric motors for sliding and swing gates. Safe, fast installation with warranty.",
+        "tags": ["Remote control", "Safety sensors", "Technical support"]
+      }
     }
   },
   "gallery": {
@@ -235,6 +259,12 @@
           "title": "Need an electrical installation?",
           "description": "Get a personalized quote for your residential or commercial project"
         },
+        "featureCards": [
+          { "badge": "Residential", "title": "Residential Installation", "description": "Modern electrical panels with protections for homes" },
+          { "badge": "Commercial", "title": "Commercial Installation", "description": "High-power electrical systems for commercial spaces and offices" },
+          { "badge": "Lighting", "title": "Interior Lighting", "description": "Design and installation of efficient and modern lighting" },
+          { "badge": "Lighting", "title": "Exterior Lighting", "description": "Lighting solutions for exteriors, gardens and facades" }
+        ],
         "faq": [
           {
             "question": "How long does a residential installation for a new house take?",
@@ -535,7 +565,17 @@
             "Submersible"
           ]
         },
-        "galleryTitle": "Our Work"
+        "galleryTitle": "Our Work",
+        "galleryImages": [
+          { "alt": "Single-phase motor", "title": "Single-Phase Motor", "description": "Domestic applications" },
+          { "alt": "Industrial three-phase motor", "title": "Three-Phase Motor", "description": "Industrial use" },
+          { "alt": "DC motor", "title": "DC Motor", "description": "Direct current" },
+          { "alt": "Submersible motor", "title": "Submersible Motor", "description": "Water wells" },
+          { "alt": "Motor winding", "title": "Winding", "description": "Specialized repair" },
+          { "alt": "Frequency drives", "title": "Drives", "description": "Speed control" },
+          { "alt": "Motor maintenance", "title": "Maintenance", "description": "Preventive and corrective" },
+          { "alt": "Fault diagnosis", "title": "Diagnosis", "description": "Problem detection" }
+        ]
       },
       "portones-automaticos": {
         "heroTitle": "Electric gate installation and programming",
@@ -602,7 +642,17 @@
             ]
           }
         },
-        "galleryTitle": "Our Installations"
+        "galleryTitle": "Our Installations",
+        "galleryImages": [
+          { "alt": "Swing gate arm motor", "title": "Arm Motor", "description": "Swing gates" },
+          { "alt": "Rack motor for sliding gate", "title": "Rack Motor", "description": "Sliding gates" },
+          { "alt": "High power industrial motor", "title": "Industrial Motor", "description": "Up to 2000kg" },
+          { "alt": "Underground gate motor", "title": "Underground Motor", "description": "Hidden installation" },
+          { "alt": "Smart WiFi control", "title": "WiFi Control", "description": "Remote access" },
+          { "alt": "Touch panel access control", "title": "Touch Panel", "description": "Access control" },
+          { "alt": "Gate safety sensors", "title": "Sensors", "description": "Maximum security" },
+          { "alt": "Gate control center", "title": "Control Center", "description": "Complete management" }
+        ]
       },
       "sistemas-piscinas": {
         "heroTitle": "Installation of electromechanical systems for pools and jacuzzis",
@@ -640,7 +690,16 @@
           "Special electrical panels",
           "Compliance with safety regulations"
         ],
-        "galleryTitle": "Our Pool Projects"
+        "galleryTitle": "Our Pool Projects",
+        "galleryImages": [
+          { "alt": "Premium Residential Pool", "title": "Premium Residential Pool", "caption": "Complete filtration and climate system" },
+          { "alt": "LED Lighting", "title": "LED Lighting", "caption": "RGB multicolor system" },
+          { "alt": "Advanced Filtration", "title": "Advanced Filtration", "caption": "Purification system" },
+          { "alt": "Pool with Jacuzzi", "title": "Pool with Jacuzzi", "caption": "Modern design with waterfall" },
+          { "alt": "Full Climate Control", "title": "Full Climate Control", "caption": "Temperature control" },
+          { "alt": "Natural Pool", "title": "Natural Pool", "caption": "Ecological filtration" },
+          { "alt": "Infinity Pool", "title": "Infinity Pool", "caption": "Infinity edge with panoramic view" }
+        ]
       }
     }
   }

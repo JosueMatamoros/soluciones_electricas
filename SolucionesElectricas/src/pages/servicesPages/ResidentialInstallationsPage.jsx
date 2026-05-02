@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { SERVICES } from "../../data/services";
+import { INSTALLATION_IMAGES } from "../../data/galleryImages/installationImages";
 import ImageModal from "../../components/common/ImageModal";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
@@ -10,38 +11,14 @@ import ServiceFeatureCard from "../../components/services/ServiceFeatureCard";
 import FAQAccordion from "../../components/common/FAQAccordion";
 import { BadgeCheck, Hammer, MessageCircle } from "lucide-react";
 
-/**
- * Instalaciones Residenciales - Estilo Classic
- * Layout clásico con sidebar CTA
- */
 export default function ResidentialInstallationsPage() {
   const { t } = useTranslation();
   const { isDarkMode } = useTheme();
   const service = SERVICES.find((s) => s.id === "instalaciones-residenciales");
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const installationImages = [
-    {
-      src: "/images/instalacion-residencial.jpg",
-      alt: "Instalación Residencial",
-      title: "Instalación Residencial"
-    },
-    {
-      src: "/images/instalacion-comercial.jpg",
-      alt: "Instalación Comercial",
-      title: "Instalación Comercial"
-    },
-    {
-      src: "/temporales/iluminacion-interior.jpg",
-      alt: "Iluminación Interior",
-      title: "Iluminación Interior"
-    },
-    {
-      src: "/images/iluminacion-exterior.jpg",
-      alt: "Iluminación Exterior",
-      title: "Iluminación Exterior"
-    }
-  ];
+  const featureCards = t("services.detail.instalaciones-residenciales.featureCards", { returnObjects: true });
+  const installationImages = INSTALLATION_IMAGES.map((img) => ({ src: img.src }));
 
   if (!service) return null;
 
@@ -162,34 +139,16 @@ export default function ResidentialInstallationsPage() {
 
             {/* Grid 2x2 de características destacadas */}
             <div className="mb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <ServiceFeatureCard
-                badge="Residencial"
-                title="Instalación Residencial"
-                description="Tableros eléctricos modernos con protecciones para viviendas"
-                image={installationImages[0].src}
-                onClick={() => setSelectedImage(installationImages[0])}
-              />
-              <ServiceFeatureCard
-                badge="Comercial"
-                title="Instalación Comercial"
-                description="Sistemas eléctricos de alta potencia para locales comerciales y oficinas"
-                image={installationImages[1].src}
-                onClick={() => setSelectedImage(installationImages[1])}
-              />
-              <ServiceFeatureCard
-                badge="Iluminación"
-                title="Iluminación Interior"
-                description="Diseño e instalación de iluminación eficiente y moderna"
-                image={installationImages[2].src}
-                onClick={() => setSelectedImage(installationImages[2])}
-              />
-              <ServiceFeatureCard
-                badge="Iluminación"
-                title="Iluminación Exterior"
-                description="Soluciones de iluminación para exteriores, jardines y fachadas"
-                image={installationImages[3].src}
-                onClick={() => setSelectedImage(installationImages[3])}
-              />
+              {featureCards.map((card, i) => (
+                <ServiceFeatureCard
+                  key={i}
+                  badge={card.badge}
+                  title={card.title}
+                  description={card.description}
+                  image={installationImages[i].src}
+                  onClick={() => setSelectedImage(installationImages[i])}
+                />
+              ))}
             </div>
 
             {/* Características */}

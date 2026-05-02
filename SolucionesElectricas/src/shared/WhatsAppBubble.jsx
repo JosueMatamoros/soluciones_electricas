@@ -1,18 +1,15 @@
 import React from 'react';
-
-const whatsappNumber = "50661350349";
-const whatsappMessage = "Hola, me gustaría obtener más información.";
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+import { WHATSAPP_URL, WHATSAPP_MESSAGE } from "../constants/contact";
 
 const WhatsAppBubble = () => {
   return (
     <a
-      href={whatsappUrl}
+      href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-0  right-0 sm:bottom-6 sm:right-6 z-50"
-      aria-label={whatsappMessage}
-      title={whatsappMessage}
+      aria-label={WHATSAPP_MESSAGE}
+      title={WHATSAPP_MESSAGE}
     >
       <img
         src="/WhatsAppLogo.webp"

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { SERVICES } from "../../data/services";
+import { POOL_IMAGES } from "../../data/galleryImages/poolImages";
+import { WHATSAPP_URL } from "../../constants/contact";
 import ImageModal from "../../components/common/ImageModal";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
@@ -14,43 +16,8 @@ export default function PoolSystemsPage() {
   const service = SERVICES.find((s) => s.id === "sistemas-piscinas");
   const [selectedImage, setSelectedImage] = useState(null);
 
-  const poolImages = [
-    {
-      src: "/temporales/piscinas-jacuzzis.png",
-      alt: "Piscina Residencial Premium",
-      title: "Piscina Residencial Premium"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop",
-      alt: "Iluminación LED",
-      title: "Iluminación LED"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop",
-      alt: "Filtración",
-      title: "Filtración Avanzada"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop",
-      alt: "Piscina con Jacuzzi",
-      title: "Piscina con Jacuzzi"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop",
-      alt: "Climatización",
-      title: "Climatización Total"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop",
-      alt: "Piscina Natural",
-      title: "Piscina Natural"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop",
-      alt: "Piscina Infinity",
-      title: "Piscina Infinity"
-    }
-  ];
+  const galleryTexts = t("services.detail.sistemas-piscinas.galleryImages", { returnObjects: true });
+  const poolImages = POOL_IMAGES.map((img, i) => ({ src: img.src, ...galleryTexts[i] }));
 
   if (!service) return null;
 
@@ -173,7 +140,7 @@ export default function PoolSystemsPage() {
                   <ArrowRight className="h-5 w-6 transition-transform group-hover:translate-x-1" />
                 </a>
                 <a
-                  href="https://wa.me/1234567890"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex-1 min-w-0 inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold transition-all duration-300 bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl hover:scale-105 shadow-green-600/30"
@@ -337,7 +304,7 @@ export default function PoolSystemsPage() {
                         {poolImages[0].title}
                       </h4>
                       <p className="text-white/90 text-sm">
-                        Sistema completo de filtración y climatización
+                        {poolImages[0].caption}
                       </p>
                     </div>
                   </div>
@@ -362,7 +329,7 @@ export default function PoolSystemsPage() {
                         {poolImages[1].title}
                       </h4>
                       <p className="text-white/90 text-xs">
-                        Sistema RGB multicolor
+                        {poolImages[1].caption}
                       </p>
                     </div>
                   </div>
@@ -388,7 +355,7 @@ export default function PoolSystemsPage() {
                       {poolImages[2].title}
                     </h4>
                     <p className="text-white/90 text-xs">
-                      Sistema de purificación
+                      {poolImages[2].caption}
                     </p>
                   </div>
                 </div>
@@ -412,7 +379,7 @@ export default function PoolSystemsPage() {
                         {poolImages[3].title}
                       </h4>
                       <p className="text-white/90 text-sm">
-                        Diseño moderno con cascada
+                        {poolImages[3].caption}
                       </p>
                     </div>
                   </div>
@@ -436,7 +403,7 @@ export default function PoolSystemsPage() {
                       {poolImages[4].title}
                     </h4>
                     <p className="text-white/90 text-xs">
-                      Control de temperatura
+                      {poolImages[4].caption}
                     </p>
                   </div>
                 </div>
@@ -461,7 +428,7 @@ export default function PoolSystemsPage() {
                       {poolImages[5].title}
                     </h4>
                     <p className="text-white/90 text-xs">
-                      Filtración ecológica
+                      {poolImages[5].caption}
                     </p>
                   </div>
                 </div>
@@ -485,7 +452,7 @@ export default function PoolSystemsPage() {
                         {poolImages[6].title}
                       </h4>
                       <p className="text-white/90 text-sm">
-                        Borde infinito con vista panorámica
+                        {poolImages[6].caption}
                       </p>
                     </div>
                   </div>

@@ -48,10 +48,7 @@ function ServicesPage() {
               <ServiceCard
                 key={service.id}
                 id={service.id}
-                title={service.title}
-                icon={service.icon}
                 image={service.image}
-                description={service.description}
               />
             ))}
           </div>

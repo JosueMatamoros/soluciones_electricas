@@ -2,10 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { FaWhatsapp, FaFacebook, FaInstagram } from "react-icons/fa";
-
-const whatsappNumber = "50661350349";
-const whatsappMessage = "Hola, me gustaría obtener más información.";
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+import { WHATSAPP_URL, FACEBOOK_URL, INSTAGRAM_URL } from "../constants/contact";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -35,13 +32,13 @@ export default function Footer() {
           <Link to="/contacto" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">{t('footer.contact')}</Link>
         </nav>
         <div className="flex items-center gap-4">
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-brand-cyan-dark dark:hover:text-brand-cyan transition-colors">
             <FaWhatsapp size={22} />
           </a>
-          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
+          <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-blue-700 dark:hover:text-blue-400 transition-colors">
             <FaFacebook size={22} />
           </a>
-          <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-pink-500 dark:hover:text-pink-400 transition-colors">
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-pink-500 dark:hover:text-pink-400 transition-colors">
             <FaInstagram size={22} />
           </a>
         </div>

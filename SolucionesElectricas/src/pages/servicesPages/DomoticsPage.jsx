@@ -2,16 +2,13 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { SERVICES } from "../../data/services";
+import { WHATSAPP_URL } from "../../constants/contact";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
 import SmartDeviceCard from "../../components/services/SmartDeviceCard";
 import { Lightbulb, Camera, DoorOpen, Droplets, Speaker, Waves, ArrowLeft, Smartphone, Cpu } from "lucide-react";
 
-/**
- * Domótica - Estilo Cards Modern
- * Layout moderno con cards y CTA integrado
- */
 export default function DomoticsPage() {
   const { t } = useTranslation();
   const { isDarkMode } = useTheme();
@@ -98,7 +95,7 @@ export default function DomoticsPage() {
                 </a>
 
                 <a
-                  href="https://wa.me/1234567890"
+                  href={WHATSAPP_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-sm font-semibold transition-all duration-300 bg-green-600 text-white hover:bg-green-700 shadow-lg hover:shadow-xl hover:scale-105 shadow-green-600/30"

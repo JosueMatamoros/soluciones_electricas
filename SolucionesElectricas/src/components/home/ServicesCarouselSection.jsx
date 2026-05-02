@@ -3,45 +3,18 @@ import { Check, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import SectionHeader from "../common/SectionHeader";
+import { CAROUSEL_SERVICES } from "../../data/carouselServices";
 
 export default function ServicesCarousel() {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
-  const services = [
-    {
-      title: "Instalación y mantenimiento de aires acondicionados",
-      description:
-        "Venta, instalación profesional y servicio preventivo/correctivo para equipos de aire acondicionado split, central y más. Climatización confiable todo el año.",
-      image: "/temporales/aire-acondicionado.png",
-      tags: ["Carga de gas", "Limpieza profunda", "Reparación de fallas"],
-      link: "/servicios/climatizacion",
-    },
-    {
-      title: "Instalaciones eléctricas comerciales y residenciales",
-      description:
-        "Diseño, montaje y modernización de sistemas eléctricos para hogares, comercios y fábricas. Seguridad, eficiencia y cumplimiento de normativas garantizados.",
-      image: "/temporales/iluminacion-interior.jpg",
-      tags: ["Tableros eléctricos", "Iluminación LED", "Certificación"],
-      link: "/servicios/instalaciones-residenciales",
-    },
-    {
-      title: "Sistemas eléctricos y motores para jacuzzis y piscinas",
-      description:
-        "Instalación y automatización de bombas, filtros y sistemas eléctricos para piscinas y jacuzzis. Disfruta de agua limpia y segura con tecnología eficiente.",
-      image: "/services/piscinas-jacuzzis.png",
-      tags: ["Bombas automáticas", "Tableros de control", "Mantenimiento"],
-      link: "/servicios/sistemas-piscinas",
-    },
-    {
-      title: "Instalación de motores eléctricos para portones",
-      description:
-        "Automatiza tu acceso con motores eléctricos para portones corredizos y batientes. Instalación segura, rápida y con garantía de funcionamiento.",
-      image: "/services/portones-electricos.png",
-      tags: ["Control remoto", "Sensores de seguridad", "Soporte técnico"],
-      link: "/servicios/portones-automaticos",
-    },
-  ];
+  const services = CAROUSEL_SERVICES.map((s) => ({
+    ...s,
+    title: t(`home.carouselServices.${s.id}.title`),
+    description: t(`home.carouselServices.${s.id}.description`),
+    tags: t(`home.carouselServices.${s.id}.tags`, { returnObjects: true }),
+  }));
 
   const [index, setIndex] = useState(0);
 

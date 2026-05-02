@@ -34,6 +34,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import ModeToggle from "./ModeToggle";
 import LanguageSelector from "./LanguageSelector";
 import { useTheme } from "../context/ThemeContext";
+import { WHATSAPP_URL, CONTACT_EMAIL } from "../constants/contact";
 
 const logo = "/logo.png";
 const logoWhite = "/logoWhite.png";
@@ -104,11 +105,6 @@ export function NavbarWithMegaMenu() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const whatsappNumber = "50661350349";
-  const whatsappMessage = "Hola, me gustaría obtener más información.";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-    whatsappMessage
-  )}`;
 
   return (
     <Navbar
@@ -169,7 +165,7 @@ export function NavbarWithMegaMenu() {
             </SpeedDialHandler>
             <SpeedDialContent className="flex-row space-x-2">
               <SpeedDialAction
-                onClick={() => window.open(whatsappUrl, "_blank")}
+                onClick={() => window.open(WHATSAPP_URL, "_blank")}
                 label="WhatsApp"
                 className={`border-0 transition-colors duration-300 ${
                   isDarkMode
@@ -180,7 +176,7 @@ export function NavbarWithMegaMenu() {
                 <FaWhatsapp className="h-5 w-5" />
               </SpeedDialAction>
               <SpeedDialAction
-                onClick={() => window.open("mailto:tuemail@ejemplo.com", "_self")}
+                onClick={() => window.open(`mailto:${CONTACT_EMAIL}`, "_self")}
                 label="Correo"
                 className={`border-0 transition-colors duration-300 ${
                   isDarkMode
