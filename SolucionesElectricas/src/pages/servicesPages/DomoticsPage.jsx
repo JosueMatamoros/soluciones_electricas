@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useTheme } from "../../context/ThemeContext";
 import { SERVICES } from "../../data/services";
 import { WHATSAPP_URL } from "../../constants/contact";
+import { DOMOTICS_IMAGES } from "../../data/galleryImages/domoticsImages";
 import ServiceHero from "../../components/services/ServiceHero";
 import ServiceFeatures from "../../components/services/ServiceFeatures";
 import ServiceCTA from "../../components/services/ServiceCTA";
@@ -21,7 +22,7 @@ export default function DomoticsPage() {
   const devicesWithIcons = smartDevices.map((device, index) => ({
     ...device,
     icon: deviceIcons[index],
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&auto=format&fit=crop"
+    image: DOMOTICS_IMAGES[index].src,
   }));
 
   return (

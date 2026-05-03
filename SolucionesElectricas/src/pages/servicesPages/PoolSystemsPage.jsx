@@ -284,182 +284,76 @@ export default function PoolSystemsPage() {
             </h2>
           </div>
 
-          <div className="relative">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-              <div className="md:col-span-2">
-                <div
-                  className={`group relative overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:-rotate-1 ${
-                    isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                  } h-[320px]`}
-                  onClick={() => setSelectedImage(poolImages[0])}
-                >
-                  <img
-                    src={poolImages[0].src}
-                    alt={poolImages[0].alt}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h4 className="text-white text-xl font-bold mb-2">
-                        {poolImages[0].title}
-                      </h4>
-                      <p className="text-white/90 text-sm">
-                        {poolImages[0].caption}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div
-                  className={`group overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-3 ${
-                    isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                  } h-[320px]`}
-                  onClick={() => setSelectedImage(poolImages[1])}
-                >
-                  <img
-                    src={poolImages[1].src}
-                    alt={poolImages[1].alt}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h4 className="text-white text-base font-bold mb-1">
-                        {poolImages[1].title}
-                      </h4>
-                      <p className="text-white/90 text-xs">
-                        {poolImages[1].caption}
-                      </p>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {/* Fila 1: imagen grande + imagen normal */}
+            <div className="md:col-span-2">
+              <div
+                className={`group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:scale-[1.02] hover:-rotate-1 ${
+                  isDarkMode ? "bg-dark-surface" : "bg-gray-200"
+                } h-[300px]`}
+                onClick={() => setSelectedImage(poolImages[0])}
+              >
+                <img src={poolImages[0].src} alt={poolImages[0].alt} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h4 className="text-white text-xl font-bold mb-1">{poolImages[0].title}</h4>
+                    <p className="text-white/90 text-sm">{poolImages[0].caption}</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+            <div>
               <div
-                className={`group overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-2 ${
+                className={`group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:scale-105 hover:rotate-1 ${
                   isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                } h-[240px]`}
-                onClick={() => setSelectedImage(poolImages[2])}
+                } h-[300px]`}
+                onClick={() => setSelectedImage(poolImages[1])}
               >
-                <img
-                  src={poolImages[2].src}
-                  alt={poolImages[2].alt}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <h4 className="text-white text-sm font-bold mb-1">
-                      {poolImages[2].title}
-                    </h4>
-                    <p className="text-white/90 text-xs">
-                      {poolImages[2].caption}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="md:col-span-2">
-                <div
-                  className={`group relative overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:rotate-1 ${
-                    isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                  } h-[240px]`}
-                  onClick={() => setSelectedImage(poolImages[3])}
-                >
-                  <img
-                    src={poolImages[3].src}
-                    alt={poolImages[3].alt}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h4 className="text-white text-lg font-bold mb-1">
-                        {poolImages[3].title}
-                      </h4>
-                      <p className="text-white/90 text-sm">
-                        {poolImages[3].caption}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className={`group overflow-hidden rounded-2xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:rotate-2 ${
-                  isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                } h-[240px]`}
-                onClick={() => setSelectedImage(poolImages[4])}
-              >
-                <img
-                  src={poolImages[4].src}
-                  alt={poolImages[4].alt}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <h4 className="text-white text-sm font-bold mb-1">
-                      {poolImages[4].title}
-                    </h4>
-                    <p className="text-white/90 text-xs">
-                      {poolImages[4].caption}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div
-                className={`group overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-105 hover:-rotate-3 ${
-                  isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                } h-[280px]`}
-                onClick={() => setSelectedImage(poolImages[5])}
-              >
-                <img
-                  src={poolImages[5].src}
-                  alt={poolImages[5].alt}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
+                <img src={poolImages[1].src} alt={poolImages[1].alt} className="absolute inset-0 w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h4 className="text-white text-base font-bold mb-1">
-                      {poolImages[5].title}
-                    </h4>
-                    <p className="text-white/90 text-xs">
-                      {poolImages[5].caption}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="md:col-span-2">
-                <div
-                  className={`group relative overflow-hidden rounded-3xl cursor-pointer transform transition-all duration-500 hover:scale-[1.02] hover:rotate-1 ${
-                    isDarkMode ? "bg-dark-surface" : "bg-gray-200"
-                  } h-[280px]`}
-                  onClick={() => setSelectedImage(poolImages[6])}
-                >
-                  <img
-                    src={poolImages[6].src}
-                    alt={poolImages[6].alt}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h4 className="text-white text-xl font-bold mb-2">
-                        {poolImages[6].title}
-                      </h4>
-                      <p className="text-white/90 text-sm">
-                        {poolImages[6].caption}
-                      </p>
-                    </div>
+                    <h4 className="text-white text-base font-bold mb-1">{poolImages[1].title}</h4>
+                    <p className="text-white/90 text-xs">{poolImages[1].caption}</p>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* Fila 2: imagen normal + imagen grande */}
+            <div>
+              <div
+                className={`group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1 ${
+                  isDarkMode ? "bg-dark-surface" : "bg-gray-200"
+                } h-[260px]`}
+                onClick={() => setSelectedImage(poolImages[2])}
+              >
+                <img src={poolImages[2].src} alt={poolImages[2].alt} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h4 className="text-white text-base font-bold mb-1">{poolImages[2].title}</h4>
+                    <p className="text-white/90 text-xs">{poolImages[2].caption}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="md:col-span-2">
+              <div
+                className={`group relative overflow-hidden rounded-3xl cursor-pointer transition-all duration-500 hover:scale-[1.02] hover:rotate-1 ${
+                  isDarkMode ? "bg-dark-surface" : "bg-gray-200"
+                } h-[260px]`}
+                onClick={() => setSelectedImage(poolImages[3])}
+              >
+                <img src={poolImages[3].src} alt={poolImages[3].alt} className="absolute inset-0 w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h4 className="text-white text-xl font-bold mb-1">{poolImages[3].title}</h4>
+                    <p className="text-white/90 text-sm">{poolImages[3].caption}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
 

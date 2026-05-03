@@ -5,6 +5,7 @@ import {
   Check,
   X,
 } from "lucide-react";
+import { AC_IMAGES } from "../../data/galleryImages/airConditioningImages";
 
 function StatusIcon({ status }) {
   if (status === "ok") {
@@ -118,22 +119,22 @@ export default function AirConditioningModels() {
     {
       ...t("services.detail.climatizacion.models.cards.model12k", { returnObjects: true }),
       popular: false,
-      imageSrc: "/services/aire-acondicionado.jpg"
+      imageSrc: AC_IMAGES[0].src,
     },
     {
       ...t("services.detail.climatizacion.models.cards.model18k", { returnObjects: true }),
       popular: true,
-      imageSrc: "/services/aire-acondicionado.jpg"
+      imageSrc: AC_IMAGES[1].src,
     },
     {
       ...t("services.detail.climatizacion.models.cards.model24k", { returnObjects: true }),
       popular: false,
-      imageSrc: "/services/aire-acondicionado.jpg"
+      imageSrc: AC_IMAGES[2].src,
     },
     {
       ...t("services.detail.climatizacion.models.cards.floorCeiling", { returnObjects: true }),
       popular: false,
-      imageSrc: "/services/aire-acondicionado.jpg"
+      imageSrc: AC_IMAGES[3].src,
     }
   ];
 

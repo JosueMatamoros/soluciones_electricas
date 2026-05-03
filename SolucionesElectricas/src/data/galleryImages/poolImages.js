@@ -1,9 +1,6 @@
 export const POOL_IMAGES = [
-  { id: "residencial", src: "/temporales/piscinas-jacuzzis.png" },
-  { id: "led", src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop" },
-  { id: "filtracion", src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop" },
-  { id: "jacuzzi", src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop" },
-  { id: "climatizacion", src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=600&auto=format&fit=crop" },
-  { id: "natural", src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=800&auto=format&fit=crop" },
-  { id: "infinity", src: "https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?w=1200&auto=format&fit=crop" },
+  { id: "residencial", src: "/gallery/piscinas/01-piscina-residencial.png" },
+  { id: "led", src: "/gallery/piscinas/02-iluminacion-led.png" },
+  { id: "filtracion", src: "/gallery/piscinas/03-filtracion-avanzada.png" },
+  { id: "jacuzzi", src: "/gallery/piscinas/04-piscina-jacuzzi.png" },
 ];

@@ -1,6 +1,6 @@
 export const INSTALLATION_IMAGES = [
-  { id: "residencial", src: "/images/instalacion-residencial.jpg" },
-  { id: "comercial", src: "/images/instalacion-comercial.jpg" },
-  { id: "interior", src: "/temporales/iluminacion-interior.jpg" },
-  { id: "exterior", src: "/images/iluminacion-exterior.jpg" },
+  { id: "residencial", src: "/gallery/instalaciones/01-instalacion-residencial.png" },
+  { id: "comercial", src: "/gallery/instalaciones/02-instalacion-comercial.png" },
+  { id: "interior", src: "/gallery/instalaciones/03-iluminacion-interior.png" },
+  { id: "exterior", src: "/gallery/instalaciones/04-iluminacion-exterior.png" },
 ];
