@@ -4,31 +4,31 @@ export const SERVICES = [
   {
     id: "instalaciones-residenciales",
     icon: Plug,
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
+    image: "/services/instalaciones-residenciales.png",
   },
   {
     id: "climatizacion",
     icon: Wind,
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
+    image: "/services/climatizacion.png",
   },
   {
     id: "domotica",
     icon: Home,
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
+    image: "/services/domotica.png",
   },
   {
     id: "motores-electricos",
     icon: Cog,
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
+    image: "/services/motores-electricos.png",
   },
   {
     id: "portones-automaticos",
     icon: Cog,
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
+    image: "/services/portones-automaticos.png",
   },
   {
     id: "sistemas-piscinas",
     icon: Droplets,
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop",
+    image: "/services/sistemas-piscinas.png",
   },
 ];
