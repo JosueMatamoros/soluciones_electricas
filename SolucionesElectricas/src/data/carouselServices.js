@@ -1,22 +1,22 @@
 export const CAROUSEL_SERVICES = [
   {
     id: "climatizacion",
-    image: "/temporales/aire-acondicionado.png",
+    image: "/services/climatizacion.png",
     link: "/servicios/climatizacion",
   },
   {
     id: "instalaciones-residenciales",
-    image: "/temporales/iluminacion-interior.jpg",
+    image: "/services/instalaciones-residenciales.png",
     link: "/servicios/instalaciones-residenciales",
   },
   {
     id: "sistemas-piscinas",
-    image: "/services/piscinas-jacuzzis.png",
+    image: "/services/sistemas-piscinas.png",
     link: "/servicios/sistemas-piscinas",
   },
   {
     id: "portones-automaticos",
-    image: "/services/portones-electricos.png",
+    image: "/services/portones-automaticos.png",
     link: "/servicios/portones-automaticos",
   },
 ];
