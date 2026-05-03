@@ -4,31 +4,31 @@ export const SERVICES = [
   {
     id: "instalaciones-residenciales",
     icon: Plug,
-    image: "/services/instalaciones-residenciales.png",
+    image: "/services/instalaciones-residenciales.webp",
   },
   {
     id: "climatizacion",
     icon: Wind,
-    image: "/services/climatizacion.png",
+    image: "/services/climatizacion.webp",
   },
   {
     id: "domotica",
     icon: Home,
-    image: "/services/domotica.png",
+    image: "/services/domotica.webp",
   },
   {
     id: "motores-electricos",
     icon: Cog,
-    image: "/services/motores-electricos.png",
+    image: "/services/motores-electricos.webp",
   },
   {
     id: "portones-automaticos",
     icon: Cog,
-    image: "/services/portones-automaticos.png",
+    image: "/services/portones-automaticos.webp",
   },
   {
     id: "sistemas-piscinas",
     icon: Droplets,
-    image: "/services/sistemas-piscinas.png",
+    image: "/services/sistemas-piscinas.webp",
   },
 ];
